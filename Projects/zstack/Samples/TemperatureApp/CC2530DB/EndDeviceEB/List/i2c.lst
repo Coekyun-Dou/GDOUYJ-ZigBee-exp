@@ -1,0 +1,748 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         24/Dec/2025  16:54:34 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\Sourc #
+#                          e\i2c.c                                            #
+#    Command line       =  -f E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC #
+#                          2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg        #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f E:\´«¸ÐÆ÷ZStack-CC2530\´«¸Ð #
+#                          Æ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sampl #
+#                          es\TemperatureApp\CC2530DB\..\..\..\Tools\CC2530DB #
+#                          \f8wConfig.cfg (-DZIGBEEPRO -DSECURE=0             #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST26=0x04000000                    #
+#                          -DDEFAULT_CHANLIST25=0x02000000                    #
+#                          -DDEFAULT_CHANLIST24=0x01000000                    #
+#                          -DDEFAULT_CHANLIST23=0x00800000                    #
+#                          -DDEFAULT_CHANLIST22=0x00400000                    #
+#                          -DDEFAULT_CHANLIST21=0x00200000                    #
+#                          -DDEFAULT_CHANLIST20=0x00100000                    #
+#                          -DDEFAULT_CHANLIST19=0x00080000                    #
+#                          -DDEFAULT_CHANLIST18=0x00040000                    #
+#                          -DDEFAULT_CHANLIST17=0x00020000                    #
+#                          -DDEFAULT_CHANLIST16=0x00010000                    #
+#                          -DDEFAULT_CHANLIST15=0x00008000                    #
+#                          -DDEFAULT_CHANLIST14=0x00004000                    #
+#                          -DDEFAULT_CHANLIST13=0x00002000                    #
+#                          -DDEFAULT_CHANLIST12=0x00001000                    #
+#                          -DDEFAULT_CHANLIST11=0x00000800                    #
+#                          -DDEFAULT_CHANLIST=DEFAULT_CHANLIST25              #
+#                          -DZDAPP_CONFIG_PAN_ID=0x0006                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 E:\´«¸ÐÆ÷ZStack-CC2530\´«¸Ð #
+#                          Æ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sampl #
+#                          es\TemperatureApp\Source\i2c.c -D NWK_AUTO_POLL    #
+#                          -D ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D           #
+#                          MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D              #
+#                          xPOWER_SAVING -lC E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZSt #
+#                          ack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\Te #
+#                          mperatureApp\CC2530DB\EndDeviceEB\List\ -lA        #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\EndDeviceEB\List\ --diag_suppress Pe001,Pa010  #
+#                          -o E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC #
+#                          2530DB\EndDeviceEB\Obj\ -e --no_code_motion        #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC #
+#                          2530DB\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2 #
+#                          530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\Temperatu #
+#                          reApp\CC2530DB\..\Source\ -I                       #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\ZMain\TI2530DB\ -I                    #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\hal\include\ -I      #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\hal\target\CC2530EB\ #
+#                           -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑ #
+#                          µ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\C #
+#                          C2530DB\..\..\..\..\..\Components\mac\include\ -I  #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\mac\high_level\ -I   #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\mac\low_level\srf04\ #
+#                           -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑ #
+#                          µ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\C #
+#                          C2530DB\..\..\..\..\..\Components\mac\low_level\sr #
+#                          f04\single_chip\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷Z #
+#                          Stack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\ #
+#                          TemperatureApp\CC2530DB\..\..\..\..\..\Components\ #
+#                          mt\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530- #
+#                          ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureAp #
+#                          p\CC2530DB\..\..\..\..\..\Components\osal\include\ #
+#                           -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑ #
+#                          µ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\C #
+#                          C2530DB\..\..\..\..\..\Components\services\saddr\  #
+#                          -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC #
+#                          2530DB\..\..\..\..\..\Components\services\sdata\   #
+#                          -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC #
+#                          2530DB\..\..\..\..\..\Components\stack\af\ -I      #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\stack\nwk\ -I        #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\stack\sapi\ -I       #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\stack\sec\ -I        #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\stack\sys\ -I        #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\stack\zdo\ -I        #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\zmac\ -I             #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\zmac\f8w\ -Ohz       #
+#                          --require_prototypes                               #
+#    List file          =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\EndDeviceEB\List\i2c.lst                       #
+#    Object file        =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\EndDeviceEB\Obj\i2c.r51                        #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\Source\i2c.c
+      1          #include <iocc2530.h>
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      2          #include "i2c.h"
+      3          
+      4          // I2C IO Pins
+      5          // SDA on port p0.5
+      6          #define SDA_LOW()  (P0_5=0) // set SDA to low
+      7          #define SDA_HIGH() (P0_5=1) // set SDA to high
+      8          #define SDA_READ   (P0_5)   // read SDA
+      9          #define SDA_OUT()  (P0DIR |= (1<<5))
+     10          #define SDA_IN()   (P0DIR &= ~(1<<5))
+     11          
+     12          // SCL on port p0.4
+     13          #define SCL_LOW()  (P0_4=0) // set SCL to low
+     14          #define SCL_HIGH() (P0_4=1) // set SCL to high
+     15          #define SCL_READ   (P0_4)   // read SCL
+     16          #define SCL_OUT()  (P0DIR |= (1<<4))
+     17          #define SCL_IN()   (P0DIR &= ~(1<<4))
+     18          
+     19          //-- Static function prototypes -----------------------------------------------
+     20          static etError I2c_WaitWhileClockStreching(u8t timeout);
+     21          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     22          void DelayMicroSeconds(u32t xms)
+   \                     DelayMicroSeconds:
+     23          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+     24             u32t i,j;
+     25          
+     26             for(i=xms;i>0;i--)
+   \   000005   8A..         MOV     ?V0 + 4,R2
+   \   000007   8B..         MOV     ?V0 + 5,R3
+   \   000009   8C..         MOV     ?V0 + 6,R4
+   \   00000B   8D..         MOV     ?V0 + 7,R5
+   \   00000D   800E         SJMP    ??DelayMicroSeconds_0
+     27               for(j=8;j>0;j--)
+   \                     ??DelayMicroSeconds_1:
+   \   00000F   7408         MOV     A,#0x8
+     28                asm("nop");    //¿ÕÓï¾äÏûºÄÊ±ÖÓ
+   \                     ??DelayMicroSeconds_2:
+   \   000011   00           nop
+   \   000012   14           DEC     A
+   \   000013   70FC         JNZ     ??DelayMicroSeconds_2
+   \   000015   90....       MOV     DPTR,#__Constant_ffffffff
+   \   000018   78..         MOV     R0,#?V0 + 4
+   \   00001A   12....       LCALL   ?L_ADD_X
+   \                     ??DelayMicroSeconds_0:
+   \   00001D   E5..         MOV     A,?V0 + 4
+   \   00001F   45..         ORL     A,?V0 + 5
+   \   000021   45..         ORL     A,?V0 + 6
+   \   000023   45..         ORL     A,?V0 + 7
+   \   000025   70E8         JNZ     ??DelayMicroSeconds_1
+     29          }
+   \   000027   7F08         MOV     R7,#0x8
+   \   000029   02....       LJMP    ?BANKED_LEAVE_XDATA
+     30          
+     31          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     32          void I2c_Init(void)
+   \                     I2c_Init:
+     33          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     34            P0SEL &=~((1<<4)|(1<<5)); //P0.4 P0.5×÷ÎªGPIO¹¦ÄÜ
+   \   000000   53F3CF       ANL     0xf3,#0xcf
+     35            P0DIR |= (1<<4)|(1<<5);   //P0.4 P0.5ÉèÖÃÎªÊä³ö
+   \   000003   43FD30       ORL     0xfd,#0x30
+     36            
+     37            SDA_HIGH();                  // I2C-bus idle mode SDA released
+   \   000006   D285         SETB    0x80.5
+     38            SCL_HIGH();                  // I2C-bus idle mode SCL released
+   \   000008   D284         SETB    0x80.4
+     39          }
+   \   00000A   02....       LJMP    ?BRET
+   \   00000D                REQUIRE P0SEL
+   \   00000D                REQUIRE P0DIR
+   \   00000D                REQUIRE _A_P0
+     40          
+     41          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     42          void I2c_StartCondition(void)
+   \                     I2c_StartCondition:
+     43          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     44            SDA_HIGH();
+   \   000004   D285         SETB    0x80.5
+     45            DelayMicroSeconds(1);
+   \   000006                ; Setup parameters for call to function DelayMicroSeconds
+   \   000006   90....       MOV     DPTR,#__Constant_1
+   \   000009   12....       LCALL   ?XLOAD_R2345
+   \   00000C   12....       LCALL   ??DelayMicroSeconds?relay
+     46            SCL_HIGH();
+   \   00000F   D284         SETB    0x80.4
+     47            DelayMicroSeconds(1);
+   \   000011                ; Setup parameters for call to function DelayMicroSeconds
+   \   000011   90....       MOV     DPTR,#__Constant_1
+   \   000014   12....       LCALL   ?XLOAD_R2345
+   \   000017   12....       LCALL   ??DelayMicroSeconds?relay
+     48            SDA_LOW();
+   \   00001A   C285         CLR     0x80.5
+     49            DelayMicroSeconds(10);  // hold time start condition (t_HD;STA)
+   \   00001C                ; Setup parameters for call to function DelayMicroSeconds
+   \   00001C   90....       MOV     DPTR,#__Constant_a
+   \   00001F   12....       LCALL   ?XLOAD_R2345
+   \   000022   12....       LCALL   ??DelayMicroSeconds?relay
+     50            SCL_LOW();
+   \   000025   C284         CLR     0x80.4
+     51            DelayMicroSeconds(10);
+   \   000027                ; Setup parameters for call to function DelayMicroSeconds
+   \   000027                REQUIRE ?Subroutine0
+   \   000027                REQUIRE _A_P0
+   \   000027                ; // Fall through to label ?Subroutine0
+     52          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   90....       MOV     DPTR,#__Constant_a
+   \   000003   12....       LCALL   ?XLOAD_R2345
+   \   000006   12....       LCALL   ??DelayMicroSeconds?relay
+   \   000009                REQUIRE ??Subroutine2_0
+   \   000009                ; // Fall through to label ??Subroutine2_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine2_0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+     53          
+     54          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     55          void I2c_StopCondition(void)
+   \                     I2c_StopCondition:
+     56          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     57            SCL_LOW();
+   \   000004   C284         CLR     0x80.4
+     58            DelayMicroSeconds(1);
+   \   000006                ; Setup parameters for call to function DelayMicroSeconds
+   \   000006   90....       MOV     DPTR,#__Constant_1
+   \   000009   12....       LCALL   ?XLOAD_R2345
+   \   00000C   12....       LCALL   ??DelayMicroSeconds?relay
+     59            SDA_LOW();
+   \   00000F   C285         CLR     0x80.5
+     60            DelayMicroSeconds(1);
+   \   000011                ; Setup parameters for call to function DelayMicroSeconds
+   \   000011   90....       MOV     DPTR,#__Constant_1
+   \   000014   12....       LCALL   ?XLOAD_R2345
+   \   000017   12....       LCALL   ??DelayMicroSeconds?relay
+     61            SCL_HIGH();
+   \   00001A   D284         SETB    0x80.4
+     62            DelayMicroSeconds(10);  // set-up time stop condition (t_SU;STO)
+   \   00001C                ; Setup parameters for call to function DelayMicroSeconds
+   \   00001C   90....       MOV     DPTR,#__Constant_a
+   \   00001F   12....       LCALL   ?XLOAD_R2345
+   \   000022   12....       LCALL   ??DelayMicroSeconds?relay
+     63            SDA_HIGH();
+   \   000025   D285         SETB    0x80.5
+     64            DelayMicroSeconds(10);
+   \   000027                ; Setup parameters for call to function DelayMicroSeconds
+   \   000027   80..         SJMP    ?Subroutine0
+   \   000029                REQUIRE _A_P0
+     65          }
+     66          
+     67          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     68          etError I2c_WriteByte(u8t txByte)
+   \                     I2c_WriteByte:
+     69          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+     70            etError error = NO_ERROR;
+   \   000007   7E00         MOV     R6,#0x0
+     71            u8t     mask;
+     72            for(mask = 0x80; mask > 0; mask >>= 1)// shift bit for masking (8 times)
+   \   000009   75..80       MOV     ?V0 + 0,#-0x80
+     73            {
+     74              if((mask & txByte) == 0) 
+   \                     ??I2c_WriteByte_0:
+   \   00000C   E5..         MOV     A,?V0 + 0
+   \   00000E   5F           ANL     A,R7
+   \   00000F   7004         JNZ     ??I2c_WriteByte_1
+     75                SDA_LOW(); // masking txByte, write bit to SDA-Line
+   \   000011   C285         CLR     0x80.5
+   \   000013   8002         SJMP    ??I2c_WriteByte_2
+     76              else                     
+     77                SDA_HIGH();
+   \                     ??I2c_WriteByte_1:
+   \   000015   D285         SETB    0x80.5
+     78              DelayMicroSeconds(1);               // data set-up time (t_SU;DAT)
+   \                     ??I2c_WriteByte_2:
+   \   000017                ; Setup parameters for call to function DelayMicroSeconds
+   \   000017   90....       MOV     DPTR,#__Constant_1
+   \   00001A   12....       LCALL   ?XLOAD_R2345
+   \   00001D   12....       LCALL   ?Subroutine1 & 0xFFFF
+     79              SCL_HIGH();                         // generate clock pulse on SCL
+     80              DelayMicroSeconds(5);               // SCL high time (t_HIGH)
+   \                     ??CrossCallReturnLabel_0:
+   \   000020   12....       LCALL   ?XLOAD_R2345
+   \   000023   12....       LCALL   ??DelayMicroSeconds?relay
+     81              SCL_LOW();
+   \   000026   C284         CLR     0x80.4
+     82              DelayMicroSeconds(1);               // data hold time(t_HD;DAT)
+   \   000028                ; Setup parameters for call to function DelayMicroSeconds
+   \   000028   90....       MOV     DPTR,#__Constant_1
+   \   00002B   12....       LCALL   ?XLOAD_R2345
+   \   00002E   12....       LCALL   ??DelayMicroSeconds?relay
+     83            }
+   \   000031   E5..         MOV     A,?V0 + 0
+   \   000033   C3           CLR     C
+   \   000034   13           RRC     A
+   \   000035   F5..         MOV     ?V0 + 0,A
+   \   000037   70D3         JNZ     ??I2c_WriteByte_0
+     84            SDA_HIGH();                           // release SDA-line
+   \   000039   D285         SETB    0x80.5
+     85            SCL_HIGH();                           // clk #9 for ack
+   \   00003B   D284         SETB    0x80.4
+     86            DelayMicroSeconds(1);                 // data set-up time (t_SU;DAT)
+   \   00003D                ; Setup parameters for call to function DelayMicroSeconds
+   \   00003D   90....       MOV     DPTR,#__Constant_1
+   \   000040   12....       LCALL   ?XLOAD_R2345
+   \   000043   12....       LCALL   ??DelayMicroSeconds?relay
+     87            if(SDA_READ) error = ACK_ERROR;       // check ack from i2c slave
+   \   000046   A285         MOV     C,0x80.5
+   \   000048   5001         JNC     ??I2c_WriteByte_3
+   \   00004A   0E           INC     R6
+     88            SCL_LOW();
+   \                     ??I2c_WriteByte_3:
+   \   00004B   C284         CLR     0x80.4
+     89            DelayMicroSeconds(20);                // wait to see byte package on scope
+   \   00004D                ; Setup parameters for call to function DelayMicroSeconds
+   \   00004D   90....       MOV     DPTR,#__Constant_14
+   \   000050   12....       LCALL   ?XLOAD_R2345
+   \   000053   12....       LCALL   ??DelayMicroSeconds?relay
+     90            return error;                         // return error code
+   \   000056   EE           MOV     A,R6
+   \   000057   F9           MOV     R1,A
+   \   000058   7F01         MOV     R7,#0x1
+   \   00005A   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00005D                REQUIRE _A_P0
+     91          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL   ??DelayMicroSeconds?relay
+   \   000003   D284         SETB    0x80.4
+   \   000005                ; Setup parameters for call to function DelayMicroSeconds
+   \   000005                ; Setup parameters for call to function DelayMicroSeconds
+   \   000005   90....       MOV     DPTR,#__Constant_5
+   \   000008   22           RET
+     92          
+     93          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     94          etError I2c_ReadByte(u8t *rxByte, etI2cAck ack, u8t timeout)
+   \                     I2c_ReadByte:
+     95          {
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 1,R1
+   \   00000B   8C..         MOV     ?V0 + 2,R4
+     96            etError error = NO_ERROR;
+     97            u8t mask;
+     98            *rxByte = 0x00;
+   \   00000D   8E82         MOV     DPL,R6
+   \   00000F   8F83         MOV     DPH,R7
+   \   000011   E4           CLR     A
+   \   000012   F0           MOVX    @DPTR,A
+     99            SDA_HIGH();                            // release SDA-line
+   \   000013   D285         SETB    0x80.5
+    100            for(mask = 0x80; mask > 0; mask >>= 1) // shift bit for masking (8 times)
+   \   000015   75..80       MOV     ?V0 + 3,#-0x80
+    101            { 
+    102              SCL_HIGH();                          // start clock on SCL-line
+   \                     ??I2c_ReadByte_0:
+   \   000018   D284         SETB    0x80.4
+    103              DelayMicroSeconds(1);                // clock set-up time (t_SU;CLK)
+   \   00001A                ; Setup parameters for call to function DelayMicroSeconds
+   \   00001A   90....       MOV     DPTR,#__Constant_1
+   \   00001D   12....       LCALL   ?XLOAD_R2345
+   \   000020   12....       LCALL   ??DelayMicroSeconds?relay
+    104              error = I2c_WaitWhileClockStreching(timeout);// wait while clock streching
+   \   000023   85....       MOV     ?V0 + 4,?V0 + 2
+   \   000026   8009         SJMP    ??I2c_ReadByte_1
+   \                     ??I2c_ReadByte_2:
+   \   000028                ; Setup parameters for call to function DelayMicroSeconds
+   \   000028   90....       MOV     DPTR,#__Constant_3e8
+   \   00002B   12....       LCALL   ?XLOAD_R2345
+   \   00002E   12....       LCALL   ??DelayMicroSeconds?relay
+   \                     ??I2c_ReadByte_1:
+   \   000031   A284         MOV     C,0x80.4
+   \   000033   4011         JC      ??I2c_ReadByte_3
+   \   000035   85....       MOV     ?V0 + 5,?V0 + 4
+   \   000038   74FF         MOV     A,#-0x1
+   \   00003A   25..         ADD     A,?V0 + 5
+   \   00003C   F5..         MOV     ?V0 + 4,A
+   \   00003E   04           INC     A
+   \   00003F   70E7         JNZ     ??I2c_ReadByte_2
+   \   000041   75..04       MOV     ?V0 + 0,#0x4
+   \   000044   8003         SJMP    ??I2c_ReadByte_4
+   \                     ??I2c_ReadByte_3:
+   \   000046   75..00       MOV     ?V0 + 0,#0x0
+    105              DelayMicroSeconds(3);                // SCL high time (t_HIGH)
+   \                     ??I2c_ReadByte_4:
+   \   000049                ; Setup parameters for call to function DelayMicroSeconds
+   \   000049   90....       MOV     DPTR,#__Constant_3
+   \   00004C   12....       LCALL   ?XLOAD_R2345
+   \   00004F   12....       LCALL   ??DelayMicroSeconds?relay
+    106              if(SDA_READ) *rxByte |= mask;        // read bit
+   \   000052   A285         MOV     C,0x80.5
+   \   000054   5008         JNC     ??I2c_ReadByte_5
+   \   000056   8E82         MOV     DPL,R6
+   \   000058   8F83         MOV     DPH,R7
+   \   00005A   E0           MOVX    A,@DPTR
+   \   00005B   45..         ORL     A,?V0 + 3
+   \   00005D   F0           MOVX    @DPTR,A
+    107              SCL_LOW();
+   \                     ??I2c_ReadByte_5:
+   \   00005E   C284         CLR     0x80.4
+    108              DelayMicroSeconds(1);                // data hold time(t_HD;DAT)
+   \   000060                ; Setup parameters for call to function DelayMicroSeconds
+   \   000060   90....       MOV     DPTR,#__Constant_1
+   \   000063   12....       LCALL   ?XLOAD_R2345
+   \   000066   12....       LCALL   ??DelayMicroSeconds?relay
+    109            }
+   \   000069   E5..         MOV     A,?V0 + 3
+   \   00006B   C3           CLR     C
+   \   00006C   13           RRC     A
+   \   00006D   F5..         MOV     ?V0 + 3,A
+   \   00006F   70A7         JNZ     ??I2c_ReadByte_0
+    110            if(ack == ACK)
+   \   000071   E5..         MOV     A,?V0 + 1
+   \   000073   7004         JNZ     ??I2c_ReadByte_6
+    111              SDA_LOW();              // send acknowledge if necessary
+   \   000075   C285         CLR     0x80.5
+   \   000077   8002         SJMP    ??I2c_ReadByte_7
+    112            else
+    113              SDA_HIGH();
+   \                     ??I2c_ReadByte_6:
+   \   000079   D285         SETB    0x80.5
+    114            DelayMicroSeconds(1);                  // data set-up time (t_SU;DAT)
+   \                     ??I2c_ReadByte_7:
+   \   00007B                ; Setup parameters for call to function DelayMicroSeconds
+   \   00007B   90....       MOV     DPTR,#__Constant_1
+   \   00007E   12....       LCALL   ?XLOAD_R2345
+   \   000081   12....       LCALL   ?Subroutine1 & 0xFFFF
+    115            SCL_HIGH();                            // clk #9 for ack
+    116            DelayMicroSeconds(5);                  // SCL high time (t_HIGH)
+   \                     ??CrossCallReturnLabel_1:
+   \   000084   12....       LCALL   ?XLOAD_R2345
+   \   000087   12....       LCALL   ??DelayMicroSeconds?relay
+    117            SCL_LOW();
+   \   00008A   C284         CLR     0x80.4
+    118            SDA_HIGH();                            // release SDA-line
+   \   00008C   D285         SETB    0x80.5
+    119            DelayMicroSeconds(20);                 // wait to see byte package on scope
+   \   00008E                ; Setup parameters for call to function DelayMicroSeconds
+   \   00008E   90....       MOV     DPTR,#__Constant_14
+   \   000091   12....       LCALL   ?XLOAD_R2345
+   \   000094   12....       LCALL   ??DelayMicroSeconds?relay
+    120            
+    121            return error;                          // return with no error
+   \   000097   A9..         MOV     R1,?V0 + 0
+   \   000099   7F06         MOV     R7,#0x6
+   \   00009B   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00009E                REQUIRE _A_P0
+    122          }
+    123          
+    124          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    125          etError I2c_GeneralCallReset(void)
+   \                     I2c_GeneralCallReset:
+    126          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    127            etError error;
+    128            
+    129            I2c_StartCondition();
+   \   000004                ; Setup parameters for call to function I2c_StartCondition
+   \   000004   12....       LCALL   ??I2c_StartCondition?relay
+    130            error = I2c_WriteByte(0x00);
+   \   000007                ; Setup parameters for call to function I2c_WriteByte
+   \   000007   7900         MOV     R1,#0x0
+   \   000009   12....       LCALL   ??I2c_WriteByte?relay
+   \   00000C   E9           MOV     A,R1
+    131            if(error == NO_ERROR)
+   \   00000D   7005         JNZ     ??I2c_GeneralCallReset_0
+    132              error = I2c_WriteByte(0x06);
+   \   00000F                ; Setup parameters for call to function I2c_WriteByte
+   \   00000F   7906         MOV     R1,#0x6
+   \   000011   12....       LCALL   ??I2c_WriteByte?relay
+    133            
+    134            return error;
+   \                     ??I2c_GeneralCallReset_0:
+   \   000014   02....       LJMP    ??Subroutine2_0 & 0xFFFF
+    135          }
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_ffffffff:
+   \   000000   FFFFFFFF     DD 4294967295
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_1:
+   \   000000   01000000     DD 1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_a:
+   \   000000   0A000000     DD 10
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_5:
+   \   000000   05000000     DD 5
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_14:
+   \   000000   14000000     DD 20
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3e8:
+   \   000000   E8030000     DD 1000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3:
+   \   000000   03000000     DD 3
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??DelayMicroSeconds?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    DelayMicroSeconds
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2c_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2c_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2c_StartCondition?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2c_StartCondition
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2c_StopCondition?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2c_StopCondition
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2c_WriteByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2c_WriteByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2c_ReadByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2c_ReadByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2c_GeneralCallReset?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2c_GeneralCallReset
+    136          
+    137          //-----------------------------------------------------------------------------
+    138          static etError I2c_WaitWhileClockStreching(u8t timeout)
+    139          {
+    140            etError error = NO_ERROR;
+    141            
+    142            while(SCL_READ == 0)
+    143            {
+    144              if(timeout-- == 0)
+    145                return TIMEOUT_ERROR;
+    146              DelayMicroSeconds(1000);
+    147            }
+    148            
+    149            return error;
+    150          }
+
+   Maximum stack usage in bytes:
+
+     Function                ISTACK PSTACK XSTACK
+     --------                ------ ------ ------
+     DelayMicroSeconds           0      0     30
+     I2c_GeneralCallReset        2      0      0
+       -> I2c_StartCondition     4      0      0
+       -> I2c_WriteByte          4      0      0
+       -> I2c_WriteByte          4      0      0
+     I2c_Init                    0      0      0
+     I2c_ReadByte                0      0     14
+       -> DelayMicroSeconds      0      0     28
+       -> DelayMicroSeconds      0      0     28
+       -> DelayMicroSeconds      0      0     28
+       -> DelayMicroSeconds      0      0     28
+       -> DelayMicroSeconds      0      0     28
+       -> DelayMicroSeconds      0      0     28
+       -> DelayMicroSeconds      0      0     28
+     I2c_StartCondition          2      0      0
+       -> DelayMicroSeconds      4      0      0
+       -> DelayMicroSeconds      4      0      0
+       -> DelayMicroSeconds      4      0      0
+       -> DelayMicroSeconds      4      0      0
+     I2c_StopCondition           2      0      0
+       -> DelayMicroSeconds      4      0      0
+       -> DelayMicroSeconds      4      0      0
+       -> DelayMicroSeconds      4      0      0
+       -> DelayMicroSeconds      4      0      0
+     I2c_WriteByte               0      0      9
+       -> DelayMicroSeconds      0      0     18
+       -> DelayMicroSeconds      0      0     18
+       -> DelayMicroSeconds      0      0     18
+       -> DelayMicroSeconds      0      0     18
+       -> DelayMicroSeconds      0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label               Bytes
+     --------------               -----
+     _A_P0                           1
+     P0SEL                           1
+     P0DIR                           1
+     DelayMicroSeconds              44
+     I2c_Init                       13
+     I2c_StartCondition             39
+     ?Subroutine0                    9
+     ??Subroutine2_0                 7
+     I2c_StopCondition              41
+     I2c_WriteByte                  93
+     ?Subroutine1                    9
+     I2c_ReadByte                  158
+     I2c_GeneralCallReset           23
+     __Constant_ffffffff             4
+     __Constant_1                    4
+     __Constant_a                    4
+     __Constant_5                    4
+     __Constant_14                   4
+     __Constant_3e8                  4
+     __Constant_3                    4
+     ??DelayMicroSeconds?relay       6
+     ??I2c_Init?relay                6
+     ??I2c_StartCondition?relay      6
+     ??I2c_StopCondition?relay       6
+     ??I2c_WriteByte?relay           6
+     ??I2c_ReadByte?relay            6
+     ??I2c_GeneralCallReset?relay    6
+
+ 
+ 436 bytes in segment BANKED_CODE
+  42 bytes in segment BANK_RELAYS
+   3 bytes in segment SFR_AN
+  28 bytes in segment XDATA_ROM_C
+ 
+ 478 bytes of CODE  memory
+   0 bytes of CONST memory (+ 28 bytes shared)
+   0 bytes of DATA  memory (+  3 bytes shared)
+
+Errors: none
+Warnings: none

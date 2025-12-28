@@ -1,0 +1,2551 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        24/Dec/2025  16:42:21 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\Source\PeopleApp.c     /
+//    Command line       =  -f C:\Users\admin\Desktop\ZStack-CC2530-Best\Proj /
+//                          ects\zstack\Samples\PeopleApp\CC2530DB\..\..\..\T /
+//                          ools\CC2530DB\f8wEndev.cfg (-DCPU32MHZ            /
+//                          -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3        /
+//                          -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f         /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\Tool /
+//                          s\CC2530DB\f8wConfig.cfg (-DZIGBEEPRO -DSECURE=0  /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DDEFAULT_CHANLIST26=0x04000000                   /
+//                          -DDEFAULT_CHANLIST25=0x02000000                   /
+//                          -DDEFAULT_CHANLIST24=0x01000000                   /
+//                          -DDEFAULT_CHANLIST23=0x00800000                   /
+//                          -DDEFAULT_CHANLIST22=0x00400000                   /
+//                          -DDEFAULT_CHANLIST21=0x00200000                   /
+//                          -DDEFAULT_CHANLIST20=0x00100000                   /
+//                          -DDEFAULT_CHANLIST19=0x00080000                   /
+//                          -DDEFAULT_CHANLIST18=0x00040000                   /
+//                          -DDEFAULT_CHANLIST17=0x00020000                   /
+//                          -DDEFAULT_CHANLIST16=0x00010000                   /
+//                          -DDEFAULT_CHANLIST15=0x00008000                   /
+//                          -DDEFAULT_CHANLIST14=0x00004000                   /
+//                          -DDEFAULT_CHANLIST13=0x00002000                   /
+//                          -DDEFAULT_CHANLIST12=0x00001000                   /
+//                          -DDEFAULT_CHANLIST11=0x00000800                   /
+//                          -DDEFAULT_CHANLIST=DEFAULT_CHANLIST25             /
+//                          -DZDAPP_CONFIG_PAN_ID=0x0006                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 C:\Users\admin\Desktop\ZSt /
+//                          ack-CC2530-Best\Projects\zstack\Samples\PeopleApp /
+//                          \Source\PeopleApp.c -D NWK_AUTO_POLL -D ZTOOL_P1  /
+//                          -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D       /
+//                          LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC          /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\EndDeviceEB\L /
+//                          ist\ -lA C:\Users\admin\Desktop\ZStack-CC2530-Bes /
+//                          t\Projects\zstack\Samples\PeopleApp\CC2530DB\EndD /
+//                          eviceEB\List\ --diag_suppress Pe001,Pa010 -o      /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\EndDeviceEB\O /
+//                          bj\ -e --no_code_motion --debug --core=plain      /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\ -I           /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\Source\    /
+//                          -I C:\Users\admin\Desktop\ZStack-CC2530-Best\Proj /
+//                          ects\zstack\Samples\PeopleApp\CC2530DB\..\..\..\Z /
+//                          Main\TI2530DB\ -I C:\Users\admin\Desktop\ZStack-C /
+//                          C2530-Best\Projects\zstack\Samples\PeopleApp\CC25 /
+//                          30DB\..\..\..\..\..\Components\hal\include\ -I    /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\..\. /
+//                          .\Components\hal\target\CC2530EB\ -I              /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\..\. /
+//                          .\Components\mac\include\ -I                      /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\..\. /
+//                          .\Components\mac\high_level\ -I                   /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\..\. /
+//                          .\Components\mac\low_level\srf04\ -I              /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\..\. /
+//                          .\Components\mac\low_level\srf04\single_chip\ -I  /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\..\. /
+//                          .\Components\mt\ -I C:\Users\admin\Desktop\ZStack /
+//                          -CC2530-Best\Projects\zstack\Samples\PeopleApp\CC /
+//                          2530DB\..\..\..\..\..\Components\osal\include\    /
+//                          -I C:\Users\admin\Desktop\ZStack-CC2530-Best\Proj /
+//                          ects\zstack\Samples\PeopleApp\CC2530DB\..\..\..\. /
+//                          .\..\Components\services\saddr\ -I                /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\..\. /
+//                          .\Components\services\sdata\ -I                   /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\..\. /
+//                          .\Components\stack\af\ -I                         /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\..\. /
+//                          .\Components\stack\nwk\ -I                        /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\..\. /
+//                          .\Components\stack\sapi\ -I                       /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\..\. /
+//                          .\Components\stack\sec\ -I                        /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\..\. /
+//                          .\Components\stack\sys\ -I                        /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\..\. /
+//                          .\Components\stack\zdo\ -I                        /
+//                          C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\..\..\..\..\. /
+//                          .\Components\zmac\ -I C:\Users\admin\Desktop\ZSta /
+//                          ck-CC2530-Best\Projects\zstack\Samples\PeopleApp\ /
+//                          CC2530DB\..\..\..\..\..\Components\zmac\f8w\      /
+//                          -Ohz --require_prototypes                         /
+//    List file          =  C:\Users\admin\Desktop\ZStack-CC2530-Best\Project /
+//                          s\zstack\Samples\PeopleApp\CC2530DB\EndDeviceEB\L /
+//                          ist\PeopleApp.s51                                 /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME PeopleApp
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?US_SWITCH_SPARSE
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??PeopleApp_HandleKeys?relay
+        FUNCTION ??PeopleApp_HandleKeys?relay,0203H
+        PUBLIC ??PeopleApp_Init?relay
+        FUNCTION ??PeopleApp_Init?relay,0203H
+        PUBLIC ??PeopleApp_MessageMSGCB?relay
+        FUNCTION ??PeopleApp_MessageMSGCB?relay,0203H
+        PUBLIC ??PeopleApp_ProcessEvent?relay
+        FUNCTION ??PeopleApp_ProcessEvent?relay,0203H
+        PUBLIC ??PeopleApp_ProcessZDOMsgs?relay
+        FUNCTION ??PeopleApp_ProcessZDOMsgs?relay,0203H
+        PUBLIC ??PeopleApp_Send_body_Message?relay
+        FUNCTION ??PeopleApp_Send_body_Message?relay,0203H
+        PUBWEAK P1DIR
+        PUBWEAK P1SEL
+        PUBLIC PeopleApp_ClusterList
+        PUBLIC PeopleApp_DstAddr
+        PUBLIC PeopleApp_HandleKeys
+        FUNCTION PeopleApp_HandleKeys,021203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 29, STACK
+        PUBLIC PeopleApp_Init
+        FUNCTION PeopleApp_Init,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC PeopleApp_MessageMSGCB
+        FUNCTION PeopleApp_MessageMSGCB,021203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC PeopleApp_NwkState
+        PUBLIC PeopleApp_ProcessEvent
+        FUNCTION PeopleApp_ProcessEvent,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC PeopleApp_ProcessZDOMsgs
+        FUNCTION PeopleApp_ProcessZDOMsgs,0a1203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC PeopleApp_Send_body_Message
+        FUNCTION PeopleApp_Send_body_Message,021203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 65, STACK
+        PUBLIC PeopleApp_SimpleDesc
+        PUBLIC PeopleApp_TaskID
+        PUBLIC PeopleApp_TransID
+        PUBLIC PeopleApp_epDesc
+        PUBWEAK _A_P1
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        
+        CFI Common cfiCommon1 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B SameValue
+        CFI A SameValue
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 SameValue
+        CFI R1 SameValue
+        CFI R2 SameValue
+        CFI R3 SameValue
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT SameValue
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon1
+        
+afRegister          SYMBOL "afRegister"
+RegisterForKeys     SYMBOL "RegisterForKeys"
+HalLcdWriteString   SYMBOL "HalLcdWriteString"
+ZDO_RegisterForZDOMsg SYMBOL "ZDO_RegisterForZDOMsg"
+osal_msg_receive    SYMBOL "osal_msg_receive"
+HalLedBlink         SYMBOL "HalLedBlink"
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+osal_msg_deallocate SYMBOL "osal_msg_deallocate"
+HalLedSet           SYMBOL "HalLedSet"
+ZDO_ParseEPListRsp  SYMBOL "ZDO_ParseEPListRsp"
+osal_mem_free       SYMBOL "osal_mem_free"
+NLME_GetShortAddr   SYMBOL "NLME_GetShortAddr"
+ZDP_EndDeviceBindReq SYMBOL "ZDP_EndDeviceBindReq"
+ZDP_MatchDescReq    SYMBOL "ZDP_MatchDescReq"
+HalLcdWriteScreen   SYMBOL "HalLcdWriteScreen"
+NLME_GetCoordShortAddr SYMBOL "NLME_GetCoordShortAddr"
+AF_DataRequest      SYMBOL "AF_DataRequest"
+??AF_DataRequest?relay SYMBOL "?relay", AF_DataRequest
+??HalLcdWriteScreen?relay SYMBOL "?relay", HalLcdWriteScreen
+??HalLcdWriteString?relay SYMBOL "?relay", HalLcdWriteString
+??HalLedBlink?relay SYMBOL "?relay", HalLedBlink
+??HalLedSet?relay   SYMBOL "?relay", HalLedSet
+??NLME_GetCoordShortAddr?relay SYMBOL "?relay", NLME_GetCoordShortAddr
+??NLME_GetShortAddr?relay SYMBOL "?relay", NLME_GetShortAddr
+??RegisterForKeys?relay SYMBOL "?relay", RegisterForKeys
+??ZDO_ParseEPListRsp?relay SYMBOL "?relay", ZDO_ParseEPListRsp
+??ZDO_RegisterForZDOMsg?relay SYMBOL "?relay", ZDO_RegisterForZDOMsg
+??ZDP_EndDeviceBindReq?relay SYMBOL "?relay", ZDP_EndDeviceBindReq
+??ZDP_MatchDescReq?relay SYMBOL "?relay", ZDP_MatchDescReq
+??afRegister?relay  SYMBOL "?relay", afRegister
+??osal_mem_free?relay SYMBOL "?relay", osal_mem_free
+??osal_msg_deallocate?relay SYMBOL "?relay", osal_msg_deallocate
+??osal_msg_receive?relay SYMBOL "?relay", osal_msg_receive
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+PeopleApp_HandleKeys SYMBOL "PeopleApp_HandleKeys"
+??PeopleApp_HandleKeys?relay SYMBOL "?relay", PeopleApp_HandleKeys
+PeopleApp_Init      SYMBOL "PeopleApp_Init"
+??PeopleApp_Init?relay SYMBOL "?relay", PeopleApp_Init
+PeopleApp_MessageMSGCB SYMBOL "PeopleApp_MessageMSGCB"
+??PeopleApp_MessageMSGCB?relay SYMBOL "?relay", PeopleApp_MessageMSGCB
+PeopleApp_ProcessEvent SYMBOL "PeopleApp_ProcessEvent"
+??PeopleApp_ProcessEvent?relay SYMBOL "?relay", PeopleApp_ProcessEvent
+PeopleApp_ProcessZDOMsgs SYMBOL "PeopleApp_ProcessZDOMsgs"
+??PeopleApp_ProcessZDOMsgs?relay SYMBOL "?relay", PeopleApp_ProcessZDOMsgs
+PeopleApp_Send_body_Message SYMBOL "PeopleApp_Send_body_Message"
+??PeopleApp_Send_body_Message?relay SYMBOL "?relay", PeopleApp_Send_body_Message
+
+        EXTERN afRegister
+        FUNCTION afRegister,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN RegisterForKeys
+        FUNCTION RegisterForKeys,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN HalLcdWriteString
+        FUNCTION HalLcdWriteString,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ZDO_RegisterForZDOMsg
+        FUNCTION ZDO_RegisterForZDOMsg,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_receive
+        FUNCTION osal_msg_receive,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN HalLedBlink
+        FUNCTION HalLedBlink,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_start_timerEx
+        FUNCTION osal_start_timerEx,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_deallocate
+        FUNCTION osal_msg_deallocate,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN HalLedSet
+        FUNCTION HalLedSet,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ZDO_ParseEPListRsp
+        FUNCTION ZDO_ParseEPListRsp,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_mem_free
+        FUNCTION osal_mem_free,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN NLME_GetShortAddr
+        FUNCTION NLME_GetShortAddr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ZDP_EndDeviceBindReq
+        FUNCTION ZDP_EndDeviceBindReq,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ZDP_MatchDescReq
+        FUNCTION ZDP_MatchDescReq,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 28, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN HalLcdWriteScreen
+        FUNCTION HalLcdWriteScreen,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN NLME_GetCoordShortAddr
+        FUNCTION NLME_GetCoordShortAddr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN AF_DataRequest
+        FUNCTION AF_DataRequest,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 65, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??AF_DataRequest?relay
+        FUNCTION ??AF_DataRequest?relay,00H
+        EXTERN ??HalLcdWriteScreen?relay
+        FUNCTION ??HalLcdWriteScreen?relay,00H
+        EXTERN ??HalLcdWriteString?relay
+        FUNCTION ??HalLcdWriteString?relay,00H
+        EXTERN ??HalLedBlink?relay
+        FUNCTION ??HalLedBlink?relay,00H
+        EXTERN ??HalLedSet?relay
+        FUNCTION ??HalLedSet?relay,00H
+        EXTERN ??NLME_GetCoordShortAddr?relay
+        FUNCTION ??NLME_GetCoordShortAddr?relay,00H
+        EXTERN ??NLME_GetShortAddr?relay
+        FUNCTION ??NLME_GetShortAddr?relay,00H
+        EXTERN ??RegisterForKeys?relay
+        FUNCTION ??RegisterForKeys?relay,00H
+        EXTERN ??ZDO_ParseEPListRsp?relay
+        FUNCTION ??ZDO_ParseEPListRsp?relay,00H
+        EXTERN ??ZDO_RegisterForZDOMsg?relay
+        FUNCTION ??ZDO_RegisterForZDOMsg?relay,00H
+        EXTERN ??ZDP_EndDeviceBindReq?relay
+        FUNCTION ??ZDP_EndDeviceBindReq?relay,00H
+        EXTERN ??ZDP_MatchDescReq?relay
+        FUNCTION ??ZDP_MatchDescReq?relay,00H
+        EXTERN ??afRegister?relay
+        FUNCTION ??afRegister?relay,00H
+        EXTERN ??osal_mem_free?relay
+        FUNCTION ??osal_mem_free?relay,00H
+        EXTERN ??osal_msg_deallocate?relay
+        FUNCTION ??osal_msg_deallocate?relay,00H
+        EXTERN ??osal_msg_receive?relay
+        FUNCTION ??osal_msg_receive?relay,00H
+        EXTERN ??osal_start_timerEx?relay
+        FUNCTION ??osal_start_timerEx?relay,00H
+
+// C:\Users\admin\Desktop\ZStack-CC2530-Best\Projects\zstack\Samples\PeopleApp\Source\PeopleApp.c
+//    1 
+//    2 #include "OSAL.h"
+//    3 #include "AF.h"
+//    4 #include "ZDApp.h"
+//    5 #include "ZDObject.h"
+//    6 #include "ZDProfile.h"
+//    7 
+//    8 #include "PeopleApp.h"
+//    9 #include "DebugTrace.h"
+//   10 
+//   11 #if !defined( WIN32 )
+//   12   #include "OnBoard.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f4H
+// unsigned char volatile __sfr P1SEL
+P1SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DATA8
+        DS 1
+//   13 #endif
+//   14 
+//   15 /* HAL */
+//   16 #include "hal_lcd.h"
+//   17 #include "hal_led.h"
+//   18 #include "hal_key.h"
+//   19 #include "hal_uart.h"
+//   20 
+//   21 
+//   22 // 协议簇定义
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   23 const cId_t PeopleApp_ClusterList[PeopleApp_MAX_CLUSTERS] =
+PeopleApp_ClusterList:
+        DW 1
+//   24 {
+//   25   PeopleApp_CLUSTERID
+//   26 };
+//   27 
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   28 const SimpleDescriptionFormat_t PeopleApp_SimpleDesc =
+PeopleApp_SimpleDesc:
+        DB 10
+        DATA16
+        DW 3844
+        DW 1
+        DATA8
+        DB 0
+        DB 1
+        DATA16
+        DW PeopleApp_ClusterList
+        DATA8
+        DB 1
+        DATA16
+        DW PeopleApp_ClusterList
+//   29 {
+//   30   PeopleApp_ENDPOINT,              //  int Endpoint;
+//   31   PeopleApp_PROFID,                //  uint16 AppProfId[2];
+//   32   PeopleApp_DEVICEID,              //  uint16 AppDeviceId[2];
+//   33   PeopleApp_DEVICE_VERSION,        //  int   AppDevVer:4;
+//   34   PeopleApp_FLAGS,                 //  int   AppFlags:4;
+//   35   PeopleApp_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+//   36   (cId_t *)PeopleApp_ClusterList,  //  byte *pAppInClusterList;
+//   37   PeopleApp_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+//   38   (cId_t *)PeopleApp_ClusterList   //  byte *pAppInClusterList;
+//   39 };
+//   40 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   41 endPointDesc_t PeopleApp_epDesc;
+PeopleApp_epDesc:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+//   42 
+//   43 //TASKID初始化
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   44 byte PeopleApp_TaskID;   // Task ID for internal task/event processing
+PeopleApp_TaskID:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   45                           // This variable will be received when
+//   46                           // PeopleApp_Init() is called.
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   47 devStates_t PeopleApp_NwkState;
+PeopleApp_NwkState:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   48 
+//   49 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   50 byte PeopleApp_TransID;  // This is the unique message ID (counter)
+PeopleApp_TransID:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   51 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   52 afAddrType_t PeopleApp_DstAddr;
+PeopleApp_DstAddr:
+        DS 12
+        REQUIRE __INIT_XDATA_Z
+//   53 
+//   54 /*********************************************************************
+//   55  * 函数声明
+//   56  */
+//   57 void PeopleApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );
+//   58 void PeopleApp_HandleKeys( byte shift, byte keys );
+//   59 void PeopleApp_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+//   60 
+//   61 void  PeopleApp_Send_body_Message(void);
+//   62 
+//   63 
+//   64 //人体感应函数
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   65 void PeopleApp_Init( byte task_id )
+PeopleApp_Init:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function PeopleApp_Init
+        CODE
+//   66 {
+        FUNCALL PeopleApp_Init, afRegister
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_Init, RegisterForKeys
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_Init, HalLcdWriteString
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_Init, ZDO_RegisterForZDOMsg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_Init, ZDO_RegisterForZDOMsg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+//   67   PeopleApp_TaskID = task_id;
+        MOV     DPTR,#PeopleApp_TaskID
+        MOVX    @DPTR,A
+//   68   PeopleApp_NwkState = DEV_INIT;
+        MOV     DPTR,#PeopleApp_NwkState
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//   69   PeopleApp_TransID = 0;
+        MOV     DPTR,#PeopleApp_TransID
+        CLR     A
+        MOVX    @DPTR,A
+//   70   
+//   71   //人体感应初始化 
+//   72    P1DIR&=~(0x01<<0);//设置P1.0为输入方式
+        ANL     0xfe,#0xfe
+//   73    P1SEL&=0x01;//设置P1.0为通用输入方向
+        MOV     A,0xf4
+        MOV     C,0xE0 /* A   */.0
+        CLR     A
+        RLC     A
+        MOV     0xf4,A
+//   74    
+//   75 
+//   76   PeopleApp_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
+        MOV     DPTR,#PeopleApp_DstAddr + 8
+        CLR     A
+        MOVX    @DPTR,A
+//   77   PeopleApp_DstAddr.endPoint = 0;
+        INC     DPTR
+        MOVX    @DPTR,A
+//   78   PeopleApp_DstAddr.addr.shortAddr = 0;
+        MOV     DPTR,#PeopleApp_DstAddr
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//   79 
+//   80   // Fill out the endpoint description.
+//   81   PeopleApp_epDesc.endPoint = PeopleApp_ENDPOINT;
+        MOV     DPTR,#PeopleApp_epDesc
+        MOV     A,#0xa
+        MOVX    @DPTR,A
+//   82   PeopleApp_epDesc.task_id = &PeopleApp_TaskID;
+        INC     DPTR
+        MOV     A,#PeopleApp_TaskID & 0xff
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#(PeopleApp_TaskID >> 8) & 0xff
+        MOVX    @DPTR,A
+//   83   PeopleApp_epDesc.simpleDesc
+//   84             = (SimpleDescriptionFormat_t *)&PeopleApp_SimpleDesc;
+        INC     DPTR
+        MOV     A,#PeopleApp_SimpleDesc & 0xff
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#(PeopleApp_SimpleDesc >> 8) & 0xff
+        MOVX    @DPTR,A
+//   85   PeopleApp_epDesc.latencyReq = noLatencyReqs;
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//   86 
+//   87   // Register the endpoint description with the AF
+//   88   afRegister( &PeopleApp_epDesc );
+        ; Setup parameters for call to function afRegister
+        MOV     R2,#PeopleApp_epDesc & 0xff
+        MOV     R3,#(PeopleApp_epDesc >> 8) & 0xff
+        LCALL   ??afRegister?relay
+//   89 
+//   90   // Register for all key events - This app will handle all key events
+//   91   RegisterForKeys( PeopleApp_TaskID );
+        ; Setup parameters for call to function RegisterForKeys
+        MOV     DPTR,#PeopleApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??RegisterForKeys?relay
+//   92 
+//   93   // Update the display
+//   94 #if defined ( LCD_SUPPORTED )
+//   95     HalLcdWriteString( "PeopleApp", HAL_LCD_LINE_1 );
+        ; Setup parameters for call to function HalLcdWriteString
+        MOV     R1,#0x1
+        MOV     R2,#`?<Constant "PeopleApp">` & 0xff
+        MOV     R3,#(`?<Constant "PeopleApp">` >> 8) & 0xff
+        LCALL   ??HalLcdWriteString?relay
+//   96 #endif
+//   97 
+//   98   ZDO_RegisterForZDOMsg( PeopleApp_TaskID, End_Device_Bind_rsp );
+        ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+        MOV     R2,#0x20
+        MOV     R3,#-0x80
+        MOV     DPTR,#PeopleApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??ZDO_RegisterForZDOMsg?relay
+//   99   ZDO_RegisterForZDOMsg( PeopleApp_TaskID, Match_Desc_rsp );
+        ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+        MOV     R2,#0x6
+        MOV     R3,#-0x80
+        MOV     DPTR,#PeopleApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??ZDO_RegisterForZDOMsg?relay
+//  100 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock0
+        REQUIRE P1DIR
+        REQUIRE P1SEL
+//  101 
+//  102 //事件处理函数
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  103 UINT16 PeopleApp_ProcessEvent( byte task_id, UINT16 events )
+PeopleApp_ProcessEvent:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function PeopleApp_ProcessEvent
+        CODE
+//  104 {
+        FUNCALL PeopleApp_ProcessEvent, osal_msg_receive
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_ProcessEvent, HalLedBlink
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_ProcessEvent, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_ProcessEvent, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_ProcessEvent, osal_msg_receive
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_ProcessEvent, PeopleApp_ProcessZDOMsgs
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_ProcessEvent, PeopleApp_HandleKeys
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_ProcessEvent, PeopleApp_MessageMSGCB
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_ProcessEvent, PeopleApp_Send_body_Message
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_ProcessEvent, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  105   afIncomingMSGPacket_t *MSGpkt;
+//  106   afDataConfirm_t *afDataConfirm;
+//  107 
+//  108   // Data Confirmation message fields
+//  109   byte sentEP;
+//  110   ZStatus_t sentStatus;
+//  111   byte sentTransID;       // This should match the value sent
+//  112   (void)task_id;  // Intentionally unreferenced parameter
+//  113 
+//  114   if ( events & SYS_EVENT_MSG )
+        ANL     A,#0x80
+        JNZ     $+5
+        LJMP    ??PeopleApp_ProcessEvent_0 & 0xFFFF
+//  115   {
+//  116     MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( PeopleApp_TaskID );
+        ; Setup parameters for call to function osal_msg_receive
+        SJMP    ??PeopleApp_ProcessEvent_1
+//  117     while ( MSGpkt )
+//  118     {
+//  119       switch ( MSGpkt->hdr.event )
+//  120       {
+//  121         case ZDO_CB_MSG:
+//  122           PeopleApp_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+//  123           break;
+//  124 
+//  125         case KEY_CHANGE:
+//  126           PeopleApp_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+//  127           break;
+//  128 
+//  129         case AF_DATA_CONFIRM_CMD:
+//  130           // This message is received as a confirmation of a data packet sent.
+//  131           // The status is of ZStatus_t type [defined in ZComDef.h]
+//  132           // The message fields are defined in AF.h
+//  133           afDataConfirm = (afDataConfirm_t *)MSGpkt;
+//  134           sentEP = afDataConfirm->endpoint;
+//  135           sentStatus = afDataConfirm->hdr.status;
+//  136           sentTransID = afDataConfirm->transID;
+//  137           (void)sentEP;
+//  138           (void)sentTransID;
+//  139 
+//  140           // Action taken when confirmation is received.
+//  141           if ( sentStatus != ZSuccess )
+//  142           {
+//  143             // The data wasn't delivered -- Do something
+//  144           }
+//  145           break;
+//  146 
+//  147         case AF_INCOMING_MSG_CMD:
+//  148           PeopleApp_MessageMSGCB( MSGpkt );
+//  149           break;
+//  150 
+//  151         case ZDO_STATE_CHANGE:
+//  152           PeopleApp_NwkState = (devStates_t)(MSGpkt->hdr.status);
+??PeopleApp_ProcessEvent_2:
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPTR,#PeopleApp_NwkState
+        MOVX    @DPTR,A
+//  153           if ( (PeopleApp_NwkState == DEV_ZB_COORD)
+//  154               || (PeopleApp_NwkState == DEV_ROUTER)
+//  155               || (PeopleApp_NwkState == DEV_END_DEVICE) )
+        XRL     A,#0x9
+        JZ      ??PeopleApp_ProcessEvent_3
+        MOVX    A,@DPTR
+        XRL     A,#0x7
+        JZ      ??PeopleApp_ProcessEvent_3
+        MOVX    A,@DPTR
+        XRL     A,#0x6
+        JNZ     ??PeopleApp_ProcessEvent_4
+//  156           {
+//  157              HalLedBlink( HAL_LED_1, 5, 50, 250 );
+??PeopleApp_ProcessEvent_3:
+        ; Setup parameters for call to function HalLedBlink
+        MOV     R4,#-0x6
+        MOV     R5,#0x0
+        MOV     R3,#0x32
+        MOV     R2,#0x5
+        MOV     R1,#0x1
+        LCALL   ??HalLedBlink?relay
+//  158             // Start sending "the" message in a regular interval.
+//  159           #if!defined(ZOD_COORDINATOR)                                //如果是终端节点那么就定时发送人体感应数据
+//  160             osal_start_timerEx( PeopleApp_TaskID,
+//  161                                 PeopleApp_SEND_MSG_PERIODIC_BODY_EVT,
+//  162                                 PeopleApp_SEND_MSG_TIMEOUT ); 
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#-0x30
+        MOV     R5,#0x7
+        MOV     R2,#0x2
+        MOV     R3,#0x0
+        MOV     DPTR,#PeopleApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+//  163           #endif  
+//  164             
+//  165           }
+//  166           break;
+//  167 
+//  168         default:
+//  169           break;
+//  170       }
+//  171 
+//  172       // Release the memory
+//  173       osal_msg_deallocate( (uint8 *)MSGpkt );
+??PeopleApp_ProcessEvent_4:
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??osal_msg_deallocate?relay
+//  174 
+//  175       // Next
+//  176       MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( PeopleApp_TaskID );
+        ; Setup parameters for call to function osal_msg_receive
+??PeopleApp_ProcessEvent_1:
+        MOV     DPTR,#PeopleApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_msg_receive?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,?V0 + 0
+        ORL     A,?V0 + 1
+        JZ      ??PeopleApp_ProcessEvent_5
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        ADD     A,#-0x1a
+        JZ      ??PeopleApp_ProcessEvent_6
+        ADD     A,#0x5a
+        JZ      ??PeopleApp_ProcessEvent_7
+        ADD     A,#-0x11
+        JZ      ??PeopleApp_ProcessEvent_2
+        ADD     A,#-0x2
+        JNZ     ??PeopleApp_ProcessEvent_4
+        ; Setup parameters for call to function PeopleApp_ProcessZDOMsgs
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??PeopleApp_ProcessZDOMsgs?relay
+        SJMP    ??PeopleApp_ProcessEvent_4
+??PeopleApp_ProcessEvent_7:
+        ; Setup parameters for call to function PeopleApp_HandleKeys
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??PeopleApp_HandleKeys?relay
+        SJMP    ??PeopleApp_ProcessEvent_4
+??PeopleApp_ProcessEvent_6:
+        ; Setup parameters for call to function PeopleApp_MessageMSGCB
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??PeopleApp_MessageMSGCB?relay
+        SJMP    ??PeopleApp_ProcessEvent_4
+//  177     }
+//  178 
+//  179     // return unprocessed events
+//  180     return (events ^ SYS_EVENT_MSG);
+??PeopleApp_ProcessEvent_5:
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x80
+??PeopleApp_ProcessEvent_8:
+        MOV     R3,A
+        SJMP    ??PeopleApp_ProcessEvent_9
+//  181   }
+//  182 
+//  183   // Send a message out - This event is generated by a timer
+//  184   //  (setup in PeopleApp_Init()).
+//  185   if ( events & PeopleApp_SEND_MSG_EVT )
+??PeopleApp_ProcessEvent_0:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??PeopleApp_ProcessEvent_10
+//  186   {
+//  187     // Send "the" message
+//  188    //PeopleApp_SendTheMessage();
+//  189 
+//  190     // Setup to send message again
+//  191     /*osal_start_timerEx( PeopleApp_TaskID,
+//  192                         PeopleApp_SEND_MSG_EVT,
+//  193                         PeopleApp_SEND_MSG_TIMEOUT );*/
+//  194 
+//  195     // return unprocessed events
+//  196     return (events ^ PeopleApp_SEND_MSG_EVT);
+        XRL     A,#0x1
+        MOV     R2,A
+        SJMP    ??PeopleApp_ProcessEvent_9
+//  197   }
+//  198   
+//  199   if ( events & PeopleApp_SEND_MSG_PERIODIC_BODY_EVT )
+??PeopleApp_ProcessEvent_10:
+        ANL     A,#0x2
+        JZ      ??PeopleApp_ProcessEvent_11
+//  200   {
+//  201     
+//  202 
+//  203     
+//  204       PeopleApp_Send_body_Message();
+        ; Setup parameters for call to function PeopleApp_Send_body_Message
+        LCALL   ??PeopleApp_Send_body_Message?relay
+//  205 
+//  206     
+//  207     // Setup to send message again
+//  208     osal_start_timerEx( PeopleApp_TaskID,
+//  209                         PeopleApp_SEND_MSG_PERIODIC_BODY_EVT,
+//  210                         PeopleApp_SEND_MSG_TIMEOUT );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#-0x30
+        MOV     R5,#0x7
+        MOV     R2,#0x2
+        MOV     R3,#0x0
+        MOV     DPTR,#PeopleApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+//  211 
+//  212     // return unprocessed events
+//  213     return (events ^ PeopleApp_SEND_MSG_PERIODIC_BODY_EVT);
+        MOV     A,R6
+        XRL     A,#0x2
+        MOV     R2,A
+        MOV     A,R7
+        SJMP    ??PeopleApp_ProcessEvent_8
+//  214   }
+//  215  
+//  216   
+//  217   
+//  218   return 0;
+??PeopleApp_ProcessEvent_11:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        CFI EndBlock cfiBlock1
+??PeopleApp_ProcessEvent_9:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//  219 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+//  220 
+//  221 
+//  222 
+//  223 /*********************************************************************
+//  224  * Event Generation Functions
+//  225  */
+//  226 
+//  227 /*********************************************************************
+//  228  * @fn      PeopleApp_ProcessZDOMsgs()
+//  229  *
+//  230  * @brief   Process response messages
+//  231  *
+//  232  * @param   none
+//  233  *
+//  234  * @return  none
+//  235  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  236 void PeopleApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+PeopleApp_ProcessZDOMsgs:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function PeopleApp_ProcessZDOMsgs
+        CODE
+//  237 {
+        FUNCALL PeopleApp_ProcessZDOMsgs, HalLedSet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_ProcessZDOMsgs, HalLedSet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_ProcessZDOMsgs, ZDO_ParseEPListRsp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_ProcessZDOMsgs, HalLedSet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_ProcessZDOMsgs, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  238   switch ( inMsg->clusterID )
+        MOV     A,R2
+        ADD     A,#0xc
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_1:
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?US_SWITCH_SPARSE
+`?<Jumptable for PeopleApp_ProcessZDOMsgs>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        0
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        2
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        32774
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??PeopleApp_ProcessZDOMsgs_0
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        32800
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??PeopleApp_ProcessZDOMsgs_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??PeopleApp_ProcessZDOMsgs_2
+        CODE
+//  239   {
+//  240     case End_Device_Bind_rsp:
+//  241       if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+??PeopleApp_ProcessZDOMsgs_1:
+        MOV     A,R2
+        ADD     A,#0x13
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_2:
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        MOVX    A,@DPTR
+        JNZ     ??PeopleApp_ProcessZDOMsgs_3
+//  242       {
+//  243         // Light LED
+//  244         HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+        ; Setup parameters for call to function HalLedSet
+        MOV     R2,#0x1
+??PeopleApp_ProcessZDOMsgs_4:
+        MOV     R1,#0x8
+        LCALL   ??HalLedSet?relay
+        SJMP    ??PeopleApp_ProcessZDOMsgs_2
+//  245       }
+//  246 #if defined( BLINK_LEDS )
+//  247       else
+//  248       {
+//  249         // Flash LED to show failure
+//  250         HalLedSet ( HAL_LED_4, HAL_LED_MODE_FLASH );
+??PeopleApp_ProcessZDOMsgs_3:
+        ; Setup parameters for call to function HalLedSet
+        MOV     R2,#0x4
+        SJMP    ??PeopleApp_ProcessZDOMsgs_4
+//  251       }
+//  252 #endif
+//  253       break;
+//  254 
+//  255     case Match_Desc_rsp:
+//  256       {
+//  257         ZDO_ActiveEndpointRsp_t *pRsp = ZDO_ParseEPListRsp( inMsg );
+??PeopleApp_ProcessZDOMsgs_0:
+        ; Setup parameters for call to function ZDO_ParseEPListRsp
+        LCALL   ??ZDO_ParseEPListRsp?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R6,?V0 + 0
+        MOV     R7,?V0 + 1
+//  258         if ( pRsp )
+        MOV     A,R6
+        ORL     A,R7
+        JZ      ??PeopleApp_ProcessZDOMsgs_2
+//  259         {
+//  260           if ( pRsp->status == ZSuccess && pRsp->cnt )
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        JNZ     ??PeopleApp_ProcessZDOMsgs_5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JZ      ??PeopleApp_ProcessZDOMsgs_5
+//  261           {
+//  262             PeopleApp_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+        MOV     DPTR,#PeopleApp_DstAddr + 8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  263             PeopleApp_DstAddr.addr.shortAddr = pRsp->nwkAddr;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#PeopleApp_DstAddr
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  264             // Take the first endpoint, Can be changed to search through endpoints
+//  265             PeopleApp_DstAddr.endPoint = pRsp->epList[0];
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPTR,#PeopleApp_DstAddr + 9
+        MOVX    @DPTR,A
+//  266 
+//  267             // Light LED
+//  268             HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+        ; Setup parameters for call to function HalLedSet
+        MOV     R2,#0x1
+        MOV     R1,#0x8
+        LCALL   ??HalLedSet?relay
+//  269           }
+//  270           osal_mem_free( pRsp );
+??PeopleApp_ProcessZDOMsgs_5:
+        ; Setup parameters for call to function osal_mem_free
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osal_mem_free?relay
+//  271         }
+//  272       }
+//  273       break;
+//  274   }
+//  275 }
+??PeopleApp_ProcessZDOMsgs_2:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock3
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        CFI Block cfiCond4 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_1
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        CFI Block cfiCond5 Using cfiCommon0
+        CFI (cfiCond5) NoFunction
+        CFI (cfiCond5) Conditional ??CrossCallReturnLabel_2
+        CFI (cfiCond5) R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond5) VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond5) V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond5) V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond5) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond5) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond5) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond5) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond5) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond5) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond5) CFA_SP SP+0
+        CFI (cfiCond5) CFA_XSP16 add(XSP16, 10)
+        CFI Block cfiCond6 Using cfiCommon0
+        CFI (cfiCond6) NoFunction
+        CFI (cfiCond6) Conditional ??CrossCallReturnLabel_3
+        CFI (cfiCond6) DPL0 Frame(CFA_SP, 4)
+        CFI (cfiCond6) DPH0 Frame(CFA_SP, 5)
+        CFI (cfiCond6) CFA_SP SP+-5
+        CFI Block cfiPicker7 Using cfiCommon1
+        CFI (cfiPicker7) NoFunction
+        CFI (cfiPicker7) Picker
+        MOV     DPL,A
+        MOV     A,R3
+        CFI EndBlock cfiCond4
+        CFI EndBlock cfiCond5
+        CFI EndBlock cfiCond6
+        CFI EndBlock cfiPicker7
+        REQUIRE ??Subroutine2_0
+        ; // Fall through to label ??Subroutine2_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine2_0:
+        CFI Block cfiCond8 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_0
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 56)
+        CFI Block cfiCond9 Using cfiCommon0
+        CFI (cfiCond9) NoFunction
+        CFI (cfiCond9) Conditional ??CrossCallReturnLabel_1
+        CFI (cfiCond9) R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond9) VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond9) V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond9) V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond9) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond9) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond9) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond9) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond9) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond9) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond9) CFA_SP SP+0
+        CFI (cfiCond9) CFA_XSP16 add(XSP16, 10)
+        CFI Block cfiCond10 Using cfiCommon0
+        CFI (cfiCond10) NoFunction
+        CFI (cfiCond10) Conditional ??CrossCallReturnLabel_2
+        CFI (cfiCond10) R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond10) VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond10) V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond10) V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond10) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond10) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond10) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond10) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond10) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond10) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond10) CFA_SP SP+0
+        CFI (cfiCond10) CFA_XSP16 add(XSP16, 10)
+        CFI Block cfiCond11 Using cfiCommon0
+        CFI (cfiCond11) NoFunction
+        CFI (cfiCond11) Conditional ??CrossCallReturnLabel_3
+        CFI (cfiCond11) DPL0 Frame(CFA_SP, 4)
+        CFI (cfiCond11) DPH0 Frame(CFA_SP, 5)
+        CFI (cfiCond11) CFA_SP SP+-5
+        CFI Block cfiPicker12 Using cfiCommon1
+        CFI (cfiPicker12) NoFunction
+        CFI (cfiPicker12) Picker
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        RET
+        CFI EndBlock cfiCond8
+        CFI EndBlock cfiCond9
+        CFI EndBlock cfiCond10
+        CFI EndBlock cfiCond11
+        CFI EndBlock cfiPicker12
+//  276 
+//  277 /*********************************************************************
+//  278  * @fn      PeopleApp_HandleKeys
+//  279  *
+//  280  * @brief   Handles all key events for this device.
+//  281  *
+//  282  * @param   shift - true if in shift/alt.
+//  283  * @param   keys - bit field for key events. Valid entries:
+//  284  *                 HAL_KEY_SW_4
+//  285  *                 HAL_KEY_SW_3
+//  286  *                 HAL_KEY_SW_2
+//  287  *                 HAL_KEY_SW_1
+//  288  *
+//  289  * @return  none
+//  290  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  291 void PeopleApp_HandleKeys( byte shift, byte keys )
+PeopleApp_HandleKeys:
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI Function PeopleApp_HandleKeys
+        CODE
+//  292 {
+        FUNCALL PeopleApp_HandleKeys, HalLedSet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 20, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_HandleKeys, NLME_GetShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 20, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_HandleKeys, ZDP_EndDeviceBindReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_HandleKeys, HalLedSet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 20, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_HandleKeys, ZDP_MatchDescReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 28, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 28, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 11)
+        ; Saved register size: 11
+        ; Auto size: 9
+        MOV     A,#-0x9
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 20)
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,R2
+        MOV     R7,A
+//  293   zAddrType_t dstAddr;
+//  294 
+//  295   // Shift is used to make each button/switch dual purpose.
+//  296   if ( shift )
+        MOV     A,R6
+        JZ      $+5
+        LJMP    ??PeopleApp_HandleKeys_0 & 0xFFFF
+//  297   {
+//  298     if ( keys & HAL_KEY_SW_1 )
+//  299     {
+//  300     }
+//  301     if ( keys & HAL_KEY_SW_2 )
+//  302     {
+//  303     }
+//  304     if ( keys & HAL_KEY_SW_3 )
+//  305     {
+//  306     }
+//  307     if ( keys & HAL_KEY_SW_4 )
+//  308     {
+//  309     }
+//  310   }
+//  311   else
+//  312   {
+//  313     if ( keys & HAL_KEY_SW_1 )
+//  314     {
+//  315       // Since SW1 isn't used for anything else in this application...
+//  316 #if defined( SWITCH1_BIND )
+//  317       // we can use SW1 to simulate SW2 for devices that only have one switch,
+//  318       keys |= HAL_KEY_SW_2;
+//  319 #elif defined( SWITCH1_MATCH )
+//  320       // or use SW1 to simulate SW4 for devices that only have one switch
+//  321       keys |= HAL_KEY_SW_4;
+//  322 #endif
+//  323     }
+//  324 
+//  325     if ( keys & HAL_KEY_SW_2 )
+        MOV     A,R7
+        MOV     C,0xE0 /* A   */.1
+        JNC     ??PeopleApp_HandleKeys_1
+//  326     {
+//  327       HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+        ; Setup parameters for call to function HalLedSet
+        MOV     R2,#0x0
+        MOV     R1,#0x8
+        LCALL   ??HalLedSet?relay
+//  328 
+//  329       // Initiate an End Device Bind Request for the mandatory endpoint
+//  330       dstAddr.addrMode = Addr16Bit;
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  331       dstAddr.addr.shortAddr = 0x0000; // Coordinator
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//  332       ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+//  333                             PeopleApp_epDesc.endPoint,
+//  334                             PeopleApp_PROFID,
+//  335                             PeopleApp_MAX_CLUSTERS, (cId_t *)PeopleApp_ClusterList,
+//  336                             PeopleApp_MAX_CLUSTERS, (cId_t *)PeopleApp_ClusterList,
+//  337                             FALSE );
+        ; Setup parameters for call to function NLME_GetShortAddr
+        LCALL   ??NLME_GetShortAddr?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R4,?V0 + 0
+        MOV     R5,?V0 + 1
+        MOV     ?V0 + 0,#PeopleApp_ClusterList & 0xff
+        MOV     ?V0 + 1,#(PeopleApp_ClusterList >> 8) & 0xff
+        ; Setup parameters for call to function ZDP_EndDeviceBindReq
+        MOV     ?V0 + 2,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 21)
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 23)
+        MOV     ?V0 + 2,#0x1
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 24)
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 26)
+        MOV     ?V0 + 0,#0x1
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 27)
+        MOV     ?V0 + 0,#0x4
+        MOV     ?V0 + 1,#0xf
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 29)
+        MOV     DPTR,#PeopleApp_epDesc
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ZDP_EndDeviceBindReq?relay
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 20)
+//  338     }
+//  339 
+//  340     if ( keys & HAL_KEY_SW_3 )
+//  341     {
+//  342     }
+//  343 
+//  344     if ( keys & HAL_KEY_SW_4 )
+??PeopleApp_HandleKeys_1:
+        MOV     A,R7
+        MOV     C,0xE0 /* A   */.3
+        JNC     ??PeopleApp_HandleKeys_0
+//  345     {
+//  346       HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+        ; Setup parameters for call to function HalLedSet
+        MOV     R2,#0x0
+        MOV     R1,#0x8
+        LCALL   ??HalLedSet?relay
+//  347       // Initiate a Match Description Request (Service Discovery)
+//  348       dstAddr.addrMode = AddrBroadcast;
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0xf
+        MOVX    @DPTR,A
+//  349       dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//  350       ZDP_MatchDescReq( &dstAddr, NWK_BROADCAST_SHORTADDR,
+//  351                         PeopleApp_PROFID,
+//  352                         PeopleApp_MAX_CLUSTERS, (cId_t *)PeopleApp_ClusterList,
+//  353                         PeopleApp_MAX_CLUSTERS, (cId_t *)PeopleApp_ClusterList,
+//  354                         FALSE );
+        MOV     ?V0 + 0,#PeopleApp_ClusterList & 0xff
+        MOV     ?V0 + 1,#(PeopleApp_ClusterList >> 8) & 0xff
+        ; Setup parameters for call to function ZDP_MatchDescReq
+        MOV     ?V0 + 2,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 21)
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 23)
+        MOV     ?V0 + 2,#0x1
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 24)
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 26)
+        MOV     ?V0 + 0,#0x4
+        MOV     ?V0 + 1,#0xf
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 28)
+        MOV     R1,#0x1
+        MOV     R4,#-0x1
+        MOV     R5,#-0x1
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ZDP_MatchDescReq?relay
+        MOV     A,#0x8
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 20)
+//  355     }
+//  356   }
+//  357 }
+??PeopleApp_HandleKeys_0:
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 11)
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock13
+//  358 
+//  359 /*********************************************************************
+//  360  * LOCAL FUNCTIONS
+//  361  */
+//  362 
+//  363 /*********************************************************************
+//  364  * @fn      PeopleApp_MessageMSGCB
+//  365  *
+//  366  * @brief   Data message processor callback.  This function processes
+//  367  *          any incoming data - probably from other devices.  So, based
+//  368  *          on cluster ID, perform the intended action.
+//  369  *
+//  370  * @param   none
+//  371  *
+//  372  * @return  none
+//  373  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  374 void PeopleApp_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+PeopleApp_MessageMSGCB:
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI Function PeopleApp_MessageMSGCB
+        CODE
+//  375 {
+        FUNCALL PeopleApp_MessageMSGCB, HalLcdWriteScreen
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  376   switch ( pkt->clusterId )
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??PeopleApp_MessageMSGCB_0
+        INC     DPTR
+        MOVX    A,@DPTR
+??PeopleApp_MessageMSGCB_0:
+        JNZ     ??PeopleApp_MessageMSGCB_1
+//  377   {
+//  378     case PeopleApp_CLUSTERID:
+//  379       // "the" message
+//  380 #if defined( LCD_SUPPORTED )
+//  381       HalLcdWriteScreen( (char*)pkt->cmd.Data, "rcvd" );
+        ; Setup parameters for call to function HalLcdWriteScreen
+        MOV     R4,#`?<Constant "rcvd">` & 0xff
+        MOV     R5,#(`?<Constant "rcvd">` >> 8) & 0xff
+        MOV     A,R2
+        ADD     A,#0x22
+        LCALL   ?Subroutine1 & 0xFFFF
+??CrossCallReturnLabel_3:
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??HalLcdWriteScreen?relay
+//  382 #elif defined( WIN32 )
+//  383       WPRINTSTR( pkt->cmd.Data );
+//  384 #endif
+//  385       break;
+//  386   }
+//  387 }
+??PeopleApp_MessageMSGCB_1:
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock14
+//  388 
+//  389 /*********************************************************************
+//  390  * @fn      PeopleApp_SendTheMessage
+//  391  *
+//  392  * @brief   Send "the" message.
+//  393  *
+//  394  * @param   none
+//  395  *
+//  396  * @return  none
+//  397  */
+//  398 
+//  399 /*********************************************************************
+//  400 *********************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  401 void  PeopleApp_Send_body_Message(void)
+PeopleApp_Send_body_Message:
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI Function PeopleApp_Send_body_Message
+        CODE
+//  402 {
+        FUNCALL PeopleApp_Send_body_Message, NLME_GetShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 56, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_Send_body_Message, NLME_GetCoordShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 56, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_Send_body_Message, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 65, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 65, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_Send_body_Message, HalLedBlink
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 56, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL PeopleApp_Send_body_Message, HalLedSet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 56, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 44
+        MOV     A,#-0x2c
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 56)
+//  403        // 1. 定义数据帧数组（帧结构：帧头1 + 长度1 + 类型1 + 序号1 + 业务数据N + 校验1）
+//  404     uint8 txFrame[32]; // 分配足够空间
+//  405     uint8 i = 0;       // 数组索引
+//  406     uint8 checkSum = 0;
+        MOV     ?V0 + 0,#0x0
+//  407     static uint8 frameSeq = 0; // 静态变量保存帧序号，实现循环累加
+//  408 
+//  409     // 1. 动态获取网络地址 (注意：这些函数在设备入网后才能返回有效值)
+//  410     uint16 myShortAddr = NLME_GetShortAddr();          // 本节点短地址
+        ; Setup parameters for call to function NLME_GetShortAddr
+        LCALL   ??NLME_GetShortAddr?relay
+        MOV     ?V0 + 2,R2
+        MOV     ?V0 + 3,R3
+//  411     uint16 parentShortAddr = NLME_GetCoordShortAddr(); // 父节点短地址
+        ; Setup parameters for call to function NLME_GetCoordShortAddr
+        LCALL   ??NLME_GetCoordShortAddr?relay
+//  412 
+//  413 
+//  414 
+//  415     // 2. 构建固定帧头部分
+//  416     txFrame[i++] = 0xAA;           // 帧头固定为0xAA
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x56
+        MOVX    @DPTR,A
+//  417     txFrame[i++] = 0x00;           // 位置1：帧长度字节，先填0，最后计算
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  418     txFrame[i++] = 0x02;           // 位置2：帧类型，0x02=无线传感数据
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  419     txFrame[i++] = frameSeq++;     // 位置3：帧序号，每次发送后自增
+        MOV     DPTR,#??frameSeq
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+        MOV     DPTR,#??frameSeq
+        MOVX    A,@DPTR
+        INC     A
+        MOVX    @DPTR,A
+//  420     
+//  421     // 3. 构建业务数据部分（命令类型: 0x03=上传传感器信息到路由）
+//  422     txFrame[i++] = 0x03;           // 位置4：命令类型
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x3
+        MOVX    @DPTR,A
+//  423     txFrame[i++] = 0x01;           // 位置5：协议类型，0x01=Zigbee
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  424     
+//  425     // 传感器类型：人体感应 = 0x0006
+//  426     txFrame[i++] = 0x00;           // 位置6：传感器类型高字节
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  427     txFrame[i++] = 0x06;           // 位置7：传感器类型低字节
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x6
+        MOVX    @DPTR,A
+//  428     
+//  429     txFrame[i++] = 0x00;           // 位置8：索引号，默认为0
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  430 
+//  431     // 4. 填入动态获取的网络地址 (注意Zigbee通常使用大端格式)
+//  432     // 源地址 (本节点地址)
+//  433    txFrame[i++] = HI_UINT16(myShortAddr);      // 位置9：源地址高字节
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 3
+        MOVX    @DPTR,A
+//  434     txFrame[i++] = LO_UINT16(myShortAddr);      // 位置10：源地址低字节
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 2
+        MOVX    @DPTR,A
+//  435     // 父地址
+//  436     txFrame[i++] = HI_UINT16(parentShortAddr);  // 位置11：父地址高字节
+        MOV     A,#0xb
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  437     txFrame[i++] = LO_UINT16(parentShortAddr);  // 位置12：父地址低字节
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+//  438 
+//  439     // 5. 节点类型 (人体感应是终端节点，应为 0x02)
+//  440     txFrame[i++] = 0x02;               // 位置13：节点类型
+        MOV     A,#0xd
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  441 
+//  442     // 6. 值类型与数据值
+//  443     txFrame[i++] = 0x01;               // 位置14：值类型: 布尔型
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  444 
+//  445     // 读取传感器状态
+//  446     if (P1_0 == 0) {
+        MOV     C,0x90.0
+        MOV     A,#0xf
+        JC      ??PeopleApp_Send_body_Message_0
+//  447         txFrame[i++] = 0x01;           // 位置15：数据值，有人
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        SJMP    ??PeopleApp_Send_body_Message_1
+//  448     } else {
+//  449         txFrame[i++] = 0x00;           // 位置15：数据值，无人
+??PeopleApp_Send_body_Message_0:
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+??PeopleApp_Send_body_Message_1:
+        MOVX    @DPTR,A
+//  450     }
+//  451 
+//  452     // 7. 重新计算帧长度 (此时i=16，表示已有16个字节)
+//  453     //    总帧长 = 当前字节数(16) + 1个校验码字节 = 17 (0x11)
+//  454     txFrame[1] = i + 1;                // 回填帧长度
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x11
+        MOVX    @DPTR,A
+//  455 
+//  456     // 8. 计算校验和
+//  457     for (uint8 j = 0; j < i; j++) {
+        MOV     R0,#0x0
+//  458         checkSum += txFrame[j];
+??PeopleApp_Send_body_Message_2:
+        MOV     ?V0 + 2,R0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ADD     A,?V0 + 2
+        MOV     DPL,A
+        MOV     A,DPH
+        LCALL   ??Subroutine2_0 & 0xFFFF
+//  459     }
+??CrossCallReturnLabel_0:
+        ADD     A,?V0 + 0
+        MOV     ?V0 + 0,A
+        INC     R0
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x10
+        JC      ??PeopleApp_Send_body_Message_2
+//  460     txFrame[i++] = checkSum;           // 位置16：校验码
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+//  461 
+//  462     // 7. 发送数据帧
+//  463       afAddrType_t    PeopleApp_Send_body_dstAddr;
+//  464       PeopleApp_Send_body_dstAddr.addrMode =(afAddrMode_t)afAddr16Bit;
+        MOV     A,#0x28
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  465       PeopleApp_Send_body_dstAddr.endPoint=PeopleApp_ENDPOINT;
+        MOV     A,#0x29
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0xa
+        MOVX    @DPTR,A
+//  466       PeopleApp_Send_body_dstAddr.addr.shortAddr = 0x0000; // 目标地址：协调器
+        MOV     A,#0x20
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//  467 
+//  468 
+//  469  if ( AF_DataRequest(&PeopleApp_Send_body_dstAddr,
+//  470                    &PeopleApp_epDesc,
+//  471                   PeopleApp_CLUSTERID, // 确保在PeopleApp.h中已定义了该簇ID,这里定义的簇ID是为了在协调器接收到消息后，在接收数据处理的时候根据数据包的簇ID来选择对应的处理.需要注意的就是协调器接收到该节点发来的数据后需要在协调器的app.h文件里面定义该簇ID并且能有对应的处理
+//  472                    i,       // 发送的总字节数
+//  473                    txFrame, // 数据帧数组
+//  474                    &PeopleApp_TransID,  //用于标识本次传输的唯一序列号，不过一般不用管，它是全局变量在app初始化的时候已经赋值为0了
+//  475                    AF_DISCV_ROUTE,
+//  476                    AF_DEFAULT_RADIUS ) == afStatus_SUCCESS)
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     ?V0 + 0,#0x1e
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 57)
+        MOV     ?V0 + 0,#PeopleApp_TransID & 0xff
+        MOV     ?V0 + 1,#(PeopleApp_TransID >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 59)
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 61)
+        MOV     ?V0 + 0,#0x11
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 63)
+        MOV     ?V0 + 0,#0x1
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 65)
+        MOV     R1,#0x20
+        MOV     R4,#PeopleApp_epDesc & 0xff
+        MOV     R5,#(PeopleApp_epDesc >> 8) & 0xff
+        MOV     A,#0x29
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??AF_DataRequest?relay
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 56)
+        MOV     A,R1
+        JNZ     ??PeopleApp_Send_body_Message_3
+//  477   {
+//  478     // 发送成功后闪烁 data灯
+//  479      
+//  480       HalLedBlink( HAL_LED_1, 5, 50, 250 );//人体亮5次
+        ; Setup parameters for call to function HalLedBlink
+        MOV     R4,#-0x6
+        MOV     R5,#0x0
+        MOV     R3,#0x32
+        MOV     R2,#0x5
+        MOV     R1,#0x1
+        LCALL   ??HalLedBlink?relay
+        SJMP    ??PeopleApp_Send_body_Message_4
+//  481   }
+//  482   else
+//  483   {
+//  484         HalLedSet( HAL_LED_2, HAL_LED_MODE_ON );
+??PeopleApp_Send_body_Message_3:
+        ; Setup parameters for call to function HalLedSet
+        MOV     R2,#0x1
+        MOV     R1,#0x2
+        LCALL   ??HalLedSet?relay
+//  485          
+//  486   }
+//  487 
+//  488 }
+??PeopleApp_Send_body_Message_4:
+        MOV     A,#0x2c
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 12)
+        LJMP    ?Subroutine0 & 0xFFFF
+        CFI EndBlock cfiBlock15
+        REQUIRE _A_P1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+??frameSeq:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??PeopleApp_Init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    PeopleApp_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??PeopleApp_ProcessEvent?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    PeopleApp_ProcessEvent
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??PeopleApp_ProcessZDOMsgs?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    PeopleApp_ProcessZDOMsgs
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??PeopleApp_HandleKeys?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    PeopleApp_HandleKeys
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??PeopleApp_MessageMSGCB?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    PeopleApp_MessageMSGCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??PeopleApp_Send_body_Message?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    PeopleApp_Send_body_Message
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "PeopleApp">`:
+        DB "PeopleApp"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "rcvd">`:
+        DB "rcvd"
+
+        END
+//  489 
+//  490 
+//  491 
+//  492 
+//  493 
+//  494 
+//  495 
+//  496 
+//  497 
+//  498 
+//  499 
+//  500 
+//  501 
+//  502 
+//  503 
+//  504 
+//  505 
+//  506 
+//  507 
+//  508 
+//  509 
+//  510 
+//  511 
+//  512 
+//  513 
+//  514 
+//  515 
+//  516 
+// 
+// 1 129 bytes in segment BANKED_CODE
+//    36 bytes in segment BANK_RELAYS
+//     3 bytes in segment SFR_AN
+//    29 bytes in segment XDATA_ROM_C
+//    22 bytes in segment XDATA_Z
+// 
+// 1 165 bytes of CODE  memory
+//    29 bytes of CONST memory
+//     0 bytes of DATA  memory (+ 3 bytes shared)
+//    22 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

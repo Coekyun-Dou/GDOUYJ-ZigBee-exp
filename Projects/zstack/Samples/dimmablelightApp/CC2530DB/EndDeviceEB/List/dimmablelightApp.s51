@@ -1,0 +1,3443 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        24/Dec/2025  16:58:20 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\S /
+//                          ource\dimmablelightApp.c                          /
+//    Command line       =  -f E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑ /
+//                          µ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightAp /
+//                          p\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg   /
+//                          (-DCPU32MHZ -DROOT=__near_func                    /
+//                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6        /
+//                          -DMAC_CFG_RX_MAX=3) -f E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ /
+//                          ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sam /
+//                          ples\dimmablelightApp\CC2530DB\..\..\..\Tools\CC2 /
+//                          530DB\f8wConfig.cfg (-DZIGBEEPRO -DSECURE=0       /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DDEFAULT_CHANLIST26=0x04000000                   /
+//                          -DDEFAULT_CHANLIST25=0x02000000                   /
+//                          -DDEFAULT_CHANLIST24=0x01000000                   /
+//                          -DDEFAULT_CHANLIST23=0x00800000                   /
+//                          -DDEFAULT_CHANLIST22=0x00400000                   /
+//                          -DDEFAULT_CHANLIST21=0x00200000                   /
+//                          -DDEFAULT_CHANLIST20=0x00100000                   /
+//                          -DDEFAULT_CHANLIST19=0x00080000                   /
+//                          -DDEFAULT_CHANLIST18=0x00040000                   /
+//                          -DDEFAULT_CHANLIST17=0x00020000                   /
+//                          -DDEFAULT_CHANLIST16=0x00010000                   /
+//                          -DDEFAULT_CHANLIST15=0x00008000                   /
+//                          -DDEFAULT_CHANLIST14=0x00004000                   /
+//                          -DDEFAULT_CHANLIST13=0x00002000                   /
+//                          -DDEFAULT_CHANLIST12=0x00001000                   /
+//                          -DDEFAULT_CHANLIST11=0x00000800                   /
+//                          -DDEFAULT_CHANLIST=DEFAULT_CHANLIST25             /
+//                          -DZDAPP_CONFIG_PAN_ID=0x0006                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ /
+//                          ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sam /
+//                          ples\dimmablelightApp\Source\dimmablelightApp.c   /
+//                          -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D        /
+//                          MT_SYS_FUNC -D MT_ZDO_FUNC -D                     /
+//                          LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC          /
+//                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\EndDeviceEB\List\ -lA                     /
+//                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\EndDeviceEB\List\ --diag_suppress         /
+//                          Pe001,Pa010 -o E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStac /
+//                          k-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dim /
+//                          mablelightApp\CC2530DB\EndDeviceEB\Obj\ -e        /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-C /
+//                          C2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmab /
+//                          lelightApp\CC2530DB\..\Source\ -I                 /
+//                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\..\..\..\ZMain\TI2530DB\ -I               /
+//                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\..\..\..\..\..\Components\hal\include\    /
+//                          -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑ /
+//                          µ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightAp /
+//                          p\CC2530DB\..\..\..\..\..\Components\hal\target\C /
+//                          C2530EB\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-C /
+//                          C2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmab /
+//                          lelightApp\CC2530DB\..\..\..\..\..\Components\mac /
+//                          \include\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack- /
+//                          CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimma /
+//                          blelightApp\CC2530DB\..\..\..\..\..\Components\ma /
+//                          c\high_level\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZSt /
+//                          ack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\d /
+//                          immablelightApp\CC2530DB\..\..\..\..\..\Component /
+//                          s\mac\low_level\srf04\ -I                         /
+//                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\..\..\..\..\..\Components\mac\low_level\s /
+//                          rf04\single_chip\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ /
+//                          ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sampl /
+//                          es\dimmablelightApp\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\mt\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack- /
+//                          CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimma /
+//                          blelightApp\CC2530DB\..\..\..\..\..\Components\os /
+//                          al\include\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStac /
+//                          k-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dim /
+//                          mablelightApp\CC2530DB\..\..\..\..\..\Components\ /
+//                          services\saddr\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷Z /
+//                          Stack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples /
+//                          \dimmablelightApp\CC2530DB\..\..\..\..\..\Compone /
+//                          nts\services\sdata\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ /
+//                          ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sam /
+//                          ples\dimmablelightApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\af\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ /
+//                          ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sampl /
+//                          es\dimmablelightApp\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\stack\nwk\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ /
+//                          ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sample /
+//                          s\dimmablelightApp\CC2530DB\..\..\..\..\..\Compon /
+//                          ents\stack\sapi\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ /
+//                          ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sample /
+//                          s\dimmablelightApp\CC2530DB\..\..\..\..\..\Compon /
+//                          ents\stack\sec\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷Z /
+//                          Stack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples /
+//                          \dimmablelightApp\CC2530DB\..\..\..\..\..\Compone /
+//                          nts\stack\sys\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZS /
+//                          tack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\ /
+//                          dimmablelightApp\CC2530DB\..\..\..\..\..\Componen /
+//                          ts\stack\zdo\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZSt /
+//                          ack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\d /
+//                          immablelightApp\CC2530DB\..\..\..\..\..\Component /
+//                          s\zmac\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC /
+//                          2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmabl /
+//                          elightApp\CC2530DB\..\..\..\..\..\Components\zmac /
+//                          \f8w\ -Ohz --require_prototypes                   /
+//    List file          =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\EndDeviceEB\List\dimmablelightApp.s51     /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME dimmablelightApp
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?MOVE_LONG8_XDATA_XDATA
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?S_DIV_MOD
+        EXTERN ?US_SWITCH_SPARSE
+        EXTERN ?V0
+        EXTERN ?XLOAD_R2345
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??Delay5000ms?relay
+        FUNCTION ??Delay5000ms?relay,0203H
+        FUNCTION ??DimLightRouterApp_ControlDimLight?relay,0203H
+        FUNCTION ??DimLightRouterApp_SendSuccessResponse?relay,0203H
+        PUBLIC ??dimmablelightApp_HandleKeys?relay
+        FUNCTION ??dimmablelightApp_HandleKeys?relay,0203H
+        PUBLIC ??dimmablelightApp_Init?relay
+        FUNCTION ??dimmablelightApp_Init?relay,0203H
+        PUBLIC ??dimmablelightApp_MessageMSGCB?relay
+        FUNCTION ??dimmablelightApp_MessageMSGCB?relay,0203H
+        PUBLIC ??dimmablelightApp_ProcessEvent?relay
+        FUNCTION ??dimmablelightApp_ProcessEvent?relay,0203H
+        PUBLIC ??dimmablelightApp_ProcessZDOMsgs?relay
+        FUNCTION ??dimmablelightApp_ProcessZDOMsgs?relay,0203H
+        PUBLIC ??dimmablelightApp_SendTheMessage?relay
+        FUNCTION ??dimmablelightApp_SendTheMessage?relay,0203H
+        PUBLIC Delay5000ms
+        FUNCTION Delay5000ms,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCTION DimLightRouterApp_ControlDimLight,021203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        FUNCTION DimLightRouterApp_SendSuccessResponse,021203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 65, STACK
+        PUBWEAK _A_P0
+        PUBWEAK __Constant_1388
+        PUBLIC dimmablelightApp_ClusterList
+        PUBLIC dimmablelightApp_DstAddr
+        PUBLIC dimmablelightApp_HandleKeys
+        FUNCTION dimmablelightApp_HandleKeys,021203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 29, STACK
+        PUBLIC dimmablelightApp_Init
+        FUNCTION dimmablelightApp_Init,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC dimmablelightApp_MessageMSGCB
+        FUNCTION dimmablelightApp_MessageMSGCB,0a1203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC dimmablelightApp_NwkState
+        PUBLIC dimmablelightApp_ProcessEvent
+        FUNCTION dimmablelightApp_ProcessEvent,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC dimmablelightApp_ProcessZDOMsgs
+        FUNCTION dimmablelightApp_ProcessZDOMsgs,0a1203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC dimmablelightApp_SendTheMessage
+        FUNCTION dimmablelightApp_SendTheMessage,021203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 31, STACK
+        PUBLIC dimmablelightApp_SimpleDesc
+        PUBLIC dimmablelightApp_TaskID
+        PUBLIC dimmablelightApp_TransID
+        PUBLIC dimmablelightApp_epDesc
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        
+        CFI Common cfiCommon1 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B SameValue
+        CFI A SameValue
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 SameValue
+        CFI R1 SameValue
+        CFI R2 SameValue
+        CFI R3 SameValue
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT SameValue
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon1
+        
+DimLightRouterApp_InitDimLightHardware SYMBOL "DimLightRouterApp_InitDimLightHardware"
+afRegister          SYMBOL "afRegister"
+RegisterForKeys     SYMBOL "RegisterForKeys"
+HalLcdWriteString   SYMBOL "HalLcdWriteString"
+ZDO_RegisterForZDOMsg SYMBOL "ZDO_RegisterForZDOMsg"
+osal_msg_receive    SYMBOL "osal_msg_receive"
+HalLedBlink         SYMBOL "HalLedBlink"
+osal_msg_deallocate SYMBOL "osal_msg_deallocate"
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+HalLedSet           SYMBOL "HalLedSet"
+ZDO_ParseEPListRsp  SYMBOL "ZDO_ParseEPListRsp"
+osal_mem_free       SYMBOL "osal_mem_free"
+NLME_GetShortAddr   SYMBOL "NLME_GetShortAddr"
+ZDP_EndDeviceBindReq SYMBOL "ZDP_EndDeviceBindReq"
+ZDP_MatchDescReq    SYMBOL "ZDP_MatchDescReq"
+LED_change          SYMBOL "LED_change"
+DelayMilliseconds   SYMBOL "DelayMilliseconds"
+osal_strlen         SYMBOL "osal_strlen"
+AF_DataRequest      SYMBOL "AF_DataRequest"
+NLME_GetCoordShortAddr SYMBOL "NLME_GetCoordShortAddr"
+??AF_DataRequest?relay SYMBOL "?relay", AF_DataRequest
+??DelayMilliseconds?relay SYMBOL "?relay", DelayMilliseconds
+??DimLightRouterApp_InitDimLightHardware?relay SYMBOL "?relay", DimLightRouterApp_InitDimLightHardware
+??HalLcdWriteString?relay SYMBOL "?relay", HalLcdWriteString
+??HalLedBlink?relay SYMBOL "?relay", HalLedBlink
+??HalLedSet?relay   SYMBOL "?relay", HalLedSet
+??LED_change?relay  SYMBOL "?relay", LED_change
+??NLME_GetCoordShortAddr?relay SYMBOL "?relay", NLME_GetCoordShortAddr
+??NLME_GetShortAddr?relay SYMBOL "?relay", NLME_GetShortAddr
+??RegisterForKeys?relay SYMBOL "?relay", RegisterForKeys
+??ZDO_ParseEPListRsp?relay SYMBOL "?relay", ZDO_ParseEPListRsp
+??ZDO_RegisterForZDOMsg?relay SYMBOL "?relay", ZDO_RegisterForZDOMsg
+??ZDP_EndDeviceBindReq?relay SYMBOL "?relay", ZDP_EndDeviceBindReq
+??ZDP_MatchDescReq?relay SYMBOL "?relay", ZDP_MatchDescReq
+??afRegister?relay  SYMBOL "?relay", afRegister
+??osal_mem_free?relay SYMBOL "?relay", osal_mem_free
+??osal_msg_deallocate?relay SYMBOL "?relay", osal_msg_deallocate
+??osal_msg_receive?relay SYMBOL "?relay", osal_msg_receive
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+??osal_strlen?relay SYMBOL "?relay", osal_strlen
+Delay5000ms         SYMBOL "Delay5000ms"
+??Delay5000ms?relay SYMBOL "?relay", Delay5000ms
+dimmablelightApp_HandleKeys SYMBOL "dimmablelightApp_HandleKeys"
+??dimmablelightApp_HandleKeys?relay SYMBOL "?relay", dimmablelightApp_HandleKeys
+dimmablelightApp_Init SYMBOL "dimmablelightApp_Init"
+??dimmablelightApp_Init?relay SYMBOL "?relay", dimmablelightApp_Init
+dimmablelightApp_MessageMSGCB SYMBOL "dimmablelightApp_MessageMSGCB"
+??dimmablelightApp_MessageMSGCB?relay SYMBOL "?relay", dimmablelightApp_MessageMSGCB
+dimmablelightApp_ProcessEvent SYMBOL "dimmablelightApp_ProcessEvent"
+??dimmablelightApp_ProcessEvent?relay SYMBOL "?relay", dimmablelightApp_ProcessEvent
+dimmablelightApp_ProcessZDOMsgs SYMBOL "dimmablelightApp_ProcessZDOMsgs"
+??dimmablelightApp_ProcessZDOMsgs?relay SYMBOL "?relay", dimmablelightApp_ProcessZDOMsgs
+dimmablelightApp_SendTheMessage SYMBOL "dimmablelightApp_SendTheMessage"
+??dimmablelightApp_SendTheMessage?relay SYMBOL "?relay", dimmablelightApp_SendTheMessage
+
+        EXTERN DimLightRouterApp_InitDimLightHardware
+        FUNCTION DimLightRouterApp_InitDimLightHardware,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN afRegister
+        FUNCTION afRegister,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN RegisterForKeys
+        FUNCTION RegisterForKeys,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN HalLcdWriteString
+        FUNCTION HalLcdWriteString,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ZDO_RegisterForZDOMsg
+        FUNCTION ZDO_RegisterForZDOMsg,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_receive
+        FUNCTION osal_msg_receive,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN HalLedBlink
+        FUNCTION HalLedBlink,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_deallocate
+        FUNCTION osal_msg_deallocate,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_start_timerEx
+        FUNCTION osal_start_timerEx,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN HalLedSet
+        FUNCTION HalLedSet,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ZDO_ParseEPListRsp
+        FUNCTION ZDO_ParseEPListRsp,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_mem_free
+        FUNCTION osal_mem_free,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN NLME_GetShortAddr
+        FUNCTION NLME_GetShortAddr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ZDP_EndDeviceBindReq
+        FUNCTION ZDP_EndDeviceBindReq,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ZDP_MatchDescReq
+        FUNCTION ZDP_MatchDescReq,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 28, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN LED_change
+        FUNCTION LED_change,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN DelayMilliseconds
+        FUNCTION DelayMilliseconds,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_strlen
+        FUNCTION osal_strlen,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 27, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN AF_DataRequest
+        FUNCTION AF_DataRequest,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 65, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN NLME_GetCoordShortAddr
+        FUNCTION NLME_GetCoordShortAddr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??AF_DataRequest?relay
+        FUNCTION ??AF_DataRequest?relay,00H
+        EXTERN ??DelayMilliseconds?relay
+        FUNCTION ??DelayMilliseconds?relay,00H
+        EXTERN ??DimLightRouterApp_InitDimLightHardware?relay
+        FUNCTION ??DimLightRouterApp_InitDimLightHardware?relay,00H
+        EXTERN ??HalLcdWriteString?relay
+        FUNCTION ??HalLcdWriteString?relay,00H
+        EXTERN ??HalLedBlink?relay
+        FUNCTION ??HalLedBlink?relay,00H
+        EXTERN ??HalLedSet?relay
+        FUNCTION ??HalLedSet?relay,00H
+        EXTERN ??LED_change?relay
+        FUNCTION ??LED_change?relay,00H
+        EXTERN ??NLME_GetCoordShortAddr?relay
+        FUNCTION ??NLME_GetCoordShortAddr?relay,00H
+        EXTERN ??NLME_GetShortAddr?relay
+        FUNCTION ??NLME_GetShortAddr?relay,00H
+        EXTERN ??RegisterForKeys?relay
+        FUNCTION ??RegisterForKeys?relay,00H
+        EXTERN ??ZDO_ParseEPListRsp?relay
+        FUNCTION ??ZDO_ParseEPListRsp?relay,00H
+        EXTERN ??ZDO_RegisterForZDOMsg?relay
+        FUNCTION ??ZDO_RegisterForZDOMsg?relay,00H
+        EXTERN ??ZDP_EndDeviceBindReq?relay
+        FUNCTION ??ZDP_EndDeviceBindReq?relay,00H
+        EXTERN ??ZDP_MatchDescReq?relay
+        FUNCTION ??ZDP_MatchDescReq?relay,00H
+        EXTERN ??afRegister?relay
+        FUNCTION ??afRegister?relay,00H
+        EXTERN ??osal_mem_free?relay
+        FUNCTION ??osal_mem_free?relay,00H
+        EXTERN ??osal_msg_deallocate?relay
+        FUNCTION ??osal_msg_deallocate?relay,00H
+        EXTERN ??osal_msg_receive?relay
+        FUNCTION ??osal_msg_receive?relay,00H
+        EXTERN ??osal_start_timerEx?relay
+        FUNCTION ??osal_start_timerEx?relay,00H
+        EXTERN ??osal_strlen?relay
+        FUNCTION ??osal_strlen?relay,00H
+
+// E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\Source\dimmablelightApp.c
+//    1 /******************************************************************************
+//    2   Filename:       dimmablelightApp.c
+//    3   Revised:        $Date: 2010-12-21 10:27:34 -0800 (Tue, 21 Dec 2010) $
+//    4   Revision:       $Revision: 24670 $
+//    5 
+//    6   Description:    Generic Application (no Profile).
+//    7 
+//    8 
+//    9   Copyright 2004-2010 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product. Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 ******************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41   This application isn't intended to do anything useful, it is
+//   42   intended to be a simple example of an application's structure.
+//   43 
+//   44   This application sends "Hello World" to another "Generic"
+//   45   application every 15 seconds.  The application will also
+//   46   receive "Hello World" packets.
+//   47 
+//   48   The "Hello World" messages are sent/received as MSG type message.
+//   49 
+//   50   This applications doesn't have a profile, so it handles everything
+//   51   directly - itself.
+//   52 
+//   53   Key control:
+//   54     SW1:
+//   55     SW2:  initiates end device binding
+//   56     SW3:
+//   57     SW4:  initiates a match description request
+//   58 *********************************************************************/
+//   59 
+//   60 /*********************************************************************
+//   61  * INCLUDES
+//   62  */
+//   63 #include "OSAL.h"
+//   64 #include "AF.h"
+//   65 #include "ZDApp.h"
+//   66 #include "ZDObject.h"
+//   67 #include "ZDProfile.h"
+//   68 
+//   69 #include "dimmablelightApp.h"
+//   70 #include "DebugTrace.h"
+//   71 
+//   72 //°üº¬µ÷É«µÆ³õÊ¼»¯Í·ÎÄ¼þ
+//   73 #include"Dimmablelight.h"
+//   74 
+//   75 
+//   76 #if !defined( WIN32 )
+//   77   #include "OnBoard.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DATA8
+        DS 1
+//   78 #endif
+//   79 
+//   80 /* HAL */
+//   81 #include "hal_lcd.h"
+//   82 #include "hal_led.h"
+//   83 #include "hal_key.h"
+//   84 #include "hal_uart.h"
+//   85 
+//   86 
+//   87 // µ÷¹âµÆ¿ØÖÆÒý½Å¶¨Òå£¨¸ù¾Ýµ÷¹âµÆPDFÎÄµµ£©
+//   88 #define DIMLIGHT_BLUE_PIN           P0_1      // À¶É«¿ØÖÆÒý½Å
+//   89 #define DIMLIGHT_RED_PIN            P0_6      // ºìÉ«¿ØÖÆÒý½Å
+//   90 #define DIMLIGHT_GREEN_PIN          P0_7      // ÂÌÉ«¿ØÖÆÒý½Å
+//   91 
+//   92 
+//   93 
+//   94 
+//   95 /*********************************************************************
+//   96  * MACROS
+//   97  */
+//   98 
+//   99 /*********************************************************************
+//  100  * CONSTANTS
+//  101  */
+//  102 
+//  103 /*********************************************************************
+//  104  * TYPEDEFS
+//  105  */
+//  106 
+//  107 /*********************************************************************
+//  108  * GLOBAL VARIABLES
+//  109  */
+//  110 
+//  111 // This list should be filled with Application specific Cluster IDs.
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  112 const cId_t dimmablelightApp_ClusterList[dimmablelightApp_MAX_CLUSTERS] =
+dimmablelightApp_ClusterList:
+        DATA16
+        DW 6
+        DW 1
+        DW 2
+        DW 5
+        DW 10
+//  113 {
+//  114   dimmablelightApp_CLUSTERID,//ÓÃÓÚ×î»ù±¾µÄÍ¨ÐÅ²âÊÔ
+//  115   DIMLIGHT_BLUE_CLUSTERID,
+//  116   DIMLIGHT_RED_CLUSTERID,
+//  117   DIMLIGHT_GREEN_CLUSTERID,
+//  118   CentreApp_control_dimmablelight_CLUSTERID
+//  119 };
+//  120 //¸æÍø
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  121 const SimpleDescriptionFormat_t dimmablelightApp_SimpleDesc =
+dimmablelightApp_SimpleDesc:
+        DB 10
+        DATA16
+        DW 3844
+        DW 1
+        DATA8
+        DB 0
+        DB 5
+        DATA16
+        DW dimmablelightApp_ClusterList
+        DATA8
+        DB 5
+        DATA16
+        DW dimmablelightApp_ClusterList
+//  122 {
+//  123   dimmablelightApp_ENDPOINT,              //  int Endpoint;
+//  124   dimmablelightApp_PROFID,                //  uint16 AppProfId[2];
+//  125   dimmablelightApp_DEVICEID,              //  uint16 AppDeviceId[2];
+//  126   dimmablelightApp_DEVICE_VERSION,        //  int   AppDevVer:4;
+//  127   dimmablelightApp_FLAGS,                 //  int   AppFlags:4;
+//  128   dimmablelightApp_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+//  129   (cId_t *)dimmablelightApp_ClusterList,  //  byte *pAppInClusterList;
+//  130   dimmablelightApp_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+//  131   (cId_t *)dimmablelightApp_ClusterList   //  byte *pAppInClusterList;
+//  132 };
+//  133 
+//  134 // This is the Endpoint/Interface description.  It is defined here, but
+//  135 // filled-in in dimmablelightApp_Init().  Another way to go would be to fill
+//  136 // in the structure here and make it a "const" (in code space).  The
+//  137 // way it's defined in this sample app it is define in RAM.
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  138 endPointDesc_t dimmablelightApp_epDesc;
+dimmablelightApp_epDesc:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+//  139 
+//  140 /*********************************************************************
+//  141  * EXTERNAL VARIABLES
+//  142  */
+//  143 
+//  144 /*********************************************************************
+//  145  * EXTERNAL FUNCTIONS
+//  146  */
+//  147 
+//  148 /*********************************************************************
+//  149  * LOCAL VARIABLES
+//  150  */
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  151 byte dimmablelightApp_TaskID;   // Task ID for internal task/event processing
+dimmablelightApp_TaskID:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  152                           // This variable will be received when
+//  153                           // dimmablelightApp_Init() is called.
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  154 devStates_t dimmablelightApp_NwkState;
+dimmablelightApp_NwkState:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  155 
+//  156 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  157 byte dimmablelightApp_TransID;  // This is the unique message ID (counter)
+dimmablelightApp_TransID:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  158 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  159 afAddrType_t dimmablelightApp_DstAddr;
+dimmablelightApp_DstAddr:
+        DS 12
+        REQUIRE __INIT_XDATA_Z
+//  160 
+//  161 /*********************************************************************
+//  162  * LOCAL FUNCTIONS
+//  163  */
+//  164 void dimmablelightApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );//ÕâÊÇµ÷É«µÆ´¦ÀíZigBeeÍøÂç¹ÜÀíÏûÏ¢µÄº¯Êý
+//  165 void dimmablelightApp_HandleKeys( byte shift, byte keys );//µ÷É«µÆµÄ°´¼ü´¦Àí
+//  166 void dimmablelightApp_MessageMSGCB( afIncomingMSGPacket_t *pckt );//½«´Øid×ª»»ÎªµÆ¹âÐÅºÅ
+//  167 void dimmablelightApp_SendTheMessage( void );//µ÷É«µÆµÄÊ¾Àý·¢ËÍº¯Êý
+//  168 static void DimLightRouterApp_ControlDimLight(uint8 colorType); //¿ØÖÆµ÷É«µÆÁÁ¶ÔÓ¦µÄÑÕÉ« 
+//  169 static void DimLightRouterApp_SendSuccessResponse(uint8 colorType); //»ØÓ¦Ð­µ÷Æ÷ÏÂ´ïµÄÖ¸Áî 
+//  170 void Delay5000ms(void);
+//  171 static void Centreapp_control_dimmablelight_dispaly(afIncomingMSGPacket_t *pkt);//×Ô¶¨Òå
+//  172 /*********************************************************************
+//  173  * NETWORK LAYER CALLBACKS
+//  174  */
+//  175 
+//  176 /*********************************************************************
+//  177  * PUBLIC FUNCTIONS
+//  178  */
+//  179 
+//  180 /*********************************************************************
+//  181  * @fn      dimmablelightApp_Init
+//  182  *
+//  183  * @brief   Initialization function for the Generic App Task.
+//  184  *          This is called during initialization and should contain
+//  185  *          any application specific initialization (ie. hardware
+//  186  *          initialization/setup, table initialization, power up
+//  187  *          notificaiton ... ).
+//  188  *
+//  189  * @param   task_id - the ID assigned by OSAL.  This ID should be
+//  190  *                    used to send messages and set timers.
+//  191  *
+//  192  * @return  none
+//  193  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  194 void dimmablelightApp_Init( byte task_id )
+dimmablelightApp_Init:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function dimmablelightApp_Init
+        CODE
+//  195 {
+        FUNCALL dimmablelightApp_Init, DimLightRouterApp_InitDimLightHardware
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_Init, DimLightRouterApp_ControlDimLight
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_Init, afRegister
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_Init, RegisterForKeys
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_Init, HalLcdWriteString
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_Init, ZDO_RegisterForZDOMsg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_Init, ZDO_RegisterForZDOMsg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+//  196   dimmablelightApp_TaskID = task_id;
+        MOV     DPTR,#dimmablelightApp_TaskID
+        MOVX    @DPTR,A
+//  197   dimmablelightApp_NwkState = DEV_INIT;
+        MOV     DPTR,#dimmablelightApp_NwkState
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  198   dimmablelightApp_TransID = 0;
+        MOV     DPTR,#dimmablelightApp_TransID
+        CLR     A
+        MOVX    @DPTR,A
+//  199 
+//  200   
+//  201   DimLightRouterApp_InitDimLightHardware();  // ³õÊ¼»¯µ÷¹âµÆÓ²¼þ
+        ; Setup parameters for call to function DimLightRouterApp_InitDimLightHardware
+        LCALL   ??DimLightRouterApp_InitDimLightHardware?relay
+//  202     // µ÷É«µÆ³õÊ¼»¯ÎªµÍµçÆ½£¨µÆÃð£©
+//  203   DIMLIGHT_BLUE_PIN = 0;
+        CLR     0x80.1
+//  204   DIMLIGHT_RED_PIN = 0;
+        CLR     0x80.6
+//  205   DIMLIGHT_GREEN_PIN = 0;
+        CLR     0x80.7
+//  206   
+//  207   DimLightRouterApp_ControlDimLight(0);// ³õÊ¼»¯ËùÓÐµÆÎª¹Ø±Õ×´Ì¬
+        ; Setup parameters for call to function DimLightRouterApp_ControlDimLight
+        MOV     R1,#0x0
+        LCALL   ??DimLightRouterApp_ControlDimLight?relay
+//  208   
+//  209   
+//  210   // Device hardware initialization can be added here or in main() (Zmain.c).
+//  211   // If the hardware is application specific - add it here.
+//  212   // If the hardware is other parts of the device add it in main().
+//  213 
+//  214   dimmablelightApp_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
+        MOV     DPTR,#dimmablelightApp_DstAddr + 8
+        CLR     A
+        MOVX    @DPTR,A
+//  215   dimmablelightApp_DstAddr.endPoint = 0;
+        INC     DPTR
+        MOVX    @DPTR,A
+//  216   dimmablelightApp_DstAddr.addr.shortAddr = 0;
+        MOV     DPTR,#dimmablelightApp_DstAddr
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//  217 
+//  218   // Fill out the endpoint description.
+//  219   dimmablelightApp_epDesc.endPoint = dimmablelightApp_ENDPOINT;
+        MOV     DPTR,#dimmablelightApp_epDesc
+        MOV     A,#0xa
+        MOVX    @DPTR,A
+//  220   dimmablelightApp_epDesc.task_id = &dimmablelightApp_TaskID;
+        INC     DPTR
+        MOV     A,#dimmablelightApp_TaskID & 0xff
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#(dimmablelightApp_TaskID >> 8) & 0xff
+        MOVX    @DPTR,A
+//  221   dimmablelightApp_epDesc.simpleDesc
+//  222             = (SimpleDescriptionFormat_t *)&dimmablelightApp_SimpleDesc;
+        INC     DPTR
+        MOV     A,#dimmablelightApp_SimpleDesc & 0xff
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#(dimmablelightApp_SimpleDesc >> 8) & 0xff
+        MOVX    @DPTR,A
+//  223   dimmablelightApp_epDesc.latencyReq = noLatencyReqs;
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  224 
+//  225   // Register the endpoint description with the AF
+//  226   afRegister( &dimmablelightApp_epDesc );
+        ; Setup parameters for call to function afRegister
+        MOV     R2,#dimmablelightApp_epDesc & 0xff
+        MOV     R3,#(dimmablelightApp_epDesc >> 8) & 0xff
+        LCALL   ??afRegister?relay
+//  227 
+//  228   // Register for all key events - This app will handle all key events
+//  229   RegisterForKeys( dimmablelightApp_TaskID );
+        ; Setup parameters for call to function RegisterForKeys
+        MOV     DPTR,#dimmablelightApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??RegisterForKeys?relay
+//  230 
+//  231   // Update the display
+//  232 #if defined ( LCD_SUPPORTED )
+//  233     HalLcdWriteString( "dimmablelightApp", HAL_LCD_LINE_1 );
+        ; Setup parameters for call to function HalLcdWriteString
+        MOV     R1,#0x1
+        MOV     R2,#`?<Constant "dimmablelightApp">` & 0xff
+        MOV     R3,#(`?<Constant "dimmablelightApp">` >> 8) & 0xff
+        LCALL   ??HalLcdWriteString?relay
+//  234 #endif
+//  235 
+//  236   ZDO_RegisterForZDOMsg( dimmablelightApp_TaskID, End_Device_Bind_rsp );
+        ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+        MOV     R2,#0x20
+        MOV     R3,#-0x80
+        MOV     DPTR,#dimmablelightApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??ZDO_RegisterForZDOMsg?relay
+//  237   ZDO_RegisterForZDOMsg( dimmablelightApp_TaskID, Match_Desc_rsp );
+        ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+        MOV     R2,#0x6
+        MOV     R3,#-0x80
+        MOV     DPTR,#dimmablelightApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??ZDO_RegisterForZDOMsg?relay
+        CFI EndBlock cfiBlock0
+//  238 }
+        REQUIRE ?Subroutine0
+        REQUIRE _A_P0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+//  239 
+//  240 /*********************************************************************
+//  241  * @fn      dimmablelightApp_ProcessEvent
+//  242  *
+//  243  * @brief   Generic Application Task event processor.  This function
+//  244  *          is called to process all events for the task.  Events
+//  245  *          include timers, messages and any other user defined events.
+//  246  *
+//  247  * @param   task_id  - The OSAL assigned task ID.
+//  248  * @param   events - events to process.  This is a bit map and can
+//  249  *                   contain more than one event.
+//  250  *
+//  251  * @return  none
+//  252  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  253 UINT16 dimmablelightApp_ProcessEvent( byte task_id, UINT16 events )
+dimmablelightApp_ProcessEvent:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function dimmablelightApp_ProcessEvent
+        CODE
+//  254 {
+        FUNCALL dimmablelightApp_ProcessEvent, osal_msg_receive
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_ProcessEvent, HalLedBlink
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_ProcessEvent, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_ProcessEvent, osal_msg_receive
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_ProcessEvent, dimmablelightApp_ProcessZDOMsgs
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_ProcessEvent, dimmablelightApp_HandleKeys
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_ProcessEvent, dimmablelightApp_MessageMSGCB
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_ProcessEvent, dimmablelightApp_SendTheMessage
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_ProcessEvent, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  255   afIncomingMSGPacket_t *MSGpkt;//½ÓÊÕµ½µÄÓ¦ÓÃ²ãÏûÏ¢
+//  256   afDataConfirm_t *afDataConfirm;//È·ÈÏÊý¾ÝËÍ´ï
+//  257 
+//  258   // Data Confirmation message fields
+//  259   byte sentEP;
+//  260   ZStatus_t sentStatus;
+//  261   byte sentTransID;       // This should match the value sent
+//  262   (void)task_id;  // Intentionally unreferenced parameter
+//  263 
+//  264   if ( events & SYS_EVENT_MSG )//ÓÐÏµÍ³ÏûÏ¢ÐèÒª´¦Àí
+        ANL     A,#0x80
+        JNZ     $+5
+        LJMP    ??dimmablelightApp_ProcessEvent_0 & 0xFFFF
+//  265   {
+//  266     MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( dimmablelightApp_TaskID );
+        ; Setup parameters for call to function osal_msg_receive
+        SJMP    ??dimmablelightApp_ProcessEvent_1
+//  267     while ( MSGpkt )
+//  268     {
+//  269       switch ( MSGpkt->hdr.event )//ÊÂ¼þÀàÐÍ×Ö¶Î
+//  270         
+//  271         
+//  272         /*KEY_CHANGE(0x01): °´¼ü±ä»¯ÏûÏ¢
+//  273 ?
+//  274 AF_INCOMING_MSG_CMD(0x45): ½ÓÊÕµ½ÆäËûÉè±¸·¢À´µÄÊý¾Ý
+//  275 ?
+//  276 AF_DATA_CONFIRM_CMD(0x46): Êý¾Ý·¢ËÍÈ·ÈÏ£¨³É¹¦/Ê§°Ü£©
+//  277 ?
+//  278 ZDO_STATE_CHANGE(0x00): ÍøÂç×´Ì¬±ä»¯£¨ÈçÈëÍø³É¹¦£©
+//  279 ?
+//  280 ZDO_CB_MSG(0x00): ZDO²ã»Øµ÷ÏûÏ¢£¨°ó¶¨/·þÎñ·¢ÏÖÏìÓ¦£©
+//  281         */
+//  282       {
+//  283         case ZDO_CB_MSG:
+//  284           dimmablelightApp_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+//  285           break;
+//  286 
+//  287         case KEY_CHANGE:
+//  288           dimmablelightApp_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+//  289           break;
+//  290 
+//  291         case AF_DATA_CONFIRM_CMD:
+//  292           // This message is received as a confirmation of a data packet sent.
+//  293           // The status is of ZStatus_t type [defined in ZComDef.h]
+//  294           // The message fields are defined in AF.h
+//  295           afDataConfirm = (afDataConfirm_t *)MSGpkt;
+//  296           sentEP = afDataConfirm->endpoint;
+//  297           sentStatus = afDataConfirm->hdr.status;
+//  298           sentTransID = afDataConfirm->transID;
+//  299           (void)sentEP;
+//  300           (void)sentTransID;
+//  301 
+//  302           // Action taken when confirmation is received.
+//  303           if ( sentStatus != ZSuccess )
+//  304           {
+//  305             // The data wasn't delivered -- Do something
+//  306           }
+//  307           break;
+//  308 
+//  309         case AF_INCOMING_MSG_CMD:
+//  310           dimmablelightApp_MessageMSGCB( MSGpkt );
+//  311           break;
+//  312 
+//  313         case ZDO_STATE_CHANGE:
+//  314           dimmablelightApp_NwkState = (devStates_t)(MSGpkt->hdr.status);
+??dimmablelightApp_ProcessEvent_2:
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPTR,#dimmablelightApp_NwkState
+        MOVX    @DPTR,A
+//  315           if ( (dimmablelightApp_NwkState == DEV_ZB_COORD)
+//  316               || (dimmablelightApp_NwkState == DEV_ROUTER)
+//  317               || (dimmablelightApp_NwkState == DEV_END_DEVICE) )
+        XRL     A,#0x9
+        JZ      ??dimmablelightApp_ProcessEvent_3
+        MOVX    A,@DPTR
+        XRL     A,#0x7
+        JZ      ??dimmablelightApp_ProcessEvent_3
+        MOVX    A,@DPTR
+        XRL     A,#0x6
+        JNZ     ??dimmablelightApp_ProcessEvent_4
+//  318           {
+//  319             
+//  320             HalLedBlink(HAL_LED_2, 5, 50, 250);//³É¹¦¼ÓÈëÍøÂçÉÁË¸linkµÆ
+??dimmablelightApp_ProcessEvent_3:
+        ; Setup parameters for call to function HalLedBlink
+        MOV     R4,#-0x6
+        MOV     R5,#0x0
+        MOV     R3,#0x32
+        MOV     R2,#0x5
+        MOV     R1,#0x2
+        LCALL   ??HalLedBlink?relay
+//  321             // Start sending "the" message in a regular interval.
+//  322               /*osal_start_timerEx( dimmablelightApp_TaskID,
+//  323                                 dimmablelightApp_SEND_MSG_EVT,
+//  324                                 dimmablelightApp_SEND_MSG_TIMEOUT );*/
+//  325           }
+//  326           break;
+//  327 
+//  328         default:
+//  329           break;
+//  330       }
+//  331 
+//  332       // Release the memory
+//  333       osal_msg_deallocate( (uint8 *)MSGpkt );
+??dimmablelightApp_ProcessEvent_4:
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??osal_msg_deallocate?relay
+//  334 
+//  335       // Next
+//  336       MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( dimmablelightApp_TaskID );
+        ; Setup parameters for call to function osal_msg_receive
+??dimmablelightApp_ProcessEvent_1:
+        MOV     DPTR,#dimmablelightApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_msg_receive?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,?V0 + 0
+        ORL     A,?V0 + 1
+        JZ      ??dimmablelightApp_ProcessEvent_5
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        ADD     A,#-0x1a
+        JZ      ??dimmablelightApp_ProcessEvent_6
+        ADD     A,#0x5a
+        JZ      ??dimmablelightApp_ProcessEvent_7
+        ADD     A,#-0x11
+        JZ      ??dimmablelightApp_ProcessEvent_2
+        ADD     A,#-0x2
+        JNZ     ??dimmablelightApp_ProcessEvent_4
+        ; Setup parameters for call to function dimmablelightApp_ProcessZDOMsgs
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??dimmablelightApp_ProcessZDOMsgs?relay
+        SJMP    ??dimmablelightApp_ProcessEvent_4
+??dimmablelightApp_ProcessEvent_7:
+        ; Setup parameters for call to function dimmablelightApp_HandleKeys
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??dimmablelightApp_HandleKeys?relay
+        SJMP    ??dimmablelightApp_ProcessEvent_4
+??dimmablelightApp_ProcessEvent_6:
+        ; Setup parameters for call to function dimmablelightApp_MessageMSGCB
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??dimmablelightApp_MessageMSGCB?relay
+        SJMP    ??dimmablelightApp_ProcessEvent_4
+//  337     }
+//  338 
+//  339     // return unprocessed events
+//  340     return (events ^ SYS_EVENT_MSG);
+??dimmablelightApp_ProcessEvent_5:
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x80
+??dimmablelightApp_ProcessEvent_8:
+        MOV     R3,A
+        SJMP    ??dimmablelightApp_ProcessEvent_9
+//  341   }
+//  342 
+//  343   // Send a message out - This event is generated by a timer
+//  344   //  (setup in dimmablelightApp_Init()).
+//  345   if ( events & dimmablelightApp_SEND_MSG_EVT )
+??dimmablelightApp_ProcessEvent_0:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??dimmablelightApp_ProcessEvent_10
+//  346   {
+//  347     // Send "the" message
+//  348     dimmablelightApp_SendTheMessage();
+        ; Setup parameters for call to function dimmablelightApp_SendTheMessage
+        LCALL   ??dimmablelightApp_SendTheMessage?relay
+//  349 
+//  350     // Setup to send message again
+//  351     osal_start_timerEx( dimmablelightApp_TaskID,
+//  352                         dimmablelightApp_SEND_MSG_EVT,
+//  353                         dimmablelightApp_SEND_MSG_TIMEOUT );
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#-0x78
+        MOV     R5,#0x13
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        MOV     DPTR,#dimmablelightApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+//  354 
+//  355     // return unprocessed events
+//  356     return (events ^ dimmablelightApp_SEND_MSG_EVT);
+        MOV     A,R6
+        XRL     A,#0x1
+        MOV     R2,A
+        MOV     A,R7
+        SJMP    ??dimmablelightApp_ProcessEvent_8
+//  357   }
+//  358 
+//  359   // Discard unknown events
+//  360   return 0;
+??dimmablelightApp_ProcessEvent_10:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        CFI EndBlock cfiBlock2
+??dimmablelightApp_ProcessEvent_9:
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+//  361 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock3
+//  362 
+//  363 /*********************************************************************
+//  364  * Event Generation Functions
+//  365  */
+//  366 
+//  367 /*********************************************************************
+//  368  * @fn      dimmablelightApp_ProcessZDOMsgs()
+//  369  *
+//  370  * @brief   Process response messages
+//  371  *
+//  372  * @param   none
+//  373  *
+//  374  * @return  none
+//  375  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  376 void dimmablelightApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+dimmablelightApp_ProcessZDOMsgs:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function dimmablelightApp_ProcessZDOMsgs
+        CODE
+//  377 {
+        FUNCALL dimmablelightApp_ProcessZDOMsgs, HalLedSet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_ProcessZDOMsgs, HalLedSet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_ProcessZDOMsgs, ZDO_ParseEPListRsp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_ProcessZDOMsgs, HalLedSet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_ProcessZDOMsgs, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  378   switch ( inMsg->clusterID )
+        MOV     A,R2
+        ADD     A,#0xc
+        MOV     DPL,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     DPH,A
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_3:
+        LCALL   ?US_SWITCH_SPARSE
+`?<Jumptable for dimmablelightApp_ProcessZDOMsg_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        0
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        2
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        32774
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??dimmablelightApp_ProcessZDOMsgs_0
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        32800
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??dimmablelightApp_ProcessZDOMsgs_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??dimmablelightApp_ProcessZDOMsgs_2
+        CODE
+//  379   {
+//  380     case End_Device_Bind_rsp:
+//  381       if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+??dimmablelightApp_ProcessZDOMsgs_1:
+        MOV     A,R2
+        ADD     A,#0x13
+        LCALL   ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_5:
+        MOVX    A,@DPTR
+        JNZ     ??dimmablelightApp_ProcessZDOMsgs_3
+//  382       {
+//  383         // Light LED
+//  384         HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+        ; Setup parameters for call to function HalLedSet
+        MOV     R2,#0x1
+??dimmablelightApp_ProcessZDOMsgs_4:
+        MOV     R1,#0x8
+        LCALL   ??HalLedSet?relay
+        SJMP    ??dimmablelightApp_ProcessZDOMsgs_2
+//  385       }
+//  386 #if defined( BLINK_LEDS )
+//  387       else
+//  388       {
+//  389         // Flash LED to show failure
+//  390         HalLedSet ( HAL_LED_4, HAL_LED_MODE_FLASH );
+??dimmablelightApp_ProcessZDOMsgs_3:
+        ; Setup parameters for call to function HalLedSet
+        MOV     R2,#0x4
+        SJMP    ??dimmablelightApp_ProcessZDOMsgs_4
+//  391       }
+//  392 #endif
+//  393       break;
+//  394 
+//  395     case Match_Desc_rsp:
+//  396       {
+//  397         ZDO_ActiveEndpointRsp_t *pRsp = ZDO_ParseEPListRsp( inMsg );
+??dimmablelightApp_ProcessZDOMsgs_0:
+        ; Setup parameters for call to function ZDO_ParseEPListRsp
+        LCALL   ??ZDO_ParseEPListRsp?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R6,?V0 + 0
+        MOV     R7,?V0 + 1
+//  398         if ( pRsp )
+        MOV     A,R6
+        ORL     A,R7
+        JZ      ??dimmablelightApp_ProcessZDOMsgs_2
+//  399         {
+//  400           if ( pRsp->status == ZSuccess && pRsp->cnt )
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        JNZ     ??dimmablelightApp_ProcessZDOMsgs_5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JZ      ??dimmablelightApp_ProcessZDOMsgs_5
+//  401           {
+//  402             dimmablelightApp_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+        MOV     DPTR,#dimmablelightApp_DstAddr + 8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  403             dimmablelightApp_DstAddr.addr.shortAddr = pRsp->nwkAddr;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#dimmablelightApp_DstAddr
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  404             // Take the first endpoint, Can be changed to search through endpoints
+//  405             dimmablelightApp_DstAddr.endPoint = pRsp->epList[0];
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPTR,#dimmablelightApp_DstAddr + 9
+        MOVX    @DPTR,A
+//  406 
+//  407             // Light LED
+//  408             HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+        ; Setup parameters for call to function HalLedSet
+        MOV     R2,#0x1
+        MOV     R1,#0x8
+        LCALL   ??HalLedSet?relay
+//  409           }
+//  410           osal_mem_free( pRsp );
+??dimmablelightApp_ProcessZDOMsgs_5:
+        ; Setup parameters for call to function osal_mem_free
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osal_mem_free?relay
+        CFI EndBlock cfiBlock4
+//  411         }
+//  412       }
+//  413       break;
+//  414   }
+//  415 }
+??dimmablelightApp_ProcessZDOMsgs_2:
+        REQUIRE ?Subroutine2
+        ; // Fall through to label ?Subroutine2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock5
+//  416 
+//  417 /*********************************************************************
+//  418  * @fn      dimmablelightApp_HandleKeys
+//  419  *
+//  420  * @brief   Handles all key events for this device.
+//  421  *
+//  422  * @param   shift - true if in shift/alt.
+//  423  * @param   keys - bit field for key events. Valid entries:
+//  424  *                 HAL_KEY_SW_4
+//  425  *                 HAL_KEY_SW_3
+//  426  *                 HAL_KEY_SW_2
+//  427  *                 HAL_KEY_SW_1
+//  428  *
+//  429  * @return  none
+//  430  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  431 void dimmablelightApp_HandleKeys( byte shift, byte keys )
+dimmablelightApp_HandleKeys:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function dimmablelightApp_HandleKeys
+        CODE
+//  432 {
+        FUNCALL dimmablelightApp_HandleKeys, HalLedSet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 20, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_HandleKeys, NLME_GetShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 20, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_HandleKeys, ZDP_EndDeviceBindReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_HandleKeys, HalLedSet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 20, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_HandleKeys, ZDP_MatchDescReq
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 28, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 28, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 11)
+        ; Saved register size: 11
+        ; Auto size: 9
+        MOV     A,#-0x9
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 20)
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,R2
+        MOV     R7,A
+//  433   zAddrType_t dstAddr;
+//  434 
+//  435   // Shift is used to make each button/switch dual purpose.
+//  436   if ( shift )
+        MOV     A,R6
+        JZ      $+5
+        LJMP    ??dimmablelightApp_HandleKeys_0 & 0xFFFF
+//  437   {
+//  438     if ( keys & HAL_KEY_SW_1 )
+//  439     {
+//  440     }
+//  441     if ( keys & HAL_KEY_SW_2 )
+//  442     {
+//  443     }
+//  444     if ( keys & HAL_KEY_SW_3 )
+//  445     {
+//  446     }
+//  447     if ( keys & HAL_KEY_SW_4 )
+//  448     {
+//  449     }
+//  450   }
+//  451   else
+//  452   {
+//  453     if ( keys & HAL_KEY_SW_1 )
+//  454     {
+//  455       // Since SW1 isn't used for anything else in this application...
+//  456 #if defined( SWITCH1_BIND )
+//  457       // we can use SW1 to simulate SW2 for devices that only have one switch,
+//  458       keys |= HAL_KEY_SW_2;
+//  459 #elif defined( SWITCH1_MATCH )
+//  460       // or use SW1 to simulate SW4 for devices that only have one switch
+//  461       keys |= HAL_KEY_SW_4;
+//  462 #endif
+//  463     }
+//  464 
+//  465     if ( keys & HAL_KEY_SW_2 )
+        MOV     A,R7
+        MOV     C,0xE0 /* A   */.1
+        JNC     ??dimmablelightApp_HandleKeys_1
+//  466     {
+//  467       HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+        ; Setup parameters for call to function HalLedSet
+        MOV     R2,#0x0
+        MOV     R1,#0x8
+        LCALL   ??HalLedSet?relay
+//  468 
+//  469       // Initiate an End Device Bind Request for the mandatory endpoint
+//  470       dstAddr.addrMode = Addr16Bit;
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  471       dstAddr.addr.shortAddr = 0x0000; // Coordinator
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//  472       ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+//  473                             dimmablelightApp_epDesc.endPoint,
+//  474                             dimmablelightApp_PROFID,
+//  475                             dimmablelightApp_MAX_CLUSTERS, (cId_t *)dimmablelightApp_ClusterList,
+//  476                             dimmablelightApp_MAX_CLUSTERS, (cId_t *)dimmablelightApp_ClusterList,
+//  477                             FALSE );
+        ; Setup parameters for call to function NLME_GetShortAddr
+        LCALL   ??NLME_GetShortAddr?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R4,?V0 + 0
+        MOV     R5,?V0 + 1
+        MOV     ?V0 + 0,#dimmablelightApp_ClusterList & 0xff
+        MOV     ?V0 + 1,#(dimmablelightApp_ClusterList >> 8) & 0xff
+        ; Setup parameters for call to function ZDP_EndDeviceBindReq
+        MOV     ?V0 + 2,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 21)
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 23)
+        MOV     ?V0 + 2,#0x5
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 24)
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 26)
+        MOV     ?V0 + 0,#0x5
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 27)
+        MOV     ?V0 + 0,#0x4
+        MOV     ?V0 + 1,#0xf
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 29)
+        MOV     DPTR,#dimmablelightApp_epDesc
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ZDP_EndDeviceBindReq?relay
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 20)
+//  478     }
+//  479 
+//  480     if ( keys & HAL_KEY_SW_3 )
+//  481     {
+//  482     }
+//  483 
+//  484     if ( keys & HAL_KEY_SW_4 )
+??dimmablelightApp_HandleKeys_1:
+        MOV     A,R7
+        MOV     C,0xE0 /* A   */.3
+        JNC     ??dimmablelightApp_HandleKeys_0
+//  485     {
+//  486       HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+        ; Setup parameters for call to function HalLedSet
+        MOV     R2,#0x0
+        MOV     R1,#0x8
+        LCALL   ??HalLedSet?relay
+//  487       // Initiate a Match Description Request (Service Discovery)
+//  488       dstAddr.addrMode = AddrBroadcast;
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0xf
+        MOVX    @DPTR,A
+//  489       dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//  490       ZDP_MatchDescReq( &dstAddr, NWK_BROADCAST_SHORTADDR,
+//  491                         dimmablelightApp_PROFID,
+//  492                         dimmablelightApp_MAX_CLUSTERS, (cId_t *)dimmablelightApp_ClusterList,
+//  493                         dimmablelightApp_MAX_CLUSTERS, (cId_t *)dimmablelightApp_ClusterList,
+//  494                         FALSE );
+        MOV     ?V0 + 0,#dimmablelightApp_ClusterList & 0xff
+        MOV     ?V0 + 1,#(dimmablelightApp_ClusterList >> 8) & 0xff
+        ; Setup parameters for call to function ZDP_MatchDescReq
+        MOV     ?V0 + 2,#0x0
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 21)
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 23)
+        MOV     ?V0 + 2,#0x5
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 24)
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 26)
+        MOV     ?V0 + 0,#0x4
+        MOV     ?V0 + 1,#0xf
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 28)
+        MOV     R1,#0x5
+        MOV     R4,#-0x1
+        MOV     R5,#-0x1
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??ZDP_MatchDescReq?relay
+        MOV     A,#0x8
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 20)
+//  495     }
+//  496   }
+//  497 }
+??dimmablelightApp_HandleKeys_0:
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 11)
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock6
+//  498 
+//  499 /*********************************************************************
+//  500  * LOCAL FUNCTIONS
+//  501  */
+//  502 
+//  503 /*********************************************************************
+//  504  * @fn      dimmablelightApp_MessageMSGCB
+//  505  *
+//  506  * @brief   Data message processor callback.  This function processes
+//  507  *          any incoming data - probably from other devices.  So, based
+//  508  *          on cluster ID, perform the intended action.
+//  509  *
+//  510  * @param   none
+//  511  *
+//  512  * @return  none
+//  513  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  514 void dimmablelightApp_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+dimmablelightApp_MessageMSGCB:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function dimmablelightApp_MessageMSGCB
+        CODE
+//  515 {
+        FUNCALL dimmablelightApp_MessageMSGCB, DimLightRouterApp_ControlDimLight
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_MessageMSGCB, DimLightRouterApp_SendSuccessResponse
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_MessageMSGCB, DimLightRouterApp_ControlDimLight
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_MessageMSGCB, DimLightRouterApp_SendSuccessResponse
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_MessageMSGCB, DimLightRouterApp_ControlDimLight
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_MessageMSGCB, DimLightRouterApp_SendSuccessResponse
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_MessageMSGCB, LED_change
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_MessageMSGCB, DelayMilliseconds
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  516   switch (pkt->clusterId)
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_4:
+        LCALL   ?US_SWITCH_SPARSE
+`?<Jumptable for dimmablelightApp_MessageMSGCB>_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        0
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??dimmablelightApp_MessageMSGCB_0
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        2
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??dimmablelightApp_MessageMSGCB_1
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??dimmablelightApp_MessageMSGCB_2
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??dimmablelightApp_MessageMSGCB_3
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??dimmablelightApp_MessageMSGCB_4
+        CODE
+//  517   {
+//  518     case DIMLIGHT_BLUE_CLUSTERID:   //ÊÕµ½À´×ÔÓÚÐ­µ÷Æ÷µÄcid¸Ãcid±íÊ¾µÄÊÇÈËÌå¸ÐÓ¦ 
+//  519       {  // µãÁÁÀ¶É«µÆ
+//  520       DimLightRouterApp_ControlDimLight(1);  // 1=À¶É«
+??dimmablelightApp_MessageMSGCB_0:
+        ; Setup parameters for call to function DimLightRouterApp_ControlDimLight
+        MOV     R1,#0x1
+        LCALL   ??DimLightRouterApp_ControlDimLight?relay
+//  521       DimLightRouterApp_SendSuccessResponse(1);  // ·¢ËÍÀ¶É«³É¹¦ÏìÓ¦£¬»ØÏÔÊý¾Ý°ü¸øµ½Ð­µ÷Æ÷ 
+        ; Setup parameters for call to function DimLightRouterApp_SendSuccessResponse
+        MOV     R1,#0x1
+??dimmablelightApp_MessageMSGCB_5:
+        LCALL   ??DimLightRouterApp_SendSuccessResponse?relay
+//  522       break;
+        SJMP    ??dimmablelightApp_MessageMSGCB_4
+//  523       }
+//  524       
+//  525     case DIMLIGHT_RED_CLUSTERID:   //ÊÕµ½À´×ÔÓÚÐ­µ÷Æ÷µÄcid¸Ãcid±íÊ¾µÄÊÇÎÂÊª¶È 
+//  526       { // µãÁÁºìÉ«µÆ
+//  527       DimLightRouterApp_ControlDimLight(2);  // 2=ºìÉ«
+??dimmablelightApp_MessageMSGCB_1:
+        ; Setup parameters for call to function DimLightRouterApp_ControlDimLight
+        MOV     R1,#0x2
+        LCALL   ??DimLightRouterApp_ControlDimLight?relay
+//  528       DimLightRouterApp_SendSuccessResponse(2);  // ·¢ËÍºìÉ«³É¹¦ÏìÓ¦
+        ; Setup parameters for call to function DimLightRouterApp_SendSuccessResponse
+        MOV     R1,#0x2
+        SJMP    ??dimmablelightApp_MessageMSGCB_5
+//  529       break;
+//  530       }
+//  531       
+//  532     case DIMLIGHT_GREEN_CLUSTERID:   //ÊÕµ½À´×ÔÓÚÐ­µ÷Æ÷µÄcid¸Ãcid±íÊ¾µÄÊÇÊýÂë¹Ü»ØÏÔ 
+//  533       {// µãÁÁÂÌÉ«µÆ
+//  534       DimLightRouterApp_ControlDimLight(3);  // 3=ÂÌÉ«
+??dimmablelightApp_MessageMSGCB_2:
+        ; Setup parameters for call to function DimLightRouterApp_ControlDimLight
+        MOV     R1,#0x3
+        LCALL   ??DimLightRouterApp_ControlDimLight?relay
+//  535       DimLightRouterApp_SendSuccessResponse(3);  // ·¢ËÍÂÌÉ«³É¹¦ÏìÓ¦
+        ; Setup parameters for call to function DimLightRouterApp_SendSuccessResponse
+        MOV     R1,#0x3
+        LCALL   ??DimLightRouterApp_SendSuccessResponse?relay
+//  536       break;
+        SJMP    ??dimmablelightApp_MessageMSGCB_4
+//  537       }
+//  538       
+//  539     case CentreApp_control_dimmablelight_CLUSTERID:    //ÊÕµ½À´×ÔÓÚÐ­µ÷Æ÷µÄ×Ô¶¨ÒåÑÕÉ«µÄ´Øid
+//  540       {
+//  541           if( pkt->cmd.Data[7]==0xA5)
+??dimmablelightApp_MessageMSGCB_3:
+        MOV     A,R2
+        ADD     A,#0x22
+        LCALL   ?Subroutine5 & 0xFFFF
+??CrossCallReturnLabel_6:
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        XRL     A,#0xa5
+        JNZ     ??dimmablelightApp_MessageMSGCB_4
+//  542           {
+//  543             Centreapp_control_dimmablelight_dispaly(pkt);   //»ñÈ¡Ð­µ÷Æ÷ÒªÇóµÄ×Ô¶¨ÒåÑÕÉ«µÄÊý¾Ý£¬ÔÙÏÔÊ¾»ìºÏµÄÑÕÉ«
+        MOV     A,R2
+        ADD     A,#0x22
+        MOV     R0,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+        ; Setup parameters for call to function LED_change
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        ADD     A,#0x10
+        LCALL   ?Subroutine3 & 0xFFFF
+??CrossCallReturnLabel_0:
+        LCALL   ?S_DIV_MOD
+        MOV     A,R0
+        MOV     R4,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        ADD     A,#0xf
+        LCALL   ?Subroutine3 & 0xFFFF
+??CrossCallReturnLabel_1:
+        LCALL   ?S_DIV_MOD
+        MOV     A,R0
+        XCH     A,R4
+        MOV     R5,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        ADD     A,#0x11
+        LCALL   ?Subroutine3 & 0xFFFF
+??CrossCallReturnLabel_2:
+        LCALL   ?S_DIV_MOD
+        MOV     A,R0
+        MOV     R1,A
+        MOV     A,R5
+        MOV     R3,A
+        MOV     A,R4
+        MOV     R2,A
+        LCALL   ??LED_change?relay
+        ; Setup parameters for call to function DelayMilliseconds
+        MOV     DPTR,#__Constant_1388
+        LCALL   ?XLOAD_R2345
+        LCALL   ??DelayMilliseconds?relay
+//  544           }  
+//  545       } 
+//  546        
+//  547     default:
+//  548       // Î´ÖªCluster ID
+//  549       break;
+//  550   }
+//  551 }
+??dimmablelightApp_MessageMSGCB_4:
+        LJMP    ?Subroutine2 & 0xFFFF
+        CFI EndBlock cfiBlock7
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine5:
+        CFI Block cfiCond8 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_5
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        CFI Block cfiCond9 Using cfiCommon0
+        CFI (cfiCond9) NoFunction
+        CFI (cfiCond9) Conditional ??CrossCallReturnLabel_6
+        CFI (cfiCond9) R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond9) VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond9) V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond9) V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond9) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond9) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond9) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond9) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond9) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond9) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond9) CFA_SP SP+0
+        CFI (cfiCond9) CFA_XSP16 add(XSP16, 10)
+        CFI Block cfiPicker10 Using cfiCommon1
+        CFI (cfiPicker10) NoFunction
+        CFI (cfiPicker10) Picker
+        MOV     DPL,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        RET
+        CFI EndBlock cfiCond8
+        CFI EndBlock cfiCond9
+        CFI EndBlock cfiPicker10
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine4:
+        CFI Block cfiCond11 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_3
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        CFI Block cfiCond12 Using cfiCommon0
+        CFI (cfiCond12) NoFunction
+        CFI (cfiCond12) Conditional ??CrossCallReturnLabel_4
+        CFI (cfiCond12) R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond12) VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond12) V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond12) V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond12) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond12) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond12) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond12) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond12) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond12) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond12) CFA_SP SP+0
+        CFI (cfiCond12) CFA_XSP16 add(XSP16, 10)
+        CFI Block cfiPicker13 Using cfiCommon1
+        CFI (cfiPicker13) NoFunction
+        CFI (cfiPicker13) Picker
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 1,A
+        MOV     R0,#?V0 + 0
+        RET
+        CFI EndBlock cfiCond11
+        CFI EndBlock cfiCond12
+        CFI EndBlock cfiPicker13
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        CFI Block cfiCond14 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_0
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        CFI Block cfiCond15 Using cfiCommon0
+        CFI (cfiCond15) NoFunction
+        CFI (cfiCond15) Conditional ??CrossCallReturnLabel_1
+        CFI (cfiCond15) R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond15) VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond15) V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond15) V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond15) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond15) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond15) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond15) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond15) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond15) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond15) CFA_SP SP+0
+        CFI (cfiCond15) CFA_XSP16 add(XSP16, 10)
+        CFI Block cfiCond16 Using cfiCommon0
+        CFI (cfiCond16) NoFunction
+        CFI (cfiCond16) Conditional ??CrossCallReturnLabel_2
+        CFI (cfiCond16) R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond16) VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond16) V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond16) V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond16) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond16) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond16) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond16) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond16) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond16) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond16) CFA_SP SP+0
+        CFI (cfiCond16) CFA_XSP16 add(XSP16, 10)
+        CFI Block cfiPicker17 Using cfiCommon1
+        CFI (cfiPicker17) NoFunction
+        CFI (cfiPicker17) Picker
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     B,#0x64
+        MUL     AB
+        MOV     R0,A
+        MOV     R1,B
+        MOV     R2,#-0x1
+        MOV     R3,#0x0
+        RET
+        CFI EndBlock cfiCond14
+        CFI EndBlock cfiCond15
+        CFI EndBlock cfiCond16
+        CFI EndBlock cfiPicker17
+//  552 
+//  553 /*********************************************************************
+//  554  * @fn      dimmablelightApp_SendTheMessage
+//  555  *
+//  556  * @brief   Send "the" message.
+//  557  *
+//  558  * @param   none
+//  559  *
+//  560  * @return  none
+//  561  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  562 void dimmablelightApp_SendTheMessage( void )
+dimmablelightApp_SendTheMessage:
+        CFI Block cfiBlock18 Using cfiCommon0
+        CFI Function dimmablelightApp_SendTheMessage
+        CODE
+//  563 {
+        FUNCALL dimmablelightApp_SendTheMessage, osal_strlen
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 27, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 27, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL dimmablelightApp_SendTheMessage, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 31, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 31, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 12
+        MOV     A,#-0xc
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 22)
+//  564   char theMessageData[] = "Hello World";
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,#(`?<Constant "Hello World">` >> 8) & 0xff
+        MOV     DPL,#`?<Constant "Hello World">` & 0xff
+        MOV     A,#0xc
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+//  565 
+//  566   if ( AF_DataRequest( &dimmablelightApp_DstAddr, &dimmablelightApp_epDesc,
+//  567                        dimmablelightApp_CLUSTERID,
+//  568                        (byte)osal_strlen( theMessageData ) + 1,
+//  569                        (byte *)&theMessageData,
+//  570                        &dimmablelightApp_TransID,
+//  571                        AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     ?V0 + 0,#0x1e
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 23)
+        MOV     ?V0 + 0,#dimmablelightApp_TransID & 0xff
+        MOV     ?V0 + 1,#(dimmablelightApp_TransID >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 25)
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 27)
+        ; Setup parameters for call to function osal_strlen
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??osal_strlen?relay
+        MOV     A,R2
+        ADD     A,#0x1
+        MOV     ?V0 + 0,A
+        CLR     A
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 29)
+        MOV     ?V0 + 0,#0x6
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 31)
+        MOV     R1,#0x20
+        MOV     R4,#dimmablelightApp_epDesc & 0xff
+        MOV     R5,#(dimmablelightApp_epDesc >> 8) & 0xff
+        MOV     R2,#dimmablelightApp_DstAddr & 0xff
+        MOV     R3,#(dimmablelightApp_DstAddr >> 8) & 0xff
+        LCALL   ??AF_DataRequest?relay
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 22)
+//  572   {
+//  573     // Successfully requested to be sent.
+//  574   }
+//  575   else
+//  576   {
+//  577     // Error occurred in request to send.
+//  578   }
+//  579 }
+        MOV     A,#0xc
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 10)
+        LJMP    ?Subroutine2 & 0xFFFF
+        CFI EndBlock cfiBlock18
+//  580 
+//  581 
+//  582 
+//  583 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  584 static void DimLightRouterApp_ControlDimLight(uint8 colorType)
+DimLightRouterApp_ControlDimLight:
+        CFI Block cfiBlock19 Using cfiCommon0
+        CFI Function DimLightRouterApp_ControlDimLight
+        CODE
+//  585 {
+        FUNCALL DimLightRouterApp_ControlDimLight, LED_change
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL DimLightRouterApp_ControlDimLight, Delay5000ms
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL DimLightRouterApp_ControlDimLight, LED_change
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL DimLightRouterApp_ControlDimLight, Delay5000ms
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL DimLightRouterApp_ControlDimLight, LED_change
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL DimLightRouterApp_ControlDimLight, Delay5000ms
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+//  586   // Ê×ÏÈ¹Ø±ÕËùÓÐµÆ
+//  587   P0_1 = 0;  // À¶É«µÆDIMLIGHT_BLUE_PIN
+        CLR     0x80.1
+//  588   P0_6 = 0;  // ºìÉ«µÆDIMLIGHT_RED_PIN
+        CLR     0x80.6
+//  589   P0_7 = 0;  // ÂÌÉ«µÆDIMLIGHT_GREEN_PIN
+        CLR     0x80.7
+//  590   
+//  591   // ¸ù¾ÝÑÕÉ«ÀàÐÍµãÁÁ¶ÔÓ¦µÄµÆ
+//  592   switch (colorType)
+        DEC     A
+        JZ      ??DimLightRouterApp_ControlDimLight_0
+        DEC     A
+        JZ      ??DimLightRouterApp_ControlDimLight_1
+        DEC     A
+        JZ      ??DimLightRouterApp_ControlDimLight_2
+        SJMP    ??DimLightRouterApp_ControlDimLight_3
+//  593   {
+//  594     case 1:  // À¶É«
+//  595       { 
+//  596         LED_change(100,0 ,0 );
+??DimLightRouterApp_ControlDimLight_0:
+        ; Setup parameters for call to function LED_change
+        MOV     R3,#0x0
+        MOV     R2,#0x0
+        MOV     R1,#0x64
+        SJMP    ??DimLightRouterApp_ControlDimLight_4
+//  597       Delay5000ms();
+//  598         break;
+//  599       }
+//  600       
+//  601     case 2:  // ºìÉ«
+//  602       { 
+//  603         LED_change(0,100,0 );
+??DimLightRouterApp_ControlDimLight_1:
+        ; Setup parameters for call to function LED_change
+        MOV     R3,#0x0
+        MOV     R2,#0x64
+        SJMP    ??DimLightRouterApp_ControlDimLight_5
+//  604         Delay5000ms();
+//  605       
+//  606       break;
+//  607       } 
+//  608     case 3:  // ÂÌÉ«
+//  609       { 
+//  610         LED_change(0,0,100);
+??DimLightRouterApp_ControlDimLight_2:
+        ; Setup parameters for call to function LED_change
+        MOV     R3,#0x64
+        MOV     R2,#0x0
+??DimLightRouterApp_ControlDimLight_5:
+        MOV     R1,#0x0
+??DimLightRouterApp_ControlDimLight_4:
+        LCALL   ??LED_change?relay
+//  611         Delay5000ms();
+        ; Setup parameters for call to function Delay5000ms
+        LCALL   ??Delay5000ms?relay
+//  612       break;
+//  613       }
+//  614     default:
+//  615       // Î´ÖªÑÕÉ«»ò0£¬±£³ÖËùÓÐµÆ¹Ø±Õ
+//  616       break;
+//  617   }
+//  618 }
+??DimLightRouterApp_ControlDimLight_3:
+        LJMP    ?Subroutine0 & 0xFFFF
+        CFI EndBlock cfiBlock19
+        REQUIRE _A_P0
+//  619 
+//  620 
+//  621 static void Centreapp_control_dimmablelight_dispaly(afIncomingMSGPacket_t *pkt)
+//  622 {
+//  623               unsigned char red  =(unsigned char)pkt->cmd.Data[15];   //ÊÕµ½Ð­µ÷Æ÷·¢À´µÄ¿ØÖÆºìÉ«ÑÕÉ«µÄÁÁ¶È
+//  624               unsigned char green =(unsigned char)pkt->cmd.Data[16];   //ÊÕµ½Ð­µ÷Æ÷·¢À´µÄ¿ØÖÆÂÌÉ«ÑÕÉ«µÄÁÁ¶È
+//  625               unsigned char blue =(unsigned char)pkt->cmd.Data[17];   //ÊÕµ½Ð­µ÷Æ÷·¢À´µÄ¿ØÖÆÀ¶É«ÑÕÉ«µÄÁÁ¶È                                
+//  626              LED_change((blue * 100) / 255,(red * 100) / 255,(green * 100) / 255);  //°Ñµ÷µÄÁÁ¶È0-255Ó³ÉäÎªÕ¼¿Õ±È0-100 
+//  627              DelayMilliseconds(5000);                
+//  628 }
+//  629 
+//  630 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  631 static void DimLightRouterApp_SendSuccessResponse(uint8 colorType)
+DimLightRouterApp_SendSuccessResponse:
+        CFI Block cfiBlock20 Using cfiCommon0
+        CFI Function DimLightRouterApp_SendSuccessResponse
+        CODE
+//  632 {
+        FUNCALL DimLightRouterApp_SendSuccessResponse, NLME_GetShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 56, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL DimLightRouterApp_SendSuccessResponse, NLME_GetCoordShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 56, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL DimLightRouterApp_SendSuccessResponse, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 65, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 65, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL DimLightRouterApp_SendSuccessResponse, HalLedBlink
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 56, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL DimLightRouterApp_SendSuccessResponse, HalLedBlink
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 56, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 56, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 44
+        MOV     A,#-0x2c
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 56)
+        MOV     A,R1
+        MOV     R6,A
+//  633   uint8 txFrame[32];
+//  634   uint8 i = 0;
+//  635   uint8 checkSum = 0;
+        MOV     R7,#0x0
+//  636   static uint8 responseSeq = 0;  // ÏìÓ¦ÐòÁÐºÅ
+//  637   
+//  638   // »ñÈ¡±¾½ÚµãµØÖ·ºÍ¸¸½ÚµãµØÖ·
+//  639   uint16 myShortAddr = NLME_GetShortAddr();
+        ; Setup parameters for call to function NLME_GetShortAddr
+        LCALL   ??NLME_GetShortAddr?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+//  640   uint16 parentShortAddr = NLME_GetCoordShortAddr();
+        ; Setup parameters for call to function NLME_GetCoordShortAddr
+        LCALL   ??NLME_GetCoordShortAddr?relay
+//  641   
+//  642   // »ñÈ¡½ÚµãÀàÐÍ£¨Â·ÓÉÆ÷£©
+//  643   uint8 nodeType = 0x01;  // Â·ÓÉ½Úµã
+//  644   
+//  645   // ¸ù¾ÝÐ­ÒéÎÄµµ4.2.2½ÚºÍ4.2.4½Ú¹¹½¨ÏìÓ¦Ö¡
+//  646   // °´ÕÕ"ÉÏ´«´«¸ÐÆ÷ÐÅÏ¢"¸ñÊ½£¬µ«°üº¬µØÖ·ÐÅÏ¢£¨ÀàËÆÉÏ´«Â·ÓÉÐÅÏ¢£©
+//  647   
+//  648   // 1. ¹¹½¨Ö¡Í·
+//  649   txFrame[i++] = 0xAA;               // Ö¡Í·
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x56
+        MOVX    @DPTR,A
+//  650   txFrame[i++] = 0x00;               // Ö¡³¤¶È£¨ºóÃæ¼ÆËã£©
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  651   txFrame[i++] = 0x02;               // Ö¡ÀàÐÍ: ÎÞÏß´«¸ÐÊý¾Ý
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  652   txFrame[i++] = responseSeq++;      // Ö¡ÐòºÅ
+        MOV     DPTR,#??responseSeq
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+        MOV     DPTR,#??responseSeq
+        MOVX    A,@DPTR
+        INC     A
+        MOVX    @DPTR,A
+//  653   
+//  654   // 2. ÃüÁîÀàÐÍºÍÐ­ÒéÀàÐÍ
+//  655   txFrame[i++] = 0x03;               // ÃüÁîÀàÐÍ: ÉÏ´«´«¸ÐÆ÷ÐÅÏ¢£¬ÉÏ´«Â·ÓÉÐÅÏ¢ 
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x3
+        MOVX    @DPTR,A
+//  656   txFrame[i++] = 0x01;               // Ð­ÒéÀàÐÍ: Zigbee
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  657   
+//  658   // 3. ´«¸ÐÆ÷ÀàÐÍºÍË÷Òý
+//  659   txFrame[i++] =0x00;  // µ÷¹âµÆ´«¸ÐÆ÷ÀàÐÍ¸ß×Ö½Ú
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  660   txFrame[i++] =0xA5 ;  // µ÷¹âµÆ´«¸ÐÆ÷ÀàÐÍµÍ×Ö½Ú
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x5b
+        MOVX    @DPTR,A
+//  661   txFrame[i++] =0x00;               // Ë÷ÒýºÅ
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  662   
+//  663   // 4. Ô´µØÖ·£¨±¾½ÚµãµØÖ·£©ÀÏÑù×Ó²ÉÓÃµÄÊÇ´ó¶ËÄ£Ê½£¬¾ßÌå¾ÍÊÇ¸ßÎ»Ô´µØÖ··ÅÔÚÊý¾ÝÖ¡µÍ×Ö½Ú´¦ 
+//  664   txFrame[i++] = HI_UINT16(myShortAddr);      // Ô´µØÖ·¸ß×Ö½Ú
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 1
+        MOVX    @DPTR,A
+//  665   txFrame[i++] = LO_UINT16(myShortAddr);      // Ô´µØÖ·µÍ×Ö½Ú
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+//  666   
+//  667   // 5. ¸¸µØÖ·
+//  668   txFrame[i++] = HI_UINT16(parentShortAddr);  // ¸¸µØÖ·¸ß×Ö½Ú
+        MOV     A,#0xb
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  669   txFrame[i++] = LO_UINT16(parentShortAddr);  // ¸¸µØÖ·µÍ×Ö½Ú
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+//  670   
+//  671   // 6. ½ÚµãÀàÐÍ
+//  672   txFrame[i++] = nodeType;           // ½ÚµãÀàÐÍ: 0x01=Â·ÓÉ½Úµã
+        MOV     A,#0xd
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  673   
+//  674   // 7. ÖµÀàÐÍ£¨¸ù¾ÝÐ­Òé£¬µ÷¹âµÆÊÇÌØÊâÀàÐÍF0£¬3×Ö½Ú£©
+//  675   txFrame[i++] = 0xF0;               // ÖµÀàÐÍ: ÌØÊâÀàÐÍ
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x10
+        MOVX    @DPTR,A
+//  676   
+//  677   // 8. Êý¾ÝÖµ£¨RGBÈý¸öÁÁ¶ÈÖµ£©
+//  678   uint8 redValue = (colorType == 2) ? 0xFF : 0x00;   // ºìÉ«ÁÁ¶È
+        MOV     A,#0x2
+        XRL     A,R6
+        JNZ     ??DimLightRouterApp_SendSuccessResponse_0
+        MOV     R0,#-0x1
+??DimLightRouterApp_SendSuccessResponse_1:
+        MOV     R1,#0x0
+//  679   uint8 greenValue = (colorType == 3) ? 0xFF : 0x00; // ÂÌÉ«ÁÁ¶È
+//  680   uint8 blueValue = (colorType == 1) ? 0xFF : 0x00;  // À¶É«ÁÁ¶È
+        MOV     A,#0x1
+        XRL     A,R6
+        JNZ     ??DimLightRouterApp_SendSuccessResponse_2
+        MOV     R2,#-0x1
+        SJMP    ??DimLightRouterApp_SendSuccessResponse_3
+??DimLightRouterApp_SendSuccessResponse_0:
+        MOV     R0,#0x0
+        MOV     A,#0x3
+        XRL     A,R6
+        JNZ     ??DimLightRouterApp_SendSuccessResponse_1
+        MOV     R1,#-0x1
+??DimLightRouterApp_SendSuccessResponse_2:
+        MOV     R2,#0x0
+//  681   
+//  682   txFrame[i++] = redValue;           // ºìÉ«ÁÁ¶È
+??DimLightRouterApp_SendSuccessResponse_3:
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+//  683   txFrame[i++] = greenValue;         // ÂÌÉ«ÁÁ¶È
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  684   txFrame[i++] = blueValue;          // À¶É«ÁÁ¶È
+        MOV     A,#0x11
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+//  685   
+//  686   // 9. ¸üÐÂÖ¡³¤¶È£¨°üÀ¨Ö¡³¤¶È×Ö½Ú±¾Éí£©
+//  687   txFrame[1] = i + 1;                // ×Ü×Ö½ÚÊý£¨°üÀ¨Ð£ÑéÂë£©
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x13
+        MOVX    @DPTR,A
+//  688   
+//  689   // 10. ¼ÆËãÐ£ÑéºÍ
+//  690   for (uint8 j = 0; j < i; j++)
+        MOV     R0,#0x0
+//  691   {
+//  692     checkSum += txFrame[j];
+??DimLightRouterApp_SendSuccessResponse_4:
+        MOV     ?V0 + 0,R0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,DPH
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,R7
+        MOV     R7,A
+//  693   }
+        INC     R0
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x12
+        JC      ??DimLightRouterApp_SendSuccessResponse_4
+//  694   txFrame[i++] = checkSum;
+        MOV     A,#0x12
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R7
+        MOVX    @DPTR,A
+//  695   
+//  696   
+//  697   
+//  698   // 8. ·¢ËÍÊý¾Ýµ½Ð­µ÷Æ÷
+//  699   afAddrType_t dstAddr;
+//  700   dstAddr.addrMode = (afAddrMode_t)afAddr16Bit;
+        MOV     A,#0x28
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  701   dstAddr.endPoint = dimmablelightApp_ENDPOINT;//·¢ËÍµ½¶ÔÓ¦Éè±¸£¨±¾´ÎÊµÑµÖÐÊÇÐ­µ÷Æ÷£©µÄ¶ÔÓ¦¶Ëµã10ÉÏ 
+        MOV     A,#0x29
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0xa
+        MOVX    @DPTR,A
+//  702   dstAddr.addr.shortAddr = 0x0000;   // Ð­µ÷Æ÷µØÖ·
+        MOV     A,#0x20
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//  703   
+//  704   if (AF_DataRequest(&dstAddr,//Ä¿±êÉè±¸µÄµØÖ·
+//  705                      &dimmablelightApp_epDesc,//Ô´Éè±¸µÄ¶ËµãÃèÊö·ûºÅ£¬ÔÚÇ°ÃæÒÑ¾­¶¨ÒåÁË £¬ÔÚÇ°ÃæÒÑ¾­×¢²áÁËÕâ¸ö¶Ë¿ÚºÅ10ÁË¡£ ¿É¼û·¢ËÍµ½Ä¿µÄÉè±¸µÄ¶Ë¿ÚºÅÒª¸ú×ÔÉíÉè±¸µÄ¶Ë¿ÚºÅÏàÍ¬£¡£¡£¡ 
+//  706                      dimmablelightApp_CLUSTERID,//·¢ËÍ±¾´ÎÐÅÏ¢Ëù´øµÄCID  
+//  707                      i,              // Êý¾Ý³¤¶È
+//  708                      txFrame,
+//  709                      &dimmablelightApp_TransID,
+//  710                      AF_DISCV_ROUTE,
+//  711                      AF_DEFAULT_RADIUS) == afStatus_SUCCESS)
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     ?V0 + 0,#0x1e
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 57)
+        MOV     ?V0 + 0,#dimmablelightApp_TransID & 0xff
+        MOV     ?V0 + 1,#(dimmablelightApp_TransID >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 59)
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 61)
+        MOV     ?V0 + 0,#0x13
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 63)
+        MOV     ?V0 + 0,#0x6
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 65)
+        MOV     R1,#0x20
+        MOV     R4,#dimmablelightApp_epDesc & 0xff
+        MOV     R5,#(dimmablelightApp_epDesc >> 8) & 0xff
+        MOV     A,#0x29
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??AF_DataRequest?relay
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 56)
+        MOV     A,R1
+        MOV     R4,#0x32
+        MOV     R5,#0x0
+        MOV     R3,#-0x6
+        MOV     R2,#0x5
+        JNZ     ??DimLightRouterApp_SendSuccessResponse_5
+//  712   {
+//  713     // ·¢ËÍ³É¹¦
+//  714     HalLedBlink(HAL_LED_2, 5, 250, 50);  // linkÉÁË¸±íÊ¾·¢ËÍ³É¹¦
+        ; Setup parameters for call to function HalLedBlink
+        MOV     R1,#0x2
+        SJMP    ??DimLightRouterApp_SendSuccessResponse_6
+//  715   } else
+//  716     {
+//  717        HalLedBlink(HAL_LED_1, 5, 250, 50);  //dataÉÁË¸±íÊ¾·¢ËÍÊ§°Ü 
+??DimLightRouterApp_SendSuccessResponse_5:
+        ; Setup parameters for call to function HalLedBlink
+        MOV     R1,#0x1
+??DimLightRouterApp_SendSuccessResponse_6:
+        LCALL   ??HalLedBlink?relay
+//  718     }
+//  719     
+//  720   }
+        MOV     A,#0x2c
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 12)
+        LJMP    ?Subroutine1 & 0xFFFF
+        CFI EndBlock cfiBlock20
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+??responseSeq:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  721 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  722 void Delay5000ms(void) ////11.0592MHz
+Delay5000ms:
+        CFI Block cfiBlock21 Using cfiCommon0
+        CFI Function Delay5000ms
+        CODE
+//  723 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  724     unsigned char i, j, k;
+//  725 
+//  726     i = 43;
+        MOV     R2,#0x2b
+//  727     j = 6;
+        MOV     R1,#0x6
+//  728     k = 203;
+        MOV     R0,#-0x35
+//  729     do
+//  730     {
+//  731         do
+//  732         {
+//  733             while (--k);
+??Delay5000ms_0:
+        DEC     R0
+        MOV     A,R0
+        JNZ     ??Delay5000ms_0
+//  734         } while (--j);
+        DEC     R1
+        MOV     A,R1
+        JNZ     ??Delay5000ms_0
+//  735     } while (--i);
+        DEC     R2
+        MOV     A,R2
+        JNZ     ??Delay5000ms_0
+//  736 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock21
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??dimmablelightApp_Init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    dimmablelightApp_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??dimmablelightApp_ProcessEvent?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    dimmablelightApp_ProcessEvent
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??dimmablelightApp_ProcessZDOMsgs?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    dimmablelightApp_ProcessZDOMsgs
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??dimmablelightApp_HandleKeys?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    dimmablelightApp_HandleKeys
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??dimmablelightApp_MessageMSGCB?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    dimmablelightApp_MessageMSGCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??dimmablelightApp_SendTheMessage?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    dimmablelightApp_SendTheMessage
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??DimLightRouterApp_ControlDimLight?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    DimLightRouterApp_ControlDimLight
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??DimLightRouterApp_SendSuccessResponse?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    DimLightRouterApp_SendSuccessResponse
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Delay5000ms?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Delay5000ms
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "dimmablelightApp">`:
+        DB "dimmablelightApp"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "Hello World">`:
+        DB "Hello World"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_1388:
+        DD 5000
+
+        END
+//  737 
+//  738 
+//  739 
+//  740 
+//  741 
+//  742 
+//  743 
+//  744 
+//  745 
+//  746 
+//  747 
+// 
+// 1 493 bytes in segment BANKED_CODE
+//    54 bytes in segment BANK_RELAYS
+//     1 byte  in segment SFR_AN
+//    55 bytes in segment XDATA_ROM_C
+//    22 bytes in segment XDATA_Z
+// 
+// 1 547 bytes of CODE  memory
+//    51 bytes of CONST memory (+ 4 bytes shared)
+//     0 bytes of DATA  memory (+ 1 byte  shared)
+//    22 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

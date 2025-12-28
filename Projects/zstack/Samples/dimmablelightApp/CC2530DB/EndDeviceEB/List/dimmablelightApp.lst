@@ -1,0 +1,2082 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         24/Dec/2025  16:58:20 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\Sou #
+#                          rce\dimmablelightApp.c                             #
+#    Command line       =  -f E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\ #
+#                          CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg      #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f E:\´«¸ÐÆ÷ZStack-CC2530\´«¸Ð #
+#                          Æ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sampl #
+#                          es\dimmablelightApp\CC2530DB\..\..\..\Tools\CC2530 #
+#                          DB\f8wConfig.cfg (-DZIGBEEPRO -DSECURE=0           #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST26=0x04000000                    #
+#                          -DDEFAULT_CHANLIST25=0x02000000                    #
+#                          -DDEFAULT_CHANLIST24=0x01000000                    #
+#                          -DDEFAULT_CHANLIST23=0x00800000                    #
+#                          -DDEFAULT_CHANLIST22=0x00400000                    #
+#                          -DDEFAULT_CHANLIST21=0x00200000                    #
+#                          -DDEFAULT_CHANLIST20=0x00100000                    #
+#                          -DDEFAULT_CHANLIST19=0x00080000                    #
+#                          -DDEFAULT_CHANLIST18=0x00040000                    #
+#                          -DDEFAULT_CHANLIST17=0x00020000                    #
+#                          -DDEFAULT_CHANLIST16=0x00010000                    #
+#                          -DDEFAULT_CHANLIST15=0x00008000                    #
+#                          -DDEFAULT_CHANLIST14=0x00004000                    #
+#                          -DDEFAULT_CHANLIST13=0x00002000                    #
+#                          -DDEFAULT_CHANLIST12=0x00001000                    #
+#                          -DDEFAULT_CHANLIST11=0x00000800                    #
+#                          -DDEFAULT_CHANLIST=DEFAULT_CHANLIST25              #
+#                          -DZDAPP_CONFIG_PAN_ID=0x0006                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 E:\´«¸ÐÆ÷ZStack-CC2530\´«¸Ð #
+#                          Æ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sampl #
+#                          es\dimmablelightApp\Source\dimmablelightApp.c -D   #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -D xPOWER_SAVING -lC E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ #
+#                          ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples #
+#                          \dimmablelightApp\CC2530DB\EndDeviceEB\List\ -lA   #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\EndDeviceEB\List\ --diag_suppress            #
+#                          Pe001,Pa010 -o E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack #
+#                          -CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimma #
+#                          blelightApp\CC2530DB\EndDeviceEB\Obj\ -e           #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\ #
+#                          CC2530DB\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-C #
+#                          C2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmabl #
+#                          elightApp\CC2530DB\..\Source\ -I                   #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\..\..\..\ZMain\TI2530DB\ -I                  #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\hal\include\ -I    #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\hal\target\CC2530E #
+#                          B\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-Ê #
+#                          µÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightA #
+#                          pp\CC2530DB\..\..\..\..\..\Components\mac\include\ #
+#                           -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑ #
+#                          µ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp #
+#                          \CC2530DB\..\..\..\..\..\Components\mac\high_level #
+#                          \ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-Êµ #
+#                          Ñµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightAp #
+#                          p\CC2530DB\..\..\..\..\..\Components\mac\low_level #
+#                          \srf04\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2 #
+#                          530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablel #
+#                          ightApp\CC2530DB\..\..\..\..\..\Components\mac\low #
+#                          _level\srf04\single_chip\ -I                       #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\mt\ -I             #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\osal\include\ -I   #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\services\saddr\    #
+#                          -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\ #
+#                          CC2530DB\..\..\..\..\..\Components\services\sdata\ #
+#                           -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑ #
+#                          µ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp #
+#                          \CC2530DB\..\..\..\..\..\Components\stack\af\ -I   #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\nwk\ -I      #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\sapi\ -I     #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\sec\ -I      #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\sys\ -I      #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\stack\zdo\ -I      #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\zmac\ -I           #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\zmac\f8w\ -Ohz     #
+#                          --require_prototypes                               #
+#    List file          =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\EndDeviceEB\List\dimmablelightApp.lst        #
+#    Object file        =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\dimmablelightApp\CC2 #
+#                          530DB\EndDeviceEB\Obj\dimmablelightApp.r51         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\Source\dimmablelightApp.c
+      1          /******************************************************************************
+      2            Filename:       dimmablelightApp.c
+      3            Revised:        $Date: 2010-12-21 10:27:34 -0800 (Tue, 21 Dec 2010) $
+      4            Revision:       $Revision: 24670 $
+      5          
+      6            Description:    Generic Application (no Profile).
+      7          
+      8          
+      9            Copyright 2004-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product. Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          ******************************************************************************/
+     39          
+     40          /*********************************************************************
+     41            This application isn't intended to do anything useful, it is
+     42            intended to be a simple example of an application's structure.
+     43          
+     44            This application sends "Hello World" to another "Generic"
+     45            application every 15 seconds.  The application will also
+     46            receive "Hello World" packets.
+     47          
+     48            The "Hello World" messages are sent/received as MSG type message.
+     49          
+     50            This applications doesn't have a profile, so it handles everything
+     51            directly - itself.
+     52          
+     53            Key control:
+     54              SW1:
+     55              SW2:  initiates end device binding
+     56              SW3:
+     57              SW4:  initiates a match description request
+     58          *********************************************************************/
+     59          
+     60          /*********************************************************************
+     61           * INCLUDES
+     62           */
+     63          #include "OSAL.h"
+     64          #include "AF.h"
+     65          #include "ZDApp.h"
+     66          #include "ZDObject.h"
+     67          #include "ZDProfile.h"
+     68          
+     69          #include "dimmablelightApp.h"
+     70          #include "DebugTrace.h"
+     71          
+     72          //°üº¬µ÷É«µÆ³õÊ¼»¯Í·ÎÄ¼þ
+     73          #include"Dimmablelight.h"
+     74          
+     75          
+     76          #if !defined( WIN32 )
+     77            #include "OnBoard.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+     78          #endif
+     79          
+     80          /* HAL */
+     81          #include "hal_lcd.h"
+     82          #include "hal_led.h"
+     83          #include "hal_key.h"
+     84          #include "hal_uart.h"
+     85          
+     86          
+     87          // µ÷¹âµÆ¿ØÖÆÒý½Å¶¨Òå£¨¸ù¾Ýµ÷¹âµÆPDFÎÄµµ£©
+     88          #define DIMLIGHT_BLUE_PIN           P0_1      // À¶É«¿ØÖÆÒý½Å
+     89          #define DIMLIGHT_RED_PIN            P0_6      // ºìÉ«¿ØÖÆÒý½Å
+     90          #define DIMLIGHT_GREEN_PIN          P0_7      // ÂÌÉ«¿ØÖÆÒý½Å
+     91          
+     92          
+     93          
+     94          
+     95          /*********************************************************************
+     96           * MACROS
+     97           */
+     98          
+     99          /*********************************************************************
+    100           * CONSTANTS
+    101           */
+    102          
+    103          /*********************************************************************
+    104           * TYPEDEFS
+    105           */
+    106          
+    107          /*********************************************************************
+    108           * GLOBAL VARIABLES
+    109           */
+    110          
+    111          // This list should be filled with Application specific Cluster IDs.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    112          const cId_t dimmablelightApp_ClusterList[dimmablelightApp_MAX_CLUSTERS] =
+   \                     dimmablelightApp_ClusterList:
+   \   000000   0600         DW 6
+   \   000002   0100         DW 1
+   \   000004   0200         DW 2
+   \   000006   0500         DW 5
+   \   000008   0A00         DW 10
+    113          {
+    114            dimmablelightApp_CLUSTERID,//ÓÃÓÚ×î»ù±¾µÄÍ¨ÐÅ²âÊÔ
+    115            DIMLIGHT_BLUE_CLUSTERID,
+    116            DIMLIGHT_RED_CLUSTERID,
+    117            DIMLIGHT_GREEN_CLUSTERID,
+    118            CentreApp_control_dimmablelight_CLUSTERID
+    119          };
+    120          //¸æÍø
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    121          const SimpleDescriptionFormat_t dimmablelightApp_SimpleDesc =
+   \                     dimmablelightApp_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   05           DB 5
+   \   000007   ....         DW dimmablelightApp_ClusterList
+   \   000009   05           DB 5
+   \   00000A   ....         DW dimmablelightApp_ClusterList
+    122          {
+    123            dimmablelightApp_ENDPOINT,              //  int Endpoint;
+    124            dimmablelightApp_PROFID,                //  uint16 AppProfId[2];
+    125            dimmablelightApp_DEVICEID,              //  uint16 AppDeviceId[2];
+    126            dimmablelightApp_DEVICE_VERSION,        //  int   AppDevVer:4;
+    127            dimmablelightApp_FLAGS,                 //  int   AppFlags:4;
+    128            dimmablelightApp_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    129            (cId_t *)dimmablelightApp_ClusterList,  //  byte *pAppInClusterList;
+    130            dimmablelightApp_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    131            (cId_t *)dimmablelightApp_ClusterList   //  byte *pAppInClusterList;
+    132          };
+    133          
+    134          // This is the Endpoint/Interface description.  It is defined here, but
+    135          // filled-in in dimmablelightApp_Init().  Another way to go would be to fill
+    136          // in the structure here and make it a "const" (in code space).  The
+    137          // way it's defined in this sample app it is define in RAM.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    138          endPointDesc_t dimmablelightApp_epDesc;
+   \                     dimmablelightApp_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+    139          
+    140          /*********************************************************************
+    141           * EXTERNAL VARIABLES
+    142           */
+    143          
+    144          /*********************************************************************
+    145           * EXTERNAL FUNCTIONS
+    146           */
+    147          
+    148          /*********************************************************************
+    149           * LOCAL VARIABLES
+    150           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    151          byte dimmablelightApp_TaskID;   // Task ID for internal task/event processing
+   \                     dimmablelightApp_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    152                                    // This variable will be received when
+    153                                    // dimmablelightApp_Init() is called.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    154          devStates_t dimmablelightApp_NwkState;
+   \                     dimmablelightApp_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    155          
+    156          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    157          byte dimmablelightApp_TransID;  // This is the unique message ID (counter)
+   \                     dimmablelightApp_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    158          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    159          afAddrType_t dimmablelightApp_DstAddr;
+   \                     dimmablelightApp_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+    160          
+    161          /*********************************************************************
+    162           * LOCAL FUNCTIONS
+    163           */
+    164          void dimmablelightApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );//ÕâÊÇµ÷É«µÆ´¦ÀíZigBeeÍøÂç¹ÜÀíÏûÏ¢µÄº¯Êý
+    165          void dimmablelightApp_HandleKeys( byte shift, byte keys );//µ÷É«µÆµÄ°´¼ü´¦Àí
+    166          void dimmablelightApp_MessageMSGCB( afIncomingMSGPacket_t *pckt );//½«´Øid×ª»»ÎªµÆ¹âÐÅºÅ
+    167          void dimmablelightApp_SendTheMessage( void );//µ÷É«µÆµÄÊ¾Àý·¢ËÍº¯Êý
+    168          static void DimLightRouterApp_ControlDimLight(uint8 colorType); //¿ØÖÆµ÷É«µÆÁÁ¶ÔÓ¦µÄÑÕÉ« 
+    169          static void DimLightRouterApp_SendSuccessResponse(uint8 colorType); //»ØÓ¦Ð­µ÷Æ÷ÏÂ´ïµÄÖ¸Áî 
+    170          void Delay5000ms(void);
+    171          static void Centreapp_control_dimmablelight_dispaly(afIncomingMSGPacket_t *pkt);//×Ô¶¨Òå
+    172          /*********************************************************************
+    173           * NETWORK LAYER CALLBACKS
+    174           */
+    175          
+    176          /*********************************************************************
+    177           * PUBLIC FUNCTIONS
+    178           */
+    179          
+    180          /*********************************************************************
+    181           * @fn      dimmablelightApp_Init
+    182           *
+    183           * @brief   Initialization function for the Generic App Task.
+    184           *          This is called during initialization and should contain
+    185           *          any application specific initialization (ie. hardware
+    186           *          initialization/setup, table initialization, power up
+    187           *          notificaiton ... ).
+    188           *
+    189           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    190           *                    used to send messages and set timers.
+    191           *
+    192           * @return  none
+    193           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    194          void dimmablelightApp_Init( byte task_id )
+   \                     dimmablelightApp_Init:
+    195          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    196            dimmablelightApp_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#dimmablelightApp_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+    197            dimmablelightApp_NwkState = DEV_INIT;
+   \   00000A   90....       MOV     DPTR,#dimmablelightApp_NwkState
+   \   00000D   7401         MOV     A,#0x1
+   \   00000F   F0           MOVX    @DPTR,A
+    198            dimmablelightApp_TransID = 0;
+   \   000010   90....       MOV     DPTR,#dimmablelightApp_TransID
+   \   000013   E4           CLR     A
+   \   000014   F0           MOVX    @DPTR,A
+    199          
+    200            
+    201            DimLightRouterApp_InitDimLightHardware();  // ³õÊ¼»¯µ÷¹âµÆÓ²¼þ
+   \   000015                ; Setup parameters for call to function DimLightRouterApp_InitDimLightHardware
+   \   000015   12....       LCALL   ??DimLightRouterApp_InitDimLightHardware?relay
+    202              // µ÷É«µÆ³õÊ¼»¯ÎªµÍµçÆ½£¨µÆÃð£©
+    203            DIMLIGHT_BLUE_PIN = 0;
+   \   000018   C281         CLR     0x80.1
+    204            DIMLIGHT_RED_PIN = 0;
+   \   00001A   C286         CLR     0x80.6
+    205            DIMLIGHT_GREEN_PIN = 0;
+   \   00001C   C287         CLR     0x80.7
+    206            
+    207            DimLightRouterApp_ControlDimLight(0);// ³õÊ¼»¯ËùÓÐµÆÎª¹Ø±Õ×´Ì¬
+   \   00001E                ; Setup parameters for call to function DimLightRouterApp_ControlDimLight
+   \   00001E   7900         MOV     R1,#0x0
+   \   000020   12....       LCALL   ??DimLightRouterApp_ControlDimLight?relay
+    208            
+    209            
+    210            // Device hardware initialization can be added here or in main() (Zmain.c).
+    211            // If the hardware is application specific - add it here.
+    212            // If the hardware is other parts of the device add it in main().
+    213          
+    214            dimmablelightApp_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
+   \   000023   90....       MOV     DPTR,#dimmablelightApp_DstAddr + 8
+   \   000026   E4           CLR     A
+   \   000027   F0           MOVX    @DPTR,A
+    215            dimmablelightApp_DstAddr.endPoint = 0;
+   \   000028   A3           INC     DPTR
+   \   000029   F0           MOVX    @DPTR,A
+    216            dimmablelightApp_DstAddr.addr.shortAddr = 0;
+   \   00002A   90....       MOV     DPTR,#dimmablelightApp_DstAddr
+   \   00002D   F0           MOVX    @DPTR,A
+   \   00002E   A3           INC     DPTR
+   \   00002F   F0           MOVX    @DPTR,A
+    217          
+    218            // Fill out the endpoint description.
+    219            dimmablelightApp_epDesc.endPoint = dimmablelightApp_ENDPOINT;
+   \   000030   90....       MOV     DPTR,#dimmablelightApp_epDesc
+   \   000033   740A         MOV     A,#0xa
+   \   000035   F0           MOVX    @DPTR,A
+    220            dimmablelightApp_epDesc.task_id = &dimmablelightApp_TaskID;
+   \   000036   A3           INC     DPTR
+   \   000037   74..         MOV     A,#dimmablelightApp_TaskID & 0xff
+   \   000039   F0           MOVX    @DPTR,A
+   \   00003A   A3           INC     DPTR
+   \   00003B   74..         MOV     A,#(dimmablelightApp_TaskID >> 8) & 0xff
+   \   00003D   F0           MOVX    @DPTR,A
+    221            dimmablelightApp_epDesc.simpleDesc
+    222                      = (SimpleDescriptionFormat_t *)&dimmablelightApp_SimpleDesc;
+   \   00003E   A3           INC     DPTR
+   \   00003F   74..         MOV     A,#dimmablelightApp_SimpleDesc & 0xff
+   \   000041   F0           MOVX    @DPTR,A
+   \   000042   A3           INC     DPTR
+   \   000043   74..         MOV     A,#(dimmablelightApp_SimpleDesc >> 8) & 0xff
+   \   000045   F0           MOVX    @DPTR,A
+    223            dimmablelightApp_epDesc.latencyReq = noLatencyReqs;
+   \   000046   A3           INC     DPTR
+   \   000047   E4           CLR     A
+   \   000048   F0           MOVX    @DPTR,A
+    224          
+    225            // Register the endpoint description with the AF
+    226            afRegister( &dimmablelightApp_epDesc );
+   \   000049                ; Setup parameters for call to function afRegister
+   \   000049   7A..         MOV     R2,#dimmablelightApp_epDesc & 0xff
+   \   00004B   7B..         MOV     R3,#(dimmablelightApp_epDesc >> 8) & 0xff
+   \   00004D   12....       LCALL   ??afRegister?relay
+    227          
+    228            // Register for all key events - This app will handle all key events
+    229            RegisterForKeys( dimmablelightApp_TaskID );
+   \   000050                ; Setup parameters for call to function RegisterForKeys
+   \   000050   90....       MOV     DPTR,#dimmablelightApp_TaskID
+   \   000053   E0           MOVX    A,@DPTR
+   \   000054   F9           MOV     R1,A
+   \   000055   12....       LCALL   ??RegisterForKeys?relay
+    230          
+    231            // Update the display
+    232          #if defined ( LCD_SUPPORTED )
+    233              HalLcdWriteString( "dimmablelightApp", HAL_LCD_LINE_1 );
+   \   000058                ; Setup parameters for call to function HalLcdWriteString
+   \   000058   7901         MOV     R1,#0x1
+   \   00005A   7A..         MOV     R2,#`?<Constant "dimmablelightApp">` & 0xff
+   \   00005C   7B..         MOV     R3,#(`?<Constant "dimmablelightApp">` >> 8) & 0xff
+   \   00005E   12....       LCALL   ??HalLcdWriteString?relay
+    234          #endif
+    235          
+    236            ZDO_RegisterForZDOMsg( dimmablelightApp_TaskID, End_Device_Bind_rsp );
+   \   000061                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   000061   7A20         MOV     R2,#0x20
+   \   000063   7B80         MOV     R3,#-0x80
+   \   000065   90....       MOV     DPTR,#dimmablelightApp_TaskID
+   \   000068   E0           MOVX    A,@DPTR
+   \   000069   F9           MOV     R1,A
+   \   00006A   12....       LCALL   ??ZDO_RegisterForZDOMsg?relay
+    237            ZDO_RegisterForZDOMsg( dimmablelightApp_TaskID, Match_Desc_rsp );
+   \   00006D                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   00006D   7A06         MOV     R2,#0x6
+   \   00006F   7B80         MOV     R3,#-0x80
+   \   000071   90....       MOV     DPTR,#dimmablelightApp_TaskID
+   \   000074   E0           MOVX    A,@DPTR
+   \   000075   F9           MOV     R1,A
+   \   000076   12....       LCALL   ??ZDO_RegisterForZDOMsg?relay
+    238          }
+   \   000079                REQUIRE ?Subroutine0
+   \   000079                REQUIRE _A_P0
+   \   000079                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    239          
+    240          /*********************************************************************
+    241           * @fn      dimmablelightApp_ProcessEvent
+    242           *
+    243           * @brief   Generic Application Task event processor.  This function
+    244           *          is called to process all events for the task.  Events
+    245           *          include timers, messages and any other user defined events.
+    246           *
+    247           * @param   task_id  - The OSAL assigned task ID.
+    248           * @param   events - events to process.  This is a bit map and can
+    249           *                   contain more than one event.
+    250           *
+    251           * @return  none
+    252           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    253          UINT16 dimmablelightApp_ProcessEvent( byte task_id, UINT16 events )
+   \                     dimmablelightApp_ProcessEvent:
+    254          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    255            afIncomingMSGPacket_t *MSGpkt;//½ÓÊÕµ½µÄÓ¦ÓÃ²ãÏûÏ¢
+    256            afDataConfirm_t *afDataConfirm;//È·ÈÏÊý¾ÝËÍ´ï
+    257          
+    258            // Data Confirmation message fields
+    259            byte sentEP;
+    260            ZStatus_t sentStatus;
+    261            byte sentTransID;       // This should match the value sent
+    262            (void)task_id;  // Intentionally unreferenced parameter
+    263          
+    264            if ( events & SYS_EVENT_MSG )//ÓÐÏµÍ³ÏûÏ¢ÐèÒª´¦Àí
+   \   000009   5480         ANL     A,#0x80
+   \   00000B   7003         JNZ     $+5
+   \   00000D   02....       LJMP    ??dimmablelightApp_ProcessEvent_0 & 0xFFFF
+    265            {
+    266              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( dimmablelightApp_TaskID );
+   \   000010                ; Setup parameters for call to function osal_msg_receive
+   \   000010   8028         SJMP    ??dimmablelightApp_ProcessEvent_1
+    267              while ( MSGpkt )
+    268              {
+    269                switch ( MSGpkt->hdr.event )//ÊÂ¼þÀàÐÍ×Ö¶Î
+    270                  
+    271                  
+    272                  /*KEY_CHANGE(0x01): °´¼ü±ä»¯ÏûÏ¢
+    273          ?
+    274          AF_INCOMING_MSG_CMD(0x45): ½ÓÊÕµ½ÆäËûÉè±¸·¢À´µÄÊý¾Ý
+    275          ?
+    276          AF_DATA_CONFIRM_CMD(0x46): Êý¾Ý·¢ËÍÈ·ÈÏ£¨³É¹¦/Ê§°Ü£©
+    277          ?
+    278          ZDO_STATE_CHANGE(0x00): ÍøÂç×´Ì¬±ä»¯£¨ÈçÈëÍø³É¹¦£©
+    279          ?
+    280          ZDO_CB_MSG(0x00): ZDO²ã»Øµ÷ÏûÏ¢£¨°ó¶¨/·þÎñ·¢ÏÖÏìÓ¦£©
+    281                  */
+    282                {
+    283                  case ZDO_CB_MSG:
+    284                    dimmablelightApp_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+    285                    break;
+    286          
+    287                  case KEY_CHANGE:
+    288                    dimmablelightApp_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    289                    break;
+    290          
+    291                  case AF_DATA_CONFIRM_CMD:
+    292                    // This message is received as a confirmation of a data packet sent.
+    293                    // The status is of ZStatus_t type [defined in ZComDef.h]
+    294                    // The message fields are defined in AF.h
+    295                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+    296                    sentEP = afDataConfirm->endpoint;
+    297                    sentStatus = afDataConfirm->hdr.status;
+    298                    sentTransID = afDataConfirm->transID;
+    299                    (void)sentEP;
+    300                    (void)sentTransID;
+    301          
+    302                    // Action taken when confirmation is received.
+    303                    if ( sentStatus != ZSuccess )
+    304                    {
+    305                      // The data wasn't delivered -- Do something
+    306                    }
+    307                    break;
+    308          
+    309                  case AF_INCOMING_MSG_CMD:
+    310                    dimmablelightApp_MessageMSGCB( MSGpkt );
+    311                    break;
+    312          
+    313                  case ZDO_STATE_CHANGE:
+    314                    dimmablelightApp_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \                     ??dimmablelightApp_ProcessEvent_2:
+   \   000012   A3           INC     DPTR
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   90....       MOV     DPTR,#dimmablelightApp_NwkState
+   \   000017   F0           MOVX    @DPTR,A
+    315                    if ( (dimmablelightApp_NwkState == DEV_ZB_COORD)
+    316                        || (dimmablelightApp_NwkState == DEV_ROUTER)
+    317                        || (dimmablelightApp_NwkState == DEV_END_DEVICE) )
+   \   000018   6409         XRL     A,#0x9
+   \   00001A   600A         JZ      ??dimmablelightApp_ProcessEvent_3
+   \   00001C   E0           MOVX    A,@DPTR
+   \   00001D   6407         XRL     A,#0x7
+   \   00001F   6005         JZ      ??dimmablelightApp_ProcessEvent_3
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   6406         XRL     A,#0x6
+   \   000024   700D         JNZ     ??dimmablelightApp_ProcessEvent_4
+    318                    {
+    319                      
+    320                      HalLedBlink(HAL_LED_2, 5, 50, 250);//³É¹¦¼ÓÈëÍøÂçÉÁË¸linkµÆ
+   \                     ??dimmablelightApp_ProcessEvent_3:
+   \   000026                ; Setup parameters for call to function HalLedBlink
+   \   000026   7CFA         MOV     R4,#-0x6
+   \   000028   7D00         MOV     R5,#0x0
+   \   00002A   7B32         MOV     R3,#0x32
+   \   00002C   7A05         MOV     R2,#0x5
+   \   00002E   7902         MOV     R1,#0x2
+   \   000030   12....       LCALL   ??HalLedBlink?relay
+    321                      // Start sending "the" message in a regular interval.
+    322                        /*osal_start_timerEx( dimmablelightApp_TaskID,
+    323                                          dimmablelightApp_SEND_MSG_EVT,
+    324                                          dimmablelightApp_SEND_MSG_TIMEOUT );*/
+    325                    }
+    326                    break;
+    327          
+    328                  default:
+    329                    break;
+    330                }
+    331          
+    332                // Release the memory
+    333                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??dimmablelightApp_ProcessEvent_4:
+   \   000033                ; Setup parameters for call to function osal_msg_deallocate
+   \   000033   AA..         MOV     R2,?V0 + 0
+   \   000035   AB..         MOV     R3,?V0 + 1
+   \   000037   12....       LCALL   ??osal_msg_deallocate?relay
+    334          
+    335                // Next
+    336                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( dimmablelightApp_TaskID );
+   \   00003A                ; Setup parameters for call to function osal_msg_receive
+   \                     ??dimmablelightApp_ProcessEvent_1:
+   \   00003A   90....       MOV     DPTR,#dimmablelightApp_TaskID
+   \   00003D   E0           MOVX    A,@DPTR
+   \   00003E   F9           MOV     R1,A
+   \   00003F   12....       LCALL   ??osal_msg_receive?relay
+   \   000042   8A..         MOV     ?V0 + 0,R2
+   \   000044   8B..         MOV     ?V0 + 1,R3
+   \   000046   E5..         MOV     A,?V0 + 0
+   \   000048   45..         ORL     A,?V0 + 1
+   \   00004A   603D         JZ      ??dimmablelightApp_ProcessEvent_5
+   \   00004C   85..82       MOV     DPL,?V0 + 0
+   \   00004F   85..83       MOV     DPH,?V0 + 1
+   \   000052   E0           MOVX    A,@DPTR
+   \   000053   24E6         ADD     A,#-0x1a
+   \   000055   6029         JZ      ??dimmablelightApp_ProcessEvent_6
+   \   000057   245A         ADD     A,#0x5a
+   \   000059   6011         JZ      ??dimmablelightApp_ProcessEvent_7
+   \   00005B   24EF         ADD     A,#-0x11
+   \   00005D   60B3         JZ      ??dimmablelightApp_ProcessEvent_2
+   \   00005F   24FE         ADD     A,#-0x2
+   \   000061   70D0         JNZ     ??dimmablelightApp_ProcessEvent_4
+   \   000063                ; Setup parameters for call to function dimmablelightApp_ProcessZDOMsgs
+   \   000063   AA..         MOV     R2,?V0 + 0
+   \   000065   AB..         MOV     R3,?V0 + 1
+   \   000067   12....       LCALL   ??dimmablelightApp_ProcessZDOMsgs?relay
+   \   00006A   80C7         SJMP    ??dimmablelightApp_ProcessEvent_4
+   \                     ??dimmablelightApp_ProcessEvent_7:
+   \   00006C                ; Setup parameters for call to function dimmablelightApp_HandleKeys
+   \   00006C   A3           INC     DPTR
+   \   00006D   A3           INC     DPTR
+   \   00006E   A3           INC     DPTR
+   \   00006F   E0           MOVX    A,@DPTR
+   \   000070   FA           MOV     R2,A
+   \   000071   85..82       MOV     DPL,?V0 + 0
+   \   000074   85..83       MOV     DPH,?V0 + 1
+   \   000077   A3           INC     DPTR
+   \   000078   A3           INC     DPTR
+   \   000079   E0           MOVX    A,@DPTR
+   \   00007A   F9           MOV     R1,A
+   \   00007B   12....       LCALL   ??dimmablelightApp_HandleKeys?relay
+   \   00007E   80B3         SJMP    ??dimmablelightApp_ProcessEvent_4
+   \                     ??dimmablelightApp_ProcessEvent_6:
+   \   000080                ; Setup parameters for call to function dimmablelightApp_MessageMSGCB
+   \   000080   AA..         MOV     R2,?V0 + 0
+   \   000082   AB..         MOV     R3,?V0 + 1
+   \   000084   12....       LCALL   ??dimmablelightApp_MessageMSGCB?relay
+   \   000087   80AA         SJMP    ??dimmablelightApp_ProcessEvent_4
+    337              }
+    338          
+    339              // return unprocessed events
+    340              return (events ^ SYS_EVENT_MSG);
+   \                     ??dimmablelightApp_ProcessEvent_5:
+   \   000089   EE           MOV     A,R6
+   \   00008A   FA           MOV     R2,A
+   \   00008B   EF           MOV     A,R7
+   \   00008C   6480         XRL     A,#0x80
+   \                     ??dimmablelightApp_ProcessEvent_8:
+   \   00008E   FB           MOV     R3,A
+   \   00008F   8023         SJMP    ??dimmablelightApp_ProcessEvent_9
+    341            }
+    342          
+    343            // Send a message out - This event is generated by a timer
+    344            //  (setup in dimmablelightApp_Init()).
+    345            if ( events & dimmablelightApp_SEND_MSG_EVT )
+   \                     ??dimmablelightApp_ProcessEvent_0:
+   \   000091   EE           MOV     A,R6
+   \   000092   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000094   501A         JNC     ??dimmablelightApp_ProcessEvent_10
+    346            {
+    347              // Send "the" message
+    348              dimmablelightApp_SendTheMessage();
+   \   000096                ; Setup parameters for call to function dimmablelightApp_SendTheMessage
+   \   000096   12....       LCALL   ??dimmablelightApp_SendTheMessage?relay
+    349          
+    350              // Setup to send message again
+    351              osal_start_timerEx( dimmablelightApp_TaskID,
+    352                                  dimmablelightApp_SEND_MSG_EVT,
+    353                                  dimmablelightApp_SEND_MSG_TIMEOUT );
+   \   000099                ; Setup parameters for call to function osal_start_timerEx
+   \   000099   7C88         MOV     R4,#-0x78
+   \   00009B   7D13         MOV     R5,#0x13
+   \   00009D   7A01         MOV     R2,#0x1
+   \   00009F   7B00         MOV     R3,#0x0
+   \   0000A1   90....       MOV     DPTR,#dimmablelightApp_TaskID
+   \   0000A4   E0           MOVX    A,@DPTR
+   \   0000A5   F9           MOV     R1,A
+   \   0000A6   12....       LCALL   ??osal_start_timerEx?relay
+    354          
+    355              // return unprocessed events
+    356              return (events ^ dimmablelightApp_SEND_MSG_EVT);
+   \   0000A9   EE           MOV     A,R6
+   \   0000AA   6401         XRL     A,#0x1
+   \   0000AC   FA           MOV     R2,A
+   \   0000AD   EF           MOV     A,R7
+   \   0000AE   80DE         SJMP    ??dimmablelightApp_ProcessEvent_8
+    357            }
+    358          
+    359            // Discard unknown events
+    360            return 0;
+   \                     ??dimmablelightApp_ProcessEvent_10:
+   \   0000B0   7A00         MOV     R2,#0x0
+   \   0000B2   7B00         MOV     R3,#0x0
+   \                     ??dimmablelightApp_ProcessEvent_9:
+   \   0000B4                REQUIRE ?Subroutine1
+   \   0000B4                ; // Fall through to label ?Subroutine1
+    361          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F04         MOV     R7,#0x4
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    362          
+    363          /*********************************************************************
+    364           * Event Generation Functions
+    365           */
+    366          
+    367          /*********************************************************************
+    368           * @fn      dimmablelightApp_ProcessZDOMsgs()
+    369           *
+    370           * @brief   Process response messages
+    371           *
+    372           * @param   none
+    373           *
+    374           * @return  none
+    375           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    376          void dimmablelightApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+   \                     dimmablelightApp_ProcessZDOMsgs:
+    377          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    378            switch ( inMsg->clusterID )
+   \   000005   EA           MOV     A,R2
+   \   000006   240C         ADD     A,#0xc
+   \   000008   F582         MOV     DPL,A
+   \   00000A   EB           MOV     A,R3
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F583         MOV     DPH,A
+   \   00000F   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000012   12....       LCALL   ?US_SWITCH_SPARSE
+   \                     `?<Jumptable for dimmablelightApp_ProcessZDOMsg_0`:
+   \   000015   0000         DW        0
+   \   000017   0200         DW        2
+   \   000019   0680         DW        32774
+   \   00001B   ....         DW        ??dimmablelightApp_ProcessZDOMsgs_0
+   \   00001D   2080         DW        32800
+   \   00001F   ....         DW        ??dimmablelightApp_ProcessZDOMsgs_1
+   \   000021   ....         DW        ??dimmablelightApp_ProcessZDOMsgs_2
+    379            {
+    380              case End_Device_Bind_rsp:
+    381                if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+   \                     ??dimmablelightApp_ProcessZDOMsgs_1:
+   \   000023   EA           MOV     A,R2
+   \   000024   2413         ADD     A,#0x13
+   \   000026   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   7009         JNZ     ??dimmablelightApp_ProcessZDOMsgs_3
+    382                {
+    383                  // Light LED
+    384                  HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+   \   00002C                ; Setup parameters for call to function HalLedSet
+   \   00002C   7A01         MOV     R2,#0x1
+   \                     ??dimmablelightApp_ProcessZDOMsgs_4:
+   \   00002E   7908         MOV     R1,#0x8
+   \   000030   12....       LCALL   ??HalLedSet?relay
+   \   000033   8053         SJMP    ??dimmablelightApp_ProcessZDOMsgs_2
+    385                }
+    386          #if defined( BLINK_LEDS )
+    387                else
+    388                {
+    389                  // Flash LED to show failure
+    390                  HalLedSet ( HAL_LED_4, HAL_LED_MODE_FLASH );
+   \                     ??dimmablelightApp_ProcessZDOMsgs_3:
+   \   000035                ; Setup parameters for call to function HalLedSet
+   \   000035   7A04         MOV     R2,#0x4
+   \   000037   80F5         SJMP    ??dimmablelightApp_ProcessZDOMsgs_4
+    391                }
+    392          #endif
+    393                break;
+    394          
+    395              case Match_Desc_rsp:
+    396                {
+    397                  ZDO_ActiveEndpointRsp_t *pRsp = ZDO_ParseEPListRsp( inMsg );
+   \                     ??dimmablelightApp_ProcessZDOMsgs_0:
+   \   000039                ; Setup parameters for call to function ZDO_ParseEPListRsp
+   \   000039   12....       LCALL   ??ZDO_ParseEPListRsp?relay
+   \   00003C   8A..         MOV     ?V0 + 0,R2
+   \   00003E   8B..         MOV     ?V0 + 1,R3
+   \   000040   AE..         MOV     R6,?V0 + 0
+   \   000042   AF..         MOV     R7,?V0 + 1
+    398                  if ( pRsp )
+   \   000044   EE           MOV     A,R6
+   \   000045   4F           ORL     A,R7
+   \   000046   6040         JZ      ??dimmablelightApp_ProcessZDOMsgs_2
+    399                  {
+    400                    if ( pRsp->status == ZSuccess && pRsp->cnt )
+   \   000048   8E82         MOV     DPL,R6
+   \   00004A   8F83         MOV     DPH,R7
+   \   00004C   E0           MOVX    A,@DPTR
+   \   00004D   7032         JNZ     ??dimmablelightApp_ProcessZDOMsgs_5
+   \   00004F   A3           INC     DPTR
+   \   000050   A3           INC     DPTR
+   \   000051   A3           INC     DPTR
+   \   000052   E0           MOVX    A,@DPTR
+   \   000053   602C         JZ      ??dimmablelightApp_ProcessZDOMsgs_5
+    401                    {
+    402                      dimmablelightApp_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+   \   000055   90....       MOV     DPTR,#dimmablelightApp_DstAddr + 8
+   \   000058   7402         MOV     A,#0x2
+   \   00005A   F0           MOVX    @DPTR,A
+    403                      dimmablelightApp_DstAddr.addr.shortAddr = pRsp->nwkAddr;
+   \   00005B   8E82         MOV     DPL,R6
+   \   00005D   8F83         MOV     DPH,R7
+   \   00005F   A3           INC     DPTR
+   \   000060   E0           MOVX    A,@DPTR
+   \   000061   F8           MOV     R0,A
+   \   000062   A3           INC     DPTR
+   \   000063   E0           MOVX    A,@DPTR
+   \   000064   F9           MOV     R1,A
+   \   000065   90....       MOV     DPTR,#dimmablelightApp_DstAddr
+   \   000068   E8           MOV     A,R0
+   \   000069   F0           MOVX    @DPTR,A
+   \   00006A   A3           INC     DPTR
+   \   00006B   E9           MOV     A,R1
+   \   00006C   F0           MOVX    @DPTR,A
+    404                      // Take the first endpoint, Can be changed to search through endpoints
+    405                      dimmablelightApp_DstAddr.endPoint = pRsp->epList[0];
+   \   00006D   8E82         MOV     DPL,R6
+   \   00006F   8F83         MOV     DPH,R7
+   \   000071   A3           INC     DPTR
+   \   000072   A3           INC     DPTR
+   \   000073   A3           INC     DPTR
+   \   000074   A3           INC     DPTR
+   \   000075   E0           MOVX    A,@DPTR
+   \   000076   90....       MOV     DPTR,#dimmablelightApp_DstAddr + 9
+   \   000079   F0           MOVX    @DPTR,A
+    406          
+    407                      // Light LED
+    408                      HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+   \   00007A                ; Setup parameters for call to function HalLedSet
+   \   00007A   7A01         MOV     R2,#0x1
+   \   00007C   7908         MOV     R1,#0x8
+   \   00007E   12....       LCALL   ??HalLedSet?relay
+    409                    }
+    410                    osal_mem_free( pRsp );
+   \                     ??dimmablelightApp_ProcessZDOMsgs_5:
+   \   000081                ; Setup parameters for call to function osal_mem_free
+   \   000081   EE           MOV     A,R6
+   \   000082   FA           MOV     R2,A
+   \   000083   EF           MOV     A,R7
+   \   000084   FB           MOV     R3,A
+   \   000085   12....       LCALL   ??osal_mem_free?relay
+    411                  }
+    412                }
+    413                break;
+    414            }
+    415          }
+   \                     ??dimmablelightApp_ProcessZDOMsgs_2:
+   \   000088                REQUIRE ?Subroutine2
+   \   000088                ; // Fall through to label ?Subroutine2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   F582         MOV     DPL,A
+   \   000002   EB           MOV     A,R3
+   \   000003   3400         ADDC    A,#0x0
+   \   000005   F583         MOV     DPH,A
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   F8           MOV     R0,A
+   \   000009   A3           INC     DPTR
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   F583         MOV     DPH,A
+   \   00000D   8882         MOV     DPL,R0
+   \   00000F   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F5..         MOV     ?V0 + 0,A
+   \   000003   A3           INC     DPTR
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   F5..         MOV     ?V0 + 1,A
+   \   000007   78..         MOV     R0,#?V0 + 0
+   \   000009   22           RET
+    416          
+    417          /*********************************************************************
+    418           * @fn      dimmablelightApp_HandleKeys
+    419           *
+    420           * @brief   Handles all key events for this device.
+    421           *
+    422           * @param   shift - true if in shift/alt.
+    423           * @param   keys - bit field for key events. Valid entries:
+    424           *                 HAL_KEY_SW_4
+    425           *                 HAL_KEY_SW_3
+    426           *                 HAL_KEY_SW_2
+    427           *                 HAL_KEY_SW_1
+    428           *
+    429           * @return  none
+    430           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    431          void dimmablelightApp_HandleKeys( byte shift, byte keys )
+   \                     dimmablelightApp_HandleKeys:
+    432          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 9
+   \   000005   74F7         MOV     A,#-0x9
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EA           MOV     A,R2
+   \   00000D   FF           MOV     R7,A
+    433            zAddrType_t dstAddr;
+    434          
+    435            // Shift is used to make each button/switch dual purpose.
+    436            if ( shift )
+   \   00000E   EE           MOV     A,R6
+   \   00000F   6003         JZ      $+5
+   \   000011   02....       LJMP    ??dimmablelightApp_HandleKeys_0 & 0xFFFF
+    437            {
+    438              if ( keys & HAL_KEY_SW_1 )
+    439              {
+    440              }
+    441              if ( keys & HAL_KEY_SW_2 )
+    442              {
+    443              }
+    444              if ( keys & HAL_KEY_SW_3 )
+    445              {
+    446              }
+    447              if ( keys & HAL_KEY_SW_4 )
+    448              {
+    449              }
+    450            }
+    451            else
+    452            {
+    453              if ( keys & HAL_KEY_SW_1 )
+    454              {
+    455                // Since SW1 isn't used for anything else in this application...
+    456          #if defined( SWITCH1_BIND )
+    457                // we can use SW1 to simulate SW2 for devices that only have one switch,
+    458                keys |= HAL_KEY_SW_2;
+    459          #elif defined( SWITCH1_MATCH )
+    460                // or use SW1 to simulate SW4 for devices that only have one switch
+    461                keys |= HAL_KEY_SW_4;
+    462          #endif
+    463              }
+    464          
+    465              if ( keys & HAL_KEY_SW_2 )
+   \   000014   EF           MOV     A,R7
+   \   000015   A2E1         MOV     C,0xE0 /* A   */.1
+   \   000017   506D         JNC     ??dimmablelightApp_HandleKeys_1
+    466              {
+    467                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+   \   000019                ; Setup parameters for call to function HalLedSet
+   \   000019   7A00         MOV     R2,#0x0
+   \   00001B   7908         MOV     R1,#0x8
+   \   00001D   12....       LCALL   ??HalLedSet?relay
+    468          
+    469                // Initiate an End Device Bind Request for the mandatory endpoint
+    470                dstAddr.addrMode = Addr16Bit;
+   \   000020   7408         MOV     A,#0x8
+   \   000022   12....       LCALL   ?XSTACK_DISP0_8
+   \   000025   7402         MOV     A,#0x2
+   \   000027   F0           MOVX    @DPTR,A
+    471                dstAddr.addr.shortAddr = 0x0000; // Coordinator
+   \   000028   85..82       MOV     DPL,?XSP + 0
+   \   00002B   85..83       MOV     DPH,?XSP + 1
+   \   00002E   E4           CLR     A
+   \   00002F   F0           MOVX    @DPTR,A
+   \   000030   A3           INC     DPTR
+   \   000031   F0           MOVX    @DPTR,A
+    472                ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+    473                                      dimmablelightApp_epDesc.endPoint,
+    474                                      dimmablelightApp_PROFID,
+    475                                      dimmablelightApp_MAX_CLUSTERS, (cId_t *)dimmablelightApp_ClusterList,
+    476                                      dimmablelightApp_MAX_CLUSTERS, (cId_t *)dimmablelightApp_ClusterList,
+    477                                      FALSE );
+   \   000032                ; Setup parameters for call to function NLME_GetShortAddr
+   \   000032   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   000035   8A..         MOV     ?V0 + 0,R2
+   \   000037   8B..         MOV     ?V0 + 1,R3
+   \   000039   AC..         MOV     R4,?V0 + 0
+   \   00003B   AD..         MOV     R5,?V0 + 1
+   \   00003D   75....       MOV     ?V0 + 0,#dimmablelightApp_ClusterList & 0xff
+   \   000040   75....       MOV     ?V0 + 1,#(dimmablelightApp_ClusterList >> 8) & 0xff
+   \   000043                ; Setup parameters for call to function ZDP_EndDeviceBindReq
+   \   000043   75..00       MOV     ?V0 + 2,#0x0
+   \   000046   78..         MOV     R0,#?V0 + 2
+   \   000048   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00004B   78..         MOV     R0,#?V0 + 0
+   \   00004D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000050   75..05       MOV     ?V0 + 2,#0x5
+   \   000053   78..         MOV     R0,#?V0 + 2
+   \   000055   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000058   78..         MOV     R0,#?V0 + 0
+   \   00005A   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00005D   75..05       MOV     ?V0 + 0,#0x5
+   \   000060   78..         MOV     R0,#?V0 + 0
+   \   000062   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000065   75..04       MOV     ?V0 + 0,#0x4
+   \   000068   75..0F       MOV     ?V0 + 1,#0xf
+   \   00006B   78..         MOV     R0,#?V0 + 0
+   \   00006D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000070   90....       MOV     DPTR,#dimmablelightApp_epDesc
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   F9           MOV     R1,A
+   \   000075   7409         MOV     A,#0x9
+   \   000077   12....       LCALL   ?XSTACK_DISP0_8
+   \   00007A   AA82         MOV     R2,DPL
+   \   00007C   AB83         MOV     R3,DPH
+   \   00007E   12....       LCALL   ??ZDP_EndDeviceBindReq?relay
+   \   000081   7409         MOV     A,#0x9
+   \   000083   12....       LCALL   ?DEALLOC_XSTACK8
+    478              }
+    479          
+    480              if ( keys & HAL_KEY_SW_3 )
+    481              {
+    482              }
+    483          
+    484              if ( keys & HAL_KEY_SW_4 )
+   \                     ??dimmablelightApp_HandleKeys_1:
+   \   000086   EF           MOV     A,R7
+   \   000087   A2E3         MOV     C,0xE0 /* A   */.3
+   \   000089   505C         JNC     ??dimmablelightApp_HandleKeys_0
+    485              {
+    486                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+   \   00008B                ; Setup parameters for call to function HalLedSet
+   \   00008B   7A00         MOV     R2,#0x0
+   \   00008D   7908         MOV     R1,#0x8
+   \   00008F   12....       LCALL   ??HalLedSet?relay
+    487                // Initiate a Match Description Request (Service Discovery)
+    488                dstAddr.addrMode = AddrBroadcast;
+   \   000092   7408         MOV     A,#0x8
+   \   000094   12....       LCALL   ?XSTACK_DISP0_8
+   \   000097   740F         MOV     A,#0xf
+   \   000099   F0           MOVX    @DPTR,A
+    489                dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR;
+   \   00009A   85..82       MOV     DPL,?XSP + 0
+   \   00009D   85..83       MOV     DPH,?XSP + 1
+   \   0000A0   74FF         MOV     A,#-0x1
+   \   0000A2   F0           MOVX    @DPTR,A
+   \   0000A3   A3           INC     DPTR
+   \   0000A4   F0           MOVX    @DPTR,A
+    490                ZDP_MatchDescReq( &dstAddr, NWK_BROADCAST_SHORTADDR,
+    491                                  dimmablelightApp_PROFID,
+    492                                  dimmablelightApp_MAX_CLUSTERS, (cId_t *)dimmablelightApp_ClusterList,
+    493                                  dimmablelightApp_MAX_CLUSTERS, (cId_t *)dimmablelightApp_ClusterList,
+    494                                  FALSE );
+   \   0000A5   75....       MOV     ?V0 + 0,#dimmablelightApp_ClusterList & 0xff
+   \   0000A8   75....       MOV     ?V0 + 1,#(dimmablelightApp_ClusterList >> 8) & 0xff
+   \   0000AB                ; Setup parameters for call to function ZDP_MatchDescReq
+   \   0000AB   75..00       MOV     ?V0 + 2,#0x0
+   \   0000AE   78..         MOV     R0,#?V0 + 2
+   \   0000B0   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000B3   78..         MOV     R0,#?V0 + 0
+   \   0000B5   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000B8   75..05       MOV     ?V0 + 2,#0x5
+   \   0000BB   78..         MOV     R0,#?V0 + 2
+   \   0000BD   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000C0   78..         MOV     R0,#?V0 + 0
+   \   0000C2   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000C5   75..04       MOV     ?V0 + 0,#0x4
+   \   0000C8   75..0F       MOV     ?V0 + 1,#0xf
+   \   0000CB   78..         MOV     R0,#?V0 + 0
+   \   0000CD   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000D0   7905         MOV     R1,#0x5
+   \   0000D2   7CFF         MOV     R4,#-0x1
+   \   0000D4   7DFF         MOV     R5,#-0x1
+   \   0000D6   7408         MOV     A,#0x8
+   \   0000D8   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000DB   AA82         MOV     R2,DPL
+   \   0000DD   AB83         MOV     R3,DPH
+   \   0000DF   12....       LCALL   ??ZDP_MatchDescReq?relay
+   \   0000E2   7408         MOV     A,#0x8
+   \   0000E4   12....       LCALL   ?DEALLOC_XSTACK8
+    495              }
+    496            }
+    497          }
+   \                     ??dimmablelightApp_HandleKeys_0:
+   \   0000E7   7409         MOV     A,#0x9
+   \   0000E9   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000EC   7F03         MOV     R7,#0x3
+   \   0000EE   02....       LJMP    ?BANKED_LEAVE_XDATA
+    498          
+    499          /*********************************************************************
+    500           * LOCAL FUNCTIONS
+    501           */
+    502          
+    503          /*********************************************************************
+    504           * @fn      dimmablelightApp_MessageMSGCB
+    505           *
+    506           * @brief   Data message processor callback.  This function processes
+    507           *          any incoming data - probably from other devices.  So, based
+    508           *          on cluster ID, perform the intended action.
+    509           *
+    510           * @param   none
+    511           *
+    512           * @return  none
+    513           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    514          void dimmablelightApp_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+   \                     dimmablelightApp_MessageMSGCB:
+    515          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    516            switch (pkt->clusterId)
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   A3           INC     DPTR
+   \   00000A   A3           INC     DPTR
+   \   00000B   A3           INC     DPTR
+   \   00000C   A3           INC     DPTR
+   \   00000D   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000010   12....       LCALL   ?US_SWITCH_SPARSE
+   \                     `?<Jumptable for dimmablelightApp_MessageMSGCB>_0`:
+   \   000013   0000         DW        0
+   \   000015   0400         DW        4
+   \   000017   0100         DW        1
+   \   000019   ....         DW        ??dimmablelightApp_MessageMSGCB_0
+   \   00001B   0200         DW        2
+   \   00001D   ....         DW        ??dimmablelightApp_MessageMSGCB_1
+   \   00001F   0500         DW        5
+   \   000021   ....         DW        ??dimmablelightApp_MessageMSGCB_2
+   \   000023   0A00         DW        10
+   \   000025   ....         DW        ??dimmablelightApp_MessageMSGCB_3
+   \   000027   ....         DW        ??dimmablelightApp_MessageMSGCB_4
+    517            {
+    518              case DIMLIGHT_BLUE_CLUSTERID:   //ÊÕµ½À´×ÔÓÚÐ­µ÷Æ÷µÄcid¸Ãcid±íÊ¾µÄÊÇÈËÌå¸ÐÓ¦ 
+    519                {  // µãÁÁÀ¶É«µÆ
+    520                DimLightRouterApp_ControlDimLight(1);  // 1=À¶É«
+   \                     ??dimmablelightApp_MessageMSGCB_0:
+   \   000029                ; Setup parameters for call to function DimLightRouterApp_ControlDimLight
+   \   000029   7901         MOV     R1,#0x1
+   \   00002B   12....       LCALL   ??DimLightRouterApp_ControlDimLight?relay
+    521                DimLightRouterApp_SendSuccessResponse(1);  // ·¢ËÍÀ¶É«³É¹¦ÏìÓ¦£¬»ØÏÔÊý¾Ý°ü¸øµ½Ð­µ÷Æ÷ 
+   \   00002E                ; Setup parameters for call to function DimLightRouterApp_SendSuccessResponse
+   \   00002E   7901         MOV     R1,#0x1
+   \                     ??dimmablelightApp_MessageMSGCB_5:
+   \   000030   12....       LCALL   ??DimLightRouterApp_SendSuccessResponse?relay
+    522                break;
+   \   000033   8071         SJMP    ??dimmablelightApp_MessageMSGCB_4
+    523                }
+    524                
+    525              case DIMLIGHT_RED_CLUSTERID:   //ÊÕµ½À´×ÔÓÚÐ­µ÷Æ÷µÄcid¸Ãcid±íÊ¾µÄÊÇÎÂÊª¶È 
+    526                { // µãÁÁºìÉ«µÆ
+    527                DimLightRouterApp_ControlDimLight(2);  // 2=ºìÉ«
+   \                     ??dimmablelightApp_MessageMSGCB_1:
+   \   000035                ; Setup parameters for call to function DimLightRouterApp_ControlDimLight
+   \   000035   7902         MOV     R1,#0x2
+   \   000037   12....       LCALL   ??DimLightRouterApp_ControlDimLight?relay
+    528                DimLightRouterApp_SendSuccessResponse(2);  // ·¢ËÍºìÉ«³É¹¦ÏìÓ¦
+   \   00003A                ; Setup parameters for call to function DimLightRouterApp_SendSuccessResponse
+   \   00003A   7902         MOV     R1,#0x2
+   \   00003C   80F2         SJMP    ??dimmablelightApp_MessageMSGCB_5
+    529                break;
+    530                }
+    531                
+    532              case DIMLIGHT_GREEN_CLUSTERID:   //ÊÕµ½À´×ÔÓÚÐ­µ÷Æ÷µÄcid¸Ãcid±íÊ¾µÄÊÇÊýÂë¹Ü»ØÏÔ 
+    533                {// µãÁÁÂÌÉ«µÆ
+    534                DimLightRouterApp_ControlDimLight(3);  // 3=ÂÌÉ«
+   \                     ??dimmablelightApp_MessageMSGCB_2:
+   \   00003E                ; Setup parameters for call to function DimLightRouterApp_ControlDimLight
+   \   00003E   7903         MOV     R1,#0x3
+   \   000040   12....       LCALL   ??DimLightRouterApp_ControlDimLight?relay
+    535                DimLightRouterApp_SendSuccessResponse(3);  // ·¢ËÍÂÌÉ«³É¹¦ÏìÓ¦
+   \   000043                ; Setup parameters for call to function DimLightRouterApp_SendSuccessResponse
+   \   000043   7903         MOV     R1,#0x3
+   \   000045   12....       LCALL   ??DimLightRouterApp_SendSuccessResponse?relay
+    536                break;
+   \   000048   805C         SJMP    ??dimmablelightApp_MessageMSGCB_4
+    537                }
+    538                
+    539              case CentreApp_control_dimmablelight_CLUSTERID:    //ÊÕµ½À´×ÔÓÚÐ­µ÷Æ÷µÄ×Ô¶¨ÒåÑÕÉ«µÄ´Øid
+    540                {
+    541                    if( pkt->cmd.Data[7]==0xA5)
+   \                     ??dimmablelightApp_MessageMSGCB_3:
+   \   00004A   EA           MOV     A,R2
+   \   00004B   2422         ADD     A,#0x22
+   \   00004D   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   000050   A3           INC     DPTR
+   \   000051   A3           INC     DPTR
+   \   000052   A3           INC     DPTR
+   \   000053   A3           INC     DPTR
+   \   000054   A3           INC     DPTR
+   \   000055   A3           INC     DPTR
+   \   000056   A3           INC     DPTR
+   \   000057   E0           MOVX    A,@DPTR
+   \   000058   64A5         XRL     A,#0xa5
+   \   00005A   704A         JNZ     ??dimmablelightApp_MessageMSGCB_4
+    542                    {
+    543                      Centreapp_control_dimmablelight_dispaly(pkt);   //»ñÈ¡Ð­µ÷Æ÷ÒªÇóµÄ×Ô¶¨ÒåÑÕÉ«µÄÊý¾Ý£¬ÔÙÏÔÊ¾»ìºÏµÄÑÕÉ«
+   \   00005C   EA           MOV     A,R2
+   \   00005D   2422         ADD     A,#0x22
+   \   00005F   F8           MOV     R0,A
+   \   000060   EB           MOV     A,R3
+   \   000061   3400         ADDC    A,#0x0
+   \   000063   F9           MOV     R1,A
+   \   000064   E8           MOV     A,R0
+   \   000065   FE           MOV     R6,A
+   \   000066   E9           MOV     A,R1
+   \   000067   FF           MOV     R7,A
+   \   000068                ; Setup parameters for call to function LED_change
+   \   000068   8E82         MOV     DPL,R6
+   \   00006A   8F83         MOV     DPH,R7
+   \   00006C   E0           MOVX    A,@DPTR
+   \   00006D   2410         ADD     A,#0x10
+   \   00006F   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000072   12....       LCALL   ?S_DIV_MOD
+   \   000075   E8           MOV     A,R0
+   \   000076   FC           MOV     R4,A
+   \   000077   8E82         MOV     DPL,R6
+   \   000079   8F83         MOV     DPH,R7
+   \   00007B   E0           MOVX    A,@DPTR
+   \   00007C   240F         ADD     A,#0xf
+   \   00007E   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000081   12....       LCALL   ?S_DIV_MOD
+   \   000084   E8           MOV     A,R0
+   \   000085   CC           XCH     A,R4
+   \   000086   FD           MOV     R5,A
+   \   000087   8E82         MOV     DPL,R6
+   \   000089   8F83         MOV     DPH,R7
+   \   00008B   E0           MOVX    A,@DPTR
+   \   00008C   2411         ADD     A,#0x11
+   \   00008E   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000091   12....       LCALL   ?S_DIV_MOD
+   \   000094   E8           MOV     A,R0
+   \   000095   F9           MOV     R1,A
+   \   000096   ED           MOV     A,R5
+   \   000097   FB           MOV     R3,A
+   \   000098   EC           MOV     A,R4
+   \   000099   FA           MOV     R2,A
+   \   00009A   12....       LCALL   ??LED_change?relay
+   \   00009D                ; Setup parameters for call to function DelayMilliseconds
+   \   00009D   90....       MOV     DPTR,#__Constant_1388
+   \   0000A0   12....       LCALL   ?XLOAD_R2345
+   \   0000A3   12....       LCALL   ??DelayMilliseconds?relay
+    544                    }  
+    545                } 
+    546                 
+    547              default:
+    548                // Î´ÖªCluster ID
+    549                break;
+    550            }
+    551          }
+   \                     ??dimmablelightApp_MessageMSGCB_4:
+   \   0000A6   02....       LJMP    ?Subroutine2 & 0xFFFF
+    552          
+    553          /*********************************************************************
+    554           * @fn      dimmablelightApp_SendTheMessage
+    555           *
+    556           * @brief   Send "the" message.
+    557           *
+    558           * @param   none
+    559           *
+    560           * @return  none
+    561           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    562          void dimmablelightApp_SendTheMessage( void )
+   \                     dimmablelightApp_SendTheMessage:
+    563          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 12
+   \   000005   74F4         MOV     A,#-0xc
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    564            char theMessageData[] = "Hello World";
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   AC82         MOV     R4,DPL
+   \   000012   AD83         MOV     R5,DPH
+   \   000014   7583..       MOV     DPH,#(`?<Constant "Hello World">` >> 8) & 0xff
+   \   000017   7582..       MOV     DPL,#`?<Constant "Hello World">` & 0xff
+   \   00001A   740C         MOV     A,#0xc
+   \   00001C   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    565          
+    566            if ( AF_DataRequest( &dimmablelightApp_DstAddr, &dimmablelightApp_epDesc,
+    567                                 dimmablelightApp_CLUSTERID,
+    568                                 (byte)osal_strlen( theMessageData ) + 1,
+    569                                 (byte *)&theMessageData,
+    570                                 &dimmablelightApp_TransID,
+    571                                 AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+   \   00001F                ; Setup parameters for call to function AF_DataRequest
+   \   00001F   75..1E       MOV     ?V0 + 0,#0x1e
+   \   000022   78..         MOV     R0,#?V0 + 0
+   \   000024   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000027   75....       MOV     ?V0 + 0,#dimmablelightApp_TransID & 0xff
+   \   00002A   75....       MOV     ?V0 + 1,#(dimmablelightApp_TransID >> 8) & 0xff
+   \   00002D   78..         MOV     R0,#?V0 + 0
+   \   00002F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000032   7403         MOV     A,#0x3
+   \   000034   12....       LCALL   ?XSTACK_DISP0_8
+   \   000037   8582..       MOV     ?V0 + 0,DPL
+   \   00003A   8583..       MOV     ?V0 + 1,DPH
+   \   00003D   78..         MOV     R0,#?V0 + 0
+   \   00003F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000042                ; Setup parameters for call to function osal_strlen
+   \   000042   7405         MOV     A,#0x5
+   \   000044   12....       LCALL   ?XSTACK_DISP0_8
+   \   000047   AA82         MOV     R2,DPL
+   \   000049   AB83         MOV     R3,DPH
+   \   00004B   12....       LCALL   ??osal_strlen?relay
+   \   00004E   EA           MOV     A,R2
+   \   00004F   2401         ADD     A,#0x1
+   \   000051   F5..         MOV     ?V0 + 0,A
+   \   000053   E4           CLR     A
+   \   000054   3400         ADDC    A,#0x0
+   \   000056   F5..         MOV     ?V0 + 1,A
+   \   000058   78..         MOV     R0,#?V0 + 0
+   \   00005A   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00005D   75..06       MOV     ?V0 + 0,#0x6
+   \   000060   75..00       MOV     ?V0 + 1,#0x0
+   \   000063   78..         MOV     R0,#?V0 + 0
+   \   000065   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000068   7920         MOV     R1,#0x20
+   \   00006A   7C..         MOV     R4,#dimmablelightApp_epDesc & 0xff
+   \   00006C   7D..         MOV     R5,#(dimmablelightApp_epDesc >> 8) & 0xff
+   \   00006E   7A..         MOV     R2,#dimmablelightApp_DstAddr & 0xff
+   \   000070   7B..         MOV     R3,#(dimmablelightApp_DstAddr >> 8) & 0xff
+   \   000072   12....       LCALL   ??AF_DataRequest?relay
+   \   000075   7409         MOV     A,#0x9
+   \   000077   12....       LCALL   ?DEALLOC_XSTACK8
+    572            {
+    573              // Successfully requested to be sent.
+    574            }
+    575            else
+    576            {
+    577              // Error occurred in request to send.
+    578            }
+    579          }
+   \   00007A   740C         MOV     A,#0xc
+   \   00007C   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00007F   02....       LJMP    ?Subroutine2 & 0xFFFF
+    580          
+    581          
+    582          
+    583          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    584          static void DimLightRouterApp_ControlDimLight(uint8 colorType)
+   \                     DimLightRouterApp_ControlDimLight:
+    585          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    586            // Ê×ÏÈ¹Ø±ÕËùÓÐµÆ
+    587            P0_1 = 0;  // À¶É«µÆDIMLIGHT_BLUE_PIN
+   \   000006   C281         CLR     0x80.1
+    588            P0_6 = 0;  // ºìÉ«µÆDIMLIGHT_RED_PIN
+   \   000008   C286         CLR     0x80.6
+    589            P0_7 = 0;  // ÂÌÉ«µÆDIMLIGHT_GREEN_PIN
+   \   00000A   C287         CLR     0x80.7
+    590            
+    591            // ¸ù¾ÝÑÕÉ«ÀàÐÍµãÁÁ¶ÔÓ¦µÄµÆ
+    592            switch (colorType)
+   \   00000C   14           DEC     A
+   \   00000D   6008         JZ      ??DimLightRouterApp_ControlDimLight_0
+   \   00000F   14           DEC     A
+   \   000010   600D         JZ      ??DimLightRouterApp_ControlDimLight_1
+   \   000012   14           DEC     A
+   \   000013   6010         JZ      ??DimLightRouterApp_ControlDimLight_2
+   \   000015   801A         SJMP    ??DimLightRouterApp_ControlDimLight_3
+    593            {
+    594              case 1:  // À¶É«
+    595                { 
+    596                  LED_change(100,0 ,0 );
+   \                     ??DimLightRouterApp_ControlDimLight_0:
+   \   000017                ; Setup parameters for call to function LED_change
+   \   000017   7B00         MOV     R3,#0x0
+   \   000019   7A00         MOV     R2,#0x0
+   \   00001B   7964         MOV     R1,#0x64
+   \   00001D   800C         SJMP    ??DimLightRouterApp_ControlDimLight_4
+    597                Delay5000ms();
+    598                  break;
+    599                }
+    600                
+    601              case 2:  // ºìÉ«
+    602                { 
+    603                  LED_change(0,100,0 );
+   \                     ??DimLightRouterApp_ControlDimLight_1:
+   \   00001F                ; Setup parameters for call to function LED_change
+   \   00001F   7B00         MOV     R3,#0x0
+   \   000021   7A64         MOV     R2,#0x64
+   \   000023   8004         SJMP    ??DimLightRouterApp_ControlDimLight_5
+    604                  Delay5000ms();
+    605                
+    606                break;
+    607                } 
+    608              case 3:  // ÂÌÉ«
+    609                { 
+    610                  LED_change(0,0,100);
+   \                     ??DimLightRouterApp_ControlDimLight_2:
+   \   000025                ; Setup parameters for call to function LED_change
+   \   000025   7B64         MOV     R3,#0x64
+   \   000027   7A00         MOV     R2,#0x0
+   \                     ??DimLightRouterApp_ControlDimLight_5:
+   \   000029   7900         MOV     R1,#0x0
+   \                     ??DimLightRouterApp_ControlDimLight_4:
+   \   00002B   12....       LCALL   ??LED_change?relay
+    611                  Delay5000ms();
+   \   00002E                ; Setup parameters for call to function Delay5000ms
+   \   00002E   12....       LCALL   ??Delay5000ms?relay
+    612                break;
+    613                }
+    614              default:
+    615                // Î´ÖªÑÕÉ«»ò0£¬±£³ÖËùÓÐµÆ¹Ø±Õ
+    616                break;
+    617            }
+    618          }
+   \                     ??DimLightRouterApp_ControlDimLight_3:
+   \   000031   02....       LJMP    ?Subroutine0 & 0xFFFF
+   \   000034                REQUIRE _A_P0
+    619          
+    620          
+    621          static void Centreapp_control_dimmablelight_dispaly(afIncomingMSGPacket_t *pkt)
+    622          {
+    623                        unsigned char red  =(unsigned char)pkt->cmd.Data[15];   //ÊÕµ½Ð­µ÷Æ÷·¢À´µÄ¿ØÖÆºìÉ«ÑÕÉ«µÄÁÁ¶È
+    624                        unsigned char green =(unsigned char)pkt->cmd.Data[16];   //ÊÕµ½Ð­µ÷Æ÷·¢À´µÄ¿ØÖÆÂÌÉ«ÑÕÉ«µÄÁÁ¶È
+    625                        unsigned char blue =(unsigned char)pkt->cmd.Data[17];   //ÊÕµ½Ð­µ÷Æ÷·¢À´µÄ¿ØÖÆÀ¶É«ÑÕÉ«µÄÁÁ¶È                                
+    626                       LED_change((blue * 100) / 255,(red * 100) / 255,(green * 100) / 255);  //°Ñµ÷µÄÁÁ¶È0-255Ó³ÉäÎªÕ¼¿Õ±È0-100 
+    627                       DelayMilliseconds(5000);                
+    628          }
+    629          
+    630          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    631          static void DimLightRouterApp_SendSuccessResponse(uint8 colorType)
+   \                     DimLightRouterApp_SendSuccessResponse:
+    632          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 44
+   \   000005   74D4         MOV     A,#-0x2c
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+    633            uint8 txFrame[32];
+    634            uint8 i = 0;
+    635            uint8 checkSum = 0;
+   \   00000C   7F00         MOV     R7,#0x0
+    636            static uint8 responseSeq = 0;  // ÏìÓ¦ÐòÁÐºÅ
+    637            
+    638            // »ñÈ¡±¾½ÚµãµØÖ·ºÍ¸¸½ÚµãµØÖ·
+    639            uint16 myShortAddr = NLME_GetShortAddr();
+   \   00000E                ; Setup parameters for call to function NLME_GetShortAddr
+   \   00000E   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   000011   8A..         MOV     ?V0 + 0,R2
+   \   000013   8B..         MOV     ?V0 + 1,R3
+    640            uint16 parentShortAddr = NLME_GetCoordShortAddr();
+   \   000015                ; Setup parameters for call to function NLME_GetCoordShortAddr
+   \   000015   12....       LCALL   ??NLME_GetCoordShortAddr?relay
+    641            
+    642            // »ñÈ¡½ÚµãÀàÐÍ£¨Â·ÓÉÆ÷£©
+    643            uint8 nodeType = 0x01;  // Â·ÓÉ½Úµã
+    644            
+    645            // ¸ù¾ÝÐ­ÒéÎÄµµ4.2.2½ÚºÍ4.2.4½Ú¹¹½¨ÏìÓ¦Ö¡
+    646            // °´ÕÕ"ÉÏ´«´«¸ÐÆ÷ÐÅÏ¢"¸ñÊ½£¬µ«°üº¬µØÖ·ÐÅÏ¢£¨ÀàËÆÉÏ´«Â·ÓÉÐÅÏ¢£©
+    647            
+    648            // 1. ¹¹½¨Ö¡Í·
+    649            txFrame[i++] = 0xAA;               // Ö¡Í·
+   \   000018   85..82       MOV     DPL,?XSP + 0
+   \   00001B   85..83       MOV     DPH,?XSP + 1
+   \   00001E   74AA         MOV     A,#-0x56
+   \   000020   F0           MOVX    @DPTR,A
+    650            txFrame[i++] = 0x00;               // Ö¡³¤¶È£¨ºóÃæ¼ÆËã£©
+   \   000021   7401         MOV     A,#0x1
+   \   000023   12....       LCALL   ?XSTACK_DISP0_8
+   \   000026   E4           CLR     A
+   \   000027   F0           MOVX    @DPTR,A
+    651            txFrame[i++] = 0x02;               // Ö¡ÀàÐÍ: ÎÞÏß´«¸ÐÊý¾Ý
+   \   000028   7402         MOV     A,#0x2
+   \   00002A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002D   7402         MOV     A,#0x2
+   \   00002F   F0           MOVX    @DPTR,A
+    652            txFrame[i++] = responseSeq++;      // Ö¡ÐòºÅ
+   \   000030   90....       MOV     DPTR,#??responseSeq
+   \   000033   E0           MOVX    A,@DPTR
+   \   000034   C0E0         PUSH    A
+   \   000036   7403         MOV     A,#0x3
+   \   000038   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003B   D0E0         POP     A
+   \   00003D   F0           MOVX    @DPTR,A
+   \   00003E   90....       MOV     DPTR,#??responseSeq
+   \   000041   E0           MOVX    A,@DPTR
+   \   000042   04           INC     A
+   \   000043   F0           MOVX    @DPTR,A
+    653            
+    654            // 2. ÃüÁîÀàÐÍºÍÐ­ÒéÀàÐÍ
+    655            txFrame[i++] = 0x03;               // ÃüÁîÀàÐÍ: ÉÏ´«´«¸ÐÆ÷ÐÅÏ¢£¬ÉÏ´«Â·ÓÉÐÅÏ¢ 
+   \   000044   7404         MOV     A,#0x4
+   \   000046   12....       LCALL   ?XSTACK_DISP0_8
+   \   000049   7403         MOV     A,#0x3
+   \   00004B   F0           MOVX    @DPTR,A
+    656            txFrame[i++] = 0x01;               // Ð­ÒéÀàÐÍ: Zigbee
+   \   00004C   7405         MOV     A,#0x5
+   \   00004E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000051   7401         MOV     A,#0x1
+   \   000053   F0           MOVX    @DPTR,A
+    657            
+    658            // 3. ´«¸ÐÆ÷ÀàÐÍºÍË÷Òý
+    659            txFrame[i++] =0x00;  // µ÷¹âµÆ´«¸ÐÆ÷ÀàÐÍ¸ß×Ö½Ú
+   \   000054   7406         MOV     A,#0x6
+   \   000056   12....       LCALL   ?XSTACK_DISP0_8
+   \   000059   E4           CLR     A
+   \   00005A   F0           MOVX    @DPTR,A
+    660            txFrame[i++] =0xA5 ;  // µ÷¹âµÆ´«¸ÐÆ÷ÀàÐÍµÍ×Ö½Ú
+   \   00005B   7407         MOV     A,#0x7
+   \   00005D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000060   74A5         MOV     A,#-0x5b
+   \   000062   F0           MOVX    @DPTR,A
+    661            txFrame[i++] =0x00;               // Ë÷ÒýºÅ
+   \   000063   7408         MOV     A,#0x8
+   \   000065   12....       LCALL   ?XSTACK_DISP0_8
+   \   000068   E4           CLR     A
+   \   000069   F0           MOVX    @DPTR,A
+    662            
+    663            // 4. Ô´µØÖ·£¨±¾½ÚµãµØÖ·£©ÀÏÑù×Ó²ÉÓÃµÄÊÇ´ó¶ËÄ£Ê½£¬¾ßÌå¾ÍÊÇ¸ßÎ»Ô´µØÖ··ÅÔÚÊý¾ÝÖ¡µÍ×Ö½Ú´¦ 
+    664            txFrame[i++] = HI_UINT16(myShortAddr);      // Ô´µØÖ·¸ß×Ö½Ú
+   \   00006A   7409         MOV     A,#0x9
+   \   00006C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006F   E5..         MOV     A,?V0 + 1
+   \   000071   F0           MOVX    @DPTR,A
+    665            txFrame[i++] = LO_UINT16(myShortAddr);      // Ô´µØÖ·µÍ×Ö½Ú
+   \   000072   740A         MOV     A,#0xa
+   \   000074   12....       LCALL   ?XSTACK_DISP0_8
+   \   000077   E5..         MOV     A,?V0 + 0
+   \   000079   F0           MOVX    @DPTR,A
+    666            
+    667            // 5. ¸¸µØÖ·
+    668            txFrame[i++] = HI_UINT16(parentShortAddr);  // ¸¸µØÖ·¸ß×Ö½Ú
+   \   00007A   740B         MOV     A,#0xb
+   \   00007C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00007F   EB           MOV     A,R3
+   \   000080   F0           MOVX    @DPTR,A
+    669            txFrame[i++] = LO_UINT16(parentShortAddr);  // ¸¸µØÖ·µÍ×Ö½Ú
+   \   000081   740C         MOV     A,#0xc
+   \   000083   12....       LCALL   ?XSTACK_DISP0_8
+   \   000086   EA           MOV     A,R2
+   \   000087   F0           MOVX    @DPTR,A
+    670            
+    671            // 6. ½ÚµãÀàÐÍ
+    672            txFrame[i++] = nodeType;           // ½ÚµãÀàÐÍ: 0x01=Â·ÓÉ½Úµã
+   \   000088   740D         MOV     A,#0xd
+   \   00008A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00008D   7401         MOV     A,#0x1
+   \   00008F   F0           MOVX    @DPTR,A
+    673            
+    674            // 7. ÖµÀàÐÍ£¨¸ù¾ÝÐ­Òé£¬µ÷¹âµÆÊÇÌØÊâÀàÐÍF0£¬3×Ö½Ú£©
+    675            txFrame[i++] = 0xF0;               // ÖµÀàÐÍ: ÌØÊâÀàÐÍ
+   \   000090   740E         MOV     A,#0xe
+   \   000092   12....       LCALL   ?XSTACK_DISP0_8
+   \   000095   74F0         MOV     A,#-0x10
+   \   000097   F0           MOVX    @DPTR,A
+    676            
+    677            // 8. Êý¾ÝÖµ£¨RGBÈý¸öÁÁ¶ÈÖµ£©
+    678            uint8 redValue = (colorType == 2) ? 0xFF : 0x00;   // ºìÉ«ÁÁ¶È
+   \   000098   7402         MOV     A,#0x2
+   \   00009A   6E           XRL     A,R6
+   \   00009B   700D         JNZ     ??DimLightRouterApp_SendSuccessResponse_0
+   \   00009D   78FF         MOV     R0,#-0x1
+   \                     ??DimLightRouterApp_SendSuccessResponse_1:
+   \   00009F   7900         MOV     R1,#0x0
+    679            uint8 greenValue = (colorType == 3) ? 0xFF : 0x00; // ÂÌÉ«ÁÁ¶È
+    680            uint8 blueValue = (colorType == 1) ? 0xFF : 0x00;  // À¶É«ÁÁ¶È
+   \   0000A1   7401         MOV     A,#0x1
+   \   0000A3   6E           XRL     A,R6
+   \   0000A4   700D         JNZ     ??DimLightRouterApp_SendSuccessResponse_2
+   \   0000A6   7AFF         MOV     R2,#-0x1
+   \   0000A8   800B         SJMP    ??DimLightRouterApp_SendSuccessResponse_3
+   \                     ??DimLightRouterApp_SendSuccessResponse_0:
+   \   0000AA   7800         MOV     R0,#0x0
+   \   0000AC   7403         MOV     A,#0x3
+   \   0000AE   6E           XRL     A,R6
+   \   0000AF   70EE         JNZ     ??DimLightRouterApp_SendSuccessResponse_1
+   \   0000B1   79FF         MOV     R1,#-0x1
+   \                     ??DimLightRouterApp_SendSuccessResponse_2:
+   \   0000B3   7A00         MOV     R2,#0x0
+    681            
+    682            txFrame[i++] = redValue;           // ºìÉ«ÁÁ¶È
+   \                     ??DimLightRouterApp_SendSuccessResponse_3:
+   \   0000B5   740F         MOV     A,#0xf
+   \   0000B7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000BA   E8           MOV     A,R0
+   \   0000BB   F0           MOVX    @DPTR,A
+    683            txFrame[i++] = greenValue;         // ÂÌÉ«ÁÁ¶È
+   \   0000BC   7410         MOV     A,#0x10
+   \   0000BE   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000C1   E9           MOV     A,R1
+   \   0000C2   F0           MOVX    @DPTR,A
+    684            txFrame[i++] = blueValue;          // À¶É«ÁÁ¶È
+   \   0000C3   7411         MOV     A,#0x11
+   \   0000C5   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000C8   EA           MOV     A,R2
+   \   0000C9   F0           MOVX    @DPTR,A
+    685            
+    686            // 9. ¸üÐÂÖ¡³¤¶È£¨°üÀ¨Ö¡³¤¶È×Ö½Ú±¾Éí£©
+    687            txFrame[1] = i + 1;                // ×Ü×Ö½ÚÊý£¨°üÀ¨Ð£ÑéÂë£©
+   \   0000CA   7401         MOV     A,#0x1
+   \   0000CC   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000CF   7413         MOV     A,#0x13
+   \   0000D1   F0           MOVX    @DPTR,A
+    688            
+    689            // 10. ¼ÆËãÐ£ÑéºÍ
+    690            for (uint8 j = 0; j < i; j++)
+   \   0000D2   7800         MOV     R0,#0x0
+    691            {
+    692              checkSum += txFrame[j];
+   \                     ??DimLightRouterApp_SendSuccessResponse_4:
+   \   0000D4   88..         MOV     ?V0 + 0,R0
+   \   0000D6   85..82       MOV     DPL,?XSP + 0
+   \   0000D9   85..83       MOV     DPH,?XSP + 1
+   \   0000DC   E582         MOV     A,DPL
+   \   0000DE   25..         ADD     A,?V0 + 0
+   \   0000E0   F582         MOV     DPL,A
+   \   0000E2   E583         MOV     A,DPH
+   \   0000E4   3400         ADDC    A,#0x0
+   \   0000E6   F583         MOV     DPH,A
+   \   0000E8   E0           MOVX    A,@DPTR
+   \   0000E9   2F           ADD     A,R7
+   \   0000EA   FF           MOV     R7,A
+    693            }
+   \   0000EB   08           INC     R0
+   \   0000EC   E8           MOV     A,R0
+   \   0000ED   C3           CLR     C
+   \   0000EE   9412         SUBB    A,#0x12
+   \   0000F0   40E2         JC      ??DimLightRouterApp_SendSuccessResponse_4
+    694            txFrame[i++] = checkSum;
+   \   0000F2   7412         MOV     A,#0x12
+   \   0000F4   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000F7   EF           MOV     A,R7
+   \   0000F8   F0           MOVX    @DPTR,A
+    695            
+    696            
+    697            
+    698            // 8. ·¢ËÍÊý¾Ýµ½Ð­µ÷Æ÷
+    699            afAddrType_t dstAddr;
+    700            dstAddr.addrMode = (afAddrMode_t)afAddr16Bit;
+   \   0000F9   7428         MOV     A,#0x28
+   \   0000FB   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000FE   7402         MOV     A,#0x2
+   \   000100   F0           MOVX    @DPTR,A
+    701            dstAddr.endPoint = dimmablelightApp_ENDPOINT;//·¢ËÍµ½¶ÔÓ¦Éè±¸£¨±¾´ÎÊµÑµÖÐÊÇÐ­µ÷Æ÷£©µÄ¶ÔÓ¦¶Ëµã10ÉÏ 
+   \   000101   7429         MOV     A,#0x29
+   \   000103   12....       LCALL   ?XSTACK_DISP0_8
+   \   000106   740A         MOV     A,#0xa
+   \   000108   F0           MOVX    @DPTR,A
+    702            dstAddr.addr.shortAddr = 0x0000;   // Ð­µ÷Æ÷µØÖ·
+   \   000109   7420         MOV     A,#0x20
+   \   00010B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00010E   E4           CLR     A
+   \   00010F   F0           MOVX    @DPTR,A
+   \   000110   A3           INC     DPTR
+   \   000111   F0           MOVX    @DPTR,A
+    703            
+    704            if (AF_DataRequest(&dstAddr,//Ä¿±êÉè±¸µÄµØÖ·
+    705                               &dimmablelightApp_epDesc,//Ô´Éè±¸µÄ¶ËµãÃèÊö·ûºÅ£¬ÔÚÇ°ÃæÒÑ¾­¶¨ÒåÁË £¬ÔÚÇ°ÃæÒÑ¾­×¢²áÁËÕâ¸ö¶Ë¿ÚºÅ10ÁË¡£ ¿É¼û·¢ËÍµ½Ä¿µÄÉè±¸µÄ¶Ë¿ÚºÅÒª¸ú×ÔÉíÉè±¸µÄ¶Ë¿ÚºÅÏàÍ¬£¡£¡£¡ 
+    706                               dimmablelightApp_CLUSTERID,//·¢ËÍ±¾´ÎÐÅÏ¢Ëù´øµÄCID  
+    707                               i,              // Êý¾Ý³¤¶È
+    708                               txFrame,
+    709                               &dimmablelightApp_TransID,
+    710                               AF_DISCV_ROUTE,
+    711                               AF_DEFAULT_RADIUS) == afStatus_SUCCESS)
+   \   000112                ; Setup parameters for call to function AF_DataRequest
+   \   000112   75..1E       MOV     ?V0 + 0,#0x1e
+   \   000115   78..         MOV     R0,#?V0 + 0
+   \   000117   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00011A   75....       MOV     ?V0 + 0,#dimmablelightApp_TransID & 0xff
+   \   00011D   75....       MOV     ?V0 + 1,#(dimmablelightApp_TransID >> 8) & 0xff
+   \   000120   78..         MOV     R0,#?V0 + 0
+   \   000122   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000125   7403         MOV     A,#0x3
+   \   000127   12....       LCALL   ?XSTACK_DISP0_8
+   \   00012A   8582..       MOV     ?V0 + 0,DPL
+   \   00012D   8583..       MOV     ?V0 + 1,DPH
+   \   000130   78..         MOV     R0,#?V0 + 0
+   \   000132   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000135   75..13       MOV     ?V0 + 0,#0x13
+   \   000138   75..00       MOV     ?V0 + 1,#0x0
+   \   00013B   78..         MOV     R0,#?V0 + 0
+   \   00013D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000140   75..06       MOV     ?V0 + 0,#0x6
+   \   000143   78..         MOV     R0,#?V0 + 0
+   \   000145   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000148   7920         MOV     R1,#0x20
+   \   00014A   7C..         MOV     R4,#dimmablelightApp_epDesc & 0xff
+   \   00014C   7D..         MOV     R5,#(dimmablelightApp_epDesc >> 8) & 0xff
+   \   00014E   7429         MOV     A,#0x29
+   \   000150   12....       LCALL   ?XSTACK_DISP0_8
+   \   000153   AA82         MOV     R2,DPL
+   \   000155   AB83         MOV     R3,DPH
+   \   000157   12....       LCALL   ??AF_DataRequest?relay
+   \   00015A   7409         MOV     A,#0x9
+   \   00015C   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00015F   E9           MOV     A,R1
+   \   000160   7C32         MOV     R4,#0x32
+   \   000162   7D00         MOV     R5,#0x0
+   \   000164   7BFA         MOV     R3,#-0x6
+   \   000166   7A05         MOV     R2,#0x5
+   \   000168   7004         JNZ     ??DimLightRouterApp_SendSuccessResponse_5
+    712            {
+    713              // ·¢ËÍ³É¹¦
+    714              HalLedBlink(HAL_LED_2, 5, 250, 50);  // linkÉÁË¸±íÊ¾·¢ËÍ³É¹¦
+   \   00016A                ; Setup parameters for call to function HalLedBlink
+   \   00016A   7902         MOV     R1,#0x2
+   \   00016C   8002         SJMP    ??DimLightRouterApp_SendSuccessResponse_6
+    715            } else
+    716              {
+    717                 HalLedBlink(HAL_LED_1, 5, 250, 50);  //dataÉÁË¸±íÊ¾·¢ËÍÊ§°Ü 
+   \                     ??DimLightRouterApp_SendSuccessResponse_5:
+   \   00016E                ; Setup parameters for call to function HalLedBlink
+   \   00016E   7901         MOV     R1,#0x1
+   \                     ??DimLightRouterApp_SendSuccessResponse_6:
+   \   000170   12....       LCALL   ??HalLedBlink?relay
+    718              }
+    719              
+    720            }
+   \   000173   742C         MOV     A,#0x2c
+   \   000175   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000178   02....       LJMP    ?Subroutine1 & 0xFFFF
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??responseSeq:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    721          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    722          void Delay5000ms(void) ////11.0592MHz
+   \                     Delay5000ms:
+    723          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    724              unsigned char i, j, k;
+    725          
+    726              i = 43;
+   \   000000   7A2B         MOV     R2,#0x2b
+    727              j = 6;
+   \   000002   7906         MOV     R1,#0x6
+    728              k = 203;
+   \   000004   78CB         MOV     R0,#-0x35
+    729              do
+    730              {
+    731                  do
+    732                  {
+    733                      while (--k);
+   \                     ??Delay5000ms_0:
+   \   000006   18           DEC     R0
+   \   000007   E8           MOV     A,R0
+   \   000008   70FC         JNZ     ??Delay5000ms_0
+    734                  } while (--j);
+   \   00000A   19           DEC     R1
+   \   00000B   E9           MOV     A,R1
+   \   00000C   70F8         JNZ     ??Delay5000ms_0
+    735              } while (--i);
+   \   00000E   1A           DEC     R2
+   \   00000F   EA           MOV     A,R2
+   \   000010   70F4         JNZ     ??Delay5000ms_0
+    736          }
+   \   000012   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   F8           MOV     R0,A
+   \   000001   A3           INC     DPTR
+   \   000002   E0           MOVX    A,@DPTR
+   \   000003   3400         ADDC    A,#0x0
+   \   000005   F9           MOV     R1,A
+   \   000006   8882         MOV     DPL,R0
+   \   000008   8983         MOV     DPH,R1
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   75F064       MOV     B,#0x64
+   \   00000E   A4           MUL     AB
+   \   00000F   F8           MOV     R0,A
+   \   000010   A9F0         MOV     R1,B
+   \   000012   7AFF         MOV     R2,#-0x1
+   \   000014   7B00         MOV     R3,#0x0
+   \   000016   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??dimmablelightApp_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    dimmablelightApp_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??dimmablelightApp_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    dimmablelightApp_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??dimmablelightApp_ProcessZDOMsgs?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    dimmablelightApp_ProcessZDOMsgs
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??dimmablelightApp_HandleKeys?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    dimmablelightApp_HandleKeys
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??dimmablelightApp_MessageMSGCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    dimmablelightApp_MessageMSGCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??dimmablelightApp_SendTheMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    dimmablelightApp_SendTheMessage
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??DimLightRouterApp_ControlDimLight?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    DimLightRouterApp_ControlDimLight
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??DimLightRouterApp_SendSuccessResponse?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    DimLightRouterApp_SendSuccessResponse
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay5000ms?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay5000ms
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "dimmablelightApp">`:
+   \   000000   64696D6D     DB "dimmablelightApp"
+   \            61626C65
+   \            6C696768
+   \            74417070
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Hello World">`:
+   \   000000   48656C6C     DB "Hello World"
+   \            6F20576F
+   \            726C6400
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_1388:
+   \   000000   88130000     DD 5000
+    737          
+    738          
+    739          
+    740          
+    741          
+    742          
+    743          
+    744          
+    745          
+    746          
+    747          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     Delay5000ms                        0      0      9
+     DimLightRouterApp_ControlDimLight
+                                        0      0     19
+       -> LED_change                    0      0     18
+       -> Delay5000ms                   0      0     18
+       -> LED_change                    0      0     18
+       -> Delay5000ms                   0      0     18
+       -> LED_change                    0      0     18
+       -> Delay5000ms                   0      0     18
+     DimLightRouterApp_SendSuccessResponse
+                                        1      0     75
+       -> NLME_GetShortAddr             0      0    112
+       -> NLME_GetCoordShortAddr        0      0    112
+       -> AF_DataRequest                0      0    130
+       -> HalLedBlink                   0      0    112
+       -> HalLedBlink                   0      0    112
+     dimmablelightApp_HandleKeys        0      0     41
+       -> HalLedSet                     0      0     40
+       -> NLME_GetShortAddr             0      0     40
+       -> ZDP_EndDeviceBindReq          0      0     58
+       -> HalLedSet                     0      0     40
+       -> ZDP_MatchDescReq              0      0     56
+     dimmablelightApp_Init              0      0      9
+       -> DimLightRouterApp_InitDimLightHardware
+                                        0      0     18
+       -> DimLightRouterApp_ControlDimLight
+                                        0      0     18
+       -> afRegister                    0      0     18
+       -> RegisterForKeys               0      0     18
+       -> HalLcdWriteString             0      0     18
+       -> ZDO_RegisterForZDOMsg         0      0     18
+       -> ZDO_RegisterForZDOMsg         0      0     18
+     dimmablelightApp_MessageMSGCB      0      0     22
+       -> DimLightRouterApp_ControlDimLight
+                                        0      0     20
+       -> DimLightRouterApp_SendSuccessResponse
+                                        0      0     20
+       -> DimLightRouterApp_ControlDimLight
+                                        0      0     20
+       -> DimLightRouterApp_SendSuccessResponse
+                                        0      0     20
+       -> DimLightRouterApp_ControlDimLight
+                                        0      0     20
+       -> DimLightRouterApp_SendSuccessResponse
+                                        0      0     20
+       -> LED_change                    0      0     20
+       -> DelayMilliseconds             0      0     20
+     dimmablelightApp_ProcessEvent      0      0     12
+       -> osal_msg_receive              0      0     24
+       -> HalLedBlink                   0      0     24
+       -> osal_msg_deallocate           0      0     24
+       -> osal_msg_receive              0      0     24
+       -> dimmablelightApp_ProcessZDOMsgs
+                                        0      0     24
+       -> dimmablelightApp_HandleKeys
+                                        0      0     24
+       -> dimmablelightApp_MessageMSGCB
+                                        0      0     24
+       -> dimmablelightApp_SendTheMessage
+                                        0      0     24
+       -> osal_start_timerEx            0      0     24
+     dimmablelightApp_ProcessZDOMsgs
+                                        0      0     22
+       -> HalLedSet                     0      0     20
+       -> HalLedSet                     0      0     20
+       -> ZDO_ParseEPListRsp            0      0     20
+       -> HalLedSet                     0      0     20
+       -> osal_mem_free                 0      0     20
+     dimmablelightApp_SendTheMessage
+                                        2      0     43
+       -> osal_strlen                   0      0     54
+       -> AF_DataRequest                0      0     62
+
+
+   Segment part sizes:
+
+     Function/Label                                Bytes
+     --------------                                -----
+     _A_P0                                            1
+     dimmablelightApp_ClusterList                    10
+     dimmablelightApp_SimpleDesc                     12
+     dimmablelightApp_epDesc                          6
+     dimmablelightApp_TaskID                          1
+     dimmablelightApp_NwkState                        1
+     dimmablelightApp_TransID                         1
+     dimmablelightApp_DstAddr                        12
+     dimmablelightApp_Init                          121
+     ?Subroutine0                                     5
+     dimmablelightApp_ProcessEvent                  180
+     ?Subroutine1                                     5
+     dimmablelightApp_ProcessZDOMsgs
+                                                    136
+     ?Subroutine2                                     5
+     ?Subroutine5                                    16
+     ?Subroutine4                                    10
+     dimmablelightApp_HandleKeys                    241
+     dimmablelightApp_MessageMSGCB                  169
+     dimmablelightApp_SendTheMessage
+                                                    130
+     DimLightRouterApp_ControlDimLight
+                                                     52
+     DimLightRouterApp_SendSuccessResponse
+                                                    379
+     responseSeq                                      1
+     Delay5000ms                                     21
+     ?Subroutine3                                    23
+     ??dimmablelightApp_Init?relay                    6
+     ??dimmablelightApp_ProcessEvent?relay            6
+     ??dimmablelightApp_ProcessZDOMsgs?relay          6
+     ??dimmablelightApp_HandleKeys?relay              6
+     ??dimmablelightApp_MessageMSGCB?relay            6
+     ??dimmablelightApp_SendTheMessage?relay          6
+     ??DimLightRouterApp_ControlDimLight?relay        6
+     ??DimLightRouterApp_SendSuccessResponse?relay    6
+     ??Delay5000ms?relay                              6
+     ?<Constant "dimmablelightApp">                  17
+     ?<Constant "Hello World">                       12
+     __Constant_1388                                  4
+
+ 
+ 1 493 bytes in segment BANKED_CODE
+    54 bytes in segment BANK_RELAYS
+     1 byte  in segment SFR_AN
+    55 bytes in segment XDATA_ROM_C
+    22 bytes in segment XDATA_Z
+ 
+ 1 547 bytes of CODE  memory
+    51 bytes of CONST memory (+ 4 bytes shared)
+     0 bytes of DATA  memory (+ 1 byte  shared)
+    22 bytes of XDATA memory
+
+Errors: none
+Warnings: none

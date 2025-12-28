@@ -1,0 +1,810 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        24/Dec/2025  16:56:24 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\S /
+//                          ource\Dimmablelight_init.c                        /
+//    Command line       =  -f E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑ /
+//                          µ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightAp /
+//                          p\CC2530DB\..\..\..\Tools\CC2530DB\f8wRouter.cfg  /
+//                          (-DCPU32MHZ -DROOT=__near_func                    /
+//                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                  /
+//                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8        /
+//                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                  /
+//                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg     /
+//                          (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0     /
+//                          -DREFLECTOR -DDEFAULT_CHANLIST26=0x04000000       /
+//                          -DDEFAULT_CHANLIST25=0x02000000                   /
+//                          -DDEFAULT_CHANLIST24=0x01000000                   /
+//                          -DDEFAULT_CHANLIST23=0x00800000                   /
+//                          -DDEFAULT_CHANLIST22=0x00400000                   /
+//                          -DDEFAULT_CHANLIST21=0x00200000                   /
+//                          -DDEFAULT_CHANLIST20=0x00100000                   /
+//                          -DDEFAULT_CHANLIST19=0x00080000                   /
+//                          -DDEFAULT_CHANLIST18=0x00040000                   /
+//                          -DDEFAULT_CHANLIST17=0x00020000                   /
+//                          -DDEFAULT_CHANLIST16=0x00010000                   /
+//                          -DDEFAULT_CHANLIST15=0x00008000                   /
+//                          -DDEFAULT_CHANLIST14=0x00004000                   /
+//                          -DDEFAULT_CHANLIST13=0x00002000                   /
+//                          -DDEFAULT_CHANLIST12=0x00001000                   /
+//                          -DDEFAULT_CHANLIST11=0x00000800                   /
+//                          -DDEFAULT_CHANLIST=DEFAULT_CHANLIST25             /
+//                          -DZDAPP_CONFIG_PAN_ID=0x0006                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ /
+//                          ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sam /
+//                          ples\dimmablelightApp\Source\Dimmablelight_init.c /
+//                           -D ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D         /
+//                          MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -lC            /
+//                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\RouterEB\List\ -lA                        /
+//                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\RouterEB\List\ --diag_suppress            /
+//                          Pe001,Pa010 -o E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStac /
+//                          k-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dim /
+//                          mablelightApp\CC2530DB\RouterEB\Obj\ -e           /
+//                          --no_code_motion --debug --core=plain             /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-C /
+//                          C2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmab /
+//                          lelightApp\CC2530DB\..\Source\ -I                 /
+//                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\..\..\..\ZMain\TI2530DB\ -I               /
+//                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\..\..\..\..\..\Components\hal\include\    /
+//                          -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑ /
+//                          µ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightAp /
+//                          p\CC2530DB\..\..\..\..\..\Components\hal\target\C /
+//                          C2530EB\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-C /
+//                          C2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmab /
+//                          lelightApp\CC2530DB\..\..\..\..\..\Components\mac /
+//                          \include\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack- /
+//                          CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimma /
+//                          blelightApp\CC2530DB\..\..\..\..\..\Components\ma /
+//                          c\high_level\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZSt /
+//                          ack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\d /
+//                          immablelightApp\CC2530DB\..\..\..\..\..\Component /
+//                          s\mac\low_level\srf04\ -I                         /
+//                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\..\..\..\..\..\Components\mac\low_level\s /
+//                          rf04\single_chip\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ /
+//                          ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sampl /
+//                          es\dimmablelightApp\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\mt\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack- /
+//                          CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimma /
+//                          blelightApp\CC2530DB\..\..\..\..\..\Components\os /
+//                          al\include\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStac /
+//                          k-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dim /
+//                          mablelightApp\CC2530DB\..\..\..\..\..\Components\ /
+//                          services\saddr\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷Z /
+//                          Stack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples /
+//                          \dimmablelightApp\CC2530DB\..\..\..\..\..\Compone /
+//                          nts\services\sdata\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ /
+//                          ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sam /
+//                          ples\dimmablelightApp\CC2530DB\..\..\..\..\..\Com /
+//                          ponents\stack\af\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ /
+//                          ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sampl /
+//                          es\dimmablelightApp\CC2530DB\..\..\..\..\..\Compo /
+//                          nents\stack\nwk\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ /
+//                          ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sample /
+//                          s\dimmablelightApp\CC2530DB\..\..\..\..\..\Compon /
+//                          ents\stack\sapi\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ /
+//                          ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sample /
+//                          s\dimmablelightApp\CC2530DB\..\..\..\..\..\Compon /
+//                          ents\stack\sec\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷Z /
+//                          Stack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples /
+//                          \dimmablelightApp\CC2530DB\..\..\..\..\..\Compone /
+//                          nts\stack\sys\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZS /
+//                          tack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\ /
+//                          dimmablelightApp\CC2530DB\..\..\..\..\..\Componen /
+//                          ts\stack\zdo\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZSt /
+//                          ack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\d /
+//                          immablelightApp\CC2530DB\..\..\..\..\..\Component /
+//                          s\zmac\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC /
+//                          2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmabl /
+//                          elightApp\CC2530DB\..\..\..\..\..\Components\zmac /
+//                          \f8w\ -Ohz --require_prototypes                   /
+//    List file          =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×î /
+//                          ÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\C /
+//                          C2530DB\RouterEB\List\Dimmablelight_init.s51      /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME Dimmablelight_init
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?L_ADD_X
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??DelayMilliseconds?relay
+        FUNCTION ??DelayMilliseconds?relay,0203H
+        PUBLIC ??DimLightRouterApp_InitDimLightHardware?relay
+        FUNCTION ??DimLightRouterApp_InitDimLightHardware?relay,0203H
+        PUBLIC ??LED_change?relay
+        FUNCTION ??LED_change?relay,0203H
+        PUBWEAK `??Timer1??INTVEC 75`
+        PUBLIC DelayMilliseconds
+        FUNCTION DelayMilliseconds,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        PUBLIC DimLightRouterApp_InitDimLightHardware
+        FUNCTION DimLightRouterApp_InitDimLightHardware,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC LED_change
+        FUNCTION LED_change,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBWEAK P0DIR
+        PUBWEAK P0SEL
+        PUBWEAK T1CC0H
+        PUBWEAK T1CC0L
+        PUBWEAK T1CTL
+        PUBLIC Timer1
+        FUNCTION Timer1,0233H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 5, STACK
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_IEN1
+        PUBWEAK _A_P0
+        PUBWEAK __Constant_ffffffff
+        PUBLIC msBlueCount
+        PUBLIC msDlCount
+        PUBLIC msGreenCount
+        PUBLIC msRedCount
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        
+        CFI Common cfiCommon1 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B SameValue
+        CFI A SameValue
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 SameValue
+        CFI R1 SameValue
+        CFI R2 SameValue
+        CFI R3 SameValue
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT SameValue
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon1
+        
+DelayMilliseconds   SYMBOL "DelayMilliseconds"
+??DelayMilliseconds?relay SYMBOL "?relay", DelayMilliseconds
+DimLightRouterApp_InitDimLightHardware SYMBOL "DimLightRouterApp_InitDimLightHardware"
+??DimLightRouterApp_InitDimLightHardware?relay SYMBOL "?relay", DimLightRouterApp_InitDimLightHardware
+LED_change          SYMBOL "LED_change"
+??LED_change?relay  SYMBOL "?relay", LED_change
+Timer1              SYMBOL "Timer1"
+`??Timer1??INTVEC 75` SYMBOL "??INTVEC 75", Timer1
+
+// E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\dimmablelightApp\Source\Dimmablelight_init.c
+//    1 #include <ioCC2530.h>
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b8H
+// union <unnamed> volatile __sfr _A_IEN1
+_A_IEN1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0daH
+// unsigned char volatile __sfr T1CC0L
+T1CC0L:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0dbH
+// unsigned char volatile __sfr T1CC0H
+T1CC0H:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e4H
+// unsigned char volatile __sfr T1CTL
+T1CTL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f3H
+// unsigned char volatile __sfr P0SEL
+P0SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+//    2 #include "Dimmablelight.h"
+//    3 
+//    4 
+//    5 
+//    6 // Õ¼¿Õ±È±äÁ¿£¨0~100£¬¶ÔÓ¦ÁÁ¶È0~100%£© ºóÐø»¹Òª×öÒ»¸öÓ³Éä°ÑÐ­µ÷Æ÷´«À´µÄ0-255Ó³Éäµ½0-100ÉÏ
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//    7 unsigned char msDlCount=0;     // ºìÉ«Õ¼¿Õ±È
+msDlCount:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//    8 unsigned char msBlueCount=0;  // ÂÌÉ«Õ¼¿Õ±È
+msBlueCount:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//    9 unsigned char msRedCount=0;    // À¶É«Õ¼¿Õ±È
+msRedCount:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   10 unsigned char msGreenCount=0;   // PWMÖÜÆÚ¼ÆÊý£¨0~100£¬¶ÔÓ¦100msÖÜÆÚ£©
+msGreenCount:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   11 
+//   12 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   13 void DimLightRouterApp_InitDimLightHardware(void)
+DimLightRouterApp_InitDimLightHardware:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function DimLightRouterApp_InitDimLightHardware
+        CODE
+//   14 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   15   // ³õÊ¼»¯GPIOÎªÊä³öÄ£Ê½£¨¸ù¾Ýµ÷¹âµÆPDFÎÄµµ£©
+//   16   // P0.1, P0.6, P0.7 ×÷Îªµ÷¹âµÆ¿ØÖÆÒý½Å
+//   17  P0DIR |= (0x01<<1) | (0x01<<6) | (0x01<<7);  // ÉèÖÃP0.1/6/7ÎªÊä³ö
+        ORL     0xfd,#0xc2
+//   18  
+//   19  //¹Ø±Õµç´ÅËø£¬µç´ÅËø²»ÄÜ³£¿ª»áÉÕ»µ
+//   20 P0SEL &= ~(0x01 << 4);
+        ANL     0xf3,#0xef
+//   21 P0DIR |= (0x01 << 4);
+        ORL     0xfd,#0x10
+//   22 P0_4 =0;
+        CLR     0x80.4
+//   23 
+//   24 
+//   25   // ¶¨Ê±Æ÷1³õÊ¼»¯ÉèÖÃ     ¶¨Òå¶¨Ê±Æ÷Òç³öµÄÊ±¼ä
+//   26     T1CC0L = 0xFA;      // µÍ×Ö½Ú
+        MOV     0xda,#-0x6
+//   27     T1CC0H = 0x00;      // ¸ß×Ö½Ú£¬¶¨Ê±1ms   0xFA00
+        MOV     0xdb,#0x0
+//   28     T1CTL = 0x33;       // Í¨µÀ0£¬²»·ÖÆµ£¬up/downÄ£Ê½
+        MOV     0xe4,#0x33
+//   29 
+//   30     // Ê¹ÄÜÖÐ¶Ï
+//   31     EA = 1;             // ¿ªÆôÈ«¾ÖÖÐ¶Ï
+        SETB    0xa8.7
+//   32     T1IE = 1;          // ¿ªÆô¶¨Ê±Æ÷1ÖÐ¶Ï
+        SETB    0xb8.1
+//   33   
+//   34 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+        REQUIRE P0DIR
+        REQUIRE P0SEL
+        REQUIRE _A_P0
+        REQUIRE T1CC0L
+        REQUIRE T1CC0H
+        REQUIRE T1CTL
+        REQUIRE _A_IEN0
+        REQUIRE _A_IEN1
+//   35 
+//   36 
+//   37 /****************************************************************
+//   38 ¶¨Ê±Æ÷ÖÐ¶ÏÖÐ¿ØÖÆµ÷¹âµÆIOÊä³ö×´Ì¬
+//   39 ***********************************************************/
+//   40 #pragma vector=T1_VECTOR
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   41 __interrupt void Timer1(void)
+Timer1:
+        CFI Block cfiBlock1 Using cfiCommon1
+        CFI Function Timer1
+        CODE
+//   42 {
+        PUSH    A
+        CFI A Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    PSW
+        CFI PSW Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        MOV     A,R0
+        CFI R0 A
+        PUSH    A
+        CFI R0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 6)
+        CFI CFA_SP SP+-6
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 7)
+        CFI CFA_SP SP+-7
+        ; Saved register size: 5
+        ; Auto size: 0
+//   43   ++msDlCount;
+        MOV     DPTR,#msDlCount
+        MOVX    A,@DPTR
+        INC     A
+        MOVX    @DPTR,A
+//   44   msDlCount = (msDlCount >= 100) ? 0 : msDlCount;
+        CLR     C
+        SUBB    A,#0x64
+        JC      ??Timer1_0
+        CLR     A
+        MOVX    @DPTR,A
+//   45   P0_1 = (msDlCount <= msBlueCount) ? 1 : 0;
+??Timer1_0:
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     DPTR,#msBlueCount
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,R0
+        JC      ??Timer1_1
+        MOV     A,#0x1
+        SJMP    ??Timer1_2
+??Timer1_1:
+        CLR     A
+??Timer1_2:
+        CLR     C
+        RLC     A
+        MOV     R0,A
+        MOV     A,0x80
+        ANL     A,#0xfd
+        LCALL   ?Subroutine0
+//   46   P0_6 = (msDlCount <= msRedCount) ? 1 : 0;
+??CrossCallReturnLabel_0:
+        MOV     DPTR,#msRedCount
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,R0
+        JC      ??Timer1_3
+        MOV     A,#0x1
+        SJMP    ??Timer1_4
+??Timer1_3:
+        CLR     A
+??Timer1_4:
+        SWAP    A
+        RLC     A
+        RLC     A
+        ANL     A,#0xc0
+        MOV     R0,A
+        MOV     A,0x80
+        ANL     A,#0xbf
+        LCALL   ?Subroutine0
+//   47   P0_7 = (msDlCount <= msGreenCount) ? 1 : 0;
+??CrossCallReturnLabel_1:
+        MOV     DPTR,#msGreenCount
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,R0
+        JC      ??Timer1_5
+        MOV     R0,#0x1
+        SJMP    ??Timer1_6
+??Timer1_5:
+        MOV     R0,#0x0
+??Timer1_6:
+        MOV     A,R0
+        MOV     C,0xE0 /* A   */.0
+        MOV     0x80.7,C
+//   48 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-6
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-5
+        POP     A
+        CFI R0 A
+        CFI CFA_SP SP+-4
+        MOV     R0,A
+        CFI R0 SameValue
+        POP     PSW
+        CFI PSW SameValue
+        CFI CFA_SP SP+-3
+        POP     A
+        CFI A SameValue
+        CFI CFA_SP SP+-2
+        RETI
+        CFI EndBlock cfiBlock1
+        REQUIRE _A_P0
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        CFI Block cfiCond2 Using cfiCommon1
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_0
+        CFI A Frame(CFA_SP, 3)
+        CFI PSW Frame(CFA_SP, 4)
+        CFI R0 Frame(CFA_SP, 5)
+        CFI DPL0 Frame(CFA_SP, 6)
+        CFI DPH0 Frame(CFA_SP, 7)
+        CFI CFA_SP SP+-7
+        CFI Block cfiCond3 Using cfiCommon1
+        CFI (cfiCond3) NoFunction
+        CFI (cfiCond3) Conditional ??CrossCallReturnLabel_1
+        CFI (cfiCond3) A Frame(CFA_SP, 3)
+        CFI (cfiCond3) PSW Frame(CFA_SP, 4)
+        CFI (cfiCond3) R0 Frame(CFA_SP, 5)
+        CFI (cfiCond3) DPL0 Frame(CFA_SP, 6)
+        CFI (cfiCond3) DPH0 Frame(CFA_SP, 7)
+        CFI (cfiCond3) CFA_SP SP+-7
+        CFI Block cfiPicker4 Using cfiCommon1
+        CFI (cfiPicker4) NoFunction
+        CFI (cfiPicker4) Picker
+        ORL     A,R0
+        MOV     0x80,A
+        MOV     DPTR,#msDlCount
+        MOVX    A,@DPTR
+        MOV     R0,A
+        RET
+        CFI EndBlock cfiCond2
+        CFI EndBlock cfiCond3
+        CFI EndBlock cfiPicker4
+//   49 
+//   50 
+//   51 
+//   52 /*¸ù¾Ý´«ÈëµÄÊý¾Ý½øÐÐµÆ¹âÇÐ»»*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   53 void LED_change(unsigned char RGB_Blue,unsigned char RGB_Red,unsigned char RGB_Green)
+LED_change:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function LED_change
+        CODE
+//   54 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//   55   msBlueCount = RGB_Blue;
+        MOV     A,R1
+        MOV     DPTR,#msBlueCount
+        MOVX    @DPTR,A
+//   56   msRedCount = RGB_Red;
+        MOV     A,R2
+        MOV     DPTR,#msRedCount
+        MOVX    @DPTR,A
+//   57   msGreenCount = RGB_Green;
+        MOV     A,R3
+        MOV     DPTR,#msGreenCount
+        MOVX    @DPTR,A
+//   58 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock5
+//   59 
+//   60 
+//   61 //ÑÓÊ±º¯Êý£¬ÒÔºÁÃëÎªµ¥Î»
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   62 void DelayMilliseconds(unsigned long xms) {
+DelayMilliseconds:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function DelayMilliseconds
+        CODE
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 0
+//   63     unsigned long i, j;
+//   64     for (i = xms; i > 0; i--) {
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 6,R4
+        MOV     ?V0 + 7,R5
+        SJMP    ??DelayMilliseconds_0
+//   65         for (j = 6000; j > 0; j--) {
+??DelayMilliseconds_1:
+        MOV     DPTR,#__Constant_ffffffff
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_ADD_X
+??DelayMilliseconds_0:
+        MOV     A,?V0 + 4
+        ORL     A,?V0 + 5
+        ORL     A,?V0 + 6
+        ORL     A,?V0 + 7
+        JNZ     ??DelayMilliseconds_1
+//   66             // ¿Õ²Ù×÷£¬½öÑ­»·¼ÆÊý£¬²»Ö´ÐÐ¶îÍâ²Ù×÷
+//   67         }
+//   68     }
+//   69 }
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock6
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 75
+`??Timer1??INTVEC 75`:
+        LJMP       (Timer1)
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_ffffffff:
+        DD 4294967295
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??DimLightRouterApp_InitDimLightHardware?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    DimLightRouterApp_InitDimLightHardware
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??LED_change?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    LED_change
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??DelayMilliseconds?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    DelayMilliseconds
+
+        END
+// 
+//  91 bytes in segment BANKED_CODE
+//  18 bytes in segment BANK_RELAYS
+//   3 bytes in segment INTVEC
+// 115 bytes in segment NEAR_CODE
+//   8 bytes in segment SFR_AN
+//   4 bytes in segment XDATA_ROM_C
+//   4 bytes in segment XDATA_Z
+// 
+// 224 bytes of CODE  memory (+ 3 bytes shared)
+//   0 bytes of CONST memory (+ 4 bytes shared)
+//   0 bytes of DATA  memory (+ 8 bytes shared)
+//   4 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

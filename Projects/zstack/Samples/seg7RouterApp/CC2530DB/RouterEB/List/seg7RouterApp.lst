@@ -1,0 +1,1852 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         24/Dec/2025  17:17:24 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\Source #
+#                          \seg7RouterApp.c                                   #
+#    Command line       =  -f E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2 #
+#                          530DB\..\..\..\Tools\CC2530DB\f8wRouter.cfg        #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg           #
+#                          (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0      #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST26=0x04000000        #
+#                          -DDEFAULT_CHANLIST25=0x02000000                    #
+#                          -DDEFAULT_CHANLIST24=0x01000000                    #
+#                          -DDEFAULT_CHANLIST23=0x00800000                    #
+#                          -DDEFAULT_CHANLIST22=0x00400000                    #
+#                          -DDEFAULT_CHANLIST21=0x00200000                    #
+#                          -DDEFAULT_CHANLIST20=0x00100000                    #
+#                          -DDEFAULT_CHANLIST19=0x00080000                    #
+#                          -DDEFAULT_CHANLIST18=0x00040000                    #
+#                          -DDEFAULT_CHANLIST17=0x00020000                    #
+#                          -DDEFAULT_CHANLIST16=0x00010000                    #
+#                          -DDEFAULT_CHANLIST15=0x00008000                    #
+#                          -DDEFAULT_CHANLIST14=0x00004000                    #
+#                          -DDEFAULT_CHANLIST13=0x00002000                    #
+#                          -DDEFAULT_CHANLIST12=0x00001000                    #
+#                          -DDEFAULT_CHANLIST11=0x00000800                    #
+#                          -DDEFAULT_CHANLIST=DEFAULT_CHANLIST25              #
+#                          -DZDAPP_CONFIG_PAN_ID=0x0006                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 E:\´«¸ÐÆ÷ZStack-CC2530\´«¸Ð #
+#                          Æ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sampl #
+#                          es\seg7RouterApp\Source\seg7RouterApp.c -D         #
+#                          ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC  #
+#                          -D LCD_SUPPORTED=DEBUG -lC                         #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\RouterEB\List\ -lA E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ #
+#                          ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sample #
+#                          s\seg7RouterApp\CC2530DB\RouterEB\List\            #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\RouterEB\Obj\ -e --no_code_motion --debug       #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data --nr_virtual_regs    #
+#                          16 -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-Ê #
+#                          µÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\seg7RouterApp\ #
+#                          CC2530DB\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-C #
+#                          C2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\seg7Rou #
+#                          terApp\CC2530DB\..\Source\ -I                      #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\ZMain\TI2530DB\ -I                     #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\include\ -I       #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\  #
+#                          -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\mac\include\ -I    #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\mac\high_level\ -I    #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\mac\low_level\srf04\  #
+#                          -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\mac\low_level\srf0 #
+#                          4\single_chip\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZSt #
+#                          ack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\se #
+#                          g7RouterApp\CC2530DB\..\..\..\..\..\Components\mt\ #
+#                           -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑ #
+#                          µ×îÖÕ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC #
+#                          2530DB\..\..\..\..\..\Components\osal\include\ -I  #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\services\saddr\ -I    #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\services\sdata\ -I    #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\stack\af\ -I          #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\stack\nwk\ -I         #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\stack\sapi\ -I        #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\stack\sec\ -I         #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\stack\sys\ -I         #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\stack\zdo\ -I         #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\zmac\ -I              #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\zmac\f8w\ -Ohz        #
+#                          --require_prototypes                               #
+#    List file          =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\RouterEB\List\seg7RouterApp.lst                 #
+#    Object file        =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\RouterEB\Obj\seg7RouterApp.r51                  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\seg7RouterApp\Source\seg7RouterApp.c
+      1          /******************************************************************************
+      2            Filename:       seg7RouterApp.c
+      3            Revised:        $Date: 2010-12-21 10:27:34 -0800 (Tue, 21 Dec 2010) $
+      4            Revision:       $Revision: 24670 $
+      5          
+      6            Description:    Generic Application (no Profile).
+      7          
+      8          
+      9            Copyright 2004-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product. Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          ******************************************************************************/
+     39          
+     40          /*********************************************************************
+     41            This application isn't intended to do anything useful, it is
+     42            intended to be a simple example of an application's structure.
+     43          
+     44            This application sends "Hello World" to another "Generic"
+     45            application every 15 seconds.  The application will also
+     46            receive "Hello World" packets.
+     47          
+     48            The "Hello World" messages are sent/received as MSG type message.
+     49          
+     50            This applications doesn't have a profile, so it handles everything
+     51            directly - itself.
+     52          
+     53            Key control:
+     54              SW1:
+     55              SW2:  initiates end device binding
+     56              SW3:
+     57              SW4:  initiates a match description request
+     58          *********************************************************************/
+     59          
+     60          /*********************************************************************
+     61           * INCLUDES
+     62           */
+     63          #include "OSAL.h"
+     64          #include "AF.h"
+     65          #include "ZDApp.h"
+     66          #include "ZDObject.h"
+     67          #include "ZDProfile.h"
+     68          
+     69          #include "Sensor.h"  //°üº¬³õÊ¼»¯ÊýÂë¹ÜµÄº¯ÊýºÍ·â×°ÁË¿ÉÒÔÖ±½ÓÏÔÊ¾Êý×ÖµÄº¯ÊýÔÙ¸ÃÍ·ÎÄ¼þÀïÃæ
+     70          
+     71          #include "seg7RouterApp.h"
+     72          #include "DebugTrace.h"
+     73          
+     74          #if !defined( WIN32 )
+     75            #include "OnBoard.h"
+     76          #endif
+     77          
+     78          /* HAL */
+     79          #include "hal_lcd.h"
+     80          #include "hal_led.h"
+     81          #include "hal_key.h"
+     82          #include "hal_uart.h"
+     83          
+     84          /*********************************************************************
+     85           * MACROS
+     86           */
+     87          
+     88          /*********************************************************************
+     89           * CONSTANTS
+     90           */
+     91          
+     92          /*********************************************************************
+     93           * TYPEDEFS
+     94           */
+     95          
+     96          /*********************************************************************
+     97           * GLOBAL VARIABLES
+     98           */
+     99          
+    100          // This list should be filled with Application specific Cluster IDs.
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    101          const cId_t seg7RouterApp_ClusterList[seg7RouterApp_MAX_CLUSTERS] =
+   \                     seg7RouterApp_ClusterList:
+   \   000000                DS 8
+   \   000008                REQUIRE `?<Initializer for seg7RouterApp_ClusterList>`
+   \   000008                REQUIRE __INIT_XDATA_I
+    102          {
+    103            seg7RouterApp_CLUSTERID,
+    104            seg7RouterApp_body_CLUSTERID,             // ÈËÌå¸ÐÓ¦CID=1
+    105              seg7RouterApp_temperature_CLUSTERID,   // ÎÂÊª¶ÈCID=2
+    106              UART_INPUT_Control_SendSeg7_CLUSTERID
+    107              
+    108          };
+    109          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    110          const SimpleDescriptionFormat_t seg7RouterApp_SimpleDesc =
+   \                     seg7RouterApp_SimpleDesc:
+   \   000000                DS 12
+   \   00000C                REQUIRE `?<Initializer for seg7RouterApp_SimpleDesc>`
+   \   00000C                REQUIRE __INIT_XDATA_I
+    111          {
+    112            seg7RouterApp_ENDPOINT,              //  int Endpoint;
+    113            seg7RouterApp_PROFID,                //  uint16 AppProfId[2];
+    114            seg7RouterApp_DEVICEID,              //  uint16 AppDeviceId[2];
+    115            seg7RouterApp_DEVICE_VERSION,        //  int   AppDevVer:4;
+    116            seg7RouterApp_FLAGS,                 //  int   AppFlags:4;
+    117            seg7RouterApp_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    118            (cId_t *)seg7RouterApp_ClusterList,  //  byte *pAppInClusterList;
+    119            seg7RouterApp_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    120            (cId_t *)seg7RouterApp_ClusterList   //  byte *pAppInClusterList;
+    121          };
+    122          
+    123          // This is the Endpoint/Interface description.  It is defined here, but
+    124          // filled-in in seg7RouterApp_Init().  Another way to go would be to fill
+    125          // in the structure here and make it a "const" (in code space).  The
+    126          // way it's defined in this sample app it is define in RAM.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    127          endPointDesc_t seg7RouterApp_epDesc;//¶ËµãÃèÊö·û 
+   \                     seg7RouterApp_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+    128          
+    129          /*********************************************************************
+    130           * EXTERNAL VARIABLES
+    131           */
+    132          
+    133          /*********************************************************************
+    134           * EXTERNAL FUNCTIONS
+    135           */
+    136          
+    137          /*********************************************************************
+    138           * LOCAL VARIABLES
+    139           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    140          byte seg7RouterApp_TaskID;   // Task ID for internal task/event processing
+   \                     seg7RouterApp_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    141                                    // This variable will be received when
+    142                                    // seg7RouterApp_Init() is called.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    143          devStates_t seg7RouterApp_NwkState;
+   \                     seg7RouterApp_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    144          
+    145          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    146          byte seg7RouterApp_TransID;  // This is the unique message ID (counter)
+   \                     seg7RouterApp_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    147          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    148          afAddrType_t seg7RouterApp_DstAddr;
+   \                     seg7RouterApp_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+    149          
+    150          /*********************************************************************
+    151           * LOCAL FUNCTIONS
+    152           */
+    153          void seg7RouterApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );
+    154          void seg7RouterApp_HandleKeys( byte shift, byte keys );
+    155          void seg7RouterApp_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+    156          void seg7RouterApp_SendTheMessage( void );
+    157          void  seg7RouterApp_Send_success_TheMessage(void);
+    158          /*********************************************************************
+    159           * NETWORK LAYER CALLBACKS
+    160           */
+    161          
+    162          /*********************************************************************
+    163           * PUBLIC FUNCTIONS
+    164           */
+    165          
+    166          /*********************************************************************
+    167           * @fn      seg7RouterApp_Init
+    168           *
+    169           * @brief   Initialization function for the Generic App Task.
+    170           *          This is called during initialization and should contain
+    171           *          any application specific initialization (ie. hardware
+    172           *          initialization/setup, table initialization, power up
+    173           *          notificaiton ... ).
+    174           *
+    175           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    176           *                    used to send messages and set timers.
+    177           *
+    178           * @return  none
+    179           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    180          void seg7RouterApp_Init( byte task_id )
+   \                     seg7RouterApp_Init:
+    181          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    182            seg7RouterApp_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#seg7RouterApp_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+    183            seg7RouterApp_NwkState = DEV_INIT;
+   \   00000A   90....       MOV     DPTR,#seg7RouterApp_NwkState
+   \   00000D   7401         MOV     A,#0x1
+   \   00000F   F0           MOVX    @DPTR,A
+    184            seg7RouterApp_TransID = 0;
+   \   000010   90....       MOV     DPTR,#seg7RouterApp_TransID
+   \   000013   E4           CLR     A
+   \   000014   F0           MOVX    @DPTR,A
+    185          
+    186            
+    187            // 1. ³õÊ¼»¯ÊýÂë¹Ü£¨¸´ÓÃSensor.cµÄIOÅäÖÃ£©
+    188              SensorInit();
+   \   000015                ; Setup parameters for call to function SensorInit
+   \   000015   12....       LCALL   ??SensorInit?relay
+    189            
+    190            
+    191            
+    192            // Device hardware initialization can be added here or in main() (Zmain.c).
+    193            // If the hardware is application specific - add it here.
+    194            // If the hardware is other parts of the device add it in main().
+    195          
+    196            seg7RouterApp_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
+   \   000018   90....       MOV     DPTR,#seg7RouterApp_DstAddr + 8
+   \   00001B   E4           CLR     A
+   \   00001C   F0           MOVX    @DPTR,A
+    197            seg7RouterApp_DstAddr.endPoint = 0;
+   \   00001D   A3           INC     DPTR
+   \   00001E   F0           MOVX    @DPTR,A
+    198            seg7RouterApp_DstAddr.addr.shortAddr = 0;
+   \   00001F   90....       MOV     DPTR,#seg7RouterApp_DstAddr
+   \   000022   F0           MOVX    @DPTR,A
+   \   000023   A3           INC     DPTR
+   \   000024   F0           MOVX    @DPTR,A
+    199          
+    200          
+    201          //ÒÔÏÂÊÇÒÑ¾­×¢²áºÃµÄ¶ËµãºÅÎª10µÄ¶ËµãÃèÊö·û 
+    202            // Fill out the endpoint description.
+    203            seg7RouterApp_epDesc.endPoint = seg7RouterApp_ENDPOINT;
+   \   000025   90....       MOV     DPTR,#seg7RouterApp_epDesc
+   \   000028   740A         MOV     A,#0xa
+   \   00002A   F0           MOVX    @DPTR,A
+    204            seg7RouterApp_epDesc.task_id = &seg7RouterApp_TaskID;
+   \   00002B   A3           INC     DPTR
+   \   00002C   74..         MOV     A,#seg7RouterApp_TaskID & 0xff
+   \   00002E   F0           MOVX    @DPTR,A
+   \   00002F   A3           INC     DPTR
+   \   000030   74..         MOV     A,#(seg7RouterApp_TaskID >> 8) & 0xff
+   \   000032   F0           MOVX    @DPTR,A
+    205            seg7RouterApp_epDesc.simpleDesc
+    206                      = (SimpleDescriptionFormat_t *)&seg7RouterApp_SimpleDesc;
+   \   000033   A3           INC     DPTR
+   \   000034   74..         MOV     A,#seg7RouterApp_SimpleDesc & 0xff
+   \   000036   F0           MOVX    @DPTR,A
+   \   000037   A3           INC     DPTR
+   \   000038   74..         MOV     A,#(seg7RouterApp_SimpleDesc >> 8) & 0xff
+   \   00003A   F0           MOVX    @DPTR,A
+    207            seg7RouterApp_epDesc.latencyReq = noLatencyReqs;
+   \   00003B   A3           INC     DPTR
+   \   00003C   E4           CLR     A
+   \   00003D   F0           MOVX    @DPTR,A
+    208          
+    209            // Register the endpoint description with the AF
+    210            afRegister( &seg7RouterApp_epDesc );
+   \   00003E                ; Setup parameters for call to function afRegister
+   \   00003E   7A..         MOV     R2,#seg7RouterApp_epDesc & 0xff
+   \   000040   7B..         MOV     R3,#(seg7RouterApp_epDesc >> 8) & 0xff
+   \   000042   12....       LCALL   ??afRegister?relay
+    211          
+    212            // Register for all key events - This app will handle all key events
+    213            RegisterForKeys( seg7RouterApp_TaskID );
+   \   000045                ; Setup parameters for call to function RegisterForKeys
+   \   000045   90....       MOV     DPTR,#seg7RouterApp_TaskID
+   \   000048   E0           MOVX    A,@DPTR
+   \   000049   F9           MOV     R1,A
+   \   00004A   12....       LCALL   ??RegisterForKeys?relay
+    214          
+    215            // Update the display
+    216          #if defined ( LCD_SUPPORTED )
+    217              HalLcdWriteString( "seg7RouterApp", HAL_LCD_LINE_1 );
+   \   00004D                ; Setup parameters for call to function HalLcdWriteString
+   \   00004D   7901         MOV     R1,#0x1
+   \   00004F   7A..         MOV     R2,#`?<Constant "seg7RouterApp">` & 0xff
+   \   000051   7B..         MOV     R3,#(`?<Constant "seg7RouterApp">` >> 8) & 0xff
+   \   000053   12....       LCALL   ??HalLcdWriteString?relay
+    218          #endif
+    219          
+    220            ZDO_RegisterForZDOMsg( seg7RouterApp_TaskID, End_Device_Bind_rsp );
+   \   000056                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   000056   7A20         MOV     R2,#0x20
+   \   000058   7B80         MOV     R3,#-0x80
+   \   00005A   90....       MOV     DPTR,#seg7RouterApp_TaskID
+   \   00005D   E0           MOVX    A,@DPTR
+   \   00005E   F9           MOV     R1,A
+   \   00005F   12....       LCALL   ??ZDO_RegisterForZDOMsg?relay
+    221            ZDO_RegisterForZDOMsg( seg7RouterApp_TaskID, Match_Desc_rsp );
+   \   000062                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   000062   7A06         MOV     R2,#0x6
+   \   000064   7B80         MOV     R3,#-0x80
+   \   000066   90....       MOV     DPTR,#seg7RouterApp_TaskID
+   \   000069   E0           MOVX    A,@DPTR
+   \   00006A   F9           MOV     R1,A
+   \   00006B   12....       LCALL   ??ZDO_RegisterForZDOMsg?relay
+    222          }
+   \   00006E   7F01         MOV     R7,#0x1
+   \   000070   02....       LJMP    ?BANKED_LEAVE_XDATA
+    223          
+    224          /*********************************************************************
+    225           * @fn      seg7RouterApp_ProcessEvent
+    226           *
+    227           * @brief   Generic Application Task event processor.  This function
+    228           *          is called to process all events for the task.  Events
+    229           *          include timers, messages and any other user defined events.
+    230           *
+    231           * @param   task_id  - The OSAL assigned task ID.
+    232           * @param   events - events to process.  This is a bit map and can
+    233           *                   contain more than one event.
+    234           *
+    235           * @return  none
+    236           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    237          UINT16 seg7RouterApp_ProcessEvent( byte task_id, UINT16 events )
+   \                     seg7RouterApp_ProcessEvent:
+    238          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    239            afIncomingMSGPacket_t *MSGpkt;
+    240            afDataConfirm_t *afDataConfirm;
+    241          
+    242            // Data Confirmation message fields
+    243            byte sentEP;
+    244            ZStatus_t sentStatus;
+    245            byte sentTransID;       // This should match the value sent
+    246            (void)task_id;  // Intentionally unreferenced parameter
+    247          
+    248            if ( events & SYS_EVENT_MSG )
+   \   000009   5480         ANL     A,#0x80
+   \   00000B   7003         JNZ     $+5
+   \   00000D   02....       LJMP    ??seg7RouterApp_ProcessEvent_0 & 0xFFFF
+    249            {
+    250              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( seg7RouterApp_TaskID );
+   \   000010                ; Setup parameters for call to function osal_msg_receive
+   \   000010   8028         SJMP    ??seg7RouterApp_ProcessEvent_1
+    251              while ( MSGpkt )
+    252              {
+    253                switch ( MSGpkt->hdr.event )
+    254                {
+    255                  case ZDO_CB_MSG:
+    256                    seg7RouterApp_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+    257                    break;
+    258          
+    259                  case KEY_CHANGE:
+    260                    seg7RouterApp_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    261                    break;
+    262          
+    263                  case AF_DATA_CONFIRM_CMD:
+    264                    // This message is received as a confirmation of a data packet sent.
+    265                    // The status is of ZStatus_t type [defined in ZComDef.h]
+    266                    // The message fields are defined in AF.h
+    267                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+    268                    sentEP = afDataConfirm->endpoint;
+    269                    sentStatus = afDataConfirm->hdr.status;
+    270                    sentTransID = afDataConfirm->transID;
+    271                    (void)sentEP;
+    272                    (void)sentTransID;
+    273          
+    274                    // Action taken when confirmation is received.
+    275                    if ( sentStatus != ZSuccess )
+    276                    {
+    277                      // The data wasn't delivered -- Do something
+    278                    }
+    279                    break;
+    280          
+    281                  case AF_INCOMING_MSG_CMD:
+    282                    seg7RouterApp_MessageMSGCB( MSGpkt );
+    283                    break;
+    284          
+    285                  case ZDO_STATE_CHANGE:
+    286                    seg7RouterApp_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \                     ??seg7RouterApp_ProcessEvent_2:
+   \   000012   A3           INC     DPTR
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   90....       MOV     DPTR,#seg7RouterApp_NwkState
+   \   000017   F0           MOVX    @DPTR,A
+    287                    if ( (seg7RouterApp_NwkState == DEV_ZB_COORD)
+    288                        || (seg7RouterApp_NwkState == DEV_ROUTER)
+    289                        || (seg7RouterApp_NwkState == DEV_END_DEVICE) )
+   \   000018   6409         XRL     A,#0x9
+   \   00001A   600A         JZ      ??seg7RouterApp_ProcessEvent_3
+   \   00001C   E0           MOVX    A,@DPTR
+   \   00001D   6407         XRL     A,#0x7
+   \   00001F   6005         JZ      ??seg7RouterApp_ProcessEvent_3
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   6406         XRL     A,#0x6
+   \   000024   700D         JNZ     ??seg7RouterApp_ProcessEvent_4
+    290                    {
+    291                    	HalLedBlink(HAL_LED_2, 5, 50, 250);//¼ÓÈëÍøÂç³É¹¦ºóÉÁË¸linkµÆ 
+   \                     ??seg7RouterApp_ProcessEvent_3:
+   \   000026                ; Setup parameters for call to function HalLedBlink
+   \   000026   7CFA         MOV     R4,#-0x6
+   \   000028   7D00         MOV     R5,#0x0
+   \   00002A   7B32         MOV     R3,#0x32
+   \   00002C   7A05         MOV     R2,#0x5
+   \   00002E   7902         MOV     R1,#0x2
+   \   000030   12....       LCALL   ??HalLedBlink?relay
+    292                    	
+    293                      // Start sending "the" message in a regular interval.
+    294                      /*osal_start_timerEx( seg7RouterApp_TaskID,
+    295                                          seg7RouterApp_SEND_MSG_EVT,
+    296                                          seg7RouterApp_SEND_MSG_TIMEOUT );*/
+    297                    }
+    298                    break;
+    299          
+    300                  default:
+    301                    break;
+    302                }
+    303          
+    304                // Release the memory
+    305                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??seg7RouterApp_ProcessEvent_4:
+   \   000033                ; Setup parameters for call to function osal_msg_deallocate
+   \   000033   AA..         MOV     R2,?V0 + 0
+   \   000035   AB..         MOV     R3,?V0 + 1
+   \   000037   12....       LCALL   ??osal_msg_deallocate?relay
+    306          
+    307                // Next
+    308                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( seg7RouterApp_TaskID );
+   \   00003A                ; Setup parameters for call to function osal_msg_receive
+   \                     ??seg7RouterApp_ProcessEvent_1:
+   \   00003A   90....       MOV     DPTR,#seg7RouterApp_TaskID
+   \   00003D   E0           MOVX    A,@DPTR
+   \   00003E   F9           MOV     R1,A
+   \   00003F   12....       LCALL   ??osal_msg_receive?relay
+   \   000042   8A..         MOV     ?V0 + 0,R2
+   \   000044   8B..         MOV     ?V0 + 1,R3
+   \   000046   E5..         MOV     A,?V0 + 0
+   \   000048   45..         ORL     A,?V0 + 1
+   \   00004A   603D         JZ      ??seg7RouterApp_ProcessEvent_5
+   \   00004C   85..82       MOV     DPL,?V0 + 0
+   \   00004F   85..83       MOV     DPH,?V0 + 1
+   \   000052   E0           MOVX    A,@DPTR
+   \   000053   24E6         ADD     A,#-0x1a
+   \   000055   6029         JZ      ??seg7RouterApp_ProcessEvent_6
+   \   000057   245A         ADD     A,#0x5a
+   \   000059   6011         JZ      ??seg7RouterApp_ProcessEvent_7
+   \   00005B   24EF         ADD     A,#-0x11
+   \   00005D   60B3         JZ      ??seg7RouterApp_ProcessEvent_2
+   \   00005F   24FE         ADD     A,#-0x2
+   \   000061   70D0         JNZ     ??seg7RouterApp_ProcessEvent_4
+   \   000063                ; Setup parameters for call to function seg7RouterApp_ProcessZDOMsgs
+   \   000063   AA..         MOV     R2,?V0 + 0
+   \   000065   AB..         MOV     R3,?V0 + 1
+   \   000067   12....       LCALL   ??seg7RouterApp_ProcessZDOMsgs?relay
+   \   00006A   80C7         SJMP    ??seg7RouterApp_ProcessEvent_4
+   \                     ??seg7RouterApp_ProcessEvent_7:
+   \   00006C                ; Setup parameters for call to function seg7RouterApp_HandleKeys
+   \   00006C   A3           INC     DPTR
+   \   00006D   A3           INC     DPTR
+   \   00006E   A3           INC     DPTR
+   \   00006F   E0           MOVX    A,@DPTR
+   \   000070   FA           MOV     R2,A
+   \   000071   85..82       MOV     DPL,?V0 + 0
+   \   000074   85..83       MOV     DPH,?V0 + 1
+   \   000077   A3           INC     DPTR
+   \   000078   A3           INC     DPTR
+   \   000079   E0           MOVX    A,@DPTR
+   \   00007A   F9           MOV     R1,A
+   \   00007B   12....       LCALL   ??seg7RouterApp_HandleKeys?relay
+   \   00007E   80B3         SJMP    ??seg7RouterApp_ProcessEvent_4
+   \                     ??seg7RouterApp_ProcessEvent_6:
+   \   000080                ; Setup parameters for call to function seg7RouterApp_MessageMSGCB
+   \   000080   AA..         MOV     R2,?V0 + 0
+   \   000082   AB..         MOV     R3,?V0 + 1
+   \   000084   12....       LCALL   ??seg7RouterApp_MessageMSGCB?relay
+   \   000087   80AA         SJMP    ??seg7RouterApp_ProcessEvent_4
+    309              }
+    310          
+    311              // return unprocessed events
+    312              return (events ^ SYS_EVENT_MSG);
+   \                     ??seg7RouterApp_ProcessEvent_5:
+   \   000089   EE           MOV     A,R6
+   \   00008A   FA           MOV     R2,A
+   \   00008B   EF           MOV     A,R7
+   \   00008C   6480         XRL     A,#0x80
+   \                     ??seg7RouterApp_ProcessEvent_8:
+   \   00008E   FB           MOV     R3,A
+   \   00008F   8023         SJMP    ??seg7RouterApp_ProcessEvent_9
+    313            }
+    314          
+    315            // Send a message out - This event is generated by a timer
+    316            //  (setup in seg7RouterApp_Init()).
+    317            if ( events & seg7RouterApp_SEND_MSG_EVT )
+   \                     ??seg7RouterApp_ProcessEvent_0:
+   \   000091   EE           MOV     A,R6
+   \   000092   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000094   501A         JNC     ??seg7RouterApp_ProcessEvent_10
+    318            {
+    319              // Send "the" message
+    320              seg7RouterApp_SendTheMessage();
+   \   000096                ; Setup parameters for call to function seg7RouterApp_SendTheMessage
+   \   000096   12....       LCALL   ??seg7RouterApp_SendTheMessage?relay
+    321          
+    322              // Setup to send message again
+    323              osal_start_timerEx( seg7RouterApp_TaskID,
+    324                                  seg7RouterApp_SEND_MSG_EVT,
+    325                                  seg7RouterApp_SEND_MSG_TIMEOUT );
+   \   000099                ; Setup parameters for call to function osal_start_timerEx
+   \   000099   7C10         MOV     R4,#0x10
+   \   00009B   7D27         MOV     R5,#0x27
+   \   00009D   7A01         MOV     R2,#0x1
+   \   00009F   7B00         MOV     R3,#0x0
+   \   0000A1   90....       MOV     DPTR,#seg7RouterApp_TaskID
+   \   0000A4   E0           MOVX    A,@DPTR
+   \   0000A5   F9           MOV     R1,A
+   \   0000A6   12....       LCALL   ??osal_start_timerEx?relay
+    326          
+    327              // return unprocessed events
+    328              return (events ^ seg7RouterApp_SEND_MSG_EVT);
+   \   0000A9   EE           MOV     A,R6
+   \   0000AA   6401         XRL     A,#0x1
+   \   0000AC   FA           MOV     R2,A
+   \   0000AD   EF           MOV     A,R7
+   \   0000AE   80DE         SJMP    ??seg7RouterApp_ProcessEvent_8
+    329            }
+    330          
+    331             
+    332            // Discard unknown events
+    333            return 0;
+   \                     ??seg7RouterApp_ProcessEvent_10:
+   \   0000B0   7A00         MOV     R2,#0x0
+   \   0000B2   7B00         MOV     R3,#0x0
+   \                     ??seg7RouterApp_ProcessEvent_9:
+   \   0000B4                REQUIRE ?Subroutine0
+   \   0000B4                ; // Fall through to label ?Subroutine0
+    334          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F04         MOV     R7,#0x4
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    335          
+    336          /*********************************************************************
+    337           * Event Generation Functions
+    338           */
+    339          
+    340          /*********************************************************************
+    341           * @fn      seg7RouterApp_ProcessZDOMsgs()
+    342           *
+    343           * @brief   Process response messages
+    344           *
+    345           * @param   none
+    346           *
+    347           * @return  none
+    348           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    349          void seg7RouterApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+   \                     seg7RouterApp_ProcessZDOMsgs:
+    350          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    351            switch ( inMsg->clusterID )
+   \   000005   EA           MOV     A,R2
+   \   000006   240C         ADD     A,#0xc
+   \   000008   F582         MOV     DPL,A
+   \   00000A   EB           MOV     A,R3
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F583         MOV     DPH,A
+   \   00000F   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000012   12....       LCALL   ?US_SWITCH_SPARSE
+   \                     `?<Jumptable for seg7RouterApp_ProcessZDOMsgs>_0`:
+   \   000015   0000         DW        0
+   \   000017   0200         DW        2
+   \   000019   0680         DW        32774
+   \   00001B   ....         DW        ??seg7RouterApp_ProcessZDOMsgs_0
+   \   00001D   2080         DW        32800
+   \   00001F   ....         DW        ??seg7RouterApp_ProcessZDOMsgs_1
+   \   000021   ....         DW        ??seg7RouterApp_ProcessZDOMsgs_2
+    352            {
+    353              case End_Device_Bind_rsp:
+    354                if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+   \                     ??seg7RouterApp_ProcessZDOMsgs_1:
+   \   000023   EA           MOV     A,R2
+   \   000024   2413         ADD     A,#0x13
+   \   000026   F582         MOV     DPL,A
+   \   000028   EB           MOV     A,R3
+   \   000029   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   00002C   E0           MOVX    A,@DPTR
+   \   00002D   7009         JNZ     ??seg7RouterApp_ProcessZDOMsgs_3
+    355                {
+    356                  // Light LED
+    357                  HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+   \   00002F                ; Setup parameters for call to function HalLedSet
+   \   00002F   7A01         MOV     R2,#0x1
+   \                     ??seg7RouterApp_ProcessZDOMsgs_4:
+   \   000031   7908         MOV     R1,#0x8
+   \   000033   12....       LCALL   ??HalLedSet?relay
+   \   000036   8053         SJMP    ??seg7RouterApp_ProcessZDOMsgs_2
+    358                }
+    359          #if defined( BLINK_LEDS )
+    360                else
+    361                {
+    362                  // Flash LED to show failure
+    363                  HalLedSet ( HAL_LED_4, HAL_LED_MODE_FLASH );
+   \                     ??seg7RouterApp_ProcessZDOMsgs_3:
+   \   000038                ; Setup parameters for call to function HalLedSet
+   \   000038   7A04         MOV     R2,#0x4
+   \   00003A   80F5         SJMP    ??seg7RouterApp_ProcessZDOMsgs_4
+    364                }
+    365          #endif
+    366                break;
+    367          
+    368              case Match_Desc_rsp:
+    369                {
+    370                  ZDO_ActiveEndpointRsp_t *pRsp = ZDO_ParseEPListRsp( inMsg );
+   \                     ??seg7RouterApp_ProcessZDOMsgs_0:
+   \   00003C                ; Setup parameters for call to function ZDO_ParseEPListRsp
+   \   00003C   12....       LCALL   ??ZDO_ParseEPListRsp?relay
+   \   00003F   8A..         MOV     ?V0 + 0,R2
+   \   000041   8B..         MOV     ?V0 + 1,R3
+   \   000043   AE..         MOV     R6,?V0 + 0
+   \   000045   AF..         MOV     R7,?V0 + 1
+    371                  if ( pRsp )
+   \   000047   EE           MOV     A,R6
+   \   000048   4F           ORL     A,R7
+   \   000049   6040         JZ      ??seg7RouterApp_ProcessZDOMsgs_2
+    372                  {
+    373                    if ( pRsp->status == ZSuccess && pRsp->cnt )
+   \   00004B   8E82         MOV     DPL,R6
+   \   00004D   8F83         MOV     DPH,R7
+   \   00004F   E0           MOVX    A,@DPTR
+   \   000050   7032         JNZ     ??seg7RouterApp_ProcessZDOMsgs_5
+   \   000052   A3           INC     DPTR
+   \   000053   A3           INC     DPTR
+   \   000054   A3           INC     DPTR
+   \   000055   E0           MOVX    A,@DPTR
+   \   000056   602C         JZ      ??seg7RouterApp_ProcessZDOMsgs_5
+    374                    {
+    375                      seg7RouterApp_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+   \   000058   90....       MOV     DPTR,#seg7RouterApp_DstAddr + 8
+   \   00005B   7402         MOV     A,#0x2
+   \   00005D   F0           MOVX    @DPTR,A
+    376                      seg7RouterApp_DstAddr.addr.shortAddr = pRsp->nwkAddr;
+   \   00005E   8E82         MOV     DPL,R6
+   \   000060   8F83         MOV     DPH,R7
+   \   000062   A3           INC     DPTR
+   \   000063   E0           MOVX    A,@DPTR
+   \   000064   F8           MOV     R0,A
+   \   000065   A3           INC     DPTR
+   \   000066   E0           MOVX    A,@DPTR
+   \   000067   F9           MOV     R1,A
+   \   000068   90....       MOV     DPTR,#seg7RouterApp_DstAddr
+   \   00006B   E8           MOV     A,R0
+   \   00006C   F0           MOVX    @DPTR,A
+   \   00006D   A3           INC     DPTR
+   \   00006E   E9           MOV     A,R1
+   \   00006F   F0           MOVX    @DPTR,A
+    377                      // Take the first endpoint, Can be changed to search through endpoints
+    378                      seg7RouterApp_DstAddr.endPoint = pRsp->epList[0];
+   \   000070   8E82         MOV     DPL,R6
+   \   000072   8F83         MOV     DPH,R7
+   \   000074   A3           INC     DPTR
+   \   000075   A3           INC     DPTR
+   \   000076   A3           INC     DPTR
+   \   000077   A3           INC     DPTR
+   \   000078   E0           MOVX    A,@DPTR
+   \   000079   90....       MOV     DPTR,#seg7RouterApp_DstAddr + 9
+   \   00007C   F0           MOVX    @DPTR,A
+    379          
+    380                      // Light LED
+    381                      HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+   \   00007D                ; Setup parameters for call to function HalLedSet
+   \   00007D   7A01         MOV     R2,#0x1
+   \   00007F   7908         MOV     R1,#0x8
+   \   000081   12....       LCALL   ??HalLedSet?relay
+    382                    }
+    383                    osal_mem_free( pRsp );
+   \                     ??seg7RouterApp_ProcessZDOMsgs_5:
+   \   000084                ; Setup parameters for call to function osal_mem_free
+   \   000084   EE           MOV     A,R6
+   \   000085   FA           MOV     R2,A
+   \   000086   EF           MOV     A,R7
+   \   000087   FB           MOV     R3,A
+   \   000088   12....       LCALL   ??osal_mem_free?relay
+    384                  }
+    385                }
+    386                break;
+    387            }
+    388          }
+   \                     ??seg7RouterApp_ProcessZDOMsgs_2:
+   \   00008B   80..         SJMP    ??Subroutine5_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine5_0:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F5..         MOV     ?V0 + 0,A
+   \   000003   A3           INC     DPTR
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   F5..         MOV     ?V0 + 1,A
+   \   000007   78..         MOV     R0,#?V0 + 0
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   3400         ADDC    A,#0x0
+   \   000002   F583         MOV     DPH,A
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   F8           MOV     R0,A
+   \   000006   A3           INC     DPTR
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   F583         MOV     DPH,A
+   \   00000A   8882         MOV     DPL,R0
+   \   00000C   22           RET
+    389          
+    390          /*********************************************************************
+    391           * @fn      seg7RouterApp_HandleKeys
+    392           *
+    393           * @brief   Handles all key events for this device.
+    394           *
+    395           * @param   shift - true if in shift/alt.
+    396           * @param   keys - bit field for key events. Valid entries:
+    397           *                 HAL_KEY_SW_4
+    398           *                 HAL_KEY_SW_3
+    399           *                 HAL_KEY_SW_2
+    400           *                 HAL_KEY_SW_1
+    401           *
+    402           * @return  none
+    403           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000003                REQUIRE ??Subroutine5_0
+   \   000003                ; // Fall through to label ??Subroutine5_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    404          void seg7RouterApp_HandleKeys( byte shift, byte keys )
+   \                     seg7RouterApp_HandleKeys:
+    405          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 9
+   \   000005   74F7         MOV     A,#-0x9
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EA           MOV     A,R2
+   \   00000D   FF           MOV     R7,A
+    406            zAddrType_t dstAddr;
+    407          
+    408            // Shift is used to make each button/switch dual purpose.
+    409            if ( shift )
+   \   00000E   EE           MOV     A,R6
+   \   00000F   6003         JZ      $+5
+   \   000011   02....       LJMP    ??seg7RouterApp_HandleKeys_0 & 0xFFFF
+    410            {
+    411              if ( keys & HAL_KEY_SW_1 )
+    412              {
+    413              }
+    414              if ( keys & HAL_KEY_SW_2 )
+    415              {
+    416              }
+    417              if ( keys & HAL_KEY_SW_3 )
+    418              {
+    419              }
+    420              if ( keys & HAL_KEY_SW_4 )
+    421              {
+    422              }
+    423            }
+    424            else
+    425            {
+    426              if ( keys & HAL_KEY_SW_1 )
+    427              {
+    428                // Since SW1 isn't used for anything else in this application...
+    429          #if defined( SWITCH1_BIND )
+    430                // we can use SW1 to simulate SW2 for devices that only have one switch,
+    431                keys |= HAL_KEY_SW_2;
+    432          #elif defined( SWITCH1_MATCH )
+    433                // or use SW1 to simulate SW4 for devices that only have one switch
+    434                keys |= HAL_KEY_SW_4;
+    435          #endif
+    436              }
+    437          
+    438              if ( keys & HAL_KEY_SW_2 )
+   \   000014   EF           MOV     A,R7
+   \   000015   A2E1         MOV     C,0xE0 /* A   */.1
+   \   000017   506D         JNC     ??seg7RouterApp_HandleKeys_1
+    439              {
+    440                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+   \   000019                ; Setup parameters for call to function HalLedSet
+   \   000019   7A00         MOV     R2,#0x0
+   \   00001B   7908         MOV     R1,#0x8
+   \   00001D   12....       LCALL   ??HalLedSet?relay
+    441          
+    442                // Initiate an End Device Bind Request for the mandatory endpoint
+    443                dstAddr.addrMode = Addr16Bit;
+   \   000020   7408         MOV     A,#0x8
+   \   000022   12....       LCALL   ?XSTACK_DISP0_8
+   \   000025   7402         MOV     A,#0x2
+   \   000027   F0           MOVX    @DPTR,A
+    444                dstAddr.addr.shortAddr = 0x0000; // Coordinator
+   \   000028   85..82       MOV     DPL,?XSP + 0
+   \   00002B   85..83       MOV     DPH,?XSP + 1
+   \   00002E   E4           CLR     A
+   \   00002F   F0           MOVX    @DPTR,A
+   \   000030   A3           INC     DPTR
+   \   000031   F0           MOVX    @DPTR,A
+    445                ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+    446                                      seg7RouterApp_epDesc.endPoint,
+    447                                      seg7RouterApp_PROFID,
+    448                                      seg7RouterApp_MAX_CLUSTERS, (cId_t *)seg7RouterApp_ClusterList,
+    449                                      seg7RouterApp_MAX_CLUSTERS, (cId_t *)seg7RouterApp_ClusterList,
+    450                                      FALSE );
+   \   000032                ; Setup parameters for call to function NLME_GetShortAddr
+   \   000032   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   000035   8A..         MOV     ?V0 + 0,R2
+   \   000037   8B..         MOV     ?V0 + 1,R3
+   \   000039   AC..         MOV     R4,?V0 + 0
+   \   00003B   AD..         MOV     R5,?V0 + 1
+   \   00003D                ; Setup parameters for call to function ZDP_EndDeviceBindReq
+   \   00003D   75..00       MOV     ?V0 + 0,#0x0
+   \   000040   78..         MOV     R0,#?V0 + 0
+   \   000042   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000045   75....       MOV     ?V0 + 0,#seg7RouterApp_ClusterList & 0xff
+   \   000048   75....       MOV     ?V0 + 1,#(seg7RouterApp_ClusterList >> 8) & 0xff
+   \   00004B   78..         MOV     R0,#?V0 + 0
+   \   00004D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000050   75..04       MOV     ?V0 + 0,#0x4
+   \   000053   78..         MOV     R0,#?V0 + 0
+   \   000055   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000058   75....       MOV     ?V0 + 0,#seg7RouterApp_ClusterList & 0xff
+   \   00005B   78..         MOV     R0,#?V0 + 0
+   \   00005D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000060   75..04       MOV     ?V0 + 0,#0x4
+   \   000063   78..         MOV     R0,#?V0 + 0
+   \   000065   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000068   75..0F       MOV     ?V0 + 1,#0xf
+   \   00006B   78..         MOV     R0,#?V0 + 0
+   \   00006D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000070   90....       MOV     DPTR,#seg7RouterApp_epDesc
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   F9           MOV     R1,A
+   \   000075   7409         MOV     A,#0x9
+   \   000077   12....       LCALL   ?XSTACK_DISP0_8
+   \   00007A   AA82         MOV     R2,DPL
+   \   00007C   AB83         MOV     R3,DPH
+   \   00007E   12....       LCALL   ??ZDP_EndDeviceBindReq?relay
+   \   000081   7409         MOV     A,#0x9
+   \   000083   12....       LCALL   ?DEALLOC_XSTACK8
+    451              }
+    452          
+    453              if ( keys & HAL_KEY_SW_3 )
+    454              {
+    455              }
+    456          
+    457              if ( keys & HAL_KEY_SW_4 )
+   \                     ??seg7RouterApp_HandleKeys_1:
+   \   000086   EF           MOV     A,R7
+   \   000087   A2E3         MOV     C,0xE0 /* A   */.3
+   \   000089   505F         JNC     ??seg7RouterApp_HandleKeys_0
+    458              {
+    459                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+   \   00008B                ; Setup parameters for call to function HalLedSet
+   \   00008B   7A00         MOV     R2,#0x0
+   \   00008D   7908         MOV     R1,#0x8
+   \   00008F   12....       LCALL   ??HalLedSet?relay
+    460                // Initiate a Match Description Request (Service Discovery)
+    461                dstAddr.addrMode = AddrBroadcast;
+   \   000092   7408         MOV     A,#0x8
+   \   000094   12....       LCALL   ?XSTACK_DISP0_8
+   \   000097   740F         MOV     A,#0xf
+   \   000099   F0           MOVX    @DPTR,A
+    462                dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR;
+   \   00009A   85..82       MOV     DPL,?XSP + 0
+   \   00009D   85..83       MOV     DPH,?XSP + 1
+   \   0000A0   74FF         MOV     A,#-0x1
+   \   0000A2   F0           MOVX    @DPTR,A
+   \   0000A3   A3           INC     DPTR
+   \   0000A4   F0           MOVX    @DPTR,A
+    463                ZDP_MatchDescReq( &dstAddr, NWK_BROADCAST_SHORTADDR,
+    464                                  seg7RouterApp_PROFID,
+    465                                  seg7RouterApp_MAX_CLUSTERS, (cId_t *)seg7RouterApp_ClusterList,
+    466                                  seg7RouterApp_MAX_CLUSTERS, (cId_t *)seg7RouterApp_ClusterList,
+    467                                  FALSE );
+   \   0000A5                ; Setup parameters for call to function ZDP_MatchDescReq
+   \   0000A5   75..00       MOV     ?V0 + 0,#0x0
+   \   0000A8   78..         MOV     R0,#?V0 + 0
+   \   0000AA   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000AD   75....       MOV     ?V0 + 0,#seg7RouterApp_ClusterList & 0xff
+   \   0000B0   75....       MOV     ?V0 + 1,#(seg7RouterApp_ClusterList >> 8) & 0xff
+   \   0000B3   78..         MOV     R0,#?V0 + 0
+   \   0000B5   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000B8   75..04       MOV     ?V0 + 0,#0x4
+   \   0000BB   78..         MOV     R0,#?V0 + 0
+   \   0000BD   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000C0   75....       MOV     ?V0 + 0,#seg7RouterApp_ClusterList & 0xff
+   \   0000C3   78..         MOV     R0,#?V0 + 0
+   \   0000C5   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000C8   75..04       MOV     ?V0 + 0,#0x4
+   \   0000CB   75..0F       MOV     ?V0 + 1,#0xf
+   \   0000CE   78..         MOV     R0,#?V0 + 0
+   \   0000D0   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000D3   7904         MOV     R1,#0x4
+   \   0000D5   7CFF         MOV     R4,#-0x1
+   \   0000D7   7DFF         MOV     R5,#-0x1
+   \   0000D9   7408         MOV     A,#0x8
+   \   0000DB   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000DE   AA82         MOV     R2,DPL
+   \   0000E0   AB83         MOV     R3,DPH
+   \   0000E2   12....       LCALL   ??ZDP_MatchDescReq?relay
+   \   0000E5   7408         MOV     A,#0x8
+   \   0000E7   12....       LCALL   ?DEALLOC_XSTACK8
+    468              }
+    469            }
+    470          }
+   \                     ??seg7RouterApp_HandleKeys_0:
+   \   0000EA   7409         MOV     A,#0x9
+   \   0000EC   02....       LJMP    ?Subroutine1 & 0xFFFF
+    471          
+    472          /*********************************************************************
+    473           * LOCAL FUNCTIONS
+    474           */
+    475          
+    476          /*********************************************************************
+    477           * @fn      seg7RouterApp_MessageMSGCB
+    478           *
+    479           * @brief   Data message processor callback.  This function processes
+    480           *          any incoming data - probably from other devices.  So, based
+    481           *          on cluster ID, perform the intended action.
+    482           *
+    483           * @param   none
+    484           *
+    485           * @return  none
+    486           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    487          void seg7RouterApp_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+   \                     seg7RouterApp_MessageMSGCB:
+    488          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    489            switch ( pkt->clusterId )
+   \   000009   8E82         MOV     DPL,R6
+   \   00000B   8F83         MOV     DPH,R7
+   \   00000D   A3           INC     DPTR
+   \   00000E   A3           INC     DPTR
+   \   00000F   A3           INC     DPTR
+   \   000010   A3           INC     DPTR
+   \   000011   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000014   12....       LCALL   ?US_SWITCH_SPARSE
+   \                     `?<Jumptable for seg7RouterApp_MessageMSGCB>_0`:
+   \   000017   0000         DW        0
+   \   000019   0300         DW        3
+   \   00001B   0100         DW        1
+   \   00001D   ....         DW        ??seg7RouterApp_MessageMSGCB_0
+   \   00001F   0200         DW        2
+   \   000021   ....         DW        ??seg7RouterApp_MessageMSGCB_1
+   \   000023   0A00         DW        10
+   \   000025   ....         DW        ??seg7RouterApp_MessageMSGCB_2
+   \   000027   ....         DW        ??seg7RouterApp_MessageMSGCB_3
+    490            {
+    491              
+    492            case seg7RouterApp_CLUSTERID:
+    493                 break; 
+    494                
+    495            case seg7RouterApp_body_CLUSTERID:
+    496              { DisplayTwoDigits(4,0 );   //Èç¹ûÊÕµ½À´×ÔÓÚÐ­µ÷Æ÷·¢À´µÄ¹ØÓÚÈËÌå¸ÐÓ¦µÄÒª²Ù×÷µÄÃüÁî¾ÍÈÃÊýÂë¹ÜÁÁ02
+   \                     ??seg7RouterApp_MessageMSGCB_0:
+   \   000029                ; Setup parameters for call to function DisplayTwoDigits
+   \   000029   7A00         MOV     R2,#0x0
+   \   00002B   7904         MOV     R1,#0x4
+   \   00002D   12....       LCALL   ??DisplayTwoDigits?relay
+    497               seg7RouterApp_Send_success_TheMessage();  //ÊýÂë¹Ü»ØÏÔ¸øÐ­µ÷Æ÷³É¹¦ÏÔÊ¾µÄÊý¾Ý 
+   \   000030                ; Setup parameters for call to function seg7RouterApp_Send_success_TheMessage
+   \   000030   12....       LCALL   ??seg7RouterApp_Send_success_TheMessage?relay
+    498                break;  
+   \   000033   8054         SJMP    ??seg7RouterApp_MessageMSGCB_3
+    499              } 
+    500              
+    501            case seg7RouterApp_temperature_CLUSTERID:
+    502              { DisplayTwoDigits(4, 0);//Èç¹ûÊÕµ½À´×ÔÓÚÐ­µ÷Æ÷·¢À´µÄ¹ØÓÚÎÂÊª¶ÈµÄÒª²Ù×÷µÄÃüÁî¾ÍÈÃÊýÂë¹ÜÁÁ28
+   \                     ??seg7RouterApp_MessageMSGCB_1:
+   \   000035                ; Setup parameters for call to function DisplayTwoDigits
+   \   000035   7A00         MOV     R2,#0x0
+   \   000037   7904         MOV     R1,#0x4
+   \   000039   12....       LCALL   ??DisplayTwoDigits?relay
+    503                 seg7RouterApp_Send_success_TheMessage();
+   \   00003C                ; Setup parameters for call to function seg7RouterApp_Send_success_TheMessage
+   \   00003C   12....       LCALL   ??seg7RouterApp_Send_success_TheMessage?relay
+    504                 // ½«ÈÕÖ¾Âß¼­¹éÈë¸Ãcase·ÖÖ§£¨±ÜÃâÐü¿Õ£©
+    505          #if defined( LCD_SUPPORTED )
+    506                 HalLcdWriteScreen( (char*)pkt->cmd.Data, "rcvd" );
+   \   00003F                ; Setup parameters for call to function HalLcdWriteScreen
+   \   00003F   7C..         MOV     R4,#`?<Constant "rcvd">` & 0xff
+   \   000041   7D..         MOV     R5,#(`?<Constant "rcvd">` >> 8) & 0xff
+   \   000043   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000046   FA           MOV     R2,A
+   \   000047   A3           INC     DPTR
+   \   000048   E0           MOVX    A,@DPTR
+   \   000049   FB           MOV     R3,A
+   \   00004A   12....       LCALL   ??HalLcdWriteScreen?relay
+    507          #elif defined( WIN32 )
+    508                 WPRINTSTR( pkt->cmd.Data );
+    509          #endif
+    510                 break;  
+   \   00004D   803A         SJMP    ??seg7RouterApp_MessageMSGCB_3
+    511              }
+    512              
+    513              case UART_INPUT_Control_SendSeg7_CLUSTERID:   //Ð­µ÷Æ÷´®¿Ú¿ØÖÆ´Ø 
+    514              {
+    515                if( pkt->cmd.Data[7]==0xA2)
+   \                     ??seg7RouterApp_MessageMSGCB_2:
+   \   00004F   EE           MOV     A,R6
+   \   000050   2422         ADD     A,#0x22
+   \   000052   F582         MOV     DPL,A
+   \   000054   EF           MOV     A,R7
+   \   000055   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000058   A3           INC     DPTR
+   \   000059   A3           INC     DPTR
+   \   00005A   A3           INC     DPTR
+   \   00005B   A3           INC     DPTR
+   \   00005C   A3           INC     DPTR
+   \   00005D   A3           INC     DPTR
+   \   00005E   A3           INC     DPTR
+   \   00005F   E0           MOVX    A,@DPTR
+   \   000060   64A2         XRL     A,#0xa2
+   \   000062   7025         JNZ     ??seg7RouterApp_MessageMSGCB_3
+    516                { int receive_display_numbers = (int)pkt->cmd.Data[15];  //È¡³ö·¢À´ÒªÏÔÊ¾µÄÊý×Ö£¬ÕâÀï¼ÙÉèÁË·¢À´µÄÊý¾ÝÊÇ°´ÕÕÍ¨ÐÅ¹æ³Ì·¢À´µÄÊý¾Ý¡£ÐèÒª×¢ÒâµÄÊÇ£¬Èç¹û·¢À´µÄÊý¾ÝÊÇ²»°´ÕÕÍ¨ÐÅ¹æ³ÌµÄ»°¶ÔÓ¦Ó¦¸ÃÎª char receive_display_numbers= (char)pkt->cmd.Data[0]£¬ºóÃæ¿ÉÒÔÈ¥ÊÔÊÔ 
+   \   000064   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   000067   240F         ADD     A,#0xf
+   \   000069   F8           MOV     R0,A
+   \   00006A   A3           INC     DPTR
+   \   00006B   E0           MOVX    A,@DPTR
+   \   00006C   3400         ADDC    A,#0x0
+   \   00006E   F9           MOV     R1,A
+   \   00006F   8882         MOV     DPL,R0
+   \   000071   8983         MOV     DPH,R1
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   F8           MOV     R0,A
+    517                  unsigned char tens =(receive_display_numbers >> 4) & 0x0F;   
+    518                   unsigned char units =receive_display_numbers & 0x0F;  
+    519          	     DisplayTwoDigits(units,tens);
+   \   000075                ; Setup parameters for call to function DisplayTwoDigits
+   \   000075   C4           SWAP    A
+   \   000076   20E304       JB      0xE0 /* A   */.3,??seg7RouterApp_MessageMSGCB_4
+   \   000079   540F         ANL     A,#0xf
+   \   00007B   8002         SJMP    ??seg7RouterApp_MessageMSGCB_5
+   \                     ??seg7RouterApp_MessageMSGCB_4:
+   \   00007D   44F0         ORL     A,#0xf0
+   \                     ??seg7RouterApp_MessageMSGCB_5:
+   \   00007F   540F         ANL     A,#0xf
+   \   000081   FA           MOV     R2,A
+   \   000082   E8           MOV     A,R0
+   \   000083   540F         ANL     A,#0xf
+   \   000085   F9           MOV     R1,A
+   \   000086   12....       LCALL   ??DisplayTwoDigits?relay
+    520                }       
+    521                break;  
+    522              } 
+    523          
+    524            }
+    525          }
+   \                     ??seg7RouterApp_MessageMSGCB_3:
+   \   000089   02....       LJMP    ??Subroutine5_0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   EE           MOV     A,R6
+   \   000001   2422         ADD     A,#0x22
+   \   000003   F582         MOV     DPL,A
+   \   000005   EF           MOV     A,R7
+   \   000006   3400         ADDC    A,#0x0
+   \   000008   F583         MOV     DPH,A
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   22           RET
+    526          
+    527          
+    528          
+    529          
+    530          
+    531          /*********************************************************************
+    532           * @fn      seg7RouterApp_SendTheMessage
+    533           *
+    534           * @brief   Send "the" message.
+    535           *
+    536           * @param   none
+    537           *
+    538           * @return  none
+    539           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    540          void seg7RouterApp_SendTheMessage( void )
+   \                     seg7RouterApp_SendTheMessage:
+    541          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 12
+   \   000005   74F4         MOV     A,#-0xc
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    542            char theMessageData[] = "Hello World";
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   AC82         MOV     R4,DPL
+   \   000012   AD83         MOV     R5,DPH
+   \   000014   7583..       MOV     DPH,#(`?<Constant "Hello World">` >> 8) & 0xff
+   \   000017   7582..       MOV     DPL,#`?<Constant "Hello World">` & 0xff
+   \   00001A   740C         MOV     A,#0xc
+   \   00001C   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    543          
+    544            if ( AF_DataRequest( &seg7RouterApp_DstAddr, &seg7RouterApp_epDesc,
+    545                                 seg7RouterApp_CLUSTERID,
+    546                                 (byte)osal_strlen( theMessageData ) + 1,
+    547                                 (byte *)&theMessageData,
+    548                                 &seg7RouterApp_TransID,
+    549                                 AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+   \   00001F                ; Setup parameters for call to function AF_DataRequest
+   \   00001F   75..1E       MOV     ?V0 + 0,#0x1e
+   \   000022   78..         MOV     R0,#?V0 + 0
+   \   000024   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000027   75....       MOV     ?V0 + 0,#seg7RouterApp_TransID & 0xff
+   \   00002A   75....       MOV     ?V0 + 1,#(seg7RouterApp_TransID >> 8) & 0xff
+   \   00002D   78..         MOV     R0,#?V0 + 0
+   \   00002F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000032   7403         MOV     A,#0x3
+   \   000034   12....       LCALL   ?XSTACK_DISP0_8
+   \   000037   8582..       MOV     ?V0 + 0,DPL
+   \   00003A   8583..       MOV     ?V0 + 1,DPH
+   \   00003D   78..         MOV     R0,#?V0 + 0
+   \   00003F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000042                ; Setup parameters for call to function osal_strlen
+   \   000042   7405         MOV     A,#0x5
+   \   000044   12....       LCALL   ?XSTACK_DISP0_8
+   \   000047   AA82         MOV     R2,DPL
+   \   000049   AB83         MOV     R3,DPH
+   \   00004B   12....       LCALL   ??osal_strlen?relay
+   \   00004E   EA           MOV     A,R2
+   \   00004F   2401         ADD     A,#0x1
+   \   000051   F5..         MOV     ?V0 + 0,A
+   \   000053   E4           CLR     A
+   \   000054   3400         ADDC    A,#0x0
+   \   000056   F5..         MOV     ?V0 + 1,A
+   \   000058   78..         MOV     R0,#?V0 + 0
+   \   00005A   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00005D   75..05       MOV     ?V0 + 0,#0x5
+   \   000060   75..00       MOV     ?V0 + 1,#0x0
+   \   000063   78..         MOV     R0,#?V0 + 0
+   \   000065   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000068   7920         MOV     R1,#0x20
+   \   00006A   7C..         MOV     R4,#seg7RouterApp_epDesc & 0xff
+   \   00006C   7D..         MOV     R5,#(seg7RouterApp_epDesc >> 8) & 0xff
+   \   00006E   7A..         MOV     R2,#seg7RouterApp_DstAddr & 0xff
+   \   000070   7B..         MOV     R3,#(seg7RouterApp_DstAddr >> 8) & 0xff
+   \   000072   12....       LCALL   ??AF_DataRequest?relay
+   \   000075   7409         MOV     A,#0x9
+   \   000077   12....       LCALL   ?DEALLOC_XSTACK8
+    550            {
+    551              // Successfully requested to be sent.
+    552            }
+    553            else
+    554            {
+    555              // Error occurred in request to send.
+    556            }
+    557          }
+   \   00007A   740C         MOV     A,#0xc
+   \   00007C   02....       LJMP    ?Subroutine1 & 0xFFFF
+    558          
+    559          /*********************************************************************
+    560          *********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    561          void  seg7RouterApp_Send_success_TheMessage(void)  //·¢ËÍ³É¹¦ÏÔÊ¾µÄÎÞÏßÐÅºÅ¸øÐ­µ÷Æ÷ 
+   \                     seg7RouterApp_Send_success_TheMessage:
+    562          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 44
+   \   000005   74D4         MOV     A,#-0x2c
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    563          
+    564          uint8 txFrame[32];
+    565              uint8 i = 0;
+    566              uint8 checkSum = 0;
+   \   00000A   75..00       MOV     ?V0 + 0,#0x0
+    567              static uint8 responseSeq = 0; // ÏìÓ¦Ö¡ÐòºÅ
+    568          
+    569              // 1. »ñÈ¡±¾½Úµã¼°¸¸½ÚµãµØÖ·
+    570              uint16 myShortAddr = NLME_GetShortAddr();
+   \   00000D                ; Setup parameters for call to function NLME_GetShortAddr
+   \   00000D   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   000010   8A..         MOV     ?V0 + 2,R2
+   \   000012   8B..         MOV     ?V0 + 3,R3
+    571              uint16 parentShortAddr = NLME_GetCoordShortAddr();
+   \   000014                ; Setup parameters for call to function NLME_GetCoordShortAddr
+   \   000014   12....       LCALL   ??NLME_GetCoordShortAddr?relay
+    572          
+    573              // 2. ¹¹½¨¹Ì¶¨Ö¡Í·
+    574              txFrame[i++] = 0xAA;               // Ö¡Í·
+   \   000017   85..82       MOV     DPL,?XSP + 0
+   \   00001A   85..83       MOV     DPH,?XSP + 1
+   \   00001D   74AA         MOV     A,#-0x56
+   \   00001F   F0           MOVX    @DPTR,A
+    575              txFrame[i++] = 0x00;               // Ö¡³¤¶ÈÕ¼Î»£¬×îºó¼ÆËã³¤¶È 
+   \   000020   7401         MOV     A,#0x1
+   \   000022   12....       LCALL   ?XSTACK_DISP0_8
+   \   000025   E4           CLR     A
+   \   000026   F0           MOVX    @DPTR,A
+    576              txFrame[i++] = 0x02;               // Ö¡ÀàÐÍ: ÎÞÏß´«¸ÐÊý¾Ý
+   \   000027   7402         MOV     A,#0x2
+   \   000029   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002C   7402         MOV     A,#0x2
+   \   00002E   F0           MOVX    @DPTR,A
+    577              txFrame[i++] = responseSeq++;      // Ö¡ÐòºÅ
+   \   00002F   90....       MOV     DPTR,#??responseSeq
+   \   000032   E0           MOVX    A,@DPTR
+   \   000033   C0E0         PUSH    A
+   \   000035   7403         MOV     A,#0x3
+   \   000037   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003A   D0E0         POP     A
+   \   00003C   F0           MOVX    @DPTR,A
+   \   00003D   90....       MOV     DPTR,#??responseSeq
+   \   000040   E0           MOVX    A,@DPTR
+   \   000041   04           INC     A
+   \   000042   F0           MOVX    @DPTR,A
+    578          
+    579              // 3. ÒµÎñÊý¾Ý - ÃüÁîÀàÐÍÓëÐ­ÒéÀàÐÍ
+    580              txFrame[i++] = 0x03;               // ¡ï ¹Ø¼ü£ºÃüÁîÀàÐÍ ÎªÉÏ´«Â·ÓÉ¾ÍÊÇ·¢ËÍ×ÔÉíµÄÐÅÏ¢¸øµ½Ð­µ÷Æ÷ 
+   \   000043   7404         MOV     A,#0x4
+   \   000045   12....       LCALL   ?XSTACK_DISP0_8
+   \   000048   7403         MOV     A,#0x3
+   \   00004A   F0           MOVX    @DPTR,A
+    581              txFrame[i++] = 0x01;               // Ð­ÒéÀàÐÍ: Zigbee
+   \   00004B   7405         MOV     A,#0x5
+   \   00004D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000050   7401         MOV     A,#0x1
+   \   000052   F0           MOVX    @DPTR,A
+    582          
+    583              // 4. ´«¸ÐÆ÷ÀàÐÍÓëË÷Òý (Óë½ÓÊÕµ½µÄÃüÁî±£³ÖÒ»ÖÂ)
+    584              txFrame[i++] = 0x00;               // ´«¸ÐÆ÷ÀàÐÍ¸ß×Ö½Ú (ÊýÂë¹Ü: 0x00A2)
+   \   000053   7406         MOV     A,#0x6
+   \   000055   12....       LCALL   ?XSTACK_DISP0_8
+   \   000058   E4           CLR     A
+   \   000059   F0           MOVX    @DPTR,A
+    585              txFrame[i++] = 0xA2;               // ´«¸ÐÆ÷ÀàÐÍµÍ×Ö½Ú
+   \   00005A   7407         MOV     A,#0x7
+   \   00005C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005F   74A2         MOV     A,#-0x5e
+   \   000061   F0           MOVX    @DPTR,A
+    586              txFrame[i++] = 0x00;               // Ë÷Òý
+   \   000062   7408         MOV     A,#0x8
+   \   000064   12....       LCALL   ?XSTACK_DISP0_8
+   \   000067   E4           CLR     A
+   \   000068   F0           MOVX    @DPTR,A
+    587          
+    588              // 5. ÍøÂçµØÖ·ÐÅÏ¢£¬²ÉÓÃµÄÊÇ´ó¶ËÄ£Ê½¡£¾ÍÊÇ°ÑÔ´µØÖ·µÄ¸ß×Ö½Ú·ÅÔÚÊý¾ÝÖ¡µÄµÍ×Ö½ÚÖÐ 
+    589              txFrame[i++] = HI_UINT16(myShortAddr);      // Ô´µØÖ·¸ß×Ö½Ú
+   \   000069   7409         MOV     A,#0x9
+   \   00006B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006E   E5..         MOV     A,?V0 + 3
+   \   000070   F0           MOVX    @DPTR,A
+    590              txFrame[i++] = LO_UINT16(myShortAddr);      // Ô´µØÖ·µÍ×Ö½Ú
+   \   000071   740A         MOV     A,#0xa
+   \   000073   12....       LCALL   ?XSTACK_DISP0_8
+   \   000076   E5..         MOV     A,?V0 + 2
+   \   000078   F0           MOVX    @DPTR,A
+    591              txFrame[i++] = HI_UINT16(parentShortAddr);  // ¸¸µØÖ·¸ß×Ö½Ú
+   \   000079   740B         MOV     A,#0xb
+   \   00007B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00007E   EB           MOV     A,R3
+   \   00007F   F0           MOVX    @DPTR,A
+    592              txFrame[i++] = LO_UINT16(parentShortAddr);  // ¸¸µØÖ·µÍ×Ö½Ú
+   \   000080   740C         MOV     A,#0xc
+   \   000082   12....       LCALL   ?XSTACK_DISP0_8
+   \   000085   EA           MOV     A,R2
+   \   000086   F0           MOVX    @DPTR,A
+    593          
+    594              txFrame[i++] = 0x01;               // ½ÚµãÀàÐÍ: Â·ÓÉ½Úµã
+   \   000087   740D         MOV     A,#0xd
+   \   000089   12....       LCALL   ?XSTACK_DISP0_8
+   \   00008C   7401         MOV     A,#0x1
+   \   00008E   F0           MOVX    @DPTR,A
+    595          
+    596              // 6. Öµ³¤¶ÈÓëÊý¾ÝÖµ (±íÊ¾Ö´ÐÐ½á¹û)
+    597              txFrame[i++] = 0x01;               // ÖµÀàÐÍ: ²¼¶ûÐÍ
+   \   00008F   740E         MOV     A,#0xe
+   \   000091   12....       LCALL   ?XSTACK_DISP0_8
+   \   000094   7401         MOV     A,#0x1
+   \   000096   F0           MOVX    @DPTR,A
+    598              // Êý¾ÝÖµ: Í¨³£0x00±íÊ¾³É¹¦£¬¾ßÌåÇë²Î¿¼Ð­ÒéÎÄµµ
+    599              txFrame[i++] =0x00;            //·¢00±íÊ¾³É¹¦ÏÔÊ¾
+   \   000097   740F         MOV     A,#0xf
+   \   000099   12....       LCALL   ?XSTACK_DISP0_8
+   \   00009C   E4           CLR     A
+   \   00009D   F0           MOVX    @DPTR,A
+    600          
+    601              // 7. ¼ÆËãÖ¡³¤¶È²¢»ØÌî (´ËÊ±i=17)
+    602              // ×Ü³¤¶È = µ±Ç°i(17) + 1¸öÐ£ÑéÂë×Ö½Ú = 18 (0x12)
+    603               txFrame[1] = i + 1;
+   \   00009E   04           INC     A
+   \   00009F   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000A2   7411         MOV     A,#0x11
+   \   0000A4   F0           MOVX    @DPTR,A
+    604          
+    605              // 8. ¼ÆËãÐ£ÑéºÍ
+    606              for (uint8 j = 0; j < i; j++) {
+   \   0000A5   7800         MOV     R0,#0x0
+    607                  checkSum += txFrame[j];
+   \                     ??seg7RouterApp_Send_success_TheMessage_0:
+   \   0000A7   88..         MOV     ?V0 + 2,R0
+   \   0000A9   85..82       MOV     DPL,?XSP + 0
+   \   0000AC   85..83       MOV     DPH,?XSP + 1
+   \   0000AF   E582         MOV     A,DPL
+   \   0000B1   25..         ADD     A,?V0 + 2
+   \   0000B3   F582         MOV     DPL,A
+   \   0000B5   E583         MOV     A,DPH
+   \   0000B7   3400         ADDC    A,#0x0
+   \   0000B9   F583         MOV     DPH,A
+   \   0000BB   E0           MOVX    A,@DPTR
+   \   0000BC   25..         ADD     A,?V0 + 0
+   \   0000BE   F5..         MOV     ?V0 + 0,A
+    608              }
+   \   0000C0   08           INC     R0
+   \   0000C1   E8           MOV     A,R0
+   \   0000C2   C3           CLR     C
+   \   0000C3   9410         SUBB    A,#0x10
+   \   0000C5   40E0         JC      ??seg7RouterApp_Send_success_TheMessage_0
+    609              txFrame[i++] = checkSum;           // Ö¡Î²£ºÐ£ÑéÂë
+   \   0000C7   7410         MOV     A,#0x10
+   \   0000C9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000CC   E5..         MOV     A,?V0 + 0
+   \   0000CE   F0           MOVX    @DPTR,A
+    610          
+    611              // 9. ·¢ËÍÏìÓ¦¸øÐ­µ÷Æ÷
+    612              afAddrType_t dstAddr;
+    613              dstAddr.addrMode = (afAddrMode_t)afAddr16Bit;
+   \   0000CF   7428         MOV     A,#0x28
+   \   0000D1   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000D4   7402         MOV     A,#0x2
+   \   0000D6   F0           MOVX    @DPTR,A
+    614              dstAddr.endPoint = seg7RouterApp_ENDPOINT; // Õâ¸öÊÇÒª·¢µ½¶ÔÓ¦Ð­µ÷Æ÷µÄ¶Ëµã10£¬¶ËµãºÅÊÇ10 
+   \   0000D7   7429         MOV     A,#0x29
+   \   0000D9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000DC   740A         MOV     A,#0xa
+   \   0000DE   F0           MOVX    @DPTR,A
+    615              dstAddr.addr.shortAddr = 0x0000; // Ä¿±ê£ºÐ­µ÷Æ÷µØÖ·
+   \   0000DF   7420         MOV     A,#0x20
+   \   0000E1   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000E4   E4           CLR     A
+   \   0000E5   F0           MOVX    @DPTR,A
+   \   0000E6   A3           INC     DPTR
+   \   0000E7   F0           MOVX    @DPTR,A
+    616          
+    617              if (AF_DataRequest(&dstAddr,//¾ö¶¨ÁËÒª·¢ËÍµ½ÄÄ¸öÉè±¸µÄÄÄ¸ö¶ËµãÉÏ £¬ÕâÀïÊÇÐ­µ÷Æ÷Éè±¸µÄ¶ËµãºÅ10 
+    618                                 &seg7RouterApp_epDesc,  //Õâ¸öÔ´¶ËµãµÄÃèÊö·û£¬¾ÍÊÇËµÊÇ±íÃ÷±¾Éè±¸µÄÊÇÄÄ¸ö¶Ëµã£¬Ç°ÃæÒÑ¾­×¢²áÕâ¸ö¶Ë¿ÚºÅ10£¬¿É¼û·¢ËÍµ½Ä¿µÄÉè±¸µÄ¶Ë¿ÚºÅÒª¸ú×ÔÉíÉè±¸µÄ¶Ë¿ÚºÅÏàÍ¬£¬ÒòÎª·¢ËÍ¶ËºÍ½ÓÊÕ¶Ë±ØÐëÊ¹ÓÃÏàÍ¬µÄ¶ËµãºÅ²ÅÄÜÍ¨ÐÅ£¡£¡ 
+    619                                 seg7RouterApp_CLUSTERID , //·¢ËÍCIDÈÃ½ÓÊÕµ½¸ÃÐÅÏ¢µÄÐ­µ÷Æ÷×ö²»Í¬µÄ´¦Àí£¬¸ÃCIDÊÇ5£¬×¢Òâ£º·¢ËÍ¶ËºÍ½ÓÊÕ¶ËµÄCIDÒªÏàÍ¬£¡£¡£¬·¢ËÍ¶ËºÍ½ÓÊÕ¶ËµÄ¶ËµãºÅ±ØÐëÆ¥Åä£¬£¨±ÈÈç·¢ËÍµ½¶Ëµã 10£¬½ÓÊÕ¶ËÒ²±ØÐëÔÚ¶Ëµã 10 ×¢²áÁË¸Ã CID£© 
+    620                                 i,       // ·¢ËÍ×Ü×Ö½ÚÊý (18)
+    621                                 txFrame,
+    622                                 &seg7RouterApp_TransID,
+    623                                 AF_DISCV_ROUTE,
+    624                                 AF_DEFAULT_RADIUS) == afStatus_SUCCESS)
+   \   0000E8                ; Setup parameters for call to function AF_DataRequest
+   \   0000E8   75..1E       MOV     ?V0 + 0,#0x1e
+   \   0000EB   78..         MOV     R0,#?V0 + 0
+   \   0000ED   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000F0   75....       MOV     ?V0 + 0,#seg7RouterApp_TransID & 0xff
+   \   0000F3   75....       MOV     ?V0 + 1,#(seg7RouterApp_TransID >> 8) & 0xff
+   \   0000F6   78..         MOV     R0,#?V0 + 0
+   \   0000F8   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000FB   7403         MOV     A,#0x3
+   \   0000FD   12....       LCALL   ?XSTACK_DISP0_8
+   \   000100   8582..       MOV     ?V0 + 0,DPL
+   \   000103   8583..       MOV     ?V0 + 1,DPH
+   \   000106   78..         MOV     R0,#?V0 + 0
+   \   000108   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00010B   75..11       MOV     ?V0 + 0,#0x11
+   \   00010E   75..00       MOV     ?V0 + 1,#0x0
+   \   000111   78..         MOV     R0,#?V0 + 0
+   \   000113   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000116   75..05       MOV     ?V0 + 0,#0x5
+   \   000119   78..         MOV     R0,#?V0 + 0
+   \   00011B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00011E   7920         MOV     R1,#0x20
+   \   000120   7C..         MOV     R4,#seg7RouterApp_epDesc & 0xff
+   \   000122   7D..         MOV     R5,#(seg7RouterApp_epDesc >> 8) & 0xff
+   \   000124   7429         MOV     A,#0x29
+   \   000126   12....       LCALL   ?XSTACK_DISP0_8
+   \   000129   AA82         MOV     R2,DPL
+   \   00012B   AB83         MOV     R3,DPH
+   \   00012D   12....       LCALL   ??AF_DataRequest?relay
+   \   000130   7409         MOV     A,#0x9
+   \   000132   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000135   E9           MOV     A,R1
+   \   000136   7C32         MOV     R4,#0x32
+   \   000138   7D00         MOV     R5,#0x0
+   \   00013A   7BFA         MOV     R3,#-0x6
+   \   00013C   7A05         MOV     R2,#0x5
+   \   00013E   7004         JNZ     ??seg7RouterApp_Send_success_TheMessage_1
+    625          	{
+    626                  HalLedBlink(HAL_LED_2, 5, 250, 50); // ·¢ËÍ³É¹¦µÄ»°¾ÍÈÃdataµÆÉÁË¸ 
+   \   000140                ; Setup parameters for call to function HalLedBlink
+   \   000140   7902         MOV     R1,#0x2
+   \   000142   8002         SJMP    ??seg7RouterApp_Send_success_TheMessage_2
+    627              } 
+    628          	else
+    629          	 {
+    630                  HalLedBlink(HAL_LED_1, 5, 250, 50);//dataÉÁË¸±íÊ¾·¢ËÍÊ§°Ü 
+   \                     ??seg7RouterApp_Send_success_TheMessage_1:
+   \   000144                ; Setup parameters for call to function HalLedBlink
+   \   000144   7901         MOV     R1,#0x1
+   \                     ??seg7RouterApp_Send_success_TheMessage_2:
+   \   000146   12....       LCALL   ??HalLedBlink?relay
+    631               }
+    632          
+    633          }
+   \   000149   742C         MOV     A,#0x2c
+   \   00014B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00014E   02....       LJMP    ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??responseSeq:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "seg7RouterApp">>`:
+   \   000000   73656737     DB "seg7RouterApp"
+   \            526F7574
+   \            65724170
+   \            7000    
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "rcvd">>`:
+   \   000000   72637664     DB "rcvd"
+   \            00      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for <Constant "Hello World">>`:
+   \   000000   48656C6C     DB "Hello World"
+   \            6F20576F
+   \            726C6400
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for seg7RouterApp_ClusterList>`:
+   \   000000   0500         DW 5
+   \   000002   0100         DW 1
+   \   000004   0200         DW 2
+   \   000006   0A00         DW 10
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for seg7RouterApp_SimpleDesc>`:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   04           DB 4
+   \   000007   ....         DW seg7RouterApp_ClusterList
+   \   000009   04           DB 4
+   \   00000A   ....         DW seg7RouterApp_ClusterList
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??seg7RouterApp_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    seg7RouterApp_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??seg7RouterApp_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    seg7RouterApp_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??seg7RouterApp_ProcessZDOMsgs?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    seg7RouterApp_ProcessZDOMsgs
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??seg7RouterApp_HandleKeys?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    seg7RouterApp_HandleKeys
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??seg7RouterApp_MessageMSGCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    seg7RouterApp_MessageMSGCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??seg7RouterApp_SendTheMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    seg7RouterApp_SendTheMessage
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??seg7RouterApp_Send_success_TheMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    seg7RouterApp_Send_success_TheMessage
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "seg7RouterApp">`:
+   \   000000                DS 14
+   \   00000E                REQUIRE `?<Initializer for <Constant "seg7RouterApp">>`
+   \   00000E                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "rcvd">`:
+   \   000000                DS 5
+   \   000005                REQUIRE `?<Initializer for <Constant "rcvd">>`
+   \   000005                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     `?<Constant "Hello World">`:
+   \   000000                DS 12
+   \   00000C                REQUIRE `?<Initializer for <Constant "Hello World">>`
+   \   00000C                REQUIRE __INIT_XDATA_I
+    634          
+    635          /*
+    636          ¶ËµãºÅ£¨Endpoint£©£ºZigbee Éè±¸ÖÐÓÃÓÚÇø·Ö²»Í¬Ó¦ÓÃµÄÂß¼­¶Ë¿Ú£¨·¶Î§ 1-240£©£¬·¢ËÍ¶ËºÍ½ÓÊÕ¶Ë±ØÐëÊ¹ÓÃÏàÍ¬µÄ¶ËµãºÅ²ÅÄÜÍ¨ÐÅ¡£
+    637          
+    638          Cluster ID£¨CID£©£º¼¯Èº ID£¬ÓÃÓÚÇø·ÖÍ¬Ò»¶ËµãÏÂµÄ²»Í¬ÒµÎñ£¨ÈçÎÂ¶ÈÊý¾Ý¡¢¿ª¹Ø¿ØÖÆµÈ£©£¬·¢ËÍµÄÏûÏ¢»áÐ¯´ø CID£¬½ÓÊÕ¶ËÐè×¢²áÏàÍ¬ CID£¨ÔÚseg7RouterApp_ClusterListÊý×éÖÐ¿ÉÒÔÌí¼Ó£¬ÔÙ¸ø¶Ëµã×¢²á¾ÍºÃÁË£© ²ÅÄÜÊ¶±ð¡£
+    639          
+    640          
+    641          ×¢²áÂß¼­£ºÍ¨¹ýÐ­ÒéÕ»µÄafRegister½Ó¿Ú×¢²á¶ËµãÃèÊö·û£¬ÆäÖÐ°üº¬¸Ã¶ËµãÖ§³ÖµÄ CID ÁÐ±í£¬Ð­ÒéÕ»»á¸ù¾Ý¶ËµãºÅºÍ CID Â·ÓÉÏûÏ¢¡£
+    642          
+    643          Í¨¹ýÒÔÉÏ²½Öè£¬·¢ËÍ¶Ë·¢ËÍµÄÏûÏ¢»áÐ¯´øÕýÈ·µÄ¶ËµãºÅºÍ CID£¬½ÓÊÕ¶Ë£¨Ð­µ÷Æ÷£©Òò×¢²áÁËÏàÍ¬µÄ¶ËµãºÍ CID£¬ÄÜ¹»Õý³£Ê¶±ð²¢´¦ÀíÏûÏ¢¡£
+    644          
+    645          
+    646          */
+    647          
+    648          
+    649          
+    650          
+    651          
+    652          
+    653          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     seg7RouterApp_HandleKeys           0      0     40
+       -> HalLedSet                     0      0     38
+       -> NLME_GetShortAddr             0      0     38
+       -> ZDP_EndDeviceBindReq          0      0     56
+       -> HalLedSet                     0      0     38
+       -> ZDP_MatchDescReq              0      0     54
+     seg7RouterApp_Init                 0      0      9
+       -> SensorInit                    0      0     18
+       -> afRegister                    0      0     18
+       -> RegisterForKeys               0      0     18
+       -> HalLcdWriteString             0      0     18
+       -> ZDO_RegisterForZDOMsg         0      0     18
+       -> ZDO_RegisterForZDOMsg         0      0     18
+     seg7RouterApp_MessageMSGCB         0      0     22
+       -> DisplayTwoDigits              0      0     20
+       -> seg7RouterApp_Send_success_TheMessage
+                                        0      0     20
+       -> DisplayTwoDigits              0      0     20
+       -> seg7RouterApp_Send_success_TheMessage
+                                        0      0     20
+       -> HalLcdWriteScreen             0      0     20
+       -> DisplayTwoDigits              0      0     20
+     seg7RouterApp_ProcessEvent         0      0     12
+       -> osal_msg_receive              0      0     24
+       -> HalLedBlink                   0      0     24
+       -> osal_msg_deallocate           0      0     24
+       -> osal_msg_receive              0      0     24
+       -> seg7RouterApp_ProcessZDOMsgs
+                                        0      0     24
+       -> seg7RouterApp_HandleKeys      0      0     24
+       -> seg7RouterApp_MessageMSGCB
+                                        0      0     24
+       -> seg7RouterApp_SendTheMessage
+                                        0      0     24
+       -> osal_start_timerEx            0      0     24
+     seg7RouterApp_ProcessZDOMsgs       0      0     22
+       -> HalLedSet                     0      0     20
+       -> HalLedSet                     0      0     20
+       -> ZDO_ParseEPListRsp            0      0     20
+       -> HalLedSet                     0      0     20
+       -> osal_mem_free                 0      0     20
+     seg7RouterApp_SendTheMessage       2      0     43
+       -> osal_strlen                   0      0     54
+       -> AF_DataRequest                0      0     62
+     seg7RouterApp_Send_success_TheMessage
+                                        1      0     75
+       -> NLME_GetShortAddr             0      0    112
+       -> NLME_GetCoordShortAddr        0      0    112
+       -> AF_DataRequest                0      0    130
+       -> HalLedBlink                   0      0    112
+       -> HalLedBlink                   0      0    112
+
+
+   Segment part sizes:
+
+     Function/Label                                Bytes
+     --------------                                -----
+     seg7RouterApp_ClusterList                        8
+     seg7RouterApp_SimpleDesc                        12
+     seg7RouterApp_epDesc                             6
+     seg7RouterApp_TaskID                             1
+     seg7RouterApp_NwkState                           1
+     seg7RouterApp_TransID                            1
+     seg7RouterApp_DstAddr                           12
+     seg7RouterApp_Init                             115
+     seg7RouterApp_ProcessEvent                     180
+     ?Subroutine0                                     5
+     seg7RouterApp_ProcessZDOMsgs                   141
+     ??Subroutine5_0                                  5
+     ?Subroutine3                                    10
+     ?Subroutine2                                    13
+     ?Subroutine1                                     3
+     seg7RouterApp_HandleKeys                       239
+     seg7RouterApp_MessageMSGCB                     140
+     ?Subroutine4                                    12
+     seg7RouterApp_SendTheMessage                   127
+     seg7RouterApp_Send_success_TheMessage
+                                                    337
+     responseSeq                                      1
+     ?<Initializer for <Constant "seg7RouterApp">>   14
+     ?<Initializer for <Constant "rcvd">>             5
+     ?<Initializer for <Constant "Hello World">>     12
+     ?<Initializer for seg7RouterApp_ClusterList>     8
+     ?<Initializer for seg7RouterApp_SimpleDesc>     12
+     ??seg7RouterApp_Init?relay                       6
+     ??seg7RouterApp_ProcessEvent?relay               6
+     ??seg7RouterApp_ProcessZDOMsgs?relay             6
+     ??seg7RouterApp_HandleKeys?relay                 6
+     ??seg7RouterApp_MessageMSGCB?relay               6
+     ??seg7RouterApp_SendTheMessage?relay             6
+     ??seg7RouterApp_Send_success_TheMessage?relay    6
+     ?<Constant "seg7RouterApp">                     14
+     ?<Constant "rcvd">                               5
+     ?<Constant "Hello World">                       12
+
+ 
+ 1 327 bytes in segment BANKED_CODE
+    42 bytes in segment BANK_RELAYS
+    51 bytes in segment XDATA_I
+    51 bytes in segment XDATA_ID
+    22 bytes in segment XDATA_Z
+ 
+ 1 420 bytes of CODE  memory
+    73 bytes of XDATA memory
+
+Errors: none
+Warnings: none

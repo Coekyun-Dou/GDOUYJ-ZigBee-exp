@@ -1,0 +1,3646 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         24/Dec/2025  17:17:26 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data                                               #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\Source #
+#                          \Sensor.c                                          #
+#    Command line       =  -f E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2 #
+#                          530DB\..\..\..\Tools\CC2530DB\f8wRouter.cfg        #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg           #
+#                          (-DZIGBEEPRO -DSECURE=0 -DZG_SECURE_DYNAMIC=0      #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST26=0x04000000        #
+#                          -DDEFAULT_CHANLIST25=0x02000000                    #
+#                          -DDEFAULT_CHANLIST24=0x01000000                    #
+#                          -DDEFAULT_CHANLIST23=0x00800000                    #
+#                          -DDEFAULT_CHANLIST22=0x00400000                    #
+#                          -DDEFAULT_CHANLIST21=0x00200000                    #
+#                          -DDEFAULT_CHANLIST20=0x00100000                    #
+#                          -DDEFAULT_CHANLIST19=0x00080000                    #
+#                          -DDEFAULT_CHANLIST18=0x00040000                    #
+#                          -DDEFAULT_CHANLIST17=0x00020000                    #
+#                          -DDEFAULT_CHANLIST16=0x00010000                    #
+#                          -DDEFAULT_CHANLIST15=0x00008000                    #
+#                          -DDEFAULT_CHANLIST14=0x00004000                    #
+#                          -DDEFAULT_CHANLIST13=0x00002000                    #
+#                          -DDEFAULT_CHANLIST12=0x00001000                    #
+#                          -DDEFAULT_CHANLIST11=0x00000800                    #
+#                          -DDEFAULT_CHANLIST=DEFAULT_CHANLIST25              #
+#                          -DZDAPP_CONFIG_PAN_ID=0x0006                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 E:\´«¸ÐÆ÷ZStack-CC2530\´«¸Ð #
+#                          Æ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sampl #
+#                          es\seg7RouterApp\Source\Sensor.c -D ZTOOL_P1 -D    #
+#                          MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D           #
+#                          LCD_SUPPORTED=DEBUG -lC E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ #
+#                          ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samp #
+#                          les\seg7RouterApp\CC2530DB\RouterEB\List\ -lA      #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\RouterEB\List\ --diag_suppress Pe001,Pa010 -o   #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\RouterEB\Obj\ -e --no_code_motion --debug       #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data --nr_virtual_regs    #
+#                          16 -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-Ê #
+#                          µÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\seg7RouterApp\ #
+#                          CC2530DB\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-C #
+#                          C2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\seg7Rou #
+#                          terApp\CC2530DB\..\Source\ -I                      #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\ZMain\TI2530DB\ -I                     #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\include\ -I       #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\hal\target\CC2530EB\  #
+#                          -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\mac\include\ -I    #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\mac\high_level\ -I    #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\mac\low_level\srf04\  #
+#                          -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2 #
+#                          530DB\..\..\..\..\..\Components\mac\low_level\srf0 #
+#                          4\single_chip\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZSt #
+#                          ack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\se #
+#                          g7RouterApp\CC2530DB\..\..\..\..\..\Components\mt\ #
+#                           -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑ #
+#                          µ×îÖÕ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC #
+#                          2530DB\..\..\..\..\..\Components\osal\include\ -I  #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\services\saddr\ -I    #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\services\sdata\ -I    #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\stack\af\ -I          #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\stack\nwk\ -I         #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\stack\sapi\ -I        #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\stack\sec\ -I         #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\stack\sys\ -I         #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\stack\zdo\ -I         #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\zmac\ -I              #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\..\..\..\..\..\Components\zmac\f8w\ -Ohz        #
+#                          --require_prototypes                               #
+#    List file          =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\RouterEB\List\Sensor.lst                        #
+#    Object file        =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\seg7RouterApp\CC2530 #
+#                          DB\RouterEB\Obj\Sensor.r51                         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\seg7RouterApp\Source\Sensor.c
+      1          //=============================================================================
+      2          //    S E N S I R I O N   AG,  Laubisruetistr. 50, CH-8712 Staefa, Switzerland
+      3          //=============================================================================
+      4          // Project   :  SHT3x Sample Code (V1.1)
+      5          // File      :  sht3x.c (V1.1)
+      6          // Author    :  RFU
+      7          // Date      :  6-Mai-2015
+      8          // Controller:  STM32F100RB
+      9          // IDE       :  |¨¬Vision V5.12.0.0
+     10          // Compiler  :  Armcc
+     11          // Brief     :  Sensor Layer: Implementation of functions for sensor access.
+     12          //=============================================================================
+     13          
+     14          //-- Includes -----------------------------------------------------------------
+     15          #include "Sensor.h"
+     16          #include "i2c.h"
+     17          #include "iocc2530.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+     18          #include "hal_board.h"
+     19          #include "hal_defs.h"
+     20          #include "hal_mcu.h"
+     21          #include "hal_types.h"
+     22          #include "hal_adc.h"
+     23          
+     24          
+     25          
+     26          
+     27          
+     28          
+     29          
+     30          
+     31          
+     32          
+     33          
+     34          //-- Defines ------------------------------------------------------------------
+     35          // Generator polynomial for CRC
+     36          #define POLYNOMIAL  0x131 // P(x) = x^8 + x^5 + x^4 + 1 = 100110001
+     37          
+     38          //=============================================================================
+     39          
+     40          //-- Global variables ---------------------------------------------------------
+     41          
+     42          
+     43          
+     44          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     45          static u8t _i2cAddress; // I2C Address
+   \                     _i2cAddress:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     46          
+     47          //-- Static function prototypes -----------------------------------------------
+     48          static etError SHT3X_WriteAlertLimitData(ft humidity, ft temperature);
+     49          static etError SHT3X_ReadAlertLimitData(ft* humidity, ft* temperature);
+     50          static etError SHT3X_StartWriteAccess(void);
+     51          static etError SHT3X_StartReadAccess(void);
+     52          static void SHT3X_StopAccess(void);
+     53          static etError SHT3X_WriteCommand(etCommands command);
+     54          static etError SHT3X_Read2BytesAndCrc(u16t* data, etI2cAck finaleAckNack,
+     55                                                u8t timeout);
+     56          static etError SHT3X_Write2BytesAndCrc(u16t data);
+     57          static u8t SHT3X_CalcCrc(u8t data[], u8t nbrOfBytes);
+     58          static etError SHT3X_CheckCrc(u8t data[], u8t nbrOfBytes, u8t checksum);
+     59          static ft SHT3X_CalcTemperature(u16t rawValue);
+     60          static ft SHT3X_CalcHumidity(u16t rawValue);
+     61          static u16t SHT3X_CalcRawTemperature(ft temperature);
+     62          static u16t SHT3X_CalcRawHumidity(ft humidity);
+     63          
+     64          
+     65          void SensorInit(void);
+     66          void DisplayTwoDigits(unsigned char digit1, unsigned char digit2);
+     67          void SendSeg7(unsigned char value);
+     68          uint8 SetTwoValues(unsigned char leftDigit, unsigned char rightDigit);
+     69          
+     70          /****************************
+     71          //ÊýÂë¹ÜLEDÏÔÊ¾µã¶ÔÓ¦Ê®Áù½øÖÆÖµ
+     72          *****************************/
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     73          unsigned char seg7table[16] = {
+   \                     seg7table:
+   \   000000                DS 16
+   \   000010                REQUIRE `?<Initializer for seg7table>`
+   \   000010                REQUIRE __INIT_XDATA_I
+     74              /* 0       1       2       3       4       5       6      7*/
+     75              0xc0,   0xf9,   0xa4,   0xb0,   0x99,   0x92,   0x82,   0xf8,
+     76              /* 8       9      A        B       C       D       E      F*/
+     77              0x80,   0x90,   0x88,   0x83,   0xc6,   0xa1,   0x86,   0x8e };
+     78          /**************************************************************** 
+     79             ´«¸ÐÆ÷IO³õÊ¼»¯º¯Êý     
+     80          ***********************************************************/
+     81          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     82          void SensorInit(void)
+   \                     SensorInit:
+     83          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     84             P0INP &= ~(0x1<<1);          //P0.1ÉÏÀ­
+   \   000000   538FFD       ANL     0x8f,#0xfd
+     85             P0SEL &= ~((1<<1)|(1<<6)|(1<<7));//P0.1,P0.6,P0.7ÎªGPIO
+   \   000003   53F33D       ANL     0xf3,#0x3d
+     86             P0DIR |= (1<<1)|(1<<6)|(1<<7);   //P0.1,P0.6,P0.7ÎªOUTPUT
+   \   000006   43FDC2       ORL     0xfd,#0xc2
+     87             //74HC595³õÊ¼»¯
+     88             P0 |= (0x1<<7); //p07 DATA,Êý¾Ý¼Ä´æÆ÷
+   \   000009   D287         SETB    0x80.7
+     89             P0 |= (0x1<<6); //p06 CLK£¬Î»ÒÆ¼Ä´æÆ÷Ê±ÖÓÊäÈë
+   \   00000B   D286         SETB    0x80.6
+     90             P0 |= (0x1<<1); //p01 LOCK£¬Êý¾Ý¼Ä´æÆ÷¿ªÊ¼Ê±ÖÓ
+   \   00000D   D281         SETB    0x80.1
+     91          }
+   \   00000F   02....       LJMP    ?BRET
+   \   000012                REQUIRE P0INP
+   \   000012                REQUIRE P0SEL
+   \   000012                REQUIRE P0DIR
+   \   000012                REQUIRE _A_P0
+     92          
+     93          /****************************************************************
+     94          ÊýÂë¹ÜµÄ¿ØÖÆÓÉÒÔÏÂÈý¸ö¼Ä´æÆ÷£¬²ÉÓÃSPI·½Ê½¿ØÖÆ¡£
+     95                Êý¾Ý¼Ä´æÆ÷ DATA         p07
+     96                Êý¾Ý¼Ä´æÆ÷¿ªÊ¼Ê±ÖÓ LOCK  p01
+     97                Î»ÒÆ¼Ä´æÆ÷Ê±ÖÓ    CLK  p06
+     98          ***********************************************************/
+     99          
+    100          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    101          void DisplayTwoDigits(unsigned char digit1, unsigned char digit2)
+   \                     DisplayTwoDigits:
+    102          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    103              unsigned char i, j;
+                                      ^
+Warning[Pe177]: variable "j" was declared but never referenced
+    104              unsigned char temp;
+    105              
+    106              P0 &= ~(0x1<<6); // p06 CLK
+   \   000005   C286         CLR     0x80.6
+    107              P0 &= ~(0x1<<1); // p01 LOCK
+   \   000007   C281         CLR     0x80.1
+    108              P0 &= ~(0x1<<7); // p07 DATA
+   \   000009   C287         CLR     0x80.7
+    109              
+    110              // È·±£Êý×ÖÔÚ0-15·¶Î§ÄÚ
+    111              digit1 = digit1 % 16;
+   \   00000B   E9           MOV     A,R1
+   \   00000C   540F         ANL     A,#0xf
+   \   00000E   F9           MOV     R1,A
+    112              digit2 = digit2 % 16;
+    113              
+    114              // ÏÈ·¢ËÍµÚ¶þ¸öÊýÂë¹ÜµÄÊý¾Ý£¨¼¶ÁªµÄµÚ¶þ¸ö74HC595£©
+    115              temp = seg7table[digit2];
+   \   00000F   740F         MOV     A,#0xf
+   \   000011   5A           ANL     A,R2
+   \   000012   FC           MOV     R4,A
+   \   000013   74..         MOV     A,#seg7table & 0xff
+   \   000015   2C           ADD     A,R4
+   \   000016   12....       LCALL   ?Subroutine8 & 0xFFFF
+    116              for(i = 0; i < 8; i++)
+    117              {
+    118                  if(temp & 0x80) {
+   \                     ??CrossCallReturnLabel_4:
+   \   000019   EB           MOV     A,R3
+   \   00001A   A2E7         MOV     C,0xE0 /* A   */.7
+   \   00001C   5004         JNC     ??DisplayTwoDigits_0
+    119                      P0 |= (0x1<<7); // P0.7Öµ1£¬DATA
+   \   00001E   D287         SETB    0x80.7
+   \   000020   8002         SJMP    ??DisplayTwoDigits_1
+    120                  } else {
+    121                      P0 &= ~(0x1<<7); // P0.7Öµ0£¬DATA
+   \                     ??DisplayTwoDigits_0:
+   \   000022   C287         CLR     0x80.7
+    122                  }
+    123                  temp <<= 1;
+   \                     ??DisplayTwoDigits_1:
+   \   000024   C3           CLR     C
+   \   000025   33           RLC     A
+   \   000026   FB           MOV     R3,A
+    124                  P0 &= ~(0x1<<6); // P0.6 CLKÏÂ½µÑØ
+   \   000027   C286         CLR     0x80.6
+    125                  P0 |= (0x1<<6);  // P0.6 CLKÉÏÉýÑØ£¨ÒÆÎ»£©
+   \   000029   D286         SETB    0x80.6
+    126              }
+   \   00002B   18           DEC     R0
+   \   00002C   E8           MOV     A,R0
+   \   00002D   70EA         JNZ     ??CrossCallReturnLabel_4
+    127              
+    128              // ÔÙ·¢ËÍµÚÒ»¸öÊýÂë¹ÜµÄÊý¾Ý£¨¼¶ÁªµÄµÚÒ»¸ö74HC595£©
+    129              temp = seg7table[digit1];
+   \   00002F   89..         MOV     ?V0 + 0,R1
+   \   000031   74..         MOV     A,#seg7table & 0xff
+   \   000033   25..         ADD     A,?V0 + 0
+   \   000035   12....       LCALL   ?Subroutine8 & 0xFFFF
+    130              for(i = 0; i < 8; i++)
+    131              {
+    132                  if(temp & 0x80) {
+   \                     ??CrossCallReturnLabel_5:
+   \   000038   EB           MOV     A,R3
+   \   000039   A2E7         MOV     C,0xE0 /* A   */.7
+   \   00003B   5004         JNC     ??DisplayTwoDigits_2
+    133                      P0 |= (0x1<<7); // P0.7Öµ1£¬DATA
+   \   00003D   D287         SETB    0x80.7
+   \   00003F   8002         SJMP    ??DisplayTwoDigits_3
+    134                  } else {
+    135                      P0 &= ~(0x1<<7); // P0.7Öµ0£¬DATA
+   \                     ??DisplayTwoDigits_2:
+   \   000041   C287         CLR     0x80.7
+    136                  }
+    137                  temp <<= 1;
+   \                     ??DisplayTwoDigits_3:
+   \   000043   C3           CLR     C
+   \   000044   33           RLC     A
+   \   000045   FB           MOV     R3,A
+    138                  P0 &= ~(0x1<<6); // P0.6 CLKÏÂ½µÑØ
+   \   000046   C286         CLR     0x80.6
+    139                  P0 |= (0x1<<6);  // P0.6 CLKÉÏÉýÑØ£¨ÒÆÎ»£©
+   \   000048   D286         SETB    0x80.6
+    140              }
+   \   00004A   18           DEC     R0
+   \   00004B   E8           MOV     A,R0
+   \   00004C   70EA         JNZ     ??CrossCallReturnLabel_5
+    141              
+    142              // Ëø´æÊý¾Ý£¬¸üÐÂÏÔÊ¾
+    143              P0 &= ~(0x1<<1); // P0.1 LOCKÏÂ½µÑØ
+   \   00004E   C281         CLR     0x80.1
+    144              P0 |= (0x1<<1);  // P0.1 LOCKÉÏÉýÑØ£¨Ëø´æ£©
+   \   000050   D281         SETB    0x80.1
+    145          }
+   \   000052                REQUIRE ?Subroutine1
+   \   000052                REQUIRE _A_P0
+   \   000052                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   F582         MOV     DPL,A
+   \   000002   74..         MOV     A,#(seg7table >> 8) & 0xff
+   \   000004   3400         ADDC    A,#0x0
+   \   000006   F583         MOV     DPH,A
+   \   000008   E0           MOVX    A,@DPTR
+   \   000009   FB           MOV     R3,A
+   \   00000A   7808         MOV     R0,#0x8
+   \   00000C   22           RET
+    146          
+    147          /****************************************************************
+    148          ÏÔÊ¾µ¥¸öÊý×Ö£¨¼æÈÝÔ­ÓÐ¹¦ÄÜ£¬Í¬Ê±ÏÔÊ¾Á½¸öÏàÍ¬Êý×Ö£©
+    149          ***********************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    150          void SendSeg7(unsigned char value)
+   \                     SendSeg7:
+    151          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    152              DisplayTwoDigits(value, value);
+   \   000006                ; Setup parameters for call to function DisplayTwoDigits
+   \   000006   FA           MOV     R2,A
+   \   000007   12....       LCALL   ??DisplayTwoDigits?relay
+    153          }
+   \   00000A   80..         SJMP    ??Subroutine24_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine24_0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    154          
+    155          /****************************************************************
+    156          ÉèÖÃÒªÏÔÊ¾µÄÁ½¸ö²»Í¬Êý×Ö
+    157          ²ÎÊý: leftDigit - ×ó±ßÊýÂë¹ÜÏÔÊ¾µÄÊý×Ö(0-15)
+    158                rightDigit - ÓÒ±ßÊýÂë¹ÜÏÔÊ¾µÄÊý×Ö(0-15)
+    159          ·µ»ØÖµ: 0±íÊ¾³É¹¦
+    160          ***********************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    161          uint8 SetTwoValues(unsigned char leftDigit, unsigned char rightDigit)
+   \                     SetTwoValues:
+    162          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   EA           MOV     A,R2
+   \   000008   FF           MOV     R7,A
+    163              // ²ÎÊý·¶Î§±£»¤£ºÈ·±£ÖµÔÚ0-15Ö®¼ä
+    164              leftDigit = leftDigit % 16;
+    165              rightDigit = rightDigit % 16;
+    166              
+    167              // ÏÔÊ¾Á½¸ö²»Í¬µÄÊý×Ö
+    168              DisplayTwoDigits(leftDigit, rightDigit);
+   \   000009                ; Setup parameters for call to function DisplayTwoDigits
+   \   000009   740F         MOV     A,#0xf
+   \   00000B   5F           ANL     A,R7
+   \   00000C   FA           MOV     R2,A
+   \   00000D   740F         MOV     A,#0xf
+   \   00000F   5E           ANL     A,R6
+   \   000010   F9           MOV     R1,A
+   \   000011   12....       LCALL   ??DisplayTwoDigits?relay
+    169              
+    170              return 0;  // ·µ»Ø0±íÊ¾Ö´ÐÐ³É¹¦
+   \   000014   7900         MOV     R1,#0x0
+   \   000016   80..         SJMP    ??Subroutine24_0
+    171          }
+    172          
+    173          
+    174          
+    175          
+    176          
+    177          
+    178          
+    179          
+    180          
+    181          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    182          void Init_Sensor(void)
+   \                     Init_Sensor:
+    183          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    184            SHT3X_Init(0x44); // Address: 0x44 = Sensor on EvalBoard connector
+   \   000004                ; Setup parameters for call to function I2c_Init
+   \   000004   12....       LCALL   ??I2c_Init?relay
+   \   000007   90....       MOV     DPTR,#_i2cAddress
+   \   00000A   7444         MOV     A,#0x44
+   \   00000C   F0           MOVX    @DPTR,A
+    185            SHT3X_StartPeriodicMeasurment(REPEATAB_HIGH , FREQUENCY_2HZ);     // work mode
+   \   00000D                ; Setup parameters for call to function SHT3X_StartPeriodicMeasurment
+   \   00000D   7A02         MOV     R2,#0x2
+   \   00000F   7900         MOV     R1,#0x0
+   \   000011   12....       LCALL   ??SHT3X_StartPeriodicMeasurment?relay
+    186          }
+   \   000014   80..         SJMP    ??Subroutine25_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine25_0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+    187          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    188          void ReadTemp(int* t,int* h)
+   \                     ReadTemp:
+    189          {
+   \   000000   74EC         MOV     A,#-0x14
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 20
+   \   000005                ; Auto size: 8
+   \   000005   74F8         MOV     A,#-0x8
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+   \   00000E   8C..         MOV     ?V0 + 0,R4
+   \   000010   8D..         MOV     ?V0 + 1,R5
+    190            float temperature;
+    191            float humidity;
+    192            
+    193            SHT3X_ReadMeasurementBuffer(&temperature, &humidity);
+   \   000012                ; Setup parameters for call to function SHT3X_ReadMeasurementBuffer
+   \   000012   85..82       MOV     DPL,?XSP + 0
+   \   000015   85..83       MOV     DPH,?XSP + 1
+   \   000018   AC82         MOV     R4,DPL
+   \   00001A   AD83         MOV     R5,DPH
+   \   00001C   7404         MOV     A,#0x4
+   \   00001E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000021   AA82         MOV     R2,DPL
+   \   000023   AB83         MOV     R3,DPH
+   \   000025   12....       LCALL   ??SHT3X_ReadMeasurementBuffer?relay
+    194            *t = (int)(temperature*100);
+   \   000028   7404         MOV     A,#0x4
+   \   00002A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002D   78..         MOV     R0,#?V0 + 4
+   \   00002F   12....       LCALL   ?L_MOV_X
+   \   000032   90....       MOV     DPTR,#__Constant_42c80000
+   \   000035   78..         MOV     R0,#?V0 + 8
+   \   000037   12....       LCALL   ?L_MOV_X
+   \   00003A   78..         MOV     R0,#?V0 + 4
+   \   00003C   79..         MOV     R1,#?V0 + 8
+   \   00003E   12....       LCALL   ?FLT_MUL
+   \   000041   78..         MOV     R0,#?V0 + 4
+   \   000043   12....       LCALL   ?FLT_TO_L
+   \   000046   8E82         MOV     DPL,R6
+   \   000048   8F83         MOV     DPH,R7
+   \   00004A   E5..         MOV     A,?V0 + 4
+   \   00004C   F0           MOVX    @DPTR,A
+   \   00004D   A3           INC     DPTR
+   \   00004E   E5..         MOV     A,?V0 + 5
+   \   000050   F0           MOVX    @DPTR,A
+    195            *h = (int)(humidity*100);
+   \   000051   85..82       MOV     DPL,?XSP + 0
+   \   000054   85..83       MOV     DPH,?XSP + 1
+   \   000057   78..         MOV     R0,#?V0 + 4
+   \   000059   12....       LCALL   ?L_MOV_X
+   \   00005C   90....       MOV     DPTR,#__Constant_42c80000
+   \   00005F   78..         MOV     R0,#?V0 + 8
+   \   000061   12....       LCALL   ?L_MOV_X
+   \   000064   78..         MOV     R0,#?V0 + 4
+   \   000066   79..         MOV     R1,#?V0 + 8
+   \   000068   12....       LCALL   ?FLT_MUL
+   \   00006B   78..         MOV     R0,#?V0 + 4
+   \   00006D   12....       LCALL   ?FLT_TO_L
+   \   000070   85..82       MOV     DPL,?V0 + 0
+   \   000073   85..83       MOV     DPH,?V0 + 1
+   \   000076   E5..         MOV     A,?V0 + 4
+   \   000078   F0           MOVX    @DPTR,A
+   \   000079   A3           INC     DPTR
+   \   00007A   E5..         MOV     A,?V0 + 5
+   \   00007C   F0           MOVX    @DPTR,A
+    196          }
+   \   00007D   7408         MOV     A,#0x8
+   \   00007F   80..         SJMP    ??Subroutine26_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine26_0:
+   \   000000   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000003   7F0C         MOV     R7,#0xc
+   \   000005   02....       LJMP    ?BANKED_LEAVE_XDATA
+    197          
+    198          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    199          void SHT3X_Init(u8t i2cAddress)          /* -- adapt the init for your uC -- */
+   \                     SHT3X_Init:
+    200          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    201            I2c_Init(); // init I2C
+   \   000007                ; Setup parameters for call to function I2c_Init
+   \   000007   12....       LCALL   ??I2c_Init?relay
+    202            SHT3X_SetI2cAdr(i2cAddress);
+   \   00000A   EE           MOV     A,R6
+   \   00000B   90....       MOV     DPTR,#_i2cAddress
+   \   00000E   F0           MOVX    @DPTR,A
+    203          }
+   \   00000F   02....       LJMP    ??Subroutine24_0 & 0xFFFF
+    204          
+    205          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    206          void SHT3X_SetI2cAdr(u8t i2cAddress)
+   \                     SHT3X_SetI2cAdr:
+    207          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    208            _i2cAddress = i2cAddress;
+   \   000004   E9           MOV     A,R1
+   \   000005   90....       MOV     DPTR,#_i2cAddress
+   \   000008   F0           MOVX    @DPTR,A
+    209          }
+   \   000009   02....       LJMP    ??Subroutine25_0 & 0xFFFF
+    210          
+    211          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    212          etError SHT3x_ReadSerialNumber(u32t* serialNumber)
+   \                     SHT3x_ReadSerialNumber:
+    213          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 4
+   \   000005   74FC         MOV     A,#-0x4
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   12....       LCALL   ?Subroutine11 & 0xFFFF
+    214            etError error; // error code
+    215            u16t serialNumWords[2];
+    216            
+    217            error = SHT3X_StartWriteAccess();
+    218            
+    219            // write "read serial number" command
+    220            error |= SHT3X_WriteCommand(CMD_READ_SERIALNBR);
+   \                     ??CrossCallReturnLabel_51:
+   \   00000D                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   00000D   7A80         MOV     R2,#-0x80
+   \   00000F   7B37         MOV     R3,#0x37
+   \   000011   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_42:
+   \   000014   42..         ORL     ?V0 + 0,A
+    221            // if no error, start read access
+    222            if(error == NO_ERROR) error = SHT3X_StartReadAccess();
+   \   000016   E5..         MOV     A,?V0 + 0
+   \   000018   7003         JNZ     ??CrossCallReturnLabel_30
+   \   00001A                ; Setup parameters for call to function SHT3X_StartReadAccess
+   \   00001A   12....       LCALL   ?Subroutine16 & 0xFFFF
+    223            // if no error, read first serial number word
+    224            if(error == NO_ERROR) error = SHT3X_Read2BytesAndCrc(&serialNumWords[0], ACK, 100);
+   \                     ??CrossCallReturnLabel_30:
+   \   00001D   E5..         MOV     A,?V0 + 0
+   \   00001F   700D         JNZ     ??CrossCallReturnLabel_48
+   \   000021                ; Setup parameters for call to function SHT3X_Read2BytesAndCrc
+   \   000021   7C64         MOV     R4,#0x64
+   \   000023   7900         MOV     R1,#0x0
+   \   000025   85..82       MOV     DPL,?XSP + 0
+   \   000028   85..83       MOV     DPH,?XSP + 1
+   \   00002B   12....       LCALL   ?Subroutine17 & 0xFFFF
+    225            // if no error, read second serial number word
+    226            if(error == NO_ERROR) error = SHT3X_Read2BytesAndCrc(&serialNumWords[1], NACK, 0);
+   \                     ??CrossCallReturnLabel_48:
+   \   00002E   E5..         MOV     A,?V0 + 0
+   \   000030   700C         JNZ     ??CrossCallReturnLabel_49
+   \   000032                ; Setup parameters for call to function SHT3X_Read2BytesAndCrc
+   \   000032   7C00         MOV     R4,#0x0
+   \   000034   7901         MOV     R1,#0x1
+   \   000036   7402         MOV     A,#0x2
+   \   000038   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003B   12....       LCALL   ?Subroutine17 & 0xFFFF
+    227            
+    228            SHT3X_StopAccess();
+   \                     ??CrossCallReturnLabel_49:
+   \   00003E                ; Setup parameters for call to function I2c_StopCondition
+   \   00003E   12....       LCALL   ??I2c_StopCondition?relay
+    229            
+    230            // if no error, calc serial number as 32-bit integer
+    231            if(error == NO_ERROR)
+   \   000041   E5..         MOV     A,?V0 + 0
+   \   000043   701C         JNZ     ??SHT3x_ReadSerialNumber_0
+    232            {
+    233              *serialNumber = (serialNumWords[0] << 16) | serialNumWords[1];
+                                                           ^
+Warning[Pe063]: shift count is too large
+   \   000045   7402         MOV     A,#0x2
+   \   000047   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004A   E0           MOVX    A,@DPTR
+   \   00004B   F8           MOV     R0,A
+   \   00004C   A3           INC     DPTR
+   \   00004D   E0           MOVX    A,@DPTR
+   \   00004E   F9           MOV     R1,A
+   \   00004F   E8           MOV     A,R0
+   \   000050   FA           MOV     R2,A
+   \   000051   E9           MOV     A,R1
+   \   000052   FB           MOV     R3,A
+   \   000053   8E82         MOV     DPL,R6
+   \   000055   8F83         MOV     DPH,R7
+   \   000057   EA           MOV     A,R2
+   \   000058   F0           MOVX    @DPTR,A
+   \   000059   A3           INC     DPTR
+   \   00005A   EB           MOV     A,R3
+   \   00005B   F0           MOVX    @DPTR,A
+   \   00005C   A3           INC     DPTR
+   \   00005D   E4           CLR     A
+   \   00005E   F0           MOVX    @DPTR,A
+   \   00005F   A3           INC     DPTR
+   \   000060   F0           MOVX    @DPTR,A
+    234            }
+    235            
+    236            return error;
+   \                     ??SHT3x_ReadSerialNumber_0:
+   \   000061   A9..         MOV     R1,?V0 + 0
+   \   000063   7404         MOV     A,#0x4
+   \   000065   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000068   02....       LJMP    ??Subroutine24_0 & 0xFFFF
+    237          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine17:
+   \   000000   AA82         MOV     R2,DPL
+   \   000002   AB83         MOV     R3,DPH
+   \   000004                REQUIRE ??Subroutine27_0
+   \   000004                ; // Fall through to label ??Subroutine27_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine27_0:
+   \   000000   12....       LCALL   ??SHT3X_Read2BytesAndCrc?relay
+   \   000003   E9           MOV     A,R1
+   \   000004   F5..         MOV     ?V0 + 0,A
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine11:
+   \   000000   EA           MOV     A,R2
+   \   000001   FE           MOV     R6,A
+   \   000002   EB           MOV     A,R3
+   \   000003   FF           MOV     R7,A
+   \   000004                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   000004                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   000004                REQUIRE ??Subroutine28_0
+   \   000004                ; // Fall through to label ??Subroutine28_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine28_0:
+   \   000000   12....       LCALL   ??SHT3X_StartWriteAccess?relay
+   \   000003   E9           MOV     A,R1
+   \   000004   F5..         MOV     ?V0 + 0,A
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine16:
+   \   000000   12....       LCALL   ??SHT3X_StartReadAccess?relay
+   \   000003   E9           MOV     A,R1
+   \   000004   F5..         MOV     ?V0 + 0,A
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine22:
+   \   000000   12....       LCALL   ??SHT3X_WriteCommand?relay
+   \   000003   E9           MOV     A,R1
+   \   000004   22           RET
+    238          
+    239          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    240          etError SHT3X_ReadStatus(u16t* status)
+   \                     SHT3X_ReadStatus:
+    241          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   12....       LCALL   ?Subroutine11 & 0xFFFF
+    242            etError error; // error code
+    243            
+    244            error = SHT3X_StartWriteAccess();
+    245            
+    246            // if no error, write "read status" command
+    247            if(error == NO_ERROR) error = SHT3X_WriteCommand(CMD_READ_STATUS);
+   \                     ??CrossCallReturnLabel_52:
+   \   000008   7009         JNZ     ??SHT3X_ReadStatus_0
+   \   00000A                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   00000A   7A2D         MOV     R2,#0x2d
+   \   00000C   7BF3         MOV     R3,#-0xd
+   \   00000E   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_43:
+   \   000011   F5..         MOV     ?V0 + 0,A
+    248            // if no error, start read access
+    249            if(error == NO_ERROR) error = SHT3X_StartReadAccess(); 
+   \                     ??SHT3X_ReadStatus_0:
+   \   000013   E5..         MOV     A,?V0 + 0
+   \   000015   7003         JNZ     ??CrossCallReturnLabel_31
+   \   000017                ; Setup parameters for call to function SHT3X_StartReadAccess
+   \   000017   12....       LCALL   ?Subroutine16 & 0xFFFF
+    250            // if no error, read status
+    251            if(error == NO_ERROR) error = SHT3X_Read2BytesAndCrc(status, NACK, 0);
+   \                     ??CrossCallReturnLabel_31:
+   \   00001A   E5..         MOV     A,?V0 + 0
+   \   00001C   700B         JNZ     ??CrossCallReturnLabel_50
+   \   00001E                ; Setup parameters for call to function SHT3X_Read2BytesAndCrc
+   \   00001E   7C00         MOV     R4,#0x0
+   \   000020   7901         MOV     R1,#0x1
+   \   000022   EE           MOV     A,R6
+   \   000023   FA           MOV     R2,A
+   \   000024   EF           MOV     A,R7
+   \   000025   FB           MOV     R3,A
+   \   000026   12....       LCALL   ??Subroutine27_0 & 0xFFFF
+    252            
+    253            SHT3X_StopAccess();
+   \                     ??CrossCallReturnLabel_50:
+   \   000029                ; Setup parameters for call to function I2c_StopCondition
+   \   000029   12....       LCALL   ??I2c_StopCondition?relay
+    254            
+    255            return error;
+   \   00002C                REQUIRE ?Subroutine4
+   \   00002C                ; // Fall through to label ?Subroutine4
+    256          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   A9..         MOV     R1,?V0 + 0
+   \   000002   02....       LJMP    ??Subroutine24_0 & 0xFFFF
+    257          
+    258          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL   ??I2c_StopCondition?relay
+   \   000003   EE           MOV     A,R6
+   \   000004                REQUIRE ??Subroutine23_0
+   \   000004                ; // Fall through to label ??Subroutine23_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine23_0:
+   \   000000   F9           MOV     R1,A
+   \   000001                REQUIRE ??Subroutine24_0
+   \   000001                ; // Fall through to label ??Subroutine24_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    259          etError SHT3X_ClearAllAlertFlags(void)
+   \                     SHT3X_ClearAllAlertFlags:
+    260          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    261            etError error; // error code
+    262            
+    263            error = SHT3X_StartWriteAccess();
+   \   000005                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   000005   12....       LCALL   ?Subroutine9 & 0xFFFF
+    264            
+    265            // if no error, write clear status register command
+    266            if(error == NO_ERROR) error = SHT3X_WriteCommand(CMD_CLEAR_STATUS);
+   \                     ??CrossCallReturnLabel_6:
+   \   000008   7007         JNZ     ??CrossCallReturnLabel_70
+   \   00000A                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   00000A   7A41         MOV     R2,#0x41
+   \   00000C   7B30         MOV     R3,#0x30
+   \   00000E   12....       LCALL   ??Subroutine31_0 & 0xFFFF
+    267            
+    268            SHT3X_StopAccess();
+   \                     ??CrossCallReturnLabel_70:
+   \   000011                ; Setup parameters for call to function I2c_StopCondition
+   \   000011   02....       LJMP    ?Subroutine2 & 0xFFFF
+    269            
+    270            return error;
+    271          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine31_0:
+   \   000000   12....       LCALL   ??SHT3X_WriteCommand?relay
+   \   000003   E9           MOV     A,R1
+   \   000004   FE           MOV     R6,A
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   12....       LCALL   ??SHT3X_StartWriteAccess?relay
+   \   000003   E9           MOV     A,R1
+   \   000004   FE           MOV     R6,A
+   \   000005   22           RET
+    272          
+    273          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    274          etError SHT3X_GetTempAndHumi(ft* temperature, ft* humidity,
+   \                     SHT3X_GetTempAndHumi:
+    275                                       etRepeatability repeatability, etMode mode,
+    276                                       u8t timeout)
+    277          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   7409         MOV     A,#0x9
+   \   000009   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000C   E0           MOVX    A,@DPTR
+   \   00000D   F8           MOV     R0,A
+   \   00000E   740A         MOV     A,#0xa
+   \   000010   12....       LCALL   ?XSTACK_DISP0_8
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   F9           MOV     R1,A
+    278            etError error;
+    279                                         
+    280            switch(mode)
+   \   000015   E8           MOV     A,R0
+   \   000016   6005         JZ      ??SHT3X_GetTempAndHumi_0
+   \   000018   14           DEC     A
+   \   000019   6016         JZ      ??SHT3X_GetTempAndHumi_1
+   \   00001B   8023         SJMP    ??SHT3X_GetTempAndHumi_2
+    281            {    
+    282              case MODE_CLKSTRETCH: // get temperature with clock stretching mode
+    283                error = SHT3X_GetTempAndHumiClkStretch(temperature, humidity,
+    284                                                       repeatability, timeout);
+   \                     ??SHT3X_GetTempAndHumi_0:
+   \   00001D                ; Setup parameters for call to function SHT3X_GetTempAndHumiClkStretch
+   \   00001D   E9           MOV     A,R1
+   \   00001E   F5..         MOV     ?V0 + 0,A
+   \   000020   78..         MOV     R0,#?V0 + 0
+   \   000022   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000025   EE           MOV     A,R6
+   \   000026   F9           MOV     R1,A
+   \   000027   12....       LCALL   ??SHT3X_GetTempAndHumiClkStretch?relay
+   \                     ??SHT3X_GetTempAndHumi_3:
+   \   00002A   7401         MOV     A,#0x1
+   \   00002C   12....       LCALL   ?DEALLOC_XSTACK8
+    285                break;
+   \   00002F   8011         SJMP    ??SHT3X_GetTempAndHumi_4
+    286              case MODE_POLLING:    // get temperature with polling mode
+    287                error = SHT3X_GetTempAndHumiPolling(temperature, humidity,
+    288                                                    repeatability, timeout);
+   \                     ??SHT3X_GetTempAndHumi_1:
+   \   000031                ; Setup parameters for call to function SHT3X_GetTempAndHumiPolling
+   \   000031   E9           MOV     A,R1
+   \   000032   F5..         MOV     ?V0 + 0,A
+   \   000034   78..         MOV     R0,#?V0 + 0
+   \   000036   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000039   EE           MOV     A,R6
+   \   00003A   F9           MOV     R1,A
+   \   00003B   12....       LCALL   ??SHT3X_GetTempAndHumiPolling?relay
+   \   00003E   80EA         SJMP    ??SHT3X_GetTempAndHumi_3
+    289                break;
+    290              default:              
+    291                error = PARM_ERROR;
+   \                     ??SHT3X_GetTempAndHumi_2:
+   \   000040   7980         MOV     R1,#-0x80
+    292                break;
+    293            }
+    294            
+    295            return error;
+   \                     ??SHT3X_GetTempAndHumi_4:
+   \   000042   02....       LJMP    ??Subroutine24_0 & 0xFFFF
+    296          }
+    297          
+    298          
+    299          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7404         MOV     A,#0x4
+   \   000002                REQUIRE ??Subroutine26_0
+   \   000002                ; // Fall through to label ??Subroutine26_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    300          etError SHT3X_GetTempAndHumiClkStretch(ft* temperature, ft* humidity,
+   \                     SHT3X_GetTempAndHumiClkStretch:
+    301                                                 etRepeatability repeatability,
+    302                                                 u8t timeout)
+    303          {
+   \   000000   74EC         MOV     A,#-0x14
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 20
+   \   000005                ; Auto size: 4
+   \   000005   74FC         MOV     A,#-0x4
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV     ?V0 + 8,R2
+   \   00000C   8B..         MOV     ?V0 + 9,R3
+   \   00000E   8C..         MOV     ?V0 + 10,R4
+   \   000010   8D..         MOV     ?V0 + 11,R5
+   \   000012   E9           MOV     A,R1
+   \   000013   FE           MOV     R6,A
+   \   000014   7418         MOV     A,#0x18
+   \   000016   12....       LCALL   ?XSTACK_DISP0_8
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   F5..         MOV     ?V0 + 0,A
+    304            etError error;        // error code
+    305            u16t    rawValueTemp; // temperature raw value from sensor
+    306            u16t    rawValueHumi; // humidity raw value from sensor
+    307            
+    308            error = SHT3X_StartWriteAccess();
+   \   00001C                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   00001C   12....       LCALL   ??SHT3X_StartWriteAccess?relay
+   \   00001F   E9           MOV     A,R1
+   \   000020   FF           MOV     R7,A
+    309            
+    310            // if no error ...
+    311            if(error == NO_ERROR)
+   \   000021   701A         JNZ     ??SHT3X_GetTempAndHumiClkStretch_0
+    312            {
+    313              // start measurement in clock stretching mode
+    314              // use depending on the required repeatability, the corresponding command
+    315              switch(repeatability)
+   \   000023   EE           MOV     A,R6
+   \   000024   7003         JNZ     $+5
+   \   000026   02....       LJMP    ??SHT3X_GetTempAndHumiClkStretch_1 & 0xFFFF
+   \   000029   14           DEC     A
+   \   00002A   7003         JNZ     $+5
+   \   00002C   02....       LJMP    ??SHT3X_GetTempAndHumiClkStretch_2 & 0xFFFF
+   \   00002F   14           DEC     A
+   \   000030   6003         JZ      $+5
+   \   000032   02....       LJMP    ??SHT3X_GetTempAndHumiClkStretch_3 & 0xFFFF
+    316              {
+    317                case REPEATAB_LOW:
+    318                  error = SHT3X_WriteCommand(CMD_MEAS_CLOCKSTR_L);
+   \   000035                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000035   7A10         MOV     R2,#0x10
+   \                     ??SHT3X_GetTempAndHumiClkStretch_4:
+   \   000037   7B2C         MOV     R3,#0x2c
+   \   000039   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_44:
+   \   00003C   FF           MOV     R7,A
+    319                  break;
+    320                case REPEATAB_MEDIUM:
+    321                  error = SHT3X_WriteCommand(CMD_MEAS_CLOCKSTR_M);
+    322                  break;
+    323                case REPEATAB_HIGH:
+    324                  error = SHT3X_WriteCommand(CMD_MEAS_CLOCKSTR_H);
+    325                  break;
+    326                default:
+    327                  error = PARM_ERROR;
+    328                  break;
+    329              }
+    330            }
+    331          
+    332            // if no error, start read access
+    333            if(error == NO_ERROR) error = SHT3X_StartReadAccess();
+   \                     ??SHT3X_GetTempAndHumiClkStretch_0:
+   \   00003D   EF           MOV     A,R7
+   \   00003E   7005         JNZ     ??SHT3X_GetTempAndHumiClkStretch_5
+   \   000040                ; Setup parameters for call to function SHT3X_StartReadAccess
+   \   000040   12....       LCALL   ??SHT3X_StartReadAccess?relay
+   \   000043   E9           MOV     A,R1
+   \   000044   FF           MOV     R7,A
+    334            // if no error, read temperature raw values
+    335            if(error == NO_ERROR) error = SHT3X_Read2BytesAndCrc(&rawValueTemp, ACK, timeout);
+   \                     ??SHT3X_GetTempAndHumiClkStretch_5:
+   \   000045   EF           MOV     A,R7
+   \   000046   700D         JNZ     ??SHT3X_GetTempAndHumiClkStretch_6
+   \   000048                ; Setup parameters for call to function SHT3X_Read2BytesAndCrc
+   \   000048   AC..         MOV     R4,?V0 + 0
+   \   00004A   7900         MOV     R1,#0x0
+   \   00004C   7402         MOV     A,#0x2
+   \   00004E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000051   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_59:
+   \   000054   FF           MOV     R7,A
+    336            // if no error, read humidity raw values
+    337            if(error == NO_ERROR) error = SHT3X_Read2BytesAndCrc(&rawValueHumi, NACK, 0);
+   \                     ??SHT3X_GetTempAndHumiClkStretch_6:
+   \   000055   EF           MOV     A,R7
+   \   000056   7004         JNZ     ??SHT3X_GetTempAndHumiClkStretch_7
+   \   000058                ; Setup parameters for call to function SHT3X_Read2BytesAndCrc
+   \   000058   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_55:
+   \   00005B   FF           MOV     R7,A
+    338            
+    339            SHT3X_StopAccess();
+   \                     ??SHT3X_GetTempAndHumiClkStretch_7:
+   \   00005C                ; Setup parameters for call to function I2c_StopCondition
+   \   00005C   12....       LCALL   ??I2c_StopCondition?relay
+    340            
+    341            // if no error, calculate temperature in ??C and humidity in %RH
+    342            if(error == NO_ERROR)
+   \   00005F   EF           MOV     A,R7
+   \   000060   707C         JNZ     ??SHT3X_GetTempAndHumiClkStretch_8
+    343            {
+    344              *temperature = SHT3X_CalcTemperature(rawValueTemp);
+   \   000062   7402         MOV     A,#0x2
+   \   000064   12....       LCALL   ?XSTACK_DISP0_8
+   \   000067   12....       LCALL   ??Subroutine30_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_62:
+   \   00006A   12....       LCALL   ?UL_TO_FLT
+   \   00006D   90....       MOV     DPTR,#__Constant_432f0000
+   \   000070   78..         MOV     R0,#?V0 + 4
+   \   000072   12....       LCALL   ?L_MOV_X
+   \   000075   78..         MOV     R0,#?V0 + 0
+   \   000077   79..         MOV     R1,#?V0 + 4
+   \   000079   12....       LCALL   ?FLT_MUL
+   \   00007C   90....       MOV     DPTR,#__Constant_477fff00
+   \   00007F   78..         MOV     R0,#?V0 + 4
+   \   000081   12....       LCALL   ?L_MOV_X
+   \   000084   78..         MOV     R0,#?V0 + 0
+   \   000086   79..         MOV     R1,#?V0 + 4
+   \   000088   12....       LCALL   ?FLT_DIV
+   \   00008B   90....       MOV     DPTR,#__Constant_c2340000
+   \   00008E   78..         MOV     R0,#?V0 + 4
+   \   000090   12....       LCALL   ?L_MOV_X
+   \   000093   78..         MOV     R0,#?V0 + 0
+   \   000095   79..         MOV     R1,#?V0 + 4
+   \   000097   12....       LCALL   ?FLT_ADD
+   \   00009A   85..82       MOV     DPL,?V0 + 8
+   \   00009D   85..83       MOV     DPH,?V0 + 9
+   \   0000A0   78..         MOV     R0,#?V0 + 0
+   \   0000A2   12....       LCALL   ?L_MOV_TO_X
+    345              *humidity = SHT3X_CalcHumidity(rawValueHumi);
+    346            }
+   \   0000A5   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_64:
+   \   0000A8   12....       LCALL   ?UL_TO_FLT
+   \   0000AB   90....       MOV     DPTR,#__Constant_42c80000
+   \   0000AE   78..         MOV     R0,#?V0 + 4
+   \   0000B0   12....       LCALL   ?L_MOV_X
+   \   0000B3   78..         MOV     R0,#?V0 + 0
+   \   0000B5   79..         MOV     R1,#?V0 + 4
+   \   0000B7   12....       LCALL   ?FLT_MUL
+   \   0000BA   90....       MOV     DPTR,#__Constant_477fff00
+   \   0000BD   78..         MOV     R0,#?V0 + 4
+   \   0000BF   12....       LCALL   ?L_MOV_X
+   \   0000C2   78..         MOV     R0,#?V0 + 0
+   \   0000C4   79..         MOV     R1,#?V0 + 4
+   \   0000C6   12....       LCALL   ?FLT_DIV
+   \   0000C9   85..82       MOV     DPL,?V0 + 10
+   \   0000CC   85..83       MOV     DPH,?V0 + 11
+   \   0000CF   E5..         MOV     A,?V0 + 0
+   \   0000D1   F0           MOVX    @DPTR,A
+   \   0000D2   A3           INC     DPTR
+   \   0000D3   E5..         MOV     A,?V0 + 1
+   \   0000D5   F0           MOVX    @DPTR,A
+   \   0000D6   A3           INC     DPTR
+   \   0000D7   E5..         MOV     A,?V0 + 2
+   \   0000D9   F0           MOVX    @DPTR,A
+   \   0000DA   A3           INC     DPTR
+   \   0000DB   E5..         MOV     A,?V0 + 3
+   \   0000DD   F0           MOVX    @DPTR,A
+    347            
+    348            return error;
+   \                     ??SHT3X_GetTempAndHumiClkStretch_8:
+   \   0000DE   EF           MOV     A,R7
+   \   0000DF   F9           MOV     R1,A
+   \   0000E0   02....       LJMP    ?Subroutine3 & 0xFFFF
+   \                     ??SHT3X_GetTempAndHumiClkStretch_2:
+   \   0000E3                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   0000E3   7A0D         MOV     R2,#0xd
+   \   0000E5   02....       LJMP    ??SHT3X_GetTempAndHumiClkStretch_4 & 0xFFFF
+   \                     ??SHT3X_GetTempAndHumiClkStretch_1:
+   \   0000E8                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   0000E8   7A06         MOV     R2,#0x6
+   \   0000EA   02....       LJMP    ??SHT3X_GetTempAndHumiClkStretch_4 & 0xFFFF
+   \                     ??SHT3X_GetTempAndHumiClkStretch_3:
+   \   0000ED   7F80         MOV     R7,#-0x80
+   \   0000EF   02....       LJMP    ??SHT3X_GetTempAndHumiClkStretch_7 & 0xFFFF
+    349          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine18:
+   \   000000   7C00         MOV     R4,#0x0
+   \   000002   7901         MOV     R1,#0x1
+   \   000004   85..82       MOV     DPL,?XSP + 0
+   \   000007   85..83       MOV     DPH,?XSP + 1
+   \   00000A                REQUIRE ??Subroutine29_0
+   \   00000A                ; // Fall through to label ??Subroutine29_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine29_0:
+   \   000000   AA82         MOV     R2,DPL
+   \   000002   AB83         MOV     R3,DPH
+   \   000004   12....       LCALL   ??SHT3X_Read2BytesAndCrc?relay
+   \   000007   E9           MOV     A,R1
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   85..82       MOV     DPL,?XSP + 0
+   \   000003   85..83       MOV     DPH,?XSP + 1
+   \   000006                REQUIRE ??Subroutine30_0
+   \   000006                ; // Fall through to label ??Subroutine30_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine30_0:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F5..         MOV     ?V0 + 0,A
+   \   000003   A3           INC     DPTR
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   F5..         MOV     ?V0 + 1,A
+   \   000007   E4           CLR     A
+   \   000008   F5..         MOV     ?V0 + 2,A
+   \   00000A   F5..         MOV     ?V0 + 3,A
+   \   00000C   78..         MOV     R0,#?V0 + 0
+   \   00000E   22           RET
+    350          
+    351          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    352          etError SHT3X_GetTempAndHumiPolling(ft* temperature, ft* humidity,
+   \                     SHT3X_GetTempAndHumiPolling:
+    353                                              etRepeatability repeatability,
+    354                                              u8t timeout)
+    355          {
+   \   000000   74EA         MOV     A,#-0x16
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 22
+   \   000005                ; Auto size: 4
+   \   000005   74FC         MOV     A,#-0x4
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV     ?V0 + 2,R2
+   \   00000C   8B..         MOV     ?V0 + 3,R3
+   \   00000E   8C..         MOV     ?V0 + 12,R4
+   \   000010   8D..         MOV     ?V0 + 13,R5
+   \   000012   89..         MOV     ?V0 + 1,R1
+   \   000014   741A         MOV     A,#0x1a
+   \   000016   12....       LCALL   ?XSTACK_DISP0_8
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   FE           MOV     R6,A
+    356            etError error;           // error code
+    357            u16t    rawValueTemp;    // temperature raw value from sensor
+    358            u16t    rawValueHumi;    // humidity raw value from sensor
+    359            
+    360            error  = SHT3X_StartWriteAccess();
+   \   00001B                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   00001B   12....       LCALL   ??Subroutine28_0 & 0xFFFF
+    361            
+    362            // if no error ...
+    363            if(error == NO_ERROR)
+   \                     ??CrossCallReturnLabel_53:
+   \   00001E   701C         JNZ     ??SHT3X_GetTempAndHumiPolling_0
+    364            {
+    365              // start measurement in polling mode
+    366              // use depending on the required repeatability, the corresponding command
+    367              switch(repeatability)
+   \   000020   E5..         MOV     A,?V0 + 1
+   \   000022   7003         JNZ     $+5
+   \   000024   02....       LJMP    ??SHT3X_GetTempAndHumiPolling_1 & 0xFFFF
+   \   000027   14           DEC     A
+   \   000028   7003         JNZ     $+5
+   \   00002A   02....       LJMP    ??SHT3X_GetTempAndHumiPolling_2 & 0xFFFF
+   \   00002D   14           DEC     A
+   \   00002E   6003         JZ      $+5
+   \   000030   02....       LJMP    ??SHT3X_GetTempAndHumiPolling_3 & 0xFFFF
+    368              {
+    369                case REPEATAB_LOW:
+    370                  error = SHT3X_WriteCommand(CMD_MEAS_POLLING_L);
+   \   000033                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000033   7A16         MOV     R2,#0x16
+   \                     ??SHT3X_GetTempAndHumiPolling_4:
+   \   000035   7B24         MOV     R3,#0x24
+   \   000037   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_45:
+   \   00003A   F5..         MOV     ?V0 + 0,A
+    371                  break;
+    372                case REPEATAB_MEDIUM:
+    373                  error = SHT3X_WriteCommand(CMD_MEAS_POLLING_M);
+    374                  break;
+    375                case REPEATAB_HIGH:
+    376                  error = SHT3X_WriteCommand(CMD_MEAS_POLLING_H);
+    377                  break;
+    378                default:
+    379                  error = PARM_ERROR;
+    380                  break;
+    381              }
+    382            }
+    383            
+    384            // if no error, wait until measurement ready
+    385            if(error == NO_ERROR)
+   \                     ??SHT3X_GetTempAndHumiPolling_0:
+   \   00003C   E5..         MOV     A,?V0 + 0
+   \   00003E   7003         JNZ     $+5
+   \   000040   02....       LJMP    ??SHT3X_GetTempAndHumiPolling_5 & 0xFFFF
+    386            {
+    387              // poll every 1ms for measurement ready until timeout
+    388              while(timeout--)
+    389              {
+    390                // check if the measurement has finished
+    391                error = SHT3X_StartReadAccess();
+    392            
+    393                // if measurement has finished -> exit loop
+    394                if(error == NO_ERROR) break;
+    395            
+    396                // delay 1ms
+    397                DelayMicroSeconds(1000);
+    398              }
+    399              
+    400              // check for timeout error
+    401              if(timeout == 0) error = TIMEOUT_ERROR;
+    402            }
+    403            
+    404            // if no error, read temperature and humidity raw values
+    405            if(error == NO_ERROR)
+   \                     ??SHT3X_GetTempAndHumiPolling_6:
+   \   000043   E5..         MOV     A,?V0 + 0
+   \   000045   7013         JNZ     ??SHT3X_GetTempAndHumiPolling_7
+    406            {
+    407              error |= SHT3X_Read2BytesAndCrc(&rawValueTemp, ACK, 0);
+   \   000047                ; Setup parameters for call to function SHT3X_Read2BytesAndCrc
+   \   000047   7C00         MOV     R4,#0x0
+   \   000049   7900         MOV     R1,#0x0
+   \   00004B   7402         MOV     A,#0x2
+   \   00004D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000050   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_60:
+   \   000053   FE           MOV     R6,A
+    408              error |= SHT3X_Read2BytesAndCrc(&rawValueHumi, NACK, 0);
+   \   000054                ; Setup parameters for call to function SHT3X_Read2BytesAndCrc
+   \   000054   12....       LCALL   ?Subroutine18 & 0xFFFF
+    409            }
+   \                     ??CrossCallReturnLabel_56:
+   \   000057   4E           ORL     A,R6
+   \   000058   F5..         MOV     ?V0 + 0,A
+    410            
+    411            SHT3X_StopAccess();
+   \                     ??SHT3X_GetTempAndHumiPolling_7:
+   \   00005A                ; Setup parameters for call to function I2c_StopCondition
+   \   00005A   12....       LCALL   ??I2c_StopCondition?relay
+    412            
+    413            // if no error, calculate temperature in ??C and humidity in %RH
+    414            if(error == NO_ERROR)
+   \   00005D   E5..         MOV     A,?V0 + 0
+   \   00005F   7074         JNZ     ??CrossCallReturnLabel_3
+    415            {
+    416              *temperature = SHT3X_CalcTemperature(rawValueTemp);
+   \   000061   7402         MOV     A,#0x2
+   \   000063   12....       LCALL   ?XSTACK_DISP0_8
+   \   000066   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000069   12....       LCALL   ?UL_TO_FLT
+   \   00006C   90....       MOV     DPTR,#__Constant_432f0000
+   \   00006F   78..         MOV     R0,#?V0 + 8
+   \   000071   12....       LCALL   ?L_MOV_X
+   \   000074   78..         MOV     R0,#?V0 + 4
+   \   000076   79..         MOV     R1,#?V0 + 8
+   \   000078   12....       LCALL   ?FLT_MUL
+   \   00007B   90....       MOV     DPTR,#__Constant_477fff00
+   \   00007E   78..         MOV     R0,#?V0 + 8
+   \   000080   12....       LCALL   ?L_MOV_X
+   \   000083   78..         MOV     R0,#?V0 + 4
+   \   000085   79..         MOV     R1,#?V0 + 8
+   \   000087   12....       LCALL   ?FLT_DIV
+   \   00008A   90....       MOV     DPTR,#__Constant_c2340000
+   \   00008D   78..         MOV     R0,#?V0 + 8
+   \   00008F   12....       LCALL   ?L_MOV_X
+   \   000092   78..         MOV     R0,#?V0 + 4
+   \   000094   79..         MOV     R1,#?V0 + 8
+   \   000096   12....       LCALL   ?FLT_ADD
+   \   000099   85..82       MOV     DPL,?V0 + 2
+   \   00009C   85..83       MOV     DPH,?V0 + 3
+   \   00009F   12....       LCALL   ?Subroutine7 & 0xFFFF
+    417              *humidity = SHT3X_CalcHumidity(rawValueHumi);
+    418            }
+   \                     ??CrossCallReturnLabel_2:
+   \   0000A2   85..82       MOV     DPL,?XSP + 0
+   \   0000A5   85..83       MOV     DPH,?XSP + 1
+   \   0000A8   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   0000AB   12....       LCALL   ?UL_TO_FLT
+   \   0000AE   90....       MOV     DPTR,#__Constant_42c80000
+   \   0000B1   78..         MOV     R0,#?V0 + 8
+   \   0000B3   12....       LCALL   ?L_MOV_X
+   \   0000B6   78..         MOV     R0,#?V0 + 4
+   \   0000B8   79..         MOV     R1,#?V0 + 8
+   \   0000BA   12....       LCALL   ?FLT_MUL
+   \   0000BD   90....       MOV     DPTR,#__Constant_477fff00
+   \   0000C0   78..         MOV     R0,#?V0 + 8
+   \   0000C2   12....       LCALL   ?L_MOV_X
+   \   0000C5   78..         MOV     R0,#?V0 + 4
+   \   0000C7   79..         MOV     R1,#?V0 + 8
+   \   0000C9   12....       LCALL   ?FLT_DIV
+   \   0000CC   85..82       MOV     DPL,?V0 + 12
+   \   0000CF   85..83       MOV     DPH,?V0 + 13
+   \   0000D2   12....       LCALL   ?Subroutine7 & 0xFFFF
+    419            
+    420            return error;
+   \                     ??CrossCallReturnLabel_3:
+   \   0000D5   A9..         MOV     R1,?V0 + 0
+   \   0000D7   7404         MOV     A,#0x4
+   \   0000D9   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000DC   7F0E         MOV     R7,#0xe
+   \   0000DE   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \                     ??SHT3X_GetTempAndHumiPolling_2:
+   \   0000E1                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   0000E1   7A0B         MOV     R2,#0xb
+   \   0000E3   02....       LJMP    ??SHT3X_GetTempAndHumiPolling_4 & 0xFFFF
+   \                     ??SHT3X_GetTempAndHumiPolling_1:
+   \   0000E6                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   0000E6   7A00         MOV     R2,#0x0
+   \   0000E8   02....       LJMP    ??SHT3X_GetTempAndHumiPolling_4 & 0xFFFF
+   \                     ??SHT3X_GetTempAndHumiPolling_3:
+   \   0000EB   75..80       MOV     ?V0 + 0,#-0x80
+   \   0000EE   02....       LJMP    ??SHT3X_GetTempAndHumiPolling_7 & 0xFFFF
+   \                     ??SHT3X_GetTempAndHumiPolling_8:
+   \   0000F1                ; Setup parameters for call to function DelayMicroSeconds
+   \   0000F1   90....       MOV     DPTR,#__Constant_3e8
+   \   0000F4   12....       LCALL   ?XLOAD_R2345
+   \   0000F7   12....       LCALL   ??DelayMicroSeconds?relay
+   \                     ??SHT3X_GetTempAndHumiPolling_5:
+   \   0000FA   EE           MOV     A,R6
+   \   0000FB   FF           MOV     R7,A
+   \   0000FC   74FF         MOV     A,#-0x1
+   \   0000FE   2F           ADD     A,R7
+   \   0000FF   1E           DEC     R6
+   \   000100   04           INC     A
+   \   000101   6005         JZ      ??SHT3X_GetTempAndHumiPolling_9
+   \   000103                ; Setup parameters for call to function SHT3X_StartReadAccess
+   \   000103   12....       LCALL   ?Subroutine16 & 0xFFFF
+   \                     ??CrossCallReturnLabel_32:
+   \   000106   70E9         JNZ     ??SHT3X_GetTempAndHumiPolling_8
+   \                     ??SHT3X_GetTempAndHumiPolling_9:
+   \   000108   EE           MOV     A,R6
+   \   000109   6003         JZ      $+5
+   \   00010B   02....       LJMP    ??SHT3X_GetTempAndHumiPolling_6 & 0xFFFF
+   \   00010E   75..04       MOV     ?V0 + 0,#0x4
+   \   000111   02....       LJMP    ??SHT3X_GetTempAndHumiPolling_7 & 0xFFFF
+    421          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   E5..         MOV     A,?V0 + 4
+   \   000002   F0           MOVX    @DPTR,A
+   \   000003   A3           INC     DPTR
+   \   000004   E5..         MOV     A,?V0 + 5
+   \   000006   F0           MOVX    @DPTR,A
+   \   000007   A3           INC     DPTR
+   \   000008   E5..         MOV     A,?V0 + 6
+   \   00000A   F0           MOVX    @DPTR,A
+   \   00000B   A3           INC     DPTR
+   \   00000C   E5..         MOV     A,?V0 + 7
+   \   00000E   F0           MOVX    @DPTR,A
+   \   00000F   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F5..         MOV     ?V0 + 4,A
+   \   000003   A3           INC     DPTR
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   F5..         MOV     ?V0 + 5,A
+   \   000007   E4           CLR     A
+   \   000008   F5..         MOV     ?V0 + 6,A
+   \   00000A   F5..         MOV     ?V0 + 7,A
+   \   00000C   78..         MOV     R0,#?V0 + 4
+   \   00000E   22           RET
+    422          
+    423          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    424          etError SHT3X_StartPeriodicMeasurment(etRepeatability repeatability,
+   \                     SHT3X_StartPeriodicMeasurment:
+    425                                                etFrequency frequency)
+    426          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+   \   000007   8A..         MOV     ?V0 + 0,R2
+    427            etError error;        // error code
+    428            
+    429            error = SHT3X_StartWriteAccess();
+   \   000009                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   000009   12....       LCALL   ?Subroutine9 & 0xFFFF
+    430            
+    431            // if no error, start periodic measurement 
+    432            if(error == NO_ERROR)
+   \                     ??CrossCallReturnLabel_7:
+   \   00000C   6003         JZ      $+5
+   \   00000E   02....       LJMP    ??CrossCallReturnLabel_71 & 0xFFFF
+    433            {
+    434              // use depending on the required repeatability and frequency,
+    435              // the corresponding command
+    436              switch(repeatability)
+   \   000011   EF           MOV     A,R7
+   \   000012   605E         JZ      ??SHT3X_StartPeriodicMeasurment_0
+   \   000014   14           DEC     A
+   \   000015   6035         JZ      ??SHT3X_StartPeriodicMeasurment_1
+   \   000017   14           DEC     A
+   \   000018   702E         JNZ     ??SHT3X_StartPeriodicMeasurment_2
+    437              {
+    438                case REPEATAB_LOW: // low repeatability
+    439                  switch(frequency)
+   \   00001A   E5..         MOV     A,?V0 + 0
+   \   00001C   600E         JZ      ??SHT3X_StartPeriodicMeasurment_3
+   \   00001E   14           DEC     A
+   \   00001F   6011         JZ      ??SHT3X_StartPeriodicMeasurment_4
+   \   000021   14           DEC     A
+   \   000022   6014         JZ      ??SHT3X_StartPeriodicMeasurment_5
+   \   000024   14           DEC     A
+   \   000025   6017         JZ      ??SHT3X_StartPeriodicMeasurment_6
+   \   000027   14           DEC     A
+   \   000028   601A         JZ      ??SHT3X_StartPeriodicMeasurment_7
+   \   00002A   801C         SJMP    ??SHT3X_StartPeriodicMeasurment_2
+    440                  {
+    441                    case FREQUENCY_HZ5:  // low repeatability,  0.5 Hz
+    442                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_05_L);
+   \                     ??SHT3X_StartPeriodicMeasurment_3:
+   \   00002C                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   00002C   7A2F         MOV     R2,#0x2f
+   \                     ??SHT3X_StartPeriodicMeasurment_8:
+   \   00002E   7B20         MOV     R3,#0x20
+   \   000030   8066         SJMP    ??SHT3X_StartPeriodicMeasurment_9
+    443                      break;          
+    444                    case FREQUENCY_1HZ:  // low repeatability,  1.0 Hz
+    445                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_1_L);
+   \                     ??SHT3X_StartPeriodicMeasurment_4:
+   \   000032                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000032   7A2D         MOV     R2,#0x2d
+   \                     ??SHT3X_StartPeriodicMeasurment_10:
+   \   000034   7B21         MOV     R3,#0x21
+   \   000036   8060         SJMP    ??SHT3X_StartPeriodicMeasurment_9
+    446                      break;          
+    447                    case FREQUENCY_2HZ:  // low repeatability,  2.0 Hz
+    448                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_2_L);
+   \                     ??SHT3X_StartPeriodicMeasurment_5:
+   \   000038                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000038   7A2B         MOV     R2,#0x2b
+   \                     ??SHT3X_StartPeriodicMeasurment_11:
+   \   00003A   7B22         MOV     R3,#0x22
+   \   00003C   805A         SJMP    ??SHT3X_StartPeriodicMeasurment_9
+    449                      break;          
+    450                    case FREQUENCY_4HZ:  // low repeatability,  4.0 Hz
+    451                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_4_L);
+   \                     ??SHT3X_StartPeriodicMeasurment_6:
+   \   00003E                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   00003E   7A29         MOV     R2,#0x29
+   \                     ??SHT3X_StartPeriodicMeasurment_12:
+   \   000040   7B23         MOV     R3,#0x23
+   \   000042   8054         SJMP    ??SHT3X_StartPeriodicMeasurment_9
+    452                      break;          
+    453                    case FREQUENCY_10HZ: // low repeatability, 10.0 Hz
+    454                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_10_L);
+   \                     ??SHT3X_StartPeriodicMeasurment_7:
+   \   000044                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000044   7A2A         MOV     R2,#0x2a
+   \   000046   804E         SJMP    ??SHT3X_StartPeriodicMeasurment_13
+    455                      break;          
+    456                    default:
+    457                      error |= PARM_ERROR;
+   \                     ??SHT3X_StartPeriodicMeasurment_2:
+   \   000048   7E80         MOV     R6,#-0x80
+    458                      break;
+   \   00004A   804F         SJMP    ??CrossCallReturnLabel_71
+    459                  }
+    460                  break;
+    461                  
+    462                case REPEATAB_MEDIUM: // medium repeatability
+    463                  switch(frequency)
+   \                     ??SHT3X_StartPeriodicMeasurment_1:
+   \   00004C   E5..         MOV     A,?V0 + 0
+   \   00004E   600E         JZ      ??SHT3X_StartPeriodicMeasurment_14
+   \   000050   14           DEC     A
+   \   000051   600F         JZ      ??SHT3X_StartPeriodicMeasurment_15
+   \   000053   14           DEC     A
+   \   000054   6010         JZ      ??SHT3X_StartPeriodicMeasurment_16
+   \   000056   14           DEC     A
+   \   000057   6011         JZ      ??SHT3X_StartPeriodicMeasurment_17
+   \   000059   14           DEC     A
+   \   00005A   6012         JZ      ??SHT3X_StartPeriodicMeasurment_18
+   \   00005C   80EA         SJMP    ??SHT3X_StartPeriodicMeasurment_2
+    464                  {
+    465                    case FREQUENCY_HZ5:  // medium repeatability,  0.5 Hz
+    466                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_05_M);
+   \                     ??SHT3X_StartPeriodicMeasurment_14:
+   \   00005E                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   00005E   7A24         MOV     R2,#0x24
+   \   000060   80CC         SJMP    ??SHT3X_StartPeriodicMeasurment_8
+    467          			break;
+    468                    case FREQUENCY_1HZ:  // medium repeatability,  1.0 Hz
+    469                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_1_M);
+   \                     ??SHT3X_StartPeriodicMeasurment_15:
+   \   000062                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000062   7A26         MOV     R2,#0x26
+   \   000064   80CE         SJMP    ??SHT3X_StartPeriodicMeasurment_10
+    470          			break;        
+    471                    case FREQUENCY_2HZ:  // medium repeatability,  2.0 Hz
+    472                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_2_M);
+   \                     ??SHT3X_StartPeriodicMeasurment_16:
+   \   000066                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000066   7A20         MOV     R2,#0x20
+   \   000068   80D0         SJMP    ??SHT3X_StartPeriodicMeasurment_11
+    473          			break;        
+    474                    case FREQUENCY_4HZ:  // medium repeatability,  4.0 Hz
+    475                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_4_M);
+   \                     ??SHT3X_StartPeriodicMeasurment_17:
+   \   00006A                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   00006A   7A22         MOV     R2,#0x22
+   \   00006C   80D2         SJMP    ??SHT3X_StartPeriodicMeasurment_12
+    476          			break;      
+    477                    case FREQUENCY_10HZ: // medium repeatability, 10.0 Hz
+    478                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_10_M);
+   \                     ??SHT3X_StartPeriodicMeasurment_18:
+   \   00006E                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   00006E   7A21         MOV     R2,#0x21
+   \   000070   8024         SJMP    ??SHT3X_StartPeriodicMeasurment_13
+    479          			break;
+    480                    default:
+    481                      error |= PARM_ERROR;
+    482          			break;
+    483                  }
+    484                  break;
+    485                  
+    486                case REPEATAB_HIGH: // high repeatability
+    487                  switch(frequency)
+   \                     ??SHT3X_StartPeriodicMeasurment_0:
+   \   000072   E5..         MOV     A,?V0 + 0
+   \   000074   600E         JZ      ??SHT3X_StartPeriodicMeasurment_19
+   \   000076   14           DEC     A
+   \   000077   600F         JZ      ??SHT3X_StartPeriodicMeasurment_20
+   \   000079   14           DEC     A
+   \   00007A   6010         JZ      ??SHT3X_StartPeriodicMeasurment_21
+   \   00007C   14           DEC     A
+   \   00007D   6011         JZ      ??SHT3X_StartPeriodicMeasurment_22
+   \   00007F   14           DEC     A
+   \   000080   6012         JZ      ??SHT3X_StartPeriodicMeasurment_23
+   \   000082   80C4         SJMP    ??SHT3X_StartPeriodicMeasurment_2
+    488                  {
+    489                    case FREQUENCY_HZ5:  // high repeatability,  0.5 Hz
+    490                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_05_H);
+   \                     ??SHT3X_StartPeriodicMeasurment_19:
+   \   000084                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000084   7A32         MOV     R2,#0x32
+   \   000086   80A6         SJMP    ??SHT3X_StartPeriodicMeasurment_8
+    491                      break;
+    492                    case FREQUENCY_1HZ:  // high repeatability,  1.0 Hz
+    493                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_1_H);
+   \                     ??SHT3X_StartPeriodicMeasurment_20:
+   \   000088                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000088   7A30         MOV     R2,#0x30
+   \   00008A   80A8         SJMP    ??SHT3X_StartPeriodicMeasurment_10
+    494                      break;
+    495                    case FREQUENCY_2HZ:  // high repeatability,  2.0 Hz
+    496                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_2_H);
+   \                     ??SHT3X_StartPeriodicMeasurment_21:
+   \   00008C                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   00008C   7A36         MOV     R2,#0x36
+   \   00008E   80AA         SJMP    ??SHT3X_StartPeriodicMeasurment_11
+    497                      break;
+    498                    case FREQUENCY_4HZ:  // high repeatability,  4.0 Hz
+    499                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_4_H);
+   \                     ??SHT3X_StartPeriodicMeasurment_22:
+   \   000090                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000090   7A34         MOV     R2,#0x34
+   \   000092   80AC         SJMP    ??SHT3X_StartPeriodicMeasurment_12
+    500                      break;
+    501                    case FREQUENCY_10HZ: // high repeatability, 10.0 Hz
+    502                      error |= SHT3X_WriteCommand(CMD_MEAS_PERI_10_H);
+   \                     ??SHT3X_StartPeriodicMeasurment_23:
+   \   000094                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000094   7A37         MOV     R2,#0x37
+   \                     ??SHT3X_StartPeriodicMeasurment_13:
+   \   000096   7B27         MOV     R3,#0x27
+   \                     ??SHT3X_StartPeriodicMeasurment_9:
+   \   000098   12....       LCALL   ??Subroutine31_0 & 0xFFFF
+    503                      break;
+    504                    default:
+    505                      error |= PARM_ERROR;
+    506                      break;
+    507                  }
+    508                  break;
+    509                default:
+    510                  error |= PARM_ERROR;
+    511                  break;
+    512              }
+    513            }
+    514          
+    515            SHT3X_StopAccess();
+   \                     ??CrossCallReturnLabel_71:
+   \   00009B                ; Setup parameters for call to function I2c_StopCondition
+   \   00009B   02....       LJMP    ?Subroutine2 & 0xFFFF
+    516          
+    517            return error;
+    518          }
+    519          
+    520          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    521          etError SHT3X_ReadMeasurementBuffer(ft* temperature, ft* humidity)
+   \                     SHT3X_ReadMeasurementBuffer:
+    522          {
+   \   000000   74EC         MOV     A,#-0x14
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 20
+   \   000005                ; Auto size: 4
+   \   000005   74FC         MOV     A,#-0x4
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+   \   00000E   8C..         MOV     ?V0 + 6,R4
+   \   000010   8D..         MOV     ?V0 + 7,R5
+    523            etError  error;        // error code
+    524            u16t     rawValueTemp; // temperature raw value from sensor
+    525            u16t     rawValueHumi; // humidity raw value from sensor
+    526          
+    527            error = SHT3X_StartWriteAccess();
+   \   000012                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   000012   12....       LCALL   ??SHT3X_StartWriteAccess?relay
+   \   000015   E9           MOV     A,R1
+   \   000016   F5..         MOV     ?V0 + 4,A
+    528          
+    529            // if no error, read measurements
+    530            if(error == NO_ERROR) error = SHT3X_WriteCommand(CMD_FETCH_DATA);
+   \   000018   7009         JNZ     ??SHT3X_ReadMeasurementBuffer_0
+   \   00001A                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   00001A   7A00         MOV     R2,#0x0
+   \   00001C   7BE0         MOV     R3,#-0x20
+   \   00001E   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_46:
+   \   000021   F5..         MOV     ?V0 + 4,A
+    531            if(error == NO_ERROR) error = SHT3X_StartReadAccess();  
+   \                     ??SHT3X_ReadMeasurementBuffer_0:
+   \   000023   E5..         MOV     A,?V0 + 4
+   \   000025   7006         JNZ     ??SHT3X_ReadMeasurementBuffer_1
+   \   000027                ; Setup parameters for call to function SHT3X_StartReadAccess
+   \   000027   12....       LCALL   ??SHT3X_StartReadAccess?relay
+   \   00002A   E9           MOV     A,R1
+   \   00002B   F5..         MOV     ?V0 + 4,A
+    532            if(error == NO_ERROR) error = SHT3X_Read2BytesAndCrc(&rawValueTemp, ACK, 0);
+   \                     ??SHT3X_ReadMeasurementBuffer_1:
+   \   00002D   E5..         MOV     A,?V0 + 4
+   \   00002F   700E         JNZ     ??SHT3X_ReadMeasurementBuffer_2
+   \   000031                ; Setup parameters for call to function SHT3X_Read2BytesAndCrc
+   \   000031   7C00         MOV     R4,#0x0
+   \   000033   7900         MOV     R1,#0x0
+   \   000035   7402         MOV     A,#0x2
+   \   000037   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003A   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_61:
+   \   00003D   F5..         MOV     ?V0 + 4,A
+    533            if(error == NO_ERROR) error = SHT3X_Read2BytesAndCrc(&rawValueHumi, NACK, 0);
+   \                     ??SHT3X_ReadMeasurementBuffer_2:
+   \   00003F   E5..         MOV     A,?V0 + 4
+   \   000041   7005         JNZ     ??SHT3X_ReadMeasurementBuffer_3
+   \   000043                ; Setup parameters for call to function SHT3X_Read2BytesAndCrc
+   \   000043   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_57:
+   \   000046   F5..         MOV     ?V0 + 4,A
+    534          
+    535            // if no error, calculate temperature in ??C and humidity in %RH
+    536            if(error == NO_ERROR)
+   \                     ??SHT3X_ReadMeasurementBuffer_3:
+   \   000048   E5..         MOV     A,?V0 + 4
+   \   00004A   7070         JNZ     ??SHT3X_ReadMeasurementBuffer_4
+    537            {
+    538              *temperature = SHT3X_CalcTemperature(rawValueTemp);
+   \   00004C   7402         MOV     A,#0x2
+   \   00004E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000051   12....       LCALL   ??Subroutine30_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_63:
+   \   000054   12....       LCALL   ?UL_TO_FLT
+   \   000057   90....       MOV     DPTR,#__Constant_432f0000
+   \   00005A   78..         MOV     R0,#?V0 + 8
+   \   00005C   12....       LCALL   ?L_MOV_X
+   \   00005F   78..         MOV     R0,#?V0 + 0
+   \   000061   79..         MOV     R1,#?V0 + 8
+   \   000063   12....       LCALL   ?FLT_MUL
+   \   000066   90....       MOV     DPTR,#__Constant_477fff00
+   \   000069   78..         MOV     R0,#?V0 + 8
+   \   00006B   12....       LCALL   ?L_MOV_X
+   \   00006E   78..         MOV     R0,#?V0 + 0
+   \   000070   79..         MOV     R1,#?V0 + 8
+   \   000072   12....       LCALL   ?FLT_DIV
+   \   000075   90....       MOV     DPTR,#__Constant_c2340000
+   \   000078   78..         MOV     R0,#?V0 + 8
+   \   00007A   12....       LCALL   ?L_MOV_X
+   \   00007D   78..         MOV     R0,#?V0 + 0
+   \   00007F   79..         MOV     R1,#?V0 + 8
+   \   000081   12....       LCALL   ?FLT_ADD
+   \   000084   8E82         MOV     DPL,R6
+   \   000086   8F83         MOV     DPH,R7
+   \   000088   78..         MOV     R0,#?V0 + 0
+   \   00008A   12....       LCALL   ?L_MOV_TO_X
+    539              *humidity = SHT3X_CalcHumidity(rawValueHumi);
+    540            }
+   \   00008D   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_65:
+   \   000090   12....       LCALL   ?UL_TO_FLT
+   \   000093   90....       MOV     DPTR,#__Constant_42c80000
+   \   000096   78..         MOV     R0,#?V0 + 8
+   \   000098   12....       LCALL   ?L_MOV_X
+   \   00009B   78..         MOV     R0,#?V0 + 0
+   \   00009D   79..         MOV     R1,#?V0 + 8
+   \   00009F   12....       LCALL   ?FLT_MUL
+   \   0000A2   90....       MOV     DPTR,#__Constant_477fff00
+   \   0000A5   78..         MOV     R0,#?V0 + 8
+   \   0000A7   12....       LCALL   ?L_MOV_X
+   \   0000AA   78..         MOV     R0,#?V0 + 0
+   \   0000AC   79..         MOV     R1,#?V0 + 8
+   \   0000AE   12....       LCALL   ?FLT_DIV
+   \   0000B1   85..82       MOV     DPL,?V0 + 6
+   \   0000B4   85..83       MOV     DPH,?V0 + 7
+   \   0000B7   78..         MOV     R0,#?V0 + 0
+   \   0000B9   12....       LCALL   ?L_MOV_TO_X
+    541          
+    542            SHT3X_StopAccess();
+   \                     ??SHT3X_ReadMeasurementBuffer_4:
+   \   0000BC                ; Setup parameters for call to function I2c_StopCondition
+   \   0000BC   12....       LCALL   ??I2c_StopCondition?relay
+    543          
+    544            return error;
+   \   0000BF   A9..         MOV     R1,?V0 + 4
+   \   0000C1   02....       LJMP    ?Subroutine3 & 0xFFFF
+    545          }
+    546          
+    547          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    548          etError SHT3X_EnableHeater(void)
+   \                     SHT3X_EnableHeater:
+    549          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    550            etError error; // error code
+    551          
+    552            error = SHT3X_StartWriteAccess();
+   \   000005                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   000005   12....       LCALL   ?Subroutine9 & 0xFFFF
+    553          
+    554            // if no error, write heater enable command
+    555            if(error == NO_ERROR) error = SHT3X_WriteCommand(CMD_HEATER_ENABLE);
+   \                     ??CrossCallReturnLabel_8:
+   \   000008   7007         JNZ     ??CrossCallReturnLabel_72
+   \   00000A                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   00000A   7A6D         MOV     R2,#0x6d
+   \   00000C   7B30         MOV     R3,#0x30
+   \   00000E   12....       LCALL   ??Subroutine31_0 & 0xFFFF
+    556          
+    557            SHT3X_StopAccess();
+   \                     ??CrossCallReturnLabel_72:
+   \   000011                ; Setup parameters for call to function I2c_StopCondition
+   \   000011   02....       LJMP    ?Subroutine2 & 0xFFFF
+    558          
+    559            return error;
+    560          }
+    561          
+    562          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    563          etError SHT3X_DisableHeater(void)
+   \                     SHT3X_DisableHeater:
+    564          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    565            etError error; // error code
+    566          
+    567            error = SHT3X_StartWriteAccess();
+   \   000005                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   000005   12....       LCALL   ?Subroutine9 & 0xFFFF
+    568          
+    569            // if no error, write heater disable command
+    570            if(error == NO_ERROR) error = SHT3X_WriteCommand(CMD_HEATER_DISABLE);
+   \                     ??CrossCallReturnLabel_9:
+   \   000008   7007         JNZ     ??CrossCallReturnLabel_73
+   \   00000A                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   00000A   7A66         MOV     R2,#0x66
+   \   00000C   7B30         MOV     R3,#0x30
+   \   00000E   12....       LCALL   ??Subroutine31_0 & 0xFFFF
+    571          
+    572            SHT3X_StopAccess();
+   \                     ??CrossCallReturnLabel_73:
+   \   000011                ; Setup parameters for call to function I2c_StopCondition
+   \   000011   02....       LJMP    ?Subroutine2 & 0xFFFF
+    573          
+    574            return error;
+    575          }
+    576          
+    577          
+    578          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   7B61         MOV     R3,#0x61
+   \   000002                REQUIRE ??Subroutine31_0
+   \   000002                ; // Fall through to label ??Subroutine31_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    579          etError SHT3X_SetAlertLimits(ft humidityHighSet,   ft temperatureHighSet,
+   \                     SHT3X_SetAlertLimits:
+    580                                       ft humidityHighClear, ft temperatureHighClear,
+    581                                       ft humidityLowClear,  ft temperatureLowClear,
+    582                                       ft humidityLowSet,    ft temperatureLowSet)
+    583          {
+   \   000000   74E8         MOV     A,#-0x18
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 24
+   \   000005                ; Auto size: 4
+   \   000005   74FC         MOV     A,#-0x4
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   EA           MOV     A,R2
+   \   000011   F0           MOVX    @DPTR,A
+   \   000012   A3           INC     DPTR
+   \   000013   EB           MOV     A,R3
+   \   000014   F0           MOVX    @DPTR,A
+   \   000015   A3           INC     DPTR
+   \   000016   EC           MOV     A,R4
+   \   000017   F0           MOVX    @DPTR,A
+   \   000018   A3           INC     DPTR
+   \   000019   ED           MOV     A,R5
+   \   00001A   F0           MOVX    @DPTR,A
+   \   00001B   741C         MOV     A,#0x1c
+   \   00001D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000020   78..         MOV     R0,#?V0 + 0
+   \   000022   12....       LCALL   ?L_MOV_X
+   \   000025   7424         MOV     A,#0x24
+   \   000027   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002A   78..         MOV     R0,#?V0 + 4
+   \   00002C   12....       LCALL   ?L_MOV_X
+   \   00002F   7428         MOV     A,#0x28
+   \   000031   12....       LCALL   ?XSTACK_DISP0_8
+   \   000034   78..         MOV     R0,#?V0 + 8
+   \   000036   12....       LCALL   ?L_MOV_X
+   \   000039   7434         MOV     A,#0x34
+   \   00003B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003E   78..         MOV     R0,#?V0 + 12
+   \   000040   12....       LCALL   ?L_MOV_X
+    584            etError  error;  // error code
+    585            
+    586            // write humidity & temperature alter limits, high set
+    587            error = SHT3X_StartWriteAccess();
+   \   000043                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   000043   12....       LCALL   ?Subroutine9 & 0xFFFF
+    588            if(error == NO_ERROR) error = SHT3X_WriteCommand(CMD_W_AL_LIM_HS);
+   \                     ??CrossCallReturnLabel_10:
+   \   000046   7005         JNZ     ??CrossCallReturnLabel_66
+   \   000048                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000048   7A1D         MOV     R2,#0x1d
+   \   00004A   12....       LCALL   ?Subroutine10 & 0xFFFF
+    589            if(error == NO_ERROR) error = SHT3X_WriteAlertLimitData(humidityHighSet,
+   \                     ??CrossCallReturnLabel_66:
+   \   00004D   EE           MOV     A,R6
+   \   00004E   7015         JNZ     ??SHT3X_SetAlertLimits_0
+    590                                                                    temperatureHighSet);
+   \   000050                ; Setup parameters for call to function SHT3X_WriteAlertLimitData
+   \   000050   78..         MOV     R0,#?V0 + 0
+   \   000052   12....       LCALL   ?PUSH_XSTACK_I_FOUR
+   \   000055   7404         MOV     A,#0x4
+   \   000057   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005A   12....       LCALL   ?XLOAD_R2345
+   \   00005D   12....       LCALL   ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_33:
+   \   000060   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000063   E9           MOV     A,R1
+   \   000064   FE           MOV     R6,A
+    591            SHT3X_StopAccess();
+   \                     ??SHT3X_SetAlertLimits_0:
+   \   000065                ; Setup parameters for call to function I2c_StopCondition
+   \   000065   12....       LCALL   ??I2c_StopCondition?relay
+    592          
+    593            if(error == NO_ERROR)
+   \   000068   EE           MOV     A,R6
+   \   000069   7025         JNZ     ??SHT3X_SetAlertLimits_1
+    594            {
+    595              // write humidity & temperature alter limits, high clear
+    596              error = SHT3X_StartWriteAccess();
+   \   00006B                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   00006B   12....       LCALL   ?Subroutine9 & 0xFFFF
+    597              if(error == NO_ERROR) error = SHT3X_WriteCommand(CMD_W_AL_LIM_HC);
+   \                     ??CrossCallReturnLabel_11:
+   \   00006E   7005         JNZ     ??CrossCallReturnLabel_67
+   \   000070                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000070   7A16         MOV     R2,#0x16
+   \   000072   12....       LCALL   ?Subroutine10 & 0xFFFF
+    598              if(error == NO_ERROR) error = SHT3X_WriteAlertLimitData(humidityHighClear,
+   \                     ??CrossCallReturnLabel_67:
+   \   000075   EE           MOV     A,R6
+   \   000076   7015         JNZ     ??SHT3X_SetAlertLimits_2
+    599                                                                      temperatureHighClear);
+   \   000078                ; Setup parameters for call to function SHT3X_WriteAlertLimitData
+   \   000078   78..         MOV     R0,#?V0 + 4
+   \   00007A   12....       LCALL   ?PUSH_XSTACK_I_FOUR
+   \   00007D   7424         MOV     A,#0x24
+   \   00007F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000082   12....       LCALL   ?XLOAD_R2345
+   \   000085   12....       LCALL   ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_34:
+   \   000088   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00008B   E9           MOV     A,R1
+   \   00008C   FE           MOV     R6,A
+    600              SHT3X_StopAccess();
+   \                     ??SHT3X_SetAlertLimits_2:
+   \   00008D                ; Setup parameters for call to function I2c_StopCondition
+   \   00008D   12....       LCALL   ??I2c_StopCondition?relay
+    601            }
+    602          
+    603            if(error == NO_ERROR)
+   \                     ??SHT3X_SetAlertLimits_1:
+   \   000090   EE           MOV     A,R6
+   \   000091   7028         JNZ     ??SHT3X_SetAlertLimits_3
+    604            {
+    605              // write humidity & temperature alter limits, low clear
+    606              error = SHT3X_StartWriteAccess();
+   \   000093                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   000093   12....       LCALL   ?Subroutine9 & 0xFFFF
+    607              if(error == NO_ERROR) error = SHT3X_WriteCommand(CMD_W_AL_LIM_LC);
+   \                     ??CrossCallReturnLabel_12:
+   \   000096   7005         JNZ     ??CrossCallReturnLabel_68
+   \   000098                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000098   7A0B         MOV     R2,#0xb
+   \   00009A   12....       LCALL   ?Subroutine10 & 0xFFFF
+    608              if(error == NO_ERROR) error = SHT3X_WriteAlertLimitData(humidityLowClear,
+   \                     ??CrossCallReturnLabel_68:
+   \   00009D   EE           MOV     A,R6
+   \   00009E   7018         JNZ     ??SHT3X_SetAlertLimits_4
+    609                                                                      temperatureLowClear);
+   \   0000A0                ; Setup parameters for call to function SHT3X_WriteAlertLimitData
+   \   0000A0   742C         MOV     A,#0x2c
+   \   0000A2   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000A5   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
+   \   0000A8   AA..         MOV     R2,?V0 + 8
+   \   0000AA   AB..         MOV     R3,?V0 + 9
+   \   0000AC   AC..         MOV     R4,?V0 + 10
+   \   0000AE   AD..         MOV     R5,?V0 + 11
+   \   0000B0   12....       LCALL   ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_35:
+   \   0000B3   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000B6   E9           MOV     A,R1
+   \   0000B7   FE           MOV     R6,A
+    610              SHT3X_StopAccess();
+   \                     ??SHT3X_SetAlertLimits_4:
+   \   0000B8                ; Setup parameters for call to function I2c_StopCondition
+   \   0000B8   12....       LCALL   ??I2c_StopCondition?relay
+    611            }
+    612            
+    613            if(error == NO_ERROR)
+   \                     ??SHT3X_SetAlertLimits_3:
+   \   0000BB   EE           MOV     A,R6
+   \   0000BC   7025         JNZ     ??SHT3X_SetAlertLimits_5
+    614            {
+    615              // write humidity & temperature alter limits, low set
+    616              error = SHT3X_StartWriteAccess();
+   \   0000BE                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   0000BE   12....       LCALL   ?Subroutine9 & 0xFFFF
+    617              if(error == NO_ERROR) error = SHT3X_WriteCommand(CMD_W_AL_LIM_LS);
+   \                     ??CrossCallReturnLabel_13:
+   \   0000C1   7005         JNZ     ??CrossCallReturnLabel_69
+   \   0000C3                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   0000C3   7A00         MOV     R2,#0x0
+   \   0000C5   12....       LCALL   ?Subroutine10 & 0xFFFF
+    618              if(error == NO_ERROR) error = SHT3X_WriteAlertLimitData(humidityLowSet,
+   \                     ??CrossCallReturnLabel_69:
+   \   0000C8   EE           MOV     A,R6
+   \   0000C9   7015         JNZ     ??SHT3X_SetAlertLimits_6
+    619                                                                      temperatureLowSet);
+   \   0000CB                ; Setup parameters for call to function SHT3X_WriteAlertLimitData
+   \   0000CB   78..         MOV     R0,#?V0 + 12
+   \   0000CD   12....       LCALL   ?PUSH_XSTACK_I_FOUR
+   \   0000D0   7434         MOV     A,#0x34
+   \   0000D2   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000D5   12....       LCALL   ?XLOAD_R2345
+   \   0000D8   12....       LCALL   ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_36:
+   \   0000DB   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000DE   E9           MOV     A,R1
+   \   0000DF   FE           MOV     R6,A
+    620              SHT3X_StopAccess();
+   \                     ??SHT3X_SetAlertLimits_6:
+   \   0000E0                ; Setup parameters for call to function I2c_StopCondition
+   \   0000E0   12....       LCALL   ??I2c_StopCondition?relay
+    621            }
+    622          
+    623            return error;
+   \                     ??SHT3X_SetAlertLimits_5:
+   \   0000E3   EE           MOV     A,R6
+   \   0000E4   F9           MOV     R1,A
+   \   0000E5   7404         MOV     A,#0x4
+   \   0000E7   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000EA   7F10         MOV     R7,#0x10
+   \   0000EC   02....       LJMP    ?BANKED_LEAVE_XDATA
+    624          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine19:
+   \   000000   12....       LCALL   ??SHT3X_WriteAlertLimitData?relay
+   \   000003   7404         MOV     A,#0x4
+   \   000005   22           RET
+    625          
+    626          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    627          etError SHT3X_GetAlertLimits(ft* humidityHighSet,   ft* temperatureHighSet,
+   \                     SHT3X_GetAlertLimits:
+    628                                       ft* humidityHighClear, ft* temperatureHighClear,
+    629                                       ft* humidityLowClear,  ft* temperatureLowClear,
+    630                                       ft* humidityLowSet,    ft* temperatureLowSet)
+    631          {
+   \   000000   74E9         MOV     A,#-0x17
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 23
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+   \   00000D   7417         MOV     A,#0x17
+   \   00000F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   F5..         MOV     ?V0 + 8,A
+   \   000015   A3           INC     DPTR
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   F5..         MOV     ?V0 + 9,A
+   \   000019   7419         MOV     A,#0x19
+   \   00001B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   F5..         MOV     ?V0 + 6,A
+   \   000021   A3           INC     DPTR
+   \   000022   E0           MOVX    A,@DPTR
+   \   000023   F5..         MOV     ?V0 + 7,A
+   \   000025   741B         MOV     A,#0x1b
+   \   000027   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002A   E0           MOVX    A,@DPTR
+   \   00002B   F5..         MOV     ?V0 + 12,A
+   \   00002D   A3           INC     DPTR
+   \   00002E   E0           MOVX    A,@DPTR
+   \   00002F   F5..         MOV     ?V0 + 13,A
+   \   000031   741D         MOV     A,#0x1d
+   \   000033   12....       LCALL   ?XSTACK_DISP0_8
+   \   000036   E0           MOVX    A,@DPTR
+   \   000037   F5..         MOV     ?V0 + 10,A
+   \   000039   A3           INC     DPTR
+   \   00003A   E0           MOVX    A,@DPTR
+   \   00003B   F5..         MOV     ?V0 + 11,A
+   \   00003D   741F         MOV     A,#0x1f
+   \   00003F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000042   E0           MOVX    A,@DPTR
+   \   000043   F5..         MOV     ?V0 + 2,A
+   \   000045   A3           INC     DPTR
+   \   000046   E0           MOVX    A,@DPTR
+   \   000047   F5..         MOV     ?V0 + 3,A
+   \   000049   7421         MOV     A,#0x21
+   \   00004B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004E   E0           MOVX    A,@DPTR
+   \   00004F   F5..         MOV     ?V0 + 4,A
+   \   000051   A3           INC     DPTR
+   \   000052   E0           MOVX    A,@DPTR
+   \   000053   F5..         MOV     ?V0 + 5,A
+    632            etError  error;  // error code
+    633            
+    634            // read humidity & temperature alter limits, high set
+    635            error = SHT3X_StartWriteAccess();
+   \   000055                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   000055   12....       LCALL   ?Subroutine12 & 0xFFFF
+    636            if(error == NO_ERROR) error = SHT3X_WriteCommand(CMD_R_AL_LIM_HS);
+   \                     ??CrossCallReturnLabel_14:
+   \   000058   7005         JNZ     ??CrossCallReturnLabel_18
+   \   00005A                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   00005A   7A1F         MOV     R2,#0x1f
+   \   00005C   12....       LCALL   ?Subroutine13 & 0xFFFF
+    637            if(error == NO_ERROR) error = SHT3X_StartReadAccess();
+   \                     ??CrossCallReturnLabel_18:
+   \   00005F   E5..         MOV     A,?V0 + 14
+   \   000061   7003         JNZ     ??CrossCallReturnLabel_22
+   \   000063                ; Setup parameters for call to function SHT3X_StartReadAccess
+   \   000063   12....       LCALL   ?Subroutine14 & 0xFFFF
+    638            if(error == NO_ERROR) error = SHT3X_ReadAlertLimitData(humidityHighSet,
+   \                     ??CrossCallReturnLabel_22:
+   \   000066   E5..         MOV     A,?V0 + 14
+   \   000068   700B         JNZ     ??CrossCallReturnLabel_26
+    639                                                                   temperatureHighSet);
+   \   00006A                ; Setup parameters for call to function SHT3X_ReadAlertLimitData
+   \   00006A   AC..         MOV     R4,?V0 + 0
+   \   00006C   AD..         MOV     R5,?V0 + 1
+   \   00006E   EE           MOV     A,R6
+   \   00006F   FA           MOV     R2,A
+   \   000070   EF           MOV     A,R7
+   \   000071   FB           MOV     R3,A
+   \   000072   12....       LCALL   ?Subroutine15 & 0xFFFF
+    640            SHT3X_StopAccess();
+   \                     ??CrossCallReturnLabel_26:
+   \   000075                ; Setup parameters for call to function I2c_StopCondition
+   \   000075   12....       LCALL   ??I2c_StopCondition?relay
+    641          
+    642            if(error == NO_ERROR)
+   \   000078   E5..         MOV     A,?V0 + 14
+   \   00007A   7023         JNZ     ??SHT3X_GetAlertLimits_0
+    643            {
+    644              // read humidity & temperature alter limits, high clear
+    645              error = SHT3X_StartWriteAccess();
+   \   00007C                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   00007C   12....       LCALL   ?Subroutine12 & 0xFFFF
+    646              if(error == NO_ERROR) error = SHT3X_WriteCommand(CMD_R_AL_LIM_HC);
+   \                     ??CrossCallReturnLabel_15:
+   \   00007F   7005         JNZ     ??CrossCallReturnLabel_19
+   \   000081                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000081   7A14         MOV     R2,#0x14
+   \   000083   12....       LCALL   ?Subroutine13 & 0xFFFF
+    647              if(error == NO_ERROR) error = SHT3X_StartReadAccess();
+   \                     ??CrossCallReturnLabel_19:
+   \   000086   E5..         MOV     A,?V0 + 14
+   \   000088   7003         JNZ     ??CrossCallReturnLabel_23
+   \   00008A                ; Setup parameters for call to function SHT3X_StartReadAccess
+   \   00008A   12....       LCALL   ?Subroutine14 & 0xFFFF
+    648              if(error == NO_ERROR) error = SHT3X_ReadAlertLimitData(humidityHighClear,
+   \                     ??CrossCallReturnLabel_23:
+   \   00008D   E5..         MOV     A,?V0 + 14
+   \   00008F   700B         JNZ     ??CrossCallReturnLabel_27
+    649                                                                     temperatureHighClear);
+   \   000091                ; Setup parameters for call to function SHT3X_ReadAlertLimitData
+   \   000091   AC..         MOV     R4,?V0 + 6
+   \   000093   AD..         MOV     R5,?V0 + 7
+   \   000095   AA..         MOV     R2,?V0 + 8
+   \   000097   AB..         MOV     R3,?V0 + 9
+   \   000099   12....       LCALL   ?Subroutine15 & 0xFFFF
+    650              SHT3X_StopAccess();
+   \                     ??CrossCallReturnLabel_27:
+   \   00009C                ; Setup parameters for call to function I2c_StopCondition
+   \   00009C   12....       LCALL   ??I2c_StopCondition?relay
+    651            }
+    652          
+    653            if(error == NO_ERROR)
+   \                     ??SHT3X_GetAlertLimits_0:
+   \   00009F   E5..         MOV     A,?V0 + 14
+   \   0000A1   7023         JNZ     ??SHT3X_GetAlertLimits_1
+    654            {
+    655              // read humidity & temperature alter limits, low clear
+    656              error = SHT3X_StartWriteAccess();
+   \   0000A3                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   0000A3   12....       LCALL   ?Subroutine12 & 0xFFFF
+    657              if(error == NO_ERROR) error = SHT3X_WriteCommand(CMD_R_AL_LIM_LC);
+   \                     ??CrossCallReturnLabel_16:
+   \   0000A6   7005         JNZ     ??CrossCallReturnLabel_20
+   \   0000A8                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   0000A8   7A09         MOV     R2,#0x9
+   \   0000AA   12....       LCALL   ?Subroutine13 & 0xFFFF
+    658              if(error == NO_ERROR) error = SHT3X_StartReadAccess();
+   \                     ??CrossCallReturnLabel_20:
+   \   0000AD   E5..         MOV     A,?V0 + 14
+   \   0000AF   7003         JNZ     ??CrossCallReturnLabel_24
+   \   0000B1                ; Setup parameters for call to function SHT3X_StartReadAccess
+   \   0000B1   12....       LCALL   ?Subroutine14 & 0xFFFF
+    659              if(error == NO_ERROR) error = SHT3X_ReadAlertLimitData(humidityLowClear,
+   \                     ??CrossCallReturnLabel_24:
+   \   0000B4   E5..         MOV     A,?V0 + 14
+   \   0000B6   700B         JNZ     ??CrossCallReturnLabel_28
+    660                                                                     temperatureLowClear);
+   \   0000B8                ; Setup parameters for call to function SHT3X_ReadAlertLimitData
+   \   0000B8   AC..         MOV     R4,?V0 + 10
+   \   0000BA   AD..         MOV     R5,?V0 + 11
+   \   0000BC   AA..         MOV     R2,?V0 + 12
+   \   0000BE   AB..         MOV     R3,?V0 + 13
+   \   0000C0   12....       LCALL   ?Subroutine15 & 0xFFFF
+    661              SHT3X_StopAccess();
+   \                     ??CrossCallReturnLabel_28:
+   \   0000C3                ; Setup parameters for call to function I2c_StopCondition
+   \   0000C3   12....       LCALL   ??I2c_StopCondition?relay
+    662            }
+    663          
+    664            if(error == NO_ERROR)
+   \                     ??SHT3X_GetAlertLimits_1:
+   \   0000C6   E5..         MOV     A,?V0 + 14
+   \   0000C8   7023         JNZ     ??SHT3X_GetAlertLimits_2
+    665            {
+    666              // read humidity & temperature alter limits, low set
+    667              error = SHT3X_StartWriteAccess();
+   \   0000CA                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   0000CA   12....       LCALL   ?Subroutine12 & 0xFFFF
+    668              if(error == NO_ERROR) error = SHT3X_WriteCommand(CMD_R_AL_LIM_LS);
+   \                     ??CrossCallReturnLabel_17:
+   \   0000CD   7005         JNZ     ??CrossCallReturnLabel_21
+   \   0000CF                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   0000CF   7A02         MOV     R2,#0x2
+   \   0000D1   12....       LCALL   ?Subroutine13 & 0xFFFF
+    669              if(error == NO_ERROR) error = SHT3X_StartReadAccess();
+   \                     ??CrossCallReturnLabel_21:
+   \   0000D4   E5..         MOV     A,?V0 + 14
+   \   0000D6   7003         JNZ     ??CrossCallReturnLabel_25
+   \   0000D8                ; Setup parameters for call to function SHT3X_StartReadAccess
+   \   0000D8   12....       LCALL   ?Subroutine14 & 0xFFFF
+    670              if(error == NO_ERROR) error = SHT3X_ReadAlertLimitData(humidityLowSet,
+   \                     ??CrossCallReturnLabel_25:
+   \   0000DB   E5..         MOV     A,?V0 + 14
+   \   0000DD   700B         JNZ     ??CrossCallReturnLabel_29
+    671                                                                     temperatureLowSet);
+   \   0000DF                ; Setup parameters for call to function SHT3X_ReadAlertLimitData
+   \   0000DF   AC..         MOV     R4,?V0 + 4
+   \   0000E1   AD..         MOV     R5,?V0 + 5
+   \   0000E3   AA..         MOV     R2,?V0 + 2
+   \   0000E5   AB..         MOV     R3,?V0 + 3
+   \   0000E7   12....       LCALL   ?Subroutine15 & 0xFFFF
+    672              SHT3X_StopAccess();
+   \                     ??CrossCallReturnLabel_29:
+   \   0000EA                ; Setup parameters for call to function I2c_StopCondition
+   \   0000EA   12....       LCALL   ??I2c_StopCondition?relay
+    673            }
+    674           
+    675            return error;
+   \                     ??SHT3X_GetAlertLimits_2:
+   \   0000ED   A9..         MOV     R1,?V0 + 14
+   \   0000EF   7F0F         MOV     R7,#0xf
+   \   0000F1   02....       LJMP    ?BANKED_LEAVE_XDATA
+    676          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine15:
+   \   000000   12....       LCALL   ??SHT3X_ReadAlertLimitData?relay
+   \   000003   E9           MOV     A,R1
+   \   000004   F5..         MOV     ?V0 + 14,A
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine14:
+   \   000000   12....       LCALL   ??SHT3X_StartReadAccess?relay
+   \   000003   E9           MOV     A,R1
+   \   000004   F5..         MOV     ?V0 + 14,A
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine13:
+   \   000000   7BE1         MOV     R3,#-0x1f
+   \   000002   12....       LCALL   ??SHT3X_WriteCommand?relay
+   \   000005   E9           MOV     A,R1
+   \   000006   F5..         MOV     ?V0 + 14,A
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine12:
+   \   000000   12....       LCALL   ??SHT3X_StartWriteAccess?relay
+   \   000003   E9           MOV     A,R1
+   \   000004   F5..         MOV     ?V0 + 14,A
+   \   000006   22           RET
+    677          
+    678          //-----------------------------------------------------------------------------
+    679          //bt SHT3X_ReadAlert(void)
+    680          //{
+    681          //  // read alert pin
+    682          //  return (ALERT_READ != 0) ? TRUE : FALSE;
+    683          //}
+    684          
+    685          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    686          etError SHT3X_SoftReset(void)
+   \                     SHT3X_SoftReset:
+    687          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    688            etError error; // error code
+    689          
+    690            error = SHT3X_StartWriteAccess();
+   \   000005                ; Setup parameters for call to function SHT3X_StartWriteAccess
+   \   000005   12....       LCALL   ??Subroutine28_0 & 0xFFFF
+    691          
+    692            // write reset command
+    693            error |= SHT3X_WriteCommand(CMD_SOFT_RESET);
+   \                     ??CrossCallReturnLabel_54:
+   \   000008                ; Setup parameters for call to function SHT3X_WriteCommand
+   \   000008   7AA2         MOV     R2,#-0x5e
+   \   00000A   7B30         MOV     R3,#0x30
+   \   00000C   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_47:
+   \   00000F   42..         ORL     ?V0 + 0,A
+    694          
+    695            SHT3X_StopAccess();
+   \   000011                ; Setup parameters for call to function I2c_StopCondition
+   \   000011   12....       LCALL   ??I2c_StopCondition?relay
+    696            
+    697            // if no error, wait 50 ms after reset
+    698            if(error == NO_ERROR) DelayMicroSeconds(50000); 
+   \   000014   E5..         MOV     A,?V0 + 0
+   \   000016   7009         JNZ     ??SHT3X_SoftReset_0
+   \   000018                ; Setup parameters for call to function DelayMicroSeconds
+   \   000018   90....       MOV     DPTR,#__Constant_c350
+   \   00001B   12....       LCALL   ?XLOAD_R2345
+   \   00001E   12....       LCALL   ??DelayMicroSeconds?relay
+    699          
+    700            return error;
+   \                     ??SHT3X_SoftReset_0:
+   \   000021   02....       LJMP    ?Subroutine4 & 0xFFFF
+    701          }
+    702          
+    703          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    704          void SHT3X_HardReset(void)
+   \                     SHT3X_HardReset:
+    705          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    706            // set reset low
+    707            //RESET_LOW();
+    708          
+    709            // wait 100 ms
+    710            DelayMicroSeconds(100000);
+   \   000004                ; Setup parameters for call to function DelayMicroSeconds
+   \   000004   90....       MOV     DPTR,#__Constant_186a0
+   \   000007   12....       LCALL   ?XLOAD_R2345
+   \   00000A   12....       LCALL   ??DelayMicroSeconds?relay
+    711            
+    712            // release reset
+    713            //RESET_HIGH();
+    714            
+    715            // wait 50 ms after reset
+    716            DelayMicroSeconds(50000);
+   \   00000D                ; Setup parameters for call to function DelayMicroSeconds
+   \   00000D   90....       MOV     DPTR,#__Constant_c350
+   \   000010   12....       LCALL   ?XLOAD_R2345
+   \   000013   12....       LCALL   ??DelayMicroSeconds?relay
+    717          }
+   \   000016   02....       LJMP    ??Subroutine25_0 & 0xFFFF
+    718          
+    719                                       
+    720          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    721          static etError SHT3X_WriteAlertLimitData(ft humidity, ft temperature)
+   \                     SHT3X_WriteAlertLimitData:
+    722          {
+   \   000000   74EC         MOV     A,#-0x14
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 20
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV     A,#-0x2
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV     ?V0 + 0,R2
+   \   00000C   8B..         MOV     ?V0 + 1,R3
+   \   00000E   8C..         MOV     ?V0 + 2,R4
+   \   000010   8D..         MOV     ?V0 + 3,R5
+   \   000012   7416         MOV     A,#0x16
+   \   000014   12....       LCALL   ?XSTACK_DISP0_8
+   \   000017   78..         MOV     R0,#?V0 + 4
+   \   000019   12....       LCALL   ?L_MOV_X
+    723            etError  error;           // error code
+    724            
+    725            i16t rawHumidity;
+    726            i16t rawTemperature;
+    727            
+    728            if((humidity < 0.0f) || (humidity > 100.0f) 
+    729            || (temperature < -45.0f) || (temperature > 130.0f))
+   \   00001C   90....       MOV     DPTR,#__Constant_0
+   \   00001F   78..         MOV     R0,#?V0 + 8
+   \   000021   12....       LCALL   ?L_MOV_X
+   \   000024   78..         MOV     R0,#?V0 + 0
+   \   000026   79..         MOV     R1,#?V0 + 8
+   \   000028   12....       LCALL   ?FLT_LT
+   \   00002B   4033         JC      ??SHT3X_WriteAlertLimitData_0
+   \   00002D   90....       MOV     DPTR,#__Constant_42c80001
+   \   000030   78..         MOV     R0,#?V0 + 8
+   \   000032   12....       LCALL   ?L_MOV_X
+   \   000035   78..         MOV     R0,#?V0 + 0
+   \   000037   79..         MOV     R1,#?V0 + 8
+   \   000039   12....       LCALL   ?FLT_GE
+   \   00003C   4022         JC      ??SHT3X_WriteAlertLimitData_0
+   \   00003E   90....       MOV     DPTR,#__Constant_c2340000
+   \   000041   78..         MOV     R0,#?V0 + 8
+   \   000043   12....       LCALL   ?L_MOV_X
+   \   000046   78..         MOV     R0,#?V0 + 4
+   \   000048   79..         MOV     R1,#?V0 + 8
+   \   00004A   12....       LCALL   ?FLT_LT
+   \   00004D   4011         JC      ??SHT3X_WriteAlertLimitData_0
+   \   00004F   90....       MOV     DPTR,#__Constant_43020001
+   \   000052   78..         MOV     R0,#?V0 + 8
+   \   000054   12....       LCALL   ?L_MOV_X
+   \   000057   78..         MOV     R0,#?V0 + 4
+   \   000059   79..         MOV     R1,#?V0 + 8
+   \   00005B   12....       LCALL   ?FLT_GE
+   \   00005E   5005         JNC     ??SHT3X_WriteAlertLimitData_1
+    730            {
+    731              error = PARM_ERROR;
+   \                     ??SHT3X_WriteAlertLimitData_0:
+   \   000060   7980         MOV     R1,#-0x80
+   \   000062   02....       LJMP    ??SHT3X_WriteAlertLimitData_2 & 0xFFFF
+    732            }
+    733            else
+    734            {
+    735              rawHumidity    = SHT3X_CalcRawHumidity(humidity);
+    736              rawTemperature = SHT3X_CalcRawTemperature(temperature);
+    737          
+    738              error = SHT3X_Write2BytesAndCrc((rawHumidity & 0xFE00) | ((rawTemperature >> 7) & 0x001FF));
+   \                     ??SHT3X_WriteAlertLimitData_1:
+   \   000065   90....       MOV     DPTR,#__Constant_42c80000
+   \   000068   78..         MOV     R0,#?V0 + 8
+   \   00006A   12....       LCALL   ?L_MOV_X
+   \   00006D   78..         MOV     R0,#?V0 + 0
+   \   00006F   79..         MOV     R1,#?V0 + 8
+   \   000071   12....       LCALL   ?FLT_DIV
+   \   000074   90....       MOV     DPTR,#__Constant_477fff00
+   \   000077   78..         MOV     R0,#?V0 + 8
+   \   000079   12....       LCALL   ?L_MOV_X
+   \   00007C   78..         MOV     R0,#?V0 + 0
+   \   00007E   79..         MOV     R1,#?V0 + 8
+   \   000080   12....       LCALL   ?FLT_MUL
+   \   000083   78..         MOV     R0,#?V0 + 0
+   \   000085   12....       LCALL   ?FLT_TO_L
+   \   000088   E5..         MOV     A,?V0 + 1
+   \   00008A   54FE         ANL     A,#0xfe
+   \   00008C   FB           MOV     R3,A
+   \   00008D   90....       MOV     DPTR,#__Constant_42340000
+   \   000090   78..         MOV     R0,#?V0 + 0
+   \   000092   12....       LCALL   ?L_MOV_X
+   \   000095   78..         MOV     R0,#?V0 + 4
+   \   000097   79..         MOV     R1,#?V0 + 0
+   \   000099   12....       LCALL   ?FLT_ADD
+   \   00009C   90....       MOV     DPTR,#__Constant_432f0000
+   \   00009F   78..         MOV     R0,#?V0 + 0
+   \   0000A1   12....       LCALL   ?L_MOV_X
+   \   0000A4   78..         MOV     R0,#?V0 + 4
+   \   0000A6   79..         MOV     R1,#?V0 + 0
+   \   0000A8   12....       LCALL   ?FLT_DIV
+   \   0000AB   90....       MOV     DPTR,#__Constant_477fff00
+   \   0000AE   78..         MOV     R0,#?V0 + 0
+   \   0000B0   12....       LCALL   ?L_MOV_X
+   \   0000B3   78..         MOV     R0,#?V0 + 4
+   \   0000B5   79..         MOV     R1,#?V0 + 0
+   \   0000B7   12....       LCALL   ?FLT_MUL
+   \   0000BA   78..         MOV     R0,#?V0 + 4
+   \   0000BC   12....       LCALL   ?FLT_TO_L
+   \   0000BF   7407         MOV     A,#0x7
+   \   0000C1   78..         MOV     R0,#?V0 + 4
+   \   0000C3   12....       LCALL   ?SS_SHR
+   \   0000C6   E5..         MOV     A,?V0 + 5
+   \   0000C8   5401         ANL     A,#0x1
+   \   0000CA   F9           MOV     R1,A
+   \   0000CB   EB           MOV     A,R3
+   \   0000CC   49           ORL     A,R1
+   \   0000CD   85..82       MOV     DPL,?XSP + 0
+   \   0000D0   85..83       MOV     DPH,?XSP + 1
+   \   0000D3   F0           MOVX    @DPTR,A
+   \   0000D4   7401         MOV     A,#0x1
+   \   0000D6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000D9   E5..         MOV     A,?V0 + 4
+   \   0000DB   F0           MOVX    @DPTR,A
+   \   0000DC                ; Setup parameters for call to function SHT3X_CalcCrc
+   \   0000DC   7902         MOV     R1,#0x2
+   \   0000DE   85..82       MOV     DPL,?XSP + 0
+   \   0000E1   85..83       MOV     DPH,?XSP + 1
+   \   0000E4   AA82         MOV     R2,DPL
+   \   0000E6   AB83         MOV     R3,DPH
+   \   0000E8   12....       LCALL   ??SHT3X_CalcCrc?relay
+   \   0000EB   E9           MOV     A,R1
+   \   0000EC   FE           MOV     R6,A
+   \   0000ED                ; Setup parameters for call to function I2c_WriteByte
+   \   0000ED   85..82       MOV     DPL,?XSP + 0
+   \   0000F0   85..83       MOV     DPH,?XSP + 1
+   \   0000F3   E0           MOVX    A,@DPTR
+   \   0000F4   F9           MOV     R1,A
+   \   0000F5   12....       LCALL   ??I2c_WriteByte?relay
+   \   0000F8   E9           MOV     A,R1
+   \   0000F9   700B         JNZ     ??SHT3X_WriteAlertLimitData_3
+   \   0000FB                ; Setup parameters for call to function I2c_WriteByte
+   \   0000FB   7401         MOV     A,#0x1
+   \   0000FD   12....       LCALL   ?XSTACK_DISP0_8
+   \   000100   E0           MOVX    A,@DPTR
+   \   000101   F9           MOV     R1,A
+   \   000102   12....       LCALL   ??I2c_WriteByte?relay
+   \   000105   E9           MOV     A,R1
+   \                     ??SHT3X_WriteAlertLimitData_3:
+   \   000106   7006         JNZ     ??SHT3X_WriteAlertLimitData_4
+   \   000108                ; Setup parameters for call to function I2c_WriteByte
+   \   000108   EE           MOV     A,R6
+   \   000109   F9           MOV     R1,A
+   \   00010A   12....       LCALL   ??I2c_WriteByte?relay
+   \   00010D   E9           MOV     A,R1
+    739            }
+   \                     ??SHT3X_WriteAlertLimitData_4:
+   \   00010E   F9           MOV     R1,A
+    740            
+    741            return error;
+   \                     ??SHT3X_WriteAlertLimitData_2:
+   \   00010F   7402         MOV     A,#0x2
+   \   000111   02....       LJMP    ??Subroutine26_0 & 0xFFFF
+    742          }
+    743          
+    744          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    745          static etError SHT3X_ReadAlertLimitData(ft* humidity, ft* temperature)
+   \                     SHT3X_ReadAlertLimitData:
+    746          {
+   \   000000   74EE         MOV     A,#-0x12
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 18
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV     A,#-0x2
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+   \   00000E   8C..         MOV     ?V0 + 8,R4
+   \   000010   8D..         MOV     ?V0 + 9,R5
+    747            etError  error;           // error code
+    748            u16t     data;
+    749            
+    750            error = SHT3X_Read2BytesAndCrc(&data, NACK, 0);
+   \   000012                ; Setup parameters for call to function SHT3X_Read2BytesAndCrc
+   \   000012   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_58:
+   \   000015   FA           MOV     R2,A
+    751            
+    752            if(error == NO_ERROR)
+   \   000016   6003         JZ      $+5
+   \   000018   02....       LJMP    ??SHT3X_ReadAlertLimitData_0 & 0xFFFF
+    753            {
+    754              *humidity = SHT3X_CalcHumidity(data & 0xFE00);
+   \   00001B   85..82       MOV     DPL,?XSP + 0
+   \   00001E   85..83       MOV     DPH,?XSP + 1
+   \   000021   75..00       MOV     ?V0 + 0,#0x0
+   \   000024   A3           INC     DPTR
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   54FE         ANL     A,#0xfe
+   \   000028   F5..         MOV     ?V0 + 1,A
+   \   00002A   E4           CLR     A
+   \   00002B   F5..         MOV     ?V0 + 2,A
+   \   00002D   F5..         MOV     ?V0 + 3,A
+   \   00002F   78..         MOV     R0,#?V0 + 0
+   \   000031   12....       LCALL   ?UL_TO_FLT
+   \   000034   90....       MOV     DPTR,#__Constant_42c80000
+   \   000037   78..         MOV     R0,#?V0 + 4
+   \   000039   12....       LCALL   ?L_MOV_X
+   \   00003C   78..         MOV     R0,#?V0 + 0
+   \   00003E   79..         MOV     R1,#?V0 + 4
+   \   000040   12....       LCALL   ?FLT_MUL
+   \   000043   90....       MOV     DPTR,#__Constant_477fff00
+   \   000046   78..         MOV     R0,#?V0 + 4
+   \   000048   12....       LCALL   ?L_MOV_X
+   \   00004B   78..         MOV     R0,#?V0 + 0
+   \   00004D   79..         MOV     R1,#?V0 + 4
+   \   00004F   12....       LCALL   ?FLT_DIV
+   \   000052   8E82         MOV     DPL,R6
+   \   000054   8F83         MOV     DPH,R7
+   \   000056   78..         MOV     R0,#?V0 + 0
+   \   000058   12....       LCALL   ?L_MOV_TO_X
+    755              *temperature = SHT3X_CalcTemperature(data << 7);
+    756            }
+   \   00005B   85..82       MOV     DPL,?XSP + 0
+   \   00005E   85..83       MOV     DPH,?XSP + 1
+   \   000061   E0           MOVX    A,@DPTR
+   \   000062   F5..         MOV     ?V0 + 0,A
+   \   000064   A3           INC     DPTR
+   \   000065   E0           MOVX    A,@DPTR
+   \   000066   F5..         MOV     ?V0 + 1,A
+   \   000068   7407         MOV     A,#0x7
+   \   00006A   78..         MOV     R0,#?V0 + 0
+   \   00006C   12....       LCALL   ?S_SHL
+   \   00006F   F5..         MOV     ?V0 + 2,A
+   \   000071   F5..         MOV     ?V0 + 3,A
+   \   000073   78..         MOV     R0,#?V0 + 0
+   \   000075   12....       LCALL   ?UL_TO_FLT
+   \   000078   90....       MOV     DPTR,#__Constant_432f0000
+   \   00007B   78..         MOV     R0,#?V0 + 4
+   \   00007D   12....       LCALL   ?L_MOV_X
+   \   000080   78..         MOV     R0,#?V0 + 0
+   \   000082   79..         MOV     R1,#?V0 + 4
+   \   000084   12....       LCALL   ?FLT_MUL
+   \   000087   90....       MOV     DPTR,#__Constant_477fff00
+   \   00008A   78..         MOV     R0,#?V0 + 4
+   \   00008C   12....       LCALL   ?L_MOV_X
+   \   00008F   78..         MOV     R0,#?V0 + 0
+   \   000091   79..         MOV     R1,#?V0 + 4
+   \   000093   12....       LCALL   ?FLT_DIV
+   \   000096   90....       MOV     DPTR,#__Constant_c2340000
+   \   000099   78..         MOV     R0,#?V0 + 4
+   \   00009B   12....       LCALL   ?L_MOV_X
+   \   00009E   78..         MOV     R0,#?V0 + 0
+   \   0000A0   79..         MOV     R1,#?V0 + 4
+   \   0000A2   12....       LCALL   ?FLT_ADD
+   \   0000A5   85..82       MOV     DPL,?V0 + 8
+   \   0000A8   85..83       MOV     DPH,?V0 + 9
+   \   0000AB   78..         MOV     R0,#?V0 + 0
+   \   0000AD   12....       LCALL   ?L_MOV_TO_X
+    757            
+    758            return error;
+   \                     ??SHT3X_ReadAlertLimitData_0:
+   \   0000B0   EA           MOV     A,R2
+   \   0000B1   F9           MOV     R1,A
+   \   0000B2   7402         MOV     A,#0x2
+   \   0000B4   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000B7   7F0A         MOV     R7,#0xa
+   \   0000B9   02....       LJMP    ?BANKED_LEAVE_XDATA
+    759          }
+    760          
+    761          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   F9           MOV     R1,A
+   \   000001   12....       LCALL   ??I2c_WriteByte?relay
+   \   000004                REQUIRE ??Subroutine25_0
+   \   000004                ; // Fall through to label ??Subroutine25_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    762          static etError SHT3X_StartWriteAccess(void)
+   \                     SHT3X_StartWriteAccess:
+    763          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    764            etError error; // error code
+    765          
+    766            // write a start condition
+    767            I2c_StartCondition();
+   \   000004                ; Setup parameters for call to function I2c_StartCondition
+   \   000004   12....       LCALL   ?Subroutine20 & 0xFFFF
+    768          
+    769            // write the sensor I2C address with the write flag
+    770            error = I2c_WriteByte(_i2cAddress << 1);
+    771          
+    772            return error;
+   \                     ??CrossCallReturnLabel_37:
+   \   000007   02....       LJMP    ?Subroutine0 & 0xFFFF
+    773          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine20:
+   \   000000   12....       LCALL   ??I2c_StartCondition?relay
+   \   000003                ; Setup parameters for call to function I2c_WriteByte
+   \   000003                ; Setup parameters for call to function I2c_WriteByte
+   \   000003   90....       MOV     DPTR,#_i2cAddress
+   \   000006   E0           MOVX    A,@DPTR
+   \   000007   C3           CLR     C
+   \   000008   33           RLC     A
+   \   000009   22           RET
+    774          
+    775          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    776          static etError SHT3X_StartReadAccess(void)
+   \                     SHT3X_StartReadAccess:
+    777          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    778            etError error; // error code
+    779          
+    780            // write a start condition
+    781            I2c_StartCondition();
+   \   000004                ; Setup parameters for call to function I2c_StartCondition
+   \   000004   12....       LCALL   ?Subroutine20 & 0xFFFF
+    782          
+    783            // write the sensor I2C address with the read flag
+    784            error = I2c_WriteByte(_i2cAddress << 1 | 0x01);
+    785          
+    786            return error;
+   \                     ??CrossCallReturnLabel_38:
+   \   000007   4401         ORL     A,#0x1
+   \   000009   02....       LJMP    ?Subroutine0 & 0xFFFF
+    787          }
+    788          
+    789          //-----------------------------------------------------------------------------
+    790          static void SHT3X_StopAccess(void)
+    791          {
+    792            // write a stop condition
+    793            I2c_StopCondition();
+    794          }
+    795          
+    796          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    797          static etError SHT3X_WriteCommand(etCommands command)
+   \                     SHT3X_WriteCommand:
+    798          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+    799            etError error; // error code
+    800          
+    801            // write the upper 8 bits of the command to the sensor
+    802            error  = I2c_WriteByte(command >> 8);
+   \   000008                ; Setup parameters for call to function I2c_WriteByte
+   \   000008   F9           MOV     R1,A
+   \   000009   12....       LCALL   ??I2c_WriteByte?relay
+   \   00000C   E9           MOV     A,R1
+   \   00000D   F5..         MOV     ?V0 + 0,A
+    803          
+    804            // write the lower 8 bits of the command to the sensor
+    805            error |= I2c_WriteByte(command & 0xFF);
+    806          
+    807            return error;
+   \   00000F                ; Setup parameters for call to function I2c_WriteByte
+   \   00000F   EE           MOV     A,R6
+   \   000010   F9           MOV     R1,A
+   \   000011   12....       LCALL   ??I2c_WriteByte?relay
+   \   000014   E9           MOV     A,R1
+   \   000015   45..         ORL     A,?V0 + 0
+   \   000017   02....       LJMP    ??Subroutine23_0 & 0xFFFF
+    808          }
+    809          
+    810          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    811          static etError SHT3X_Read2BytesAndCrc(u16t* data, etI2cAck finaleAckNack,
+   \                     SHT3X_Read2BytesAndCrc:
+    812                                                u8t timeout)
+    813          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 3
+   \   000005   74FD         MOV     A,#-0x3
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+   \   00000E   89..         MOV     ?V0 + 0,R1
+    814            etError error;    // error code
+    815            u8t     bytes[2]; // read data array
+    816            u8t     checksum; // checksum byte
+    817           
+    818            // read two data bytes and one checksum byte
+    819                                  error = I2c_ReadByte(&bytes[0], ACK, timeout);
+   \   000010                ; Setup parameters for call to function I2c_ReadByte
+   \   000010   7900         MOV     R1,#0x0
+   \   000012   7401         MOV     A,#0x1
+   \   000014   12....       LCALL   ?XSTACK_DISP0_8
+   \   000017   12....       LCALL   ?Subroutine21 & 0xFFFF
+    820            if(error == NO_ERROR) error = I2c_ReadByte(&bytes[1], ACK, 0);
+   \                     ??CrossCallReturnLabel_39:
+   \   00001A   700C         JNZ     ??CrossCallReturnLabel_40
+   \   00001C                ; Setup parameters for call to function I2c_ReadByte
+   \   00001C   7C00         MOV     R4,#0x0
+   \   00001E   7900         MOV     R1,#0x0
+   \   000020   7402         MOV     A,#0x2
+   \   000022   12....       LCALL   ?XSTACK_DISP0_8
+   \   000025   12....       LCALL   ?Subroutine21 & 0xFFFF
+    821            if(error == NO_ERROR) error = I2c_ReadByte(&checksum, finaleAckNack, 0);
+   \                     ??CrossCallReturnLabel_40:
+   \   000028   E5..         MOV     A,?V0 + 2
+   \   00002A   700D         JNZ     ??CrossCallReturnLabel_41
+   \   00002C                ; Setup parameters for call to function I2c_ReadByte
+   \   00002C   7C00         MOV     R4,#0x0
+   \   00002E   A9..         MOV     R1,?V0 + 0
+   \   000030   85..82       MOV     DPL,?XSP + 0
+   \   000033   85..83       MOV     DPH,?XSP + 1
+   \   000036   12....       LCALL   ?Subroutine21 & 0xFFFF
+    822            
+    823            // verify checksum
+    824            if(error == NO_ERROR) error = SHT3X_CheckCrc(bytes, 2, checksum);
+   \                     ??CrossCallReturnLabel_41:
+   \   000039   E5..         MOV     A,?V0 + 2
+   \   00003B   701D         JNZ     ??SHT3X_Read2BytesAndCrc_0
+   \   00003D                ; Setup parameters for call to function SHT3X_CalcCrc
+   \   00003D   7902         MOV     R1,#0x2
+   \   00003F   7401         MOV     A,#0x1
+   \   000041   12....       LCALL   ?XSTACK_DISP0_8
+   \   000044   AA82         MOV     R2,DPL
+   \   000046   AB83         MOV     R3,DPH
+   \   000048   12....       LCALL   ??SHT3X_CalcCrc?relay
+   \   00004B   E9           MOV     A,R1
+   \   00004C   F8           MOV     R0,A
+   \   00004D   85..82       MOV     DPL,?XSP + 0
+   \   000050   85..83       MOV     DPH,?XSP + 1
+   \   000053   E0           MOVX    A,@DPTR
+   \   000054   68           XRL     A,R0
+   \   000055   6003         JZ      ??SHT3X_Read2BytesAndCrc_0
+   \   000057   75..02       MOV     ?V0 + 2,#0x2
+    825            
+    826            // combine the two bytes to a 16-bit value
+    827            *data = (bytes[0] << 8) | bytes[1];
+   \                     ??SHT3X_Read2BytesAndCrc_0:
+   \   00005A   7401         MOV     A,#0x1
+   \   00005C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005F   E0           MOVX    A,@DPTR
+   \   000060   F9           MOV     R1,A
+   \   000061   7402         MOV     A,#0x2
+   \   000063   12....       LCALL   ?XSTACK_DISP0_8
+   \   000066   E0           MOVX    A,@DPTR
+   \   000067   8E82         MOV     DPL,R6
+   \   000069   8F83         MOV     DPH,R7
+   \   00006B   F0           MOVX    @DPTR,A
+   \   00006C   A3           INC     DPTR
+   \   00006D   E9           MOV     A,R1
+   \   00006E   F0           MOVX    @DPTR,A
+    828            
+    829            return error;
+   \   00006F   A9..         MOV     R1,?V0 + 2
+   \   000071   7403         MOV     A,#0x3
+   \   000073   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000076   7F03         MOV     R7,#0x3
+   \   000078   02....       LJMP    ?BANKED_LEAVE_XDATA
+    830          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine21:
+   \   000000   AA82         MOV     R2,DPL
+   \   000002   AB83         MOV     R3,DPH
+   \   000004   12....       LCALL   ??I2c_ReadByte?relay
+   \   000007   E9           MOV     A,R1
+   \   000008   F5..         MOV     ?V0 + 2,A
+   \   00000A   22           RET
+    831          
+    832          //-----------------------------------------------------------------------------
+    833          static etError SHT3X_Write2BytesAndCrc(u16t data)
+    834          {
+    835            etError error;    // error code
+    836            u8t     bytes[2]; // read data array
+    837            u8t     checksum; // checksum byte
+    838            
+    839            bytes[0] = data >> 8;
+    840            bytes[1] = data & 0xFF;
+    841            checksum = SHT3X_CalcCrc(bytes, 2);
+    842           
+    843            // write two data bytes and one checksum byte
+    844                                  error = I2c_WriteByte(bytes[0]); // write data MSB
+    845            if(error == NO_ERROR) error = I2c_WriteByte(bytes[1]); // write data LSB
+    846            if(error == NO_ERROR) error = I2c_WriteByte(checksum); // write checksum
+    847            
+    848            return error;
+    849          }
+    850          
+    851          //-----------------------------------------------------------------------------
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    852          static u8t SHT3X_CalcCrc(u8t data[], u8t nbrOfBytes)
+   \                     SHT3X_CalcCrc:
+    853          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FD           MOV     R5,A
+    854            u8t bit;        // bit mask
+    855            u8t crc = 0xFF; // calculated checksum
+   \   000007   79FF         MOV     R1,#-0x1
+    856            u8t byteCtr;    // byte counter
+    857            
+    858            // calculates 8-Bit checksum with given polynomial
+    859            for(byteCtr = 0; byteCtr < nbrOfBytes; byteCtr++)
+   \   000009   7800         MOV     R0,#0x0
+   \   00000B   8008         SJMP    ??SHT3X_CalcCrc_0
+    860            {
+    861              crc ^= (data[byteCtr]);
+    862              for(bit = 8; bit > 0; --bit)
+    863              {
+    864                if(crc & 0x80) crc = (crc << 1) ^ POLYNOMIAL;
+    865                else           crc = (crc << 1);
+   \                     ??SHT3X_CalcCrc_1:
+   \   00000D   C3           CLR     C
+   \   00000E   33           RLC     A
+   \                     ??SHT3X_CalcCrc_2:
+   \   00000F   F9           MOV     R1,A
+   \   000010   1C           DEC     R4
+   \   000011   EC           MOV     A,R4
+   \   000012   7018         JNZ     ??SHT3X_CalcCrc_3
+   \   000014   08           INC     R0
+   \                     ??SHT3X_CalcCrc_0:
+   \   000015   E8           MOV     A,R0
+   \   000016   C3           CLR     C
+   \   000017   9D           SUBB    A,R5
+   \   000018   501D         JNC     ??SHT3X_CalcCrc_4
+   \   00001A   88..         MOV     ?V0 + 0,R0
+   \   00001C   EA           MOV     A,R2
+   \   00001D   25..         ADD     A,?V0 + 0
+   \   00001F   F582         MOV     DPL,A
+   \   000021   EB           MOV     A,R3
+   \   000022   3400         ADDC    A,#0x0
+   \   000024   F583         MOV     DPH,A
+   \   000026   E0           MOVX    A,@DPTR
+   \   000027   C9           XCH     A,R1
+   \   000028   69           XRL     A,R1
+   \   000029   F9           MOV     R1,A
+   \   00002A   7C08         MOV     R4,#0x8
+   \                     ??SHT3X_CalcCrc_3:
+   \   00002C   E9           MOV     A,R1
+   \   00002D   A2E7         MOV     C,0xE0 /* A   */.7
+   \   00002F   50DC         JNC     ??SHT3X_CalcCrc_1
+   \   000031   C3           CLR     C
+   \   000032   33           RLC     A
+   \   000033   6431         XRL     A,#0x31
+   \   000035   80D8         SJMP    ??SHT3X_CalcCrc_2
+    866              }
+    867            }
+    868            
+    869            return crc;
+   \                     ??SHT3X_CalcCrc_4:
+   \   000037   02....       LJMP    ?Subroutine1 & 0xFFFF
+    870          }
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_42c80000:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_42c80000>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_432f0000:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_432f0000>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_477fff00:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_477fff00>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_c2340000:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_c2340000>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_3e8:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_3e8>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_c350:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_c350>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_186a0:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_186a0>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_0:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_0>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_42c80001:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_42c80001>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_43020001:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_43020001>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     __Constant_42340000:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for __Constant_42340000>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for seg7table>`:
+   \   000000   C0           DB 192
+   \   000001   F9           DB 249
+   \   000002   A4           DB 164
+   \   000003   B0           DB 176
+   \   000004   99           DB 153
+   \   000005   92           DB 146
+   \   000006   82           DB 130
+   \   000007   F8           DB 248
+   \   000008   80           DB 128
+   \   000009   90           DB 144
+   \   00000A   88           DB 136
+   \   00000B   83           DB 131
+   \   00000C   C6           DB 198
+   \   00000D   A1           DB 161
+   \   00000E   86           DB 134
+   \   00000F   8E           DB 142
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_42c80000>`:
+   \   000000   0000C842     DD 42C80000H
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_432f0000>`:
+   \   000000   00002F43     DD 432F0000H
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_477fff00>`:
+   \   000000   00FF7F47     DD 477FFF00H
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_c2340000>`:
+   \   000000   000034C2     DD 0C2340000H
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_3e8>`:
+   \   000000   E8030000     DD 1000
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_c350>`:
+   \   000000   50C30000     DD 50000
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_186a0>`:
+   \   000000   A0860100     DD 100000
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_0>`:
+   \   000000   00000000     DD 0H
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_42c80001>`:
+   \   000000   0100C842     DD 42C80001H
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_43020001>`:
+   \   000000   01000243     DD 43020001H
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for __Constant_42340000>`:
+   \   000000   00003442     DD 42340000H
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SensorInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SensorInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??DisplayTwoDigits?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    DisplayTwoDigits
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SendSeg7?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SendSeg7
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SetTwoValues?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SetTwoValues
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Init_Sensor?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Init_Sensor
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ReadTemp?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ReadTemp
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_SetI2cAdr?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_SetI2cAdr
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3x_ReadSerialNumber?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3x_ReadSerialNumber
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_ReadStatus?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_ReadStatus
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_ClearAllAlertFlags?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_ClearAllAlertFlags
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_GetTempAndHumi?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_GetTempAndHumi
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_GetTempAndHumiClkStretch?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_GetTempAndHumiClkStretch
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_GetTempAndHumiPolling?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_GetTempAndHumiPolling
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_StartPeriodicMeasurment?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_StartPeriodicMeasurment
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_ReadMeasurementBuffer?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_ReadMeasurementBuffer
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_EnableHeater?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_EnableHeater
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_DisableHeater?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_DisableHeater
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_SetAlertLimits?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_SetAlertLimits
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_GetAlertLimits?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_GetAlertLimits
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_SoftReset?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_SoftReset
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_HardReset?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_HardReset
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_WriteAlertLimitData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_WriteAlertLimitData
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_ReadAlertLimitData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_ReadAlertLimitData
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_StartWriteAccess?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_StartWriteAccess
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_StartReadAccess?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_StartReadAccess
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_WriteCommand?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_WriteCommand
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_Read2BytesAndCrc?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_Read2BytesAndCrc
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT3X_CalcCrc?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT3X_CalcCrc
+    871          
+    872          //-----------------------------------------------------------------------------
+    873          static etError SHT3X_CheckCrc(u8t data[], u8t nbrOfBytes, u8t checksum)
+    874          {
+    875            u8t crc;     // calculated checksum
+    876            
+    877            // calculates 8-Bit checksum
+    878            crc = SHT3X_CalcCrc(data, nbrOfBytes);
+    879            
+    880            // verify checksum
+    881            if(crc != checksum) return CHECKSUM_ERROR;
+    882            else                return NO_ERROR;
+    883          }
+    884          
+    885          //-----------------------------------------------------------------------------
+    886          static ft SHT3X_CalcTemperature(u16t rawValue)
+    887          {
+    888            // calculate temperature [??C]
+    889            // T = -45 + 175 * rawValue / (2^16-1)
+    890            return 175.0f * (ft)rawValue / 65535.0f - 45.0f;
+    891          }
+    892          
+    893          //-----------------------------------------------------------------------------
+    894          static ft SHT3X_CalcHumidity(u16t rawValue)
+    895          {
+    896            // calculate relative humidity [%RH]
+    897            // RH = rawValue / (2^16-1) * 100
+    898            return 100.0f * (ft)rawValue / 65535.0f;
+    899          }
+    900          
+    901          //-----------------------------------------------------------------------------
+    902          static u16t SHT3X_CalcRawTemperature(ft temperature)
+    903          {
+    904            // calculate raw temperature [ticks]
+    905            // rawT = (temperature + 45) / 175 * (2^16-1)
+    906            return (temperature + 45.0f) / 175.0f * 65535.0f;
+                          ^
+Warning[Pa093]: implicit conversion from floating point to integer
+    907          }
+    908          
+    909          //-----------------------------------------------------------------------------
+    910          static u16t SHT3X_CalcRawHumidity(ft humidity)
+    911          {
+    912            // calculate raw relative humidity [ticks]
+    913            // rawRH = humidity / 100 * (2^16-1)
+    914            return humidity / 100.0f * 65535.0f;
+                          ^
+Warning[Pa093]: implicit conversion from floating point to integer
+    915          }
+    916          
+    917          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     DisplayTwoDigits                   0      0     19
+     Init_Sensor                        2      0      0
+       -> I2c_Init                      4      0      0
+       -> SHT3X_StartPeriodicMeasurment
+                                        4      0      0
+     ReadTemp                           0      0     28
+       -> SHT3X_ReadMeasurementBuffer
+                                        0      0     56
+     SHT3X_CalcCrc                      0      0     32
+     SHT3X_ClearAllAlertFlags           0      0      9
+       -> SHT3X_StartWriteAccess        0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> I2c_StopCondition             0      0     18
+     SHT3X_DisableHeater                0      0      9
+       -> SHT3X_StartWriteAccess        0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> I2c_StopCondition             0      0     18
+     SHT3X_EnableHeater                 0      0      9
+       -> SHT3X_StartWriteAccess        0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> I2c_StopCondition             0      0     18
+     SHT3X_GetAlertLimits               0      0     35
+       -> SHT3X_StartWriteAccess        0      0     46
+       -> SHT3X_WriteCommand            0      0     46
+       -> SHT3X_StartReadAccess         0      0     46
+       -> SHT3X_ReadAlertLimitData      0      0     46
+       -> I2c_StopCondition             0      0     46
+       -> SHT3X_StartWriteAccess        0      0     46
+       -> SHT3X_WriteCommand            0      0     46
+       -> SHT3X_StartReadAccess         0      0     46
+       -> SHT3X_ReadAlertLimitData      0      0     46
+       -> I2c_StopCondition             0      0     46
+       -> SHT3X_StartWriteAccess        0      0     46
+       -> SHT3X_WriteCommand            0      0     46
+       -> SHT3X_StartReadAccess         0      0     46
+       -> SHT3X_ReadAlertLimitData      0      0     46
+       -> I2c_StopCondition             0      0     46
+       -> SHT3X_StartWriteAccess        0      0     46
+       -> SHT3X_WriteCommand            0      0     46
+       -> SHT3X_StartReadAccess         0      0     46
+       -> SHT3X_ReadAlertLimitData      0      0     46
+       -> I2c_StopCondition             0      0     46
+     SHT3X_GetTempAndHumi               0      0     12
+       -> SHT3X_GetTempAndHumiClkStretch
+                                        0      0     20
+       -> SHT3X_GetTempAndHumiPolling
+                                        0      0     20
+     SHT3X_GetTempAndHumiClkStretch     0      0     34
+       -> SHT3X_StartWriteAccess        0      0     48
+       -> SHT3X_WriteCommand            0      0     48
+       -> SHT3X_StartReadAccess         0      0     48
+       -> SHT3X_Read2BytesAndCrc        0      0     48
+       -> SHT3X_Read2BytesAndCrc        0      0     48
+       -> I2c_StopCondition             0      0     48
+       -> SHT3X_WriteCommand            0      0     48
+       -> SHT3X_WriteCommand            0      0     48
+     SHT3X_GetTempAndHumiPolling        0      0     36
+       -> SHT3X_StartWriteAccess        0      0     52
+       -> SHT3X_WriteCommand            0      0     52
+       -> SHT3X_Read2BytesAndCrc        0      0     52
+       -> SHT3X_Read2BytesAndCrc        0      0     52
+       -> I2c_StopCondition             0      0     52
+       -> SHT3X_WriteCommand            0      0     52
+       -> SHT3X_WriteCommand            0      0     52
+       -> DelayMicroSeconds             0      0     52
+       -> SHT3X_StartReadAccess         0      0     52
+     SHT3X_HardReset                    2      0      0
+       -> DelayMicroSeconds             4      0      0
+       -> DelayMicroSeconds             4      0      0
+     SHT3X_Init                         0      0      9
+       -> I2c_Init                      0      0     18
+     SHT3X_Read2BytesAndCrc             0      0     40
+       -> I2c_ReadByte                  0      0     28
+       -> I2c_ReadByte                  0      0     28
+       -> I2c_ReadByte                  0      0     28
+       -> SHT3X_CalcCrc                 0      0     28
+     SHT3X_ReadAlertLimitData           0      0     43
+       -> SHT3X_Read2BytesAndCrc        0      0     40
+     SHT3X_ReadMeasurementBuffer        0      0     52
+       -> SHT3X_StartWriteAccess        0      0     48
+       -> SHT3X_WriteCommand            0      0     48
+       -> SHT3X_StartReadAccess         0      0     48
+       -> SHT3X_Read2BytesAndCrc        0      0     48
+       -> SHT3X_Read2BytesAndCrc        0      0     48
+       -> I2c_StopCondition             0      0     48
+     SHT3X_ReadStatus                   0      0      9
+       -> SHT3X_StartWriteAccess        0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_StartReadAccess         0      0     18
+       -> SHT3X_Read2BytesAndCrc        0      0     18
+       -> I2c_StopCondition             0      0     18
+     SHT3X_SetAlertLimits               0      0     60
+       -> SHT3X_StartWriteAccess        0      0     56
+       -> SHT3X_WriteCommand            0      0     56
+       -> SHT3X_WriteAlertLimitData     0      0     64
+       -> I2c_StopCondition             0      0     56
+       -> SHT3X_StartWriteAccess        0      0     56
+       -> SHT3X_WriteCommand            0      0     56
+       -> SHT3X_WriteAlertLimitData     0      0     64
+       -> I2c_StopCondition             0      0     56
+       -> SHT3X_StartWriteAccess        0      0     56
+       -> SHT3X_WriteCommand            0      0     56
+       -> SHT3X_WriteAlertLimitData     0      0     64
+       -> I2c_StopCondition             0      0     56
+       -> SHT3X_StartWriteAccess        0      0     56
+       -> SHT3X_WriteCommand            0      0     56
+       -> SHT3X_WriteAlertLimitData     0      0     64
+       -> I2c_StopCondition             0      0     56
+     SHT3X_SetI2cAdr                    2      0      0
+     SHT3X_SoftReset                    0      0      9
+       -> SHT3X_StartWriteAccess        0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> I2c_StopCondition             0      0     18
+       -> DelayMicroSeconds             0      0     18
+     SHT3X_StartPeriodicMeasurment      0      0      9
+       -> SHT3X_StartWriteAccess        0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> SHT3X_WriteCommand            0      0     18
+       -> I2c_StopCondition             0      0     18
+     SHT3X_StartReadAccess              2      0     26
+       -> I2c_StartCondition            4      0      0
+       -> I2c_WriteByte                 4      0      0
+     SHT3X_StartWriteAccess             2      0     28
+       -> I2c_StartCondition            4      0      0
+       -> I2c_WriteByte                 4      0      0
+     SHT3X_WriteAlertLimitData          1      0     54
+       -> SHT3X_CalcCrc                 0      0     44
+       -> I2c_WriteByte                 0      0     44
+       -> I2c_WriteByte                 0      0     44
+       -> I2c_WriteByte                 0      0     44
+     SHT3X_WriteCommand                 0      0     37
+       -> I2c_WriteByte                 0      0     18
+       -> I2c_WriteByte                 0      0     18
+     SHT3x_ReadSerialNumber             0      0     13
+       -> SHT3X_StartWriteAccess        0      0     26
+       -> SHT3X_WriteCommand            0      0     26
+       -> SHT3X_StartReadAccess         0      0     26
+       -> SHT3X_Read2BytesAndCrc        0      0     26
+       -> SHT3X_Read2BytesAndCrc        0      0     26
+       -> I2c_StopCondition             0      0     26
+     SendSeg7                           0      0      9
+       -> DisplayTwoDigits              0      0     18
+     SensorInit                         0      0      0
+     SetTwoValues                       0      0      9
+       -> DisplayTwoDigits              0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label                         Bytes
+     --------------                         -----
+     _A_P0                                     1
+     P0INP                                     1
+     P0SEL                                     1
+     P0DIR                                     1
+     _i2cAddress                               1
+     seg7table                                16
+     SensorInit                               18
+     DisplayTwoDigits                         82
+     ?Subroutine1                              5
+     ?Subroutine8                             13
+     SendSeg7                                 12
+     ??Subroutine24_0                          5
+     SetTwoValues                             24
+     Init_Sensor                              22
+     ??Subroutine25_0                          7
+     ReadTemp                                129
+     ??Subroutine26_0                          8
+     SHT3X_Init                               18
+     SHT3X_SetI2cAdr                          12
+     SHT3x_ReadSerialNumber                  107
+     ?Subroutine17                             4
+     ??Subroutine27_0                          7
+     ?Subroutine11                             4
+     ??Subroutine28_0                          7
+     ?Subroutine16                             7
+     ?Subroutine22                             5
+     SHT3X_ReadStatus                         44
+     ?Subroutine4                              5
+     ?Subroutine2                              4
+     ??Subroutine23_0                          1
+     SHT3X_ClearAllAlertFlags                 20
+     ??Subroutine31_0                          6
+     ?Subroutine9                              6
+     SHT3X_GetTempAndHumi                     69
+     ?Subroutine3                              2
+     SHT3X_GetTempAndHumiClkStretch          242
+     ?Subroutine18                            10
+     ??Subroutine29_0                          9
+     ?Subroutine5                              6
+     ??Subroutine30_0                         15
+     SHT3X_GetTempAndHumiPolling             276
+     ?Subroutine7                             16
+     ?Subroutine6                             15
+     SHT3X_StartPeriodicMeasurment           158
+     SHT3X_ReadMeasurementBuffer             196
+     SHT3X_EnableHeater                       20
+     SHT3X_DisableHeater                      20
+     ?Subroutine10                             2
+     SHT3X_SetAlertLimits                    239
+     ?Subroutine19                             6
+     SHT3X_GetAlertLimits                    244
+     ?Subroutine15                             7
+     ?Subroutine14                             7
+     ?Subroutine13                             9
+     ?Subroutine12                             7
+     SHT3X_SoftReset                          36
+     SHT3X_HardReset                          25
+     SHT3X_WriteAlertLimitData               276
+     SHT3X_ReadAlertLimitData                188
+     ?Subroutine0                              4
+     SHT3X_StartWriteAccess                   10
+     ?Subroutine20                            10
+     SHT3X_StartReadAccess                    12
+     SHT3X_WriteCommand                       26
+     SHT3X_Read2BytesAndCrc                  123
+     ?Subroutine21                            11
+     SHT3X_CalcCrc                            58
+     __Constant_42c80000                       4
+     __Constant_432f0000                       4
+     __Constant_477fff00                       4
+     __Constant_c2340000                       4
+     __Constant_3e8                            4
+     __Constant_c350                           4
+     __Constant_186a0                          4
+     __Constant_0                              4
+     __Constant_42c80001                       4
+     __Constant_43020001                       4
+     __Constant_42340000                       4
+     ?<Initializer for seg7table>             16
+     ?<Initializer for __Constant_42c80000>    4
+     ?<Initializer for __Constant_432f0000>    4
+     ?<Initializer for __Constant_477fff00>    4
+     ?<Initializer for __Constant_c2340000>    4
+     ?<Initializer for __Constant_3e8>         4
+     ?<Initializer for __Constant_c350>        4
+     ?<Initializer for __Constant_186a0>       4
+     ?<Initializer for __Constant_0>           4
+     ?<Initializer for __Constant_42c80001>    4
+     ?<Initializer for __Constant_43020001>    4
+     ?<Initializer for __Constant_42340000>    4
+     ??SensorInit?relay                        6
+     ??DisplayTwoDigits?relay                  6
+     ??SendSeg7?relay                          6
+     ??SetTwoValues?relay                      6
+     ??Init_Sensor?relay                       6
+     ??ReadTemp?relay                          6
+     ??SHT3X_Init?relay                        6
+     ??SHT3X_SetI2cAdr?relay                   6
+     ??SHT3x_ReadSerialNumber?relay            6
+     ??SHT3X_ReadStatus?relay                  6
+     ??SHT3X_ClearAllAlertFlags?relay          6
+     ??SHT3X_GetTempAndHumi?relay              6
+     ??SHT3X_GetTempAndHumiClkStretch?relay    6
+     ??SHT3X_GetTempAndHumiPolling?relay       6
+     ??SHT3X_StartPeriodicMeasurment?relay     6
+     ??SHT3X_ReadMeasurementBuffer?relay       6
+     ??SHT3X_EnableHeater?relay                6
+     ??SHT3X_DisableHeater?relay               6
+     ??SHT3X_SetAlertLimits?relay              6
+     ??SHT3X_GetAlertLimits?relay              6
+     ??SHT3X_SoftReset?relay                   6
+     ??SHT3X_HardReset?relay                   6
+     ??SHT3X_WriteAlertLimitData?relay         6
+     ??SHT3X_ReadAlertLimitData?relay          6
+     ??SHT3X_StartWriteAccess?relay            6
+     ??SHT3X_StartReadAccess?relay             6
+     ??SHT3X_WriteCommand?relay                6
+     ??SHT3X_Read2BytesAndCrc?relay            6
+     ??SHT3X_CalcCrc?relay                     6
+
+ 
+ 2 936 bytes in segment BANKED_CODE
+   174 bytes in segment BANK_RELAYS
+     4 bytes in segment SFR_AN
+    60 bytes in segment XDATA_I
+    60 bytes in segment XDATA_ID
+     1 byte  in segment XDATA_Z
+ 
+ 3 126 bytes of CODE  memory (+ 44 bytes shared)
+     0 bytes of DATA  memory (+  4 bytes shared)
+    17 bytes of XDATA memory (+ 44 bytes shared)
+
+Errors: none
+Warnings: 4

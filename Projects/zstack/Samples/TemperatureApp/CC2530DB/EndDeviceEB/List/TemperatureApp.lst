@@ -1,0 +1,1691 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         24/Dec/2025  16:53:53 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\Sourc #
+#                          e\TemperatureApp.c                                 #
+#    Command line       =  -f E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC #
+#                          2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg        #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f E:\´«¸ÐÆ÷ZStack-CC2530\´«¸Ð #
+#                          Æ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sampl #
+#                          es\TemperatureApp\CC2530DB\..\..\..\Tools\CC2530DB #
+#                          \f8wConfig.cfg (-DZIGBEEPRO -DSECURE=0             #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST26=0x04000000                    #
+#                          -DDEFAULT_CHANLIST25=0x02000000                    #
+#                          -DDEFAULT_CHANLIST24=0x01000000                    #
+#                          -DDEFAULT_CHANLIST23=0x00800000                    #
+#                          -DDEFAULT_CHANLIST22=0x00400000                    #
+#                          -DDEFAULT_CHANLIST21=0x00200000                    #
+#                          -DDEFAULT_CHANLIST20=0x00100000                    #
+#                          -DDEFAULT_CHANLIST19=0x00080000                    #
+#                          -DDEFAULT_CHANLIST18=0x00040000                    #
+#                          -DDEFAULT_CHANLIST17=0x00020000                    #
+#                          -DDEFAULT_CHANLIST16=0x00010000                    #
+#                          -DDEFAULT_CHANLIST15=0x00008000                    #
+#                          -DDEFAULT_CHANLIST14=0x00004000                    #
+#                          -DDEFAULT_CHANLIST13=0x00002000                    #
+#                          -DDEFAULT_CHANLIST12=0x00001000                    #
+#                          -DDEFAULT_CHANLIST11=0x00000800                    #
+#                          -DDEFAULT_CHANLIST=DEFAULT_CHANLIST25              #
+#                          -DZDAPP_CONFIG_PAN_ID=0x0006                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 E:\´«¸ÐÆ÷ZStack-CC2530\´«¸Ð #
+#                          Æ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Sampl #
+#                          es\TemperatureApp\Source\TemperatureApp.c -D       #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -D xPOWER_SAVING -lC E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ #
+#                          ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples #
+#                          \TemperatureApp\CC2530DB\EndDeviceEB\List\ -lA     #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\EndDeviceEB\List\ --diag_suppress Pe001,Pa010  #
+#                          -o E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC #
+#                          2530DB\EndDeviceEB\Obj\ -e --no_code_motion        #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC #
+#                          2530DB\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2 #
+#                          530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\Temperatu #
+#                          reApp\CC2530DB\..\Source\ -I                       #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\ZMain\TI2530DB\ -I                    #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\hal\include\ -I      #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\hal\target\CC2530EB\ #
+#                           -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑ #
+#                          µ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\C #
+#                          C2530DB\..\..\..\..\..\Components\mac\include\ -I  #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\mac\high_level\ -I   #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\mac\low_level\srf04\ #
+#                           -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑ #
+#                          µ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\C #
+#                          C2530DB\..\..\..\..\..\Components\mac\low_level\sr #
+#                          f04\single_chip\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷Z #
+#                          Stack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\ #
+#                          TemperatureApp\CC2530DB\..\..\..\..\..\Components\ #
+#                          mt\ -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530- #
+#                          ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureAp #
+#                          p\CC2530DB\..\..\..\..\..\Components\osal\include\ #
+#                           -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑ #
+#                          µ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\C #
+#                          C2530DB\..\..\..\..\..\Components\services\saddr\  #
+#                          -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC #
+#                          2530DB\..\..\..\..\..\Components\services\sdata\   #
+#                          -I E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ #
+#                          ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC #
+#                          2530DB\..\..\..\..\..\Components\stack\af\ -I      #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\stack\nwk\ -I        #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\stack\sapi\ -I       #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\stack\sec\ -I        #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\stack\sys\ -I        #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\stack\zdo\ -I        #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\zmac\ -I             #
+#                          E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\..\..\..\..\..\Components\zmac\f8w\ -Ohz       #
+#                          --require_prototypes                               #
+#    List file          =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\EndDeviceEB\List\TemperatureApp.lst            #
+#    Object file        =  E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖ #
+#                          Õ°æ±¾\Projects\zstack\Samples\TemperatureApp\CC253 #
+#                          0DB\EndDeviceEB\Obj\TemperatureApp.r51             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\´«¸ÐÆ÷ZStack-CC2530\´«¸ÐÆ÷ZStack-CC2530-ÊµÑµ×îÖÕ°æ±¾\Projects\zstack\Samples\TemperatureApp\Source\TemperatureApp.c
+      1          /******************************************************************************
+      2            Filename:       TemperatureApp.c
+      3            Revised:        $Date: 2010-12-21 10:27:34 -0800 (Tue, 21 Dec 2010) $
+      4            Revision:       $Revision: 24670 $
+      5          
+      6            Description:    Generic Application (no Profile).
+      7          
+      8          
+      9            Copyright 2004-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product. Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          ******************************************************************************/
+     39          
+     40          /*********************************************************************
+     41            This application isn't intended to do anything useful, it is
+     42            intended to be a simple example of an application's structure.
+     43          
+     44            This application sends "Hello World" to another "Generic"
+     45            application every 15 seconds.  The application will also
+     46            receive "Hello World" packets.
+     47          
+     48            The "Hello World" messages are sent/received as MSG type message.
+     49          
+     50            This applications doesn't have a profile, so it handles everything
+     51            directly - itself.
+     52          
+     53            Key control:
+     54              SW1:
+     55              SW2:  initiates end device binding
+     56              SW3:
+     57              SW4:  initiates a match description request
+     58          *********************************************************************/
+     59          
+     60          /*********************************************************************
+     61           * INCLUDES
+     62           */
+     63          #include "OSAL.h"
+     64          #include "AF.h"
+     65          #include "ZDApp.h"
+     66          #include "ZDObject.h"
+     67          #include "ZDProfile.h"
+     68          
+     69          #include "TemperatureApp.h"
+     70          #include "DebugTrace.h"
+     71          
+     72          #if !defined( WIN32 )
+     73            #include "OnBoard.h"
+     74          #endif
+     75          
+     76          /* HAL */
+     77          #include "hal_lcd.h"
+     78          #include "hal_led.h"
+     79          #include "hal_key.h"
+     80          #include "hal_uart.h"
+     81          
+     82          #include "i2c.h"
+     83          #include "Sensor.h"
+     84          
+     85          
+     86          /*********************************************************************
+     87           * MACROS
+     88           */
+     89          
+     90          /*********************************************************************
+     91           * CONSTANTS
+     92           */
+     93          
+     94          /*********************************************************************
+     95           * TYPEDEFS
+     96           */
+     97          
+     98          /*********************************************************************
+     99           * GLOBAL VARIABLES
+    100           */
+    101          
+    102          // This list should be filled with Application specific Cluster IDs.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    103          const cId_t TemperatureApp_ClusterList[TemperatureApp_MAX_CLUSTERS] =
+   \                     TemperatureApp_ClusterList:
+   \   000000   0200         DW 2
+    104          {
+    105            TemperatureApp_CLUSTERID
+    106          };
+    107          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    108          const SimpleDescriptionFormat_t TemperatureApp_SimpleDesc =
+   \                     TemperatureApp_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   01           DB 1
+   \   000007   ....         DW TemperatureApp_ClusterList
+   \   000009   01           DB 1
+   \   00000A   ....         DW TemperatureApp_ClusterList
+    109          {
+    110            TemperatureApp_ENDPOINT,              //  int Endpoint;
+    111            TemperatureApp_PROFID,                //  uint16 AppProfId[2];
+    112            TemperatureApp_DEVICEID,              //  uint16 AppDeviceId[2];
+    113            TemperatureApp_DEVICE_VERSION,        //  int   AppDevVer:4;
+    114            TemperatureApp_FLAGS,                 //  int   AppFlags:4;
+    115            TemperatureApp_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    116            (cId_t *)TemperatureApp_ClusterList,  //  byte *pAppInClusterList;
+    117            TemperatureApp_MAX_CLUSTERS,          //  byte  AppNumInClusters;
+    118            (cId_t *)TemperatureApp_ClusterList   //  byte *pAppInClusterList;
+    119          };
+    120          
+    121          // This is the Endpoint/Interface description.  It is defined here, but
+    122          // filled-in in TemperatureApp_Init().  Another way to go would be to fill
+    123          // in the structure here and make it a "const" (in code space).  The
+    124          // way it's defined in this sample app it is define in RAM.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    125          endPointDesc_t TemperatureApp_epDesc;
+   \                     TemperatureApp_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+    126          
+    127          /*********************************************************************
+    128           * EXTERNAL VARIABLES
+    129           */
+    130          
+    131          /*********************************************************************
+    132           * EXTERNAL FUNCTIONS
+    133           */
+    134          
+    135          /*********************************************************************
+    136           * LOCAL VARIABLES
+    137           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    138          byte TemperatureApp_TaskID;   // Task ID for internal task/event processing
+   \                     TemperatureApp_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    139                                    // This variable will be received when
+    140                                    // TemperatureApp_Init() is called.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    141          devStates_t TemperatureApp_NwkState;
+   \                     TemperatureApp_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    142          
+    143          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    144          byte TemperatureApp_TransID;  // This is the unique message ID (counter)
+   \                     TemperatureApp_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    145          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    146          afAddrType_t TemperatureApp_DstAddr;
+   \                     TemperatureApp_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+    147          
+    148          /*********************************************************************
+    149           * LOCAL FUNCTIONS
+    150           */
+    151          void TemperatureApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg );
+    152          void TemperatureApp_HandleKeys( byte shift, byte keys );
+    153          void TemperatureApp_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+    154          void TemperatureApp_SendTheMessage( void );
+    155          
+    156          /*********************************************************************
+    157           * NETWORK LAYER CALLBACKS
+    158           */
+    159          
+    160          /*********************************************************************
+    161           * PUBLIC FUNCTIONS
+    162           */
+    163          
+    164          /*********************************************************************
+    165           * @fn      TemperatureApp_Init
+    166           *
+    167           * @brief   Initialization function for the Generic App Task.
+    168           *          This is called during initialization and should contain
+    169           *          any application specific initialization (ie. hardware
+    170           *          initialization/setup, table initialization, power up
+    171           *          notificaiton ... ).
+    172           *
+    173           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    174           *                    used to send messages and set timers.
+    175           *
+    176           * @return  none
+    177           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    178          void TemperatureApp_Init( byte task_id )
+   \                     TemperatureApp_Init:
+    179          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    180            TemperatureApp_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#TemperatureApp_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+    181            TemperatureApp_NwkState = DEV_INIT;
+   \   00000A   90....       MOV     DPTR,#TemperatureApp_NwkState
+   \   00000D   7401         MOV     A,#0x1
+   \   00000F   F0           MOVX    @DPTR,A
+    182            TemperatureApp_TransID = 0;
+   \   000010   90....       MOV     DPTR,#TemperatureApp_TransID
+   \   000013   E4           CLR     A
+   \   000014   F0           MOVX    @DPTR,A
+    183          
+    184            // Device hardware initialization can be added here or in main() (Zmain.c).
+    185            // If the hardware is application specific - add it here.
+    186            // If the hardware is other parts of the device add it in main().
+    187          
+    188            
+    189               I2c_Init(); 
+   \   000015                ; Setup parameters for call to function I2c_Init
+   \   000015   12....       LCALL   ??I2c_Init?relay
+    190              // ³õÊ¼»¯ÎÂÊª¶È´«¸ÐÆ÷ (µØÖ·0x44)
+    191               SHT3X_Init(0x44);
+   \   000018                ; Setup parameters for call to function SHT3X_Init
+   \   000018   7944         MOV     R1,#0x44
+   \   00001A   12....       LCALL   ??SHT3X_Init?relay
+    192               
+    193              SHT3X_StartPeriodicMeasurment(REPEATAB_HIGH, FREQUENCY_2HZ); 
+   \   00001D                ; Setup parameters for call to function SHT3X_StartPeriodicMeasurment
+   \   00001D   7A02         MOV     R2,#0x2
+   \   00001F   7900         MOV     R1,#0x0
+   \   000021   12....       LCALL   ??SHT3X_StartPeriodicMeasurment?relay
+    194            
+    195            
+    196            
+    197            TemperatureApp_DstAddr.addrMode = (afAddrMode_t)AddrNotPresent;
+   \   000024   90....       MOV     DPTR,#TemperatureApp_DstAddr + 8
+   \   000027   E4           CLR     A
+   \   000028   F0           MOVX    @DPTR,A
+    198            TemperatureApp_DstAddr.endPoint = 0;
+   \   000029   A3           INC     DPTR
+   \   00002A   F0           MOVX    @DPTR,A
+    199            TemperatureApp_DstAddr.addr.shortAddr = 0;
+   \   00002B   90....       MOV     DPTR,#TemperatureApp_DstAddr
+   \   00002E   F0           MOVX    @DPTR,A
+   \   00002F   A3           INC     DPTR
+   \   000030   F0           MOVX    @DPTR,A
+    200          
+    201            // Fill out the endpoint description.
+    202            TemperatureApp_epDesc.endPoint = TemperatureApp_ENDPOINT;
+   \   000031   90....       MOV     DPTR,#TemperatureApp_epDesc
+   \   000034   740A         MOV     A,#0xa
+   \   000036   F0           MOVX    @DPTR,A
+    203            TemperatureApp_epDesc.task_id = &TemperatureApp_TaskID;
+   \   000037   A3           INC     DPTR
+   \   000038   74..         MOV     A,#TemperatureApp_TaskID & 0xff
+   \   00003A   F0           MOVX    @DPTR,A
+   \   00003B   A3           INC     DPTR
+   \   00003C   74..         MOV     A,#(TemperatureApp_TaskID >> 8) & 0xff
+   \   00003E   F0           MOVX    @DPTR,A
+    204            TemperatureApp_epDesc.simpleDesc
+    205                      = (SimpleDescriptionFormat_t *)&TemperatureApp_SimpleDesc;
+   \   00003F   A3           INC     DPTR
+   \   000040   74..         MOV     A,#TemperatureApp_SimpleDesc & 0xff
+   \   000042   F0           MOVX    @DPTR,A
+   \   000043   A3           INC     DPTR
+   \   000044   74..         MOV     A,#(TemperatureApp_SimpleDesc >> 8) & 0xff
+   \   000046   F0           MOVX    @DPTR,A
+    206            TemperatureApp_epDesc.latencyReq = noLatencyReqs;
+   \   000047   A3           INC     DPTR
+   \   000048   E4           CLR     A
+   \   000049   F0           MOVX    @DPTR,A
+    207          
+    208            // Register the endpoint description with the AF
+    209            afRegister( &TemperatureApp_epDesc );
+   \   00004A                ; Setup parameters for call to function afRegister
+   \   00004A   7A..         MOV     R2,#TemperatureApp_epDesc & 0xff
+   \   00004C   7B..         MOV     R3,#(TemperatureApp_epDesc >> 8) & 0xff
+   \   00004E   12....       LCALL   ??afRegister?relay
+    210          
+    211            // Register for all key events - This app will handle all key events
+    212            RegisterForKeys( TemperatureApp_TaskID );
+   \   000051                ; Setup parameters for call to function RegisterForKeys
+   \   000051   90....       MOV     DPTR,#TemperatureApp_TaskID
+   \   000054   E0           MOVX    A,@DPTR
+   \   000055   F9           MOV     R1,A
+   \   000056   12....       LCALL   ??RegisterForKeys?relay
+    213          
+    214            // Update the display
+    215          #if defined ( LCD_SUPPORTED )
+    216              HalLcdWriteString( "TemperatureApp", HAL_LCD_LINE_1 );
+   \   000059                ; Setup parameters for call to function HalLcdWriteString
+   \   000059   7901         MOV     R1,#0x1
+   \   00005B   7A..         MOV     R2,#`?<Constant "TemperatureApp">` & 0xff
+   \   00005D   7B..         MOV     R3,#(`?<Constant "TemperatureApp">` >> 8) & 0xff
+   \   00005F   12....       LCALL   ??HalLcdWriteString?relay
+    217          #endif
+    218          
+    219            ZDO_RegisterForZDOMsg( TemperatureApp_TaskID, End_Device_Bind_rsp );
+   \   000062                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   000062   7A20         MOV     R2,#0x20
+   \   000064   7B80         MOV     R3,#-0x80
+   \   000066   90....       MOV     DPTR,#TemperatureApp_TaskID
+   \   000069   E0           MOVX    A,@DPTR
+   \   00006A   F9           MOV     R1,A
+   \   00006B   12....       LCALL   ??ZDO_RegisterForZDOMsg?relay
+    220            ZDO_RegisterForZDOMsg( TemperatureApp_TaskID, Match_Desc_rsp );
+   \   00006E                ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+   \   00006E   7A06         MOV     R2,#0x6
+   \   000070   7B80         MOV     R3,#-0x80
+   \   000072   90....       MOV     DPTR,#TemperatureApp_TaskID
+   \   000075   E0           MOVX    A,@DPTR
+   \   000076   F9           MOV     R1,A
+   \   000077   12....       LCALL   ??ZDO_RegisterForZDOMsg?relay
+    221          }
+   \   00007A   7F01         MOV     R7,#0x1
+   \   00007C   02....       LJMP    ?BANKED_LEAVE_XDATA
+    222          
+    223          /*********************************************************************
+    224           * @fn      TemperatureApp_ProcessEvent
+    225           *
+    226           * @brief   Generic Application Task event processor.  This function
+    227           *          is called to process all events for the task.  Events
+    228           *          include timers, messages and any other user defined events.
+    229           *
+    230           * @param   task_id  - The OSAL assigned task ID.
+    231           * @param   events - events to process.  This is a bit map and can
+    232           *                   contain more than one event.
+    233           *
+    234           * @return  none
+    235           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    236          UINT16 TemperatureApp_ProcessEvent( byte task_id, UINT16 events )
+   \                     TemperatureApp_ProcessEvent:
+    237          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    238            afIncomingMSGPacket_t *MSGpkt;
+    239            afDataConfirm_t *afDataConfirm;
+    240          
+    241            // Data Confirmation message fields
+    242            byte sentEP;
+    243            ZStatus_t sentStatus;
+    244            byte sentTransID;       // This should match the value sent
+    245            (void)task_id;  // Intentionally unreferenced parameter
+    246          
+    247            if ( events & SYS_EVENT_MSG )
+   \   000009   5480         ANL     A,#0x80
+   \   00000B   7003         JNZ     $+5
+   \   00000D   02....       LJMP    ??TemperatureApp_ProcessEvent_0 & 0xFFFF
+    248            {
+    249              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( TemperatureApp_TaskID );
+   \   000010                ; Setup parameters for call to function osal_msg_receive
+   \   000010   8038         SJMP    ??TemperatureApp_ProcessEvent_1
+    250              while ( MSGpkt )
+    251              {
+    252                switch ( MSGpkt->hdr.event )
+    253                {
+    254                  case ZDO_CB_MSG:
+    255                    TemperatureApp_ProcessZDOMsgs( (zdoIncomingMsg_t *)MSGpkt );
+    256                    break;
+    257          
+    258                  case KEY_CHANGE:
+    259                    TemperatureApp_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    260                    break;
+    261          
+    262                  case AF_DATA_CONFIRM_CMD:
+    263                    // This message is received as a confirmation of a data packet sent.
+    264                    // The status is of ZStatus_t type [defined in ZComDef.h]
+    265                    // The message fields are defined in AF.h
+    266                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+    267                    sentEP = afDataConfirm->endpoint;
+    268                    sentStatus = afDataConfirm->hdr.status;
+    269                    sentTransID = afDataConfirm->transID;
+    270                    (void)sentEP;
+    271                    (void)sentTransID;
+    272          
+    273                    // Action taken when confirmation is received.
+    274                    if ( sentStatus != ZSuccess )
+    275                    {
+    276                      // The data wasn't delivered -- Do something
+    277                    }
+    278                    break;
+    279          
+    280                  case AF_INCOMING_MSG_CMD:
+    281                    TemperatureApp_MessageMSGCB( MSGpkt );
+    282                    break;
+    283          
+    284                  case ZDO_STATE_CHANGE:
+    285                    TemperatureApp_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \                     ??TemperatureApp_ProcessEvent_2:
+   \   000012   A3           INC     DPTR
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   90....       MOV     DPTR,#TemperatureApp_NwkState
+   \   000017   F0           MOVX    @DPTR,A
+    286                    if ( (TemperatureApp_NwkState == DEV_ZB_COORD)
+    287                        || (TemperatureApp_NwkState == DEV_ROUTER)
+    288                        || (TemperatureApp_NwkState == DEV_END_DEVICE) )
+   \   000018   6409         XRL     A,#0x9
+   \   00001A   600A         JZ      ??TemperatureApp_ProcessEvent_3
+   \   00001C   E0           MOVX    A,@DPTR
+   \   00001D   6407         XRL     A,#0x7
+   \   00001F   6005         JZ      ??TemperatureApp_ProcessEvent_3
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   6406         XRL     A,#0x6
+   \   000024   701D         JNZ     ??TemperatureApp_ProcessEvent_4
+    289                    {
+    290                      #if!defined(ZDO_COORDINATOR)
+    291                      //×éÍø³É¹¦ºóÉÁË¸dataµÆ
+    292                      HalLedBlink(HAL_LED_1, 5, 50, 250);  
+   \                     ??TemperatureApp_ProcessEvent_3:
+   \   000026                ; Setup parameters for call to function HalLedBlink
+   \   000026   7CFA         MOV     R4,#-0x6
+   \   000028   7D00         MOV     R5,#0x0
+   \   00002A   7B32         MOV     R3,#0x32
+   \   00002C   7A05         MOV     R2,#0x5
+   \   00002E   7901         MOV     R1,#0x1
+   \   000030   12....       LCALL   ??HalLedBlink?relay
+    293                      // Start sending "the" message in a regular interval.
+    294                      osal_start_timerEx( TemperatureApp_TaskID,
+    295                                          TemperatureApp_SEND_MSG_EVT,
+    296                                          TemperatureApp_SEND_MSG_TIMEOUT );
+   \   000033                ; Setup parameters for call to function osal_start_timerEx
+   \   000033   7CAC         MOV     R4,#-0x54
+   \   000035   7D0D         MOV     R5,#0xd
+   \   000037   7A01         MOV     R2,#0x1
+   \   000039   7B00         MOV     R3,#0x0
+   \   00003B   90....       MOV     DPTR,#TemperatureApp_TaskID
+   \   00003E   E0           MOVX    A,@DPTR
+   \   00003F   F9           MOV     R1,A
+   \   000040   12....       LCALL   ??osal_start_timerEx?relay
+    297                      #endif
+    298                    
+    299                    }
+    300                    break;
+    301          
+    302                  default:
+    303                    break;
+    304                }
+    305          
+    306                // Release the memory
+    307                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??TemperatureApp_ProcessEvent_4:
+   \   000043                ; Setup parameters for call to function osal_msg_deallocate
+   \   000043   AA..         MOV     R2,?V0 + 0
+   \   000045   AB..         MOV     R3,?V0 + 1
+   \   000047   12....       LCALL   ??osal_msg_deallocate?relay
+    308          
+    309                // Next
+    310                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( TemperatureApp_TaskID );
+   \   00004A                ; Setup parameters for call to function osal_msg_receive
+   \                     ??TemperatureApp_ProcessEvent_1:
+   \   00004A   90....       MOV     DPTR,#TemperatureApp_TaskID
+   \   00004D   E0           MOVX    A,@DPTR
+   \   00004E   F9           MOV     R1,A
+   \   00004F   12....       LCALL   ??osal_msg_receive?relay
+   \   000052   8A..         MOV     ?V0 + 0,R2
+   \   000054   8B..         MOV     ?V0 + 1,R3
+   \   000056   E5..         MOV     A,?V0 + 0
+   \   000058   45..         ORL     A,?V0 + 1
+   \   00005A   603D         JZ      ??TemperatureApp_ProcessEvent_5
+   \   00005C   85..82       MOV     DPL,?V0 + 0
+   \   00005F   85..83       MOV     DPH,?V0 + 1
+   \   000062   E0           MOVX    A,@DPTR
+   \   000063   24E6         ADD     A,#-0x1a
+   \   000065   6029         JZ      ??TemperatureApp_ProcessEvent_6
+   \   000067   245A         ADD     A,#0x5a
+   \   000069   6011         JZ      ??TemperatureApp_ProcessEvent_7
+   \   00006B   24EF         ADD     A,#-0x11
+   \   00006D   60A3         JZ      ??TemperatureApp_ProcessEvent_2
+   \   00006F   24FE         ADD     A,#-0x2
+   \   000071   70D0         JNZ     ??TemperatureApp_ProcessEvent_4
+   \   000073                ; Setup parameters for call to function TemperatureApp_ProcessZDOMsgs
+   \   000073   AA..         MOV     R2,?V0 + 0
+   \   000075   AB..         MOV     R3,?V0 + 1
+   \   000077   12....       LCALL   ??TemperatureApp_ProcessZDOMsgs?relay
+   \   00007A   80C7         SJMP    ??TemperatureApp_ProcessEvent_4
+   \                     ??TemperatureApp_ProcessEvent_7:
+   \   00007C                ; Setup parameters for call to function TemperatureApp_HandleKeys
+   \   00007C   A3           INC     DPTR
+   \   00007D   A3           INC     DPTR
+   \   00007E   A3           INC     DPTR
+   \   00007F   E0           MOVX    A,@DPTR
+   \   000080   FA           MOV     R2,A
+   \   000081   85..82       MOV     DPL,?V0 + 0
+   \   000084   85..83       MOV     DPH,?V0 + 1
+   \   000087   A3           INC     DPTR
+   \   000088   A3           INC     DPTR
+   \   000089   E0           MOVX    A,@DPTR
+   \   00008A   F9           MOV     R1,A
+   \   00008B   12....       LCALL   ??TemperatureApp_HandleKeys?relay
+   \   00008E   80B3         SJMP    ??TemperatureApp_ProcessEvent_4
+   \                     ??TemperatureApp_ProcessEvent_6:
+   \   000090                ; Setup parameters for call to function TemperatureApp_MessageMSGCB
+   \   000090   AA..         MOV     R2,?V0 + 0
+   \   000092   AB..         MOV     R3,?V0 + 1
+   \   000094   12....       LCALL   ??TemperatureApp_MessageMSGCB?relay
+   \   000097   80AA         SJMP    ??TemperatureApp_ProcessEvent_4
+    311              }
+    312          
+    313              // return unprocessed events
+    314              return (events ^ SYS_EVENT_MSG);
+   \                     ??TemperatureApp_ProcessEvent_5:
+   \   000099   EE           MOV     A,R6
+   \   00009A   FA           MOV     R2,A
+   \   00009B   EF           MOV     A,R7
+   \   00009C   6480         XRL     A,#0x80
+   \                     ??TemperatureApp_ProcessEvent_8:
+   \   00009E   FB           MOV     R3,A
+   \   00009F   8023         SJMP    ??TemperatureApp_ProcessEvent_9
+    315            }
+    316          
+    317            // Send a message out - This event is generated by a timer
+    318            //  (setup in TemperatureApp_Init()).
+    319            if ( events & TemperatureApp_SEND_MSG_EVT )
+   \                     ??TemperatureApp_ProcessEvent_0:
+   \   0000A1   EE           MOV     A,R6
+   \   0000A2   A2E0         MOV     C,0xE0 /* A   */.0
+   \   0000A4   501A         JNC     ??TemperatureApp_ProcessEvent_10
+    320            {
+    321              // Send "the" message
+    322              TemperatureApp_SendTheMessage();
+   \   0000A6                ; Setup parameters for call to function TemperatureApp_SendTheMessage
+   \   0000A6   12....       LCALL   ??TemperatureApp_SendTheMessage?relay
+    323          
+    324              // Setup to send message again
+    325              osal_start_timerEx( TemperatureApp_TaskID,
+    326                                  TemperatureApp_SEND_MSG_EVT,
+    327                                  TemperatureApp_SEND_MSG_TIMEOUT );
+   \   0000A9                ; Setup parameters for call to function osal_start_timerEx
+   \   0000A9   7CAC         MOV     R4,#-0x54
+   \   0000AB   7D0D         MOV     R5,#0xd
+   \   0000AD   7A01         MOV     R2,#0x1
+   \   0000AF   7B00         MOV     R3,#0x0
+   \   0000B1   90....       MOV     DPTR,#TemperatureApp_TaskID
+   \   0000B4   E0           MOVX    A,@DPTR
+   \   0000B5   F9           MOV     R1,A
+   \   0000B6   12....       LCALL   ??osal_start_timerEx?relay
+    328          
+    329              // return unprocessed events
+    330              return (events ^ TemperatureApp_SEND_MSG_EVT);
+   \   0000B9   EE           MOV     A,R6
+   \   0000BA   6401         XRL     A,#0x1
+   \   0000BC   FA           MOV     R2,A
+   \   0000BD   EF           MOV     A,R7
+   \   0000BE   80DE         SJMP    ??TemperatureApp_ProcessEvent_8
+    331            }
+    332          
+    333            
+    334            
+    335            
+    336            
+    337            // Discard unknown events
+    338            return 0;
+   \                     ??TemperatureApp_ProcessEvent_10:
+   \   0000C0   7A00         MOV     R2,#0x0
+   \   0000C2   7B00         MOV     R3,#0x0
+   \                     ??TemperatureApp_ProcessEvent_9:
+   \   0000C4   7F04         MOV     R7,#0x4
+   \   0000C6   02....       LJMP    ?BANKED_LEAVE_XDATA
+    339          }
+    340          
+    341          /*********************************************************************
+    342           * Event Generation Functions
+    343           */
+    344          
+    345          /*********************************************************************
+    346           * @fn      TemperatureApp_ProcessZDOMsgs()
+    347           *
+    348           * @brief   Process response messages
+    349           *
+    350           * @param   none
+    351           *
+    352           * @return  none
+    353           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    354          void TemperatureApp_ProcessZDOMsgs( zdoIncomingMsg_t *inMsg )
+   \                     TemperatureApp_ProcessZDOMsgs:
+    355          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    356            switch ( inMsg->clusterID )
+   \   000005   EA           MOV     A,R2
+   \   000006   240C         ADD     A,#0xc
+   \   000008   12....       LCALL   ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   00000B   F5..         MOV     ?V0 + 0,A
+   \   00000D   A3           INC     DPTR
+   \   00000E   E0           MOVX    A,@DPTR
+   \   00000F   F5..         MOV     ?V0 + 1,A
+   \   000011   78..         MOV     R0,#?V0 + 0
+   \   000013   12....       LCALL   ?US_SWITCH_SPARSE
+   \                     `?<Jumptable for TemperatureApp_ProcessZDOMsgs>_0`:
+   \   000016   0000         DW        0
+   \   000018   0200         DW        2
+   \   00001A   0680         DW        32774
+   \   00001C   ....         DW        ??TemperatureApp_ProcessZDOMsgs_0
+   \   00001E   2080         DW        32800
+   \   000020   ....         DW        ??TemperatureApp_ProcessZDOMsgs_1
+   \   000022   ....         DW        ??TemperatureApp_ProcessZDOMsgs_2
+    357            {
+    358              case End_Device_Bind_rsp:
+    359                if ( ZDO_ParseBindRsp( inMsg ) == ZSuccess )
+   \                     ??TemperatureApp_ProcessZDOMsgs_1:
+   \   000024   EA           MOV     A,R2
+   \   000025   2413         ADD     A,#0x13
+   \   000027   12....       LCALL   ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   00002A   F8           MOV     R0,A
+   \   00002B   A3           INC     DPTR
+   \   00002C   E0           MOVX    A,@DPTR
+   \   00002D   F583         MOV     DPH,A
+   \   00002F   8882         MOV     DPL,R0
+   \   000031   E0           MOVX    A,@DPTR
+   \   000032   7009         JNZ     ??TemperatureApp_ProcessZDOMsgs_3
+    360                {
+    361                  // Light LED
+    362                  HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+   \   000034                ; Setup parameters for call to function HalLedSet
+   \   000034   7A01         MOV     R2,#0x1
+   \                     ??TemperatureApp_ProcessZDOMsgs_4:
+   \   000036   7908         MOV     R1,#0x8
+   \   000038   12....       LCALL   ??HalLedSet?relay
+   \   00003B   8053         SJMP    ??TemperatureApp_ProcessZDOMsgs_2
+    363                }
+    364          #if defined( BLINK_LEDS )
+    365                else
+    366                {
+    367                  // Flash LED to show failure
+    368                  HalLedSet ( HAL_LED_4, HAL_LED_MODE_FLASH );
+   \                     ??TemperatureApp_ProcessZDOMsgs_3:
+   \   00003D                ; Setup parameters for call to function HalLedSet
+   \   00003D   7A04         MOV     R2,#0x4
+   \   00003F   80F5         SJMP    ??TemperatureApp_ProcessZDOMsgs_4
+    369                }
+    370          #endif
+    371                break;
+    372          
+    373              case Match_Desc_rsp:
+    374                {
+    375                  ZDO_ActiveEndpointRsp_t *pRsp = ZDO_ParseEPListRsp( inMsg );
+   \                     ??TemperatureApp_ProcessZDOMsgs_0:
+   \   000041                ; Setup parameters for call to function ZDO_ParseEPListRsp
+   \   000041   12....       LCALL   ??ZDO_ParseEPListRsp?relay
+   \   000044   8A..         MOV     ?V0 + 0,R2
+   \   000046   8B..         MOV     ?V0 + 1,R3
+   \   000048   AE..         MOV     R6,?V0 + 0
+   \   00004A   AF..         MOV     R7,?V0 + 1
+    376                  if ( pRsp )
+   \   00004C   EE           MOV     A,R6
+   \   00004D   4F           ORL     A,R7
+   \   00004E   6040         JZ      ??TemperatureApp_ProcessZDOMsgs_2
+    377                  {
+    378                    if ( pRsp->status == ZSuccess && pRsp->cnt )
+   \   000050   8E82         MOV     DPL,R6
+   \   000052   8F83         MOV     DPH,R7
+   \   000054   E0           MOVX    A,@DPTR
+   \   000055   7032         JNZ     ??TemperatureApp_ProcessZDOMsgs_5
+   \   000057   A3           INC     DPTR
+   \   000058   A3           INC     DPTR
+   \   000059   A3           INC     DPTR
+   \   00005A   E0           MOVX    A,@DPTR
+   \   00005B   602C         JZ      ??TemperatureApp_ProcessZDOMsgs_5
+    379                    {
+    380                      TemperatureApp_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+   \   00005D   90....       MOV     DPTR,#TemperatureApp_DstAddr + 8
+   \   000060   7402         MOV     A,#0x2
+   \   000062   F0           MOVX    @DPTR,A
+    381                      TemperatureApp_DstAddr.addr.shortAddr = pRsp->nwkAddr;
+   \   000063   8E82         MOV     DPL,R6
+   \   000065   8F83         MOV     DPH,R7
+   \   000067   A3           INC     DPTR
+   \   000068   E0           MOVX    A,@DPTR
+   \   000069   F8           MOV     R0,A
+   \   00006A   A3           INC     DPTR
+   \   00006B   E0           MOVX    A,@DPTR
+   \   00006C   F9           MOV     R1,A
+   \   00006D   90....       MOV     DPTR,#TemperatureApp_DstAddr
+   \   000070   E8           MOV     A,R0
+   \   000071   F0           MOVX    @DPTR,A
+   \   000072   A3           INC     DPTR
+   \   000073   E9           MOV     A,R1
+   \   000074   F0           MOVX    @DPTR,A
+    382                      // Take the first endpoint, Can be changed to search through endpoints
+    383                      TemperatureApp_DstAddr.endPoint = pRsp->epList[0];
+   \   000075   8E82         MOV     DPL,R6
+   \   000077   8F83         MOV     DPH,R7
+   \   000079   A3           INC     DPTR
+   \   00007A   A3           INC     DPTR
+   \   00007B   A3           INC     DPTR
+   \   00007C   A3           INC     DPTR
+   \   00007D   E0           MOVX    A,@DPTR
+   \   00007E   90....       MOV     DPTR,#TemperatureApp_DstAddr + 9
+   \   000081   F0           MOVX    @DPTR,A
+    384          
+    385                      // Light LED
+    386                      HalLedSet( HAL_LED_4, HAL_LED_MODE_ON );
+   \   000082                ; Setup parameters for call to function HalLedSet
+   \   000082   7A01         MOV     R2,#0x1
+   \   000084   7908         MOV     R1,#0x8
+   \   000086   12....       LCALL   ??HalLedSet?relay
+    387                    }
+    388                    osal_mem_free( pRsp );
+   \                     ??TemperatureApp_ProcessZDOMsgs_5:
+   \   000089                ; Setup parameters for call to function osal_mem_free
+   \   000089   EE           MOV     A,R6
+   \   00008A   FA           MOV     R2,A
+   \   00008B   EF           MOV     A,R7
+   \   00008C   FB           MOV     R3,A
+   \   00008D   12....       LCALL   ??osal_mem_free?relay
+    389                  }
+    390                }
+    391                break;
+    392            }
+    393          }
+   \                     ??TemperatureApp_ProcessZDOMsgs_2:
+   \   000090   7F02         MOV     R7,#0x2
+   \   000092   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   F582         MOV     DPL,A
+   \   000002   EB           MOV     A,R3
+   \   000003                REQUIRE ??Subroutine1_0
+   \   000003                ; // Fall through to label ??Subroutine1_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine1_0:
+   \   000000   3400         ADDC    A,#0x0
+   \   000002   F583         MOV     DPH,A
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   22           RET
+    394          
+    395          /*********************************************************************
+    396           * @fn      TemperatureApp_HandleKeys
+    397           *
+    398           * @brief   Handles all key events for this device.
+    399           *
+    400           * @param   shift - true if in shift/alt.
+    401           * @param   keys - bit field for key events. Valid entries:
+    402           *                 HAL_KEY_SW_4
+    403           *                 HAL_KEY_SW_3
+    404           *                 HAL_KEY_SW_2
+    405           *                 HAL_KEY_SW_1
+    406           *
+    407           * @return  none
+    408           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    409          void TemperatureApp_HandleKeys( byte shift, byte keys )
+   \                     TemperatureApp_HandleKeys:
+    410          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 9
+   \   000005   74F7         MOV     A,#-0x9
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EA           MOV     A,R2
+   \   00000D   FF           MOV     R7,A
+    411            zAddrType_t dstAddr;
+    412          
+    413            // Shift is used to make each button/switch dual purpose.
+    414            if ( shift )
+   \   00000E   EE           MOV     A,R6
+   \   00000F   6003         JZ      $+5
+   \   000011   02....       LJMP    ??TemperatureApp_HandleKeys_0 & 0xFFFF
+    415            {
+    416              if ( keys & HAL_KEY_SW_1 )
+    417              {
+    418              }
+    419              if ( keys & HAL_KEY_SW_2 )
+    420              {
+    421              }
+    422              if ( keys & HAL_KEY_SW_3 )
+    423              {
+    424              }
+    425              if ( keys & HAL_KEY_SW_4 )
+    426              {
+    427              }
+    428            }
+    429            else
+    430            {
+    431              if ( keys & HAL_KEY_SW_1 )
+    432              {
+    433                // Since SW1 isn't used for anything else in this application...
+    434          #if defined( SWITCH1_BIND )
+    435                // we can use SW1 to simulate SW2 for devices that only have one switch,
+    436                keys |= HAL_KEY_SW_2;
+    437          #elif defined( SWITCH1_MATCH )
+    438                // or use SW1 to simulate SW4 for devices that only have one switch
+    439                keys |= HAL_KEY_SW_4;
+    440          #endif
+    441              }
+    442          
+    443              if ( keys & HAL_KEY_SW_2 )
+   \   000014   EF           MOV     A,R7
+   \   000015   A2E1         MOV     C,0xE0 /* A   */.1
+   \   000017   506D         JNC     ??TemperatureApp_HandleKeys_1
+    444              {
+    445                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+   \   000019                ; Setup parameters for call to function HalLedSet
+   \   000019   7A00         MOV     R2,#0x0
+   \   00001B   7908         MOV     R1,#0x8
+   \   00001D   12....       LCALL   ??HalLedSet?relay
+    446          
+    447                // Initiate an End Device Bind Request for the mandatory endpoint
+    448                dstAddr.addrMode = Addr16Bit;
+   \   000020   7408         MOV     A,#0x8
+   \   000022   12....       LCALL   ?XSTACK_DISP0_8
+   \   000025   7402         MOV     A,#0x2
+   \   000027   F0           MOVX    @DPTR,A
+    449                dstAddr.addr.shortAddr = 0x0000; // Coordinator
+   \   000028   85..82       MOV     DPL,?XSP + 0
+   \   00002B   85..83       MOV     DPH,?XSP + 1
+   \   00002E   E4           CLR     A
+   \   00002F   F0           MOVX    @DPTR,A
+   \   000030   A3           INC     DPTR
+   \   000031   F0           MOVX    @DPTR,A
+    450                ZDP_EndDeviceBindReq( &dstAddr, NLME_GetShortAddr(),
+    451                                      TemperatureApp_epDesc.endPoint,
+    452                                      TemperatureApp_PROFID,
+    453                                      TemperatureApp_MAX_CLUSTERS, (cId_t *)TemperatureApp_ClusterList,
+    454                                      TemperatureApp_MAX_CLUSTERS, (cId_t *)TemperatureApp_ClusterList,
+    455                                      FALSE );
+   \   000032                ; Setup parameters for call to function NLME_GetShortAddr
+   \   000032   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   000035   8A..         MOV     ?V0 + 0,R2
+   \   000037   8B..         MOV     ?V0 + 1,R3
+   \   000039   AC..         MOV     R4,?V0 + 0
+   \   00003B   AD..         MOV     R5,?V0 + 1
+   \   00003D   75....       MOV     ?V0 + 0,#TemperatureApp_ClusterList & 0xff
+   \   000040   75....       MOV     ?V0 + 1,#(TemperatureApp_ClusterList >> 8) & 0xff
+   \   000043                ; Setup parameters for call to function ZDP_EndDeviceBindReq
+   \   000043   75..00       MOV     ?V0 + 2,#0x0
+   \   000046   78..         MOV     R0,#?V0 + 2
+   \   000048   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00004B   78..         MOV     R0,#?V0 + 0
+   \   00004D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000050   75..01       MOV     ?V0 + 2,#0x1
+   \   000053   78..         MOV     R0,#?V0 + 2
+   \   000055   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000058   78..         MOV     R0,#?V0 + 0
+   \   00005A   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00005D   75..01       MOV     ?V0 + 0,#0x1
+   \   000060   78..         MOV     R0,#?V0 + 0
+   \   000062   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000065   75..04       MOV     ?V0 + 0,#0x4
+   \   000068   75..0F       MOV     ?V0 + 1,#0xf
+   \   00006B   78..         MOV     R0,#?V0 + 0
+   \   00006D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000070   90....       MOV     DPTR,#TemperatureApp_epDesc
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   F9           MOV     R1,A
+   \   000075   7409         MOV     A,#0x9
+   \   000077   12....       LCALL   ?XSTACK_DISP0_8
+   \   00007A   AA82         MOV     R2,DPL
+   \   00007C   AB83         MOV     R3,DPH
+   \   00007E   12....       LCALL   ??ZDP_EndDeviceBindReq?relay
+   \   000081   7409         MOV     A,#0x9
+   \   000083   12....       LCALL   ?DEALLOC_XSTACK8
+    456              }
+    457          
+    458              if ( keys & HAL_KEY_SW_3 )
+    459              {
+    460              }
+    461          
+    462              if ( keys & HAL_KEY_SW_4 )
+   \                     ??TemperatureApp_HandleKeys_1:
+   \   000086   EF           MOV     A,R7
+   \   000087   A2E3         MOV     C,0xE0 /* A   */.3
+   \   000089   505C         JNC     ??TemperatureApp_HandleKeys_0
+    463              {
+    464                HalLedSet ( HAL_LED_4, HAL_LED_MODE_OFF );
+   \   00008B                ; Setup parameters for call to function HalLedSet
+   \   00008B   7A00         MOV     R2,#0x0
+   \   00008D   7908         MOV     R1,#0x8
+   \   00008F   12....       LCALL   ??HalLedSet?relay
+    465                // Initiate a Match Description Request (Service Discovery)
+    466                dstAddr.addrMode = AddrBroadcast;
+   \   000092   7408         MOV     A,#0x8
+   \   000094   12....       LCALL   ?XSTACK_DISP0_8
+   \   000097   740F         MOV     A,#0xf
+   \   000099   F0           MOVX    @DPTR,A
+    467                dstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR;
+   \   00009A   85..82       MOV     DPL,?XSP + 0
+   \   00009D   85..83       MOV     DPH,?XSP + 1
+   \   0000A0   74FF         MOV     A,#-0x1
+   \   0000A2   F0           MOVX    @DPTR,A
+   \   0000A3   A3           INC     DPTR
+   \   0000A4   F0           MOVX    @DPTR,A
+    468                ZDP_MatchDescReq( &dstAddr, NWK_BROADCAST_SHORTADDR,
+    469                                  TemperatureApp_PROFID,
+    470                                  TemperatureApp_MAX_CLUSTERS, (cId_t *)TemperatureApp_ClusterList,
+    471                                  TemperatureApp_MAX_CLUSTERS, (cId_t *)TemperatureApp_ClusterList,
+    472                                  FALSE );
+   \   0000A5   75....       MOV     ?V0 + 0,#TemperatureApp_ClusterList & 0xff
+   \   0000A8   75....       MOV     ?V0 + 1,#(TemperatureApp_ClusterList >> 8) & 0xff
+   \   0000AB                ; Setup parameters for call to function ZDP_MatchDescReq
+   \   0000AB   75..00       MOV     ?V0 + 2,#0x0
+   \   0000AE   78..         MOV     R0,#?V0 + 2
+   \   0000B0   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000B3   78..         MOV     R0,#?V0 + 0
+   \   0000B5   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000B8   75..01       MOV     ?V0 + 2,#0x1
+   \   0000BB   78..         MOV     R0,#?V0 + 2
+   \   0000BD   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000C0   78..         MOV     R0,#?V0 + 0
+   \   0000C2   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000C5   75..04       MOV     ?V0 + 0,#0x4
+   \   0000C8   75..0F       MOV     ?V0 + 1,#0xf
+   \   0000CB   78..         MOV     R0,#?V0 + 0
+   \   0000CD   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000D0   7901         MOV     R1,#0x1
+   \   0000D2   7CFF         MOV     R4,#-0x1
+   \   0000D4   7DFF         MOV     R5,#-0x1
+   \   0000D6   7408         MOV     A,#0x8
+   \   0000D8   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000DB   AA82         MOV     R2,DPL
+   \   0000DD   AB83         MOV     R3,DPH
+   \   0000DF   12....       LCALL   ??ZDP_MatchDescReq?relay
+   \   0000E2   7408         MOV     A,#0x8
+   \   0000E4   12....       LCALL   ?DEALLOC_XSTACK8
+    473              }
+    474            }
+    475          }
+   \                     ??TemperatureApp_HandleKeys_0:
+   \   0000E7   7409         MOV     A,#0x9
+   \   0000E9   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000EC   7F03         MOV     R7,#0x3
+   \   0000EE   02....       LJMP    ?BANKED_LEAVE_XDATA
+    476          
+    477          /*********************************************************************
+    478           * LOCAL FUNCTIONS
+    479           */
+    480          
+    481          /*********************************************************************
+    482           * @fn      TemperatureApp_MessageMSGCB
+    483           *
+    484           * @brief   Data message processor callback.  This function processes
+    485           *          any incoming data - probably from other devices.  So, based
+    486           *          on cluster ID, perform the intended action.
+    487           *
+    488           * @param   none
+    489           *
+    490           * @return  none
+    491           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    492          void TemperatureApp_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+   \                     TemperatureApp_MessageMSGCB:
+    493          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    494            switch ( pkt->clusterId )
+   \   000004   8A82         MOV     DPL,R2
+   \   000006   8B83         MOV     DPH,R3
+   \   000008   A3           INC     DPTR
+   \   000009   A3           INC     DPTR
+   \   00000A   A3           INC     DPTR
+   \   00000B   A3           INC     DPTR
+   \   00000C   E0           MOVX    A,@DPTR
+   \   00000D   6402         XRL     A,#0x2
+   \   00000F   7002         JNZ     ??TemperatureApp_MessageMSGCB_0
+   \   000011   A3           INC     DPTR
+   \   000012   E0           MOVX    A,@DPTR
+   \                     ??TemperatureApp_MessageMSGCB_0:
+   \   000013   7011         JNZ     ??TemperatureApp_MessageMSGCB_1
+    495            {
+    496              case TemperatureApp_CLUSTERID:
+    497                // "the" message
+    498          #if defined( LCD_SUPPORTED )
+    499                HalLcdWriteScreen( (char*)pkt->cmd.Data, "rcvd" );
+   \   000015                ; Setup parameters for call to function HalLcdWriteScreen
+   \   000015   7C..         MOV     R4,#`?<Constant "rcvd">` & 0xff
+   \   000017   7D..         MOV     R5,#(`?<Constant "rcvd">` >> 8) & 0xff
+   \   000019   EA           MOV     A,R2
+   \   00001A   2422         ADD     A,#0x22
+   \   00001C   12....       LCALL   ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   00001F   FA           MOV     R2,A
+   \   000020   A3           INC     DPTR
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   FB           MOV     R3,A
+   \   000023   12....       LCALL   ??HalLcdWriteScreen?relay
+    500          #elif defined( WIN32 )
+    501                WPRINTSTR( pkt->cmd.Data );
+    502          #endif
+    503                break;
+    504            }
+    505          }
+   \                     ??TemperatureApp_MessageMSGCB_1:
+   \   000026   D083         POP     DPH
+   \   000028   D082         POP     DPL
+   \   00002A   02....       LJMP    ?BRET
+    506          
+    507          /*********************************************************************
+    508           * @fn      TemperatureApp_SendTheMessage
+    509           *
+    510           * @brief   Send "the" message.
+    511           *
+    512           * @param   none
+    513           *
+    514           * @return  none
+    515           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    516          void TemperatureApp_SendTheMessage( void )
+   \                     TemperatureApp_SendTheMessage:
+    517          {
+   \   000000   74EE         MOV     A,#-0x12
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 18
+   \   000005                ; Auto size: 52
+   \   000005   74CC         MOV     A,#-0x34
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    518            
+    519             uint8 txFrame[32];
+    520              uint8 i = 0;
+    521              uint8 checkSum = 0;
+   \   00000A   75..00       MOV     ?V0 + 6,#0x0
+    522              static uint8 frameSeq = 0;
+    523              float temperature, humidity;
+    524              uint16 tempValue, humiValue;
+    525          
+    526              // 1. ¶¯Ì¬»ñÈ¡ÍøÂçµØÖ·
+    527              uint16 myShortAddr = NLME_GetShortAddr();
+   \   00000D                ; Setup parameters for call to function NLME_GetShortAddr
+   \   00000D   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   000010   8A..         MOV     ?V0 + 4,R2
+   \   000012   8B..         MOV     ?V0 + 5,R3
+    528              uint16 parentShortAddr = NLME_GetCoordShortAddr();
+   \   000014                ; Setup parameters for call to function NLME_GetCoordShortAddr
+   \   000014   12....       LCALL   ??NLME_GetCoordShortAddr?relay
+   \   000017   8A..         MOV     ?V0 + 0,R2
+   \   000019   8B..         MOV     ?V0 + 1,R3
+   \   00001B   AE..         MOV     R6,?V0 + 0
+   \   00001D   AF..         MOV     R7,?V0 + 1
+    529          
+    530              // 2. ¶ÁÈ¡ÎÂÊª¶È´«¸ÐÆ÷Êý¾Ý (»ùÓÚÄúÌá¹©µÄSHT30Çý¶¯)
+    531              // ×¢Òâ£º´Ëº¯ÊýÐè¸ù¾ÝÄúµÄÓ²¼þÇý¶¯Êµ¼ÊÇé¿öµ÷Õû»òÊµÏÖ
+    532              // ¼ÙÉè SHT3X_ReadMeasurementBuffer ·µ»Ø 0 ±íÊ¾³É¹¦
+    533              if (SHT3X_ReadMeasurementBuffer(&temperature, &humidity) == 0)
+   \   00001F                ; Setup parameters for call to function SHT3X_ReadMeasurementBuffer
+   \   00001F   85..82       MOV     DPL,?XSP + 0
+   \   000022   85..83       MOV     DPH,?XSP + 1
+   \   000025   AC82         MOV     R4,DPL
+   \   000027   AD83         MOV     R5,DPH
+   \   000029   7404         MOV     A,#0x4
+   \   00002B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002E   AA82         MOV     R2,DPL
+   \   000030   AB83         MOV     R3,DPH
+   \   000032   12....       LCALL   ??SHT3X_ReadMeasurementBuffer?relay
+   \   000035   E9           MOV     A,R1
+   \   000036   7045         JNZ     ??TemperatureApp_SendTheMessage_0
+    534              {
+    535                  // Ð­ÒéÒªÇó£ºÎÂ¶ÈÖµ = Êµ¼ÊÎÂ¶È(¡æ) * 100£¬ Êª¶ÈÖµ = Êµ¼ÊÊª¶È(%RH) * 100
+    536                  // ×ª»»ÎªÕûÊý£¬²¢ÏÞÖÆ·¶Î§  temperature¾ÍÊÇÎÂ¶È 
+    537                  tempValue = (uint16)temperature * 100;
+   \   000038   7404         MOV     A,#0x4
+   \   00003A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003D   12....       LCALL   ?XLOAD_R2345
+   \   000040   12....       LCALL   ?R2345_FLT_TO_L
+   \   000043   85....       MOV     ?V0 + 8,?V0 + 0
+   \   000046   85....       MOV     ?V0 + 9,?V0 + 1
+   \   000049   E5..         MOV     A,?V0 + 8
+   \   00004B   75F064       MOV     B,#0x64
+   \   00004E   A4           MUL     AB
+   \   00004F   F5..         MOV     ?V0 + 8,A
+   \   000051   A8F0         MOV     R0,B
+   \   000053   75F064       MOV     B,#0x64
+   \   000056   E5..         MOV     A,?V0 + 9
+   \   000058   A4           MUL     AB
+   \   000059   28           ADD     A,R0
+   \   00005A   F5..         MOV     ?V0 + 9,A
+    538                  humiValue = (uint16)humidity * 100;
+   \   00005C   85..82       MOV     DPL,?XSP + 0
+   \   00005F   85..83       MOV     DPH,?XSP + 1
+   \   000062   12....       LCALL   ?XLOAD_R2345
+   \   000065   12....       LCALL   ?R2345_FLT_TO_L
+   \   000068   E5..         MOV     A,?V0 + 0
+   \   00006A   75F064       MOV     B,#0x64
+   \   00006D   A4           MUL     AB
+   \   00006E   F5..         MOV     ?V0 + 0,A
+   \   000070   A8F0         MOV     R0,B
+   \   000072   75F064       MOV     B,#0x64
+   \   000075   E5..         MOV     A,?V0 + 1
+   \   000077   A4           MUL     AB
+   \   000078   28           ADD     A,R0
+   \   000079   F5..         MOV     ?V0 + 1,A
+   \   00007B   800C         SJMP    ??TemperatureApp_SendTheMessage_1
+    539                  
+    540                  // ¡¾¿ÉÑ¡¡¿µ÷ÊÔ´òÓ¡£ºÍ¨¹ý´®¿ÚÊä³öÔ­Ê¼Öµ
+    541                  // char dbgBuf[64];
+    542                  // halSprintf(dbgBuf, "Temp: %.2fC, Humi: %.2f%% -> T:%u H:%u\n", 
+    543                  //            temperature, humidity, tempValue, humiValue);
+    544                  // HalUARTWrite(0, dbgBuf, osal_strlen(dbgBuf));
+    545                  
+    546              } else {
+    547                  // ¶ÁÈ¡Ê§°Ü£¬¿ÉÉèÖÃÄ¬ÈÏÖµ»ò´íÎó±êÖ¾£¬ÕâÀïÓÃ0Ìî³ä
+    548                  tempValue = 0;
+   \                     ??TemperatureApp_SendTheMessage_0:
+   \   00007D   75..00       MOV     ?V0 + 8,#0x0
+   \   000080   75..00       MOV     ?V0 + 9,#0x0
+    549                  humiValue = 0;
+   \   000083   75..00       MOV     ?V0 + 0,#0x0
+   \   000086   75..00       MOV     ?V0 + 1,#0x0
+    550              }
+    551          
+    552              // 3. ¹¹½¨Ð­ÒéÊý¾ÝÖ¡
+    553              // ¹Ì¶¨Ö¡Í·
+    554              txFrame[i++] = 0xAA;               // Ö¡Í·
+   \                     ??TemperatureApp_SendTheMessage_1:
+   \   000089   7408         MOV     A,#0x8
+   \   00008B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00008E   74AA         MOV     A,#-0x56
+   \   000090   F0           MOVX    @DPTR,A
+    555              txFrame[i++] = 0x00;               // Ö¡³¤¶ÈÕ¼Î»
+   \   000091   7409         MOV     A,#0x9
+   \   000093   12....       LCALL   ?XSTACK_DISP0_8
+   \   000096   E4           CLR     A
+   \   000097   F0           MOVX    @DPTR,A
+    556              txFrame[i++] = 0x02;               // Ö¡ÀàÐÍ: ÎÞÏß´«¸ÐÊý¾Ý
+   \   000098   740A         MOV     A,#0xa
+   \   00009A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00009D   7402         MOV     A,#0x2
+   \   00009F   F0           MOVX    @DPTR,A
+    557              txFrame[i++] = frameSeq++;         // Ö¡ÐòºÅ
+   \   0000A0   90....       MOV     DPTR,#??frameSeq
+   \   0000A3   E0           MOVX    A,@DPTR
+   \   0000A4   C0E0         PUSH    A
+   \   0000A6   740B         MOV     A,#0xb
+   \   0000A8   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000AB   D0E0         POP     A
+   \   0000AD   F0           MOVX    @DPTR,A
+   \   0000AE   90....       MOV     DPTR,#??frameSeq
+   \   0000B1   E0           MOVX    A,@DPTR
+   \   0000B2   04           INC     A
+   \   0000B3   F0           MOVX    @DPTR,A
+    558          
+    559              // ÒµÎñÊý¾ÝÍ·
+    560              txFrame[i++] = 0x03;               // ÃüÁîÀàÐÍ: ÉÏ´«Â·ÓÉÐÅÏ¢ (0x03)
+   \   0000B4   740C         MOV     A,#0xc
+   \   0000B6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000B9   7403         MOV     A,#0x3
+   \   0000BB   F0           MOVX    @DPTR,A
+    561              txFrame[i++] = 0x01;               // Ð­ÒéÀàÐÍ: Zigbee (0x01)
+   \   0000BC   740D         MOV     A,#0xd
+   \   0000BE   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000C1   7401         MOV     A,#0x1
+   \   0000C3   F0           MOVX    @DPTR,A
+    562              
+    563              // ´«¸ÐÆ÷ÀàÐÍ: ÎÂÊª¶È = 0x0002
+    564              txFrame[i++] = 0x00;               // ¸ß×Ö½Ú
+   \   0000C4   740E         MOV     A,#0xe
+   \   0000C6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000C9   E4           CLR     A
+   \   0000CA   F0           MOVX    @DPTR,A
+    565              txFrame[i++] = 0x02;               // µÍ×Ö½Ú
+   \   0000CB   740F         MOV     A,#0xf
+   \   0000CD   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000D0   7402         MOV     A,#0x2
+   \   0000D2   F0           MOVX    @DPTR,A
+    566              
+    567              txFrame[i++] = 0x00;               // Ë÷ÒýºÅ (Ä¬ÈÏ0)
+   \   0000D3   7410         MOV     A,#0x10
+   \   0000D5   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000D8   E4           CLR     A
+   \   0000D9   F0           MOVX    @DPTR,A
+    568          
+    569              // ÍøÂçµØÖ· (´ó¶Ë¸ñÊ½)
+    570              txFrame[i++] = HI_UINT16(myShortAddr);      // Ô´µØÖ·¸ß×Ö½Ú
+   \   0000DA   7411         MOV     A,#0x11
+   \   0000DC   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000DF   E5..         MOV     A,?V0 + 5
+   \   0000E1   F0           MOVX    @DPTR,A
+    571              txFrame[i++] = LO_UINT16(myShortAddr);      // Ô´µØÖ·µÍ×Ö½Ú
+   \   0000E2   7412         MOV     A,#0x12
+   \   0000E4   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000E7   E5..         MOV     A,?V0 + 4
+   \   0000E9   F0           MOVX    @DPTR,A
+    572              txFrame[i++] = HI_UINT16(parentShortAddr);  // ¸¸µØÖ·¸ß×Ö½Ú
+   \   0000EA   7413         MOV     A,#0x13
+   \   0000EC   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000EF   EF           MOV     A,R7
+   \   0000F0   F0           MOVX    @DPTR,A
+    573              txFrame[i++] = LO_UINT16(parentShortAddr);  // ¸¸µØÖ·µÍ×Ö½Ú
+   \   0000F1   7414         MOV     A,#0x14
+   \   0000F3   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000F6   EE           MOV     A,R6
+   \   0000F7   F0           MOVX    @DPTR,A
+    574          
+    575              txFrame[i++] = 0x02;               // ½ÚµãÀàÐÍ: ÖÕ¶ËÉè±¸ (0x02)
+   \   0000F8   7415         MOV     A,#0x15
+   \   0000FA   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000FD   7402         MOV     A,#0x2
+   \   0000FF   F0           MOVX    @DPTR,A
+    576          
+    577              // ÖµÀàÐÍÓëÊý¾ÝÖµ (¹Ø¼ü²¿·Ö)
+    578              txFrame[i++] = 0xF0;               // ÖµÀàÐÍ: ÌØÊâÀàÐÍ (0xF0£¬¶ÔÓ¦ÎÂÊª¶È)
+   \   000100   7416         MOV     A,#0x16
+   \   000102   12....       LCALL   ?XSTACK_DISP0_8
+   \   000105   74F0         MOV     A,#-0x10
+   \   000107   F0           MOVX    @DPTR,A
+    579              
+    580              // Êý¾ÝÖµ: 4×Ö½Ú£¬ÎÂ¶È(2×Ö½Ú) + Êª¶È(2×Ö½Ú)£¬×¢Òâ×Ö½ÚË³Ðò
+    581              // ÎÂ¶ÈÖµ (ÀýÈç 22.65¡æ = 0x08D9=2265) ÎÂ¶ÈÖµÊÇ·Å´óÁË100±¶µÄ 
+    582              txFrame[i++] = HI_UINT16(tempValue); // ÎÂ¶È¸ß×Ö½Ú£¬ÎÂ¶ÈµÄ¸ßÎ»·ÅÔÚÊý¾ÝÖ¡µÄµÍ×Ö½Ú 
+   \   000108   7417         MOV     A,#0x17
+   \   00010A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00010D   E5..         MOV     A,?V0 + 9
+   \   00010F   F0           MOVX    @DPTR,A
+    583              txFrame[i++] = LO_UINT16(tempValue); // ÎÂ¶ÈµÍ×Ö½Ú£¬ ÎÂ¶ÈµÄµÍÎ»·ÅÔÚÊý¾ÝÖ¡µÄ¸ß×Ö½Ú
+   \   000110   7418         MOV     A,#0x18
+   \   000112   12....       LCALL   ?XSTACK_DISP0_8
+   \   000115   E5..         MOV     A,?V0 + 8
+   \   000117   F0           MOVX    @DPTR,A
+    584              // Êª¶ÈÖµ (ÀýÈç 33.69% = 0x0D29)Êª¶ÈÖµÊÇ·Å´óÁË100±¶µÄ 
+    585              txFrame[i++] = HI_UINT16(humiValue); // Êª¶È¸ß×Ö½Ú£¬Êª¶ÈµÄ¸ßÎ»·ÅÔÚÊý¾ÝÖ¡µÄµÍ×Ö½Ú 
+   \   000118   7419         MOV     A,#0x19
+   \   00011A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00011D   E5..         MOV     A,?V0 + 1
+   \   00011F   F0           MOVX    @DPTR,A
+    586              txFrame[i++] = LO_UINT16(humiValue); // Êª¶ÈµÍ×Ö½Ú£¬ Êª¶ÈµÄµÍÎ»·ÅÔÚÊý¾ÝÖ¡µÄ¸ß×Ö½Ú
+   \   000120   741A         MOV     A,#0x1a
+   \   000122   12....       LCALL   ?XSTACK_DISP0_8
+   \   000125   E5..         MOV     A,?V0 + 0
+   \   000127   F0           MOVX    @DPTR,A
+    587          
+    588              // 4. ¼ÆËãÖ¡³¤¶È²¢»ØÌî
+    589              // ´ËÊ± i = ÒÑÌîÈëµÄ×Ö½ÚÊý (Ó¦¸ÃÊÇ 20)
+    590              // ×Ü³¤¶È = µ±Ç°i + 1¸öÐ£ÑéÂë×Ö½Ú = 21 (0x15)
+    591              txFrame[1] = i + 1;                // »ØÌîÖ¡³¤¶Èµ½µÚ¶þ¸ö×Ö½Ú
+   \   000128   7409         MOV     A,#0x9
+   \   00012A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00012D   7414         MOV     A,#0x14
+   \   00012F   F0           MOVX    @DPTR,A
+    592          
+    593              // 5. ¼ÆËãÐ£ÑéºÍ (´ÓÖ¡Í·µ½Êý¾ÝÖµ×îºóÒ»¸ö×Ö½Ú)
+    594              for (uint8 j = 0; j < i; j++) {
+   \   000130   7800         MOV     R0,#0x0
+    595                  checkSum += txFrame[j];
+   \                     ??TemperatureApp_SendTheMessage_2:
+   \   000132   88..         MOV     ?V0 + 0,R0
+   \   000134   7408         MOV     A,#0x8
+   \   000136   12....       LCALL   ?XSTACK_DISP0_8
+   \   000139   E582         MOV     A,DPL
+   \   00013B   25..         ADD     A,?V0 + 0
+   \   00013D   F582         MOV     DPL,A
+   \   00013F   E583         MOV     A,DPH
+   \   000141   12....       LCALL   ??Subroutine1_0 & 0xFFFF
+    596              }
+   \                     ??CrossCallReturnLabel_0:
+   \   000144   25..         ADD     A,?V0 + 6
+   \   000146   F5..         MOV     ?V0 + 6,A
+   \   000148   08           INC     R0
+   \   000149   E8           MOV     A,R0
+   \   00014A   C3           CLR     C
+   \   00014B   9413         SUBB    A,#0x13
+   \   00014D   40E3         JC      ??TemperatureApp_SendTheMessage_2
+    597              txFrame[i++] = checkSum;           // ÌîÈëÐ£ÑéÂë
+   \   00014F   741B         MOV     A,#0x1b
+   \   000151   12....       LCALL   ?XSTACK_DISP0_8
+   \   000154   E5..         MOV     A,?V0 + 6
+   \   000156   F0           MOVX    @DPTR,A
+    598          
+    599              // 6. ·¢ËÍÊý¾ÝÖ¡
+    600              afAddrType_t dstAddr;
+    601              dstAddr.addrMode = (afAddrMode_t)afAddr16Bit;
+   \   000157   7430         MOV     A,#0x30
+   \   000159   12....       LCALL   ?XSTACK_DISP0_8
+   \   00015C   7402         MOV     A,#0x2
+   \   00015E   F0           MOVX    @DPTR,A
+    602              dstAddr.endPoint = TemperatureApp_ENDPOINT; // Õâ¸öÊÇÄ¬ÈÏµÄ¶ËµãºÅ
+   \   00015F   7431         MOV     A,#0x31
+   \   000161   12....       LCALL   ?XSTACK_DISP0_8
+   \   000164   740A         MOV     A,#0xa
+   \   000166   F0           MOVX    @DPTR,A
+    603              dstAddr.addr.shortAddr = 0x0000;        // Ä¿±ê: Ð­µ÷Æ÷
+   \   000167   7428         MOV     A,#0x28
+   \   000169   12....       LCALL   ?XSTACK_DISP0_8
+   \   00016C   E4           CLR     A
+   \   00016D   F0           MOVX    @DPTR,A
+   \   00016E   A3           INC     DPTR
+   \   00016F   F0           MOVX    @DPTR,A
+    604          
+    605              if (AF_DataRequest(&dstAddr,
+    606                                 &TemperatureApp_epDesc,  // Ô­À´¾ÍÓÐµÄ¶ËµãÃèÊö·û
+    607                                 TemperatureApp_CLUSTERID, // ÇëÌæ»»ÎªÄúµÄ´ØID
+    608                                 i,                    // ·¢ËÍ×Ü×Ö½ÚÊý (21)
+    609                                 txFrame,
+    610                                 &TemperatureApp_TransID,
+    611                                 AF_DISCV_ROUTE,
+    612                                 AF_DEFAULT_RADIUS) == afStatus_SUCCESS) 
+   \   000170                ; Setup parameters for call to function AF_DataRequest
+   \   000170   75..1E       MOV     ?V0 + 0,#0x1e
+   \   000173   78..         MOV     R0,#?V0 + 0
+   \   000175   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000178   75....       MOV     ?V0 + 0,#TemperatureApp_TransID & 0xff
+   \   00017B   75....       MOV     ?V0 + 1,#(TemperatureApp_TransID >> 8) & 0xff
+   \   00017E   78..         MOV     R0,#?V0 + 0
+   \   000180   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000183   740B         MOV     A,#0xb
+   \   000185   12....       LCALL   ?XSTACK_DISP0_8
+   \   000188   8582..       MOV     ?V0 + 0,DPL
+   \   00018B   8583..       MOV     ?V0 + 1,DPH
+   \   00018E   78..         MOV     R0,#?V0 + 0
+   \   000190   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000193   75..14       MOV     ?V0 + 0,#0x14
+   \   000196   75..00       MOV     ?V0 + 1,#0x0
+   \   000199   78..         MOV     R0,#?V0 + 0
+   \   00019B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00019E   75..02       MOV     ?V0 + 0,#0x2
+   \   0001A1   78..         MOV     R0,#?V0 + 0
+   \   0001A3   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001A6   7920         MOV     R1,#0x20
+   \   0001A8   7C..         MOV     R4,#TemperatureApp_epDesc & 0xff
+   \   0001AA   7D..         MOV     R5,#(TemperatureApp_epDesc >> 8) & 0xff
+   \   0001AC   7431         MOV     A,#0x31
+   \   0001AE   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001B1   AA82         MOV     R2,DPL
+   \   0001B3   AB83         MOV     R3,DPH
+   \   0001B5   12....       LCALL   ??AF_DataRequest?relay
+   \   0001B8   7409         MOV     A,#0x9
+   \   0001BA   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0001BD   E9           MOV     A,R1
+   \   0001BE   7CFA         MOV     R4,#-0x6
+   \   0001C0   7D00         MOV     R5,#0x0
+   \   0001C2   7B32         MOV     R3,#0x32
+   \   0001C4   7006         JNZ     ??TemperatureApp_SendTheMessage_3
+    613              {
+    614                  // ·¢ËÍ³É¹¦Ö¸Ê¾dataµÆÉÁË¸
+    615                  HalLedBlink(HAL_LED_1, 6, 50, 250);
+   \   0001C6                ; Setup parameters for call to function HalLedBlink
+   \   0001C6   7A06         MOV     R2,#0x6
+   \   0001C8   7901         MOV     R1,#0x1
+   \   0001CA   8004         SJMP    ??TemperatureApp_SendTheMessage_4
+    616                
+    617              } else {
+    618                  // ·¢ËÍÊ§°ÜÖ¸Ê¾linkµÆÉÁË¸
+    619                  HalLedBlink(HAL_LED_2, 5, 50, 250);
+   \                     ??TemperatureApp_SendTheMessage_3:
+   \   0001CC                ; Setup parameters for call to function HalLedBlink
+   \   0001CC   7A05         MOV     R2,#0x5
+   \   0001CE   7902         MOV     R1,#0x2
+   \                     ??TemperatureApp_SendTheMessage_4:
+   \   0001D0   12....       LCALL   ??HalLedBlink?relay
+    620              }
+    621            
+    622           
+    623          }
+   \   0001D3   7434         MOV     A,#0x34
+   \   0001D5   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0001D8   7F0A         MOV     R7,#0xa
+   \   0001DA   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??frameSeq:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??TemperatureApp_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    TemperatureApp_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??TemperatureApp_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    TemperatureApp_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??TemperatureApp_ProcessZDOMsgs?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    TemperatureApp_ProcessZDOMsgs
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??TemperatureApp_HandleKeys?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    TemperatureApp_HandleKeys
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??TemperatureApp_MessageMSGCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    TemperatureApp_MessageMSGCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??TemperatureApp_SendTheMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    TemperatureApp_SendTheMessage
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "TemperatureApp">`:
+   \   000000   54656D70     DB "TemperatureApp"
+   \            65726174
+   \            75726541
+   \            707000  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "rcvd">`:
+   \   000000   72637664     DB "rcvd"
+   \            00      
+    624          /*********************************************************************
+    625          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     TemperatureApp_HandleKeys          0      0     41
+       -> HalLedSet                     0      0     40
+       -> NLME_GetShortAddr             0      0     40
+       -> ZDP_EndDeviceBindReq          0      0     58
+       -> HalLedSet                     0      0     40
+       -> ZDP_MatchDescReq              0      0     56
+     TemperatureApp_Init                0      0      9
+       -> I2c_Init                      0      0     18
+       -> SHT3X_Init                    0      0     18
+       -> SHT3X_StartPeriodicMeasurment
+                                        0      0     18
+       -> afRegister                    0      0     18
+       -> RegisterForKeys               0      0     18
+       -> HalLcdWriteString             0      0     18
+       -> ZDO_RegisterForZDOMsg         0      0     18
+       -> ZDO_RegisterForZDOMsg         0      0     18
+     TemperatureApp_MessageMSGCB        2      0     12
+       -> HalLcdWriteScreen             4      0      0
+     TemperatureApp_ProcessEvent        0      0     12
+       -> osal_msg_receive              0      0     24
+       -> HalLedBlink                   0      0     24
+       -> osal_start_timerEx            0      0     24
+       -> osal_msg_deallocate           0      0     24
+       -> osal_msg_receive              0      0     24
+       -> TemperatureApp_ProcessZDOMsgs
+                                        0      0     24
+       -> TemperatureApp_HandleKeys     0      0     24
+       -> TemperatureApp_MessageMSGCB
+                                        0      0     24
+       -> TemperatureApp_SendTheMessage
+                                        0      0     24
+       -> osal_start_timerEx            0      0     24
+     TemperatureApp_ProcessZDOMsgs      0      0     22
+       -> HalLedSet                     0      0     20
+       -> HalLedSet                     0      0     20
+       -> ZDO_ParseEPListRsp            0      0     20
+       -> HalLedSet                     0      0     20
+       -> osal_mem_free                 0      0     20
+     TemperatureApp_SendTheMessage      1      0     91
+       -> NLME_GetShortAddr             0      0    140
+       -> NLME_GetCoordShortAddr        0      0    140
+       -> SHT3X_ReadMeasurementBuffer
+                                        0      0    140
+       -> AF_DataRequest                0      0    158
+       -> HalLedBlink                   0      0    140
+       -> HalLedBlink                   0      0    140
+
+
+   Segment part sizes:
+
+     Function/Label                        Bytes
+     --------------                        -----
+     TemperatureApp_ClusterList               2
+     TemperatureApp_SimpleDesc               12
+     TemperatureApp_epDesc                    6
+     TemperatureApp_TaskID                    1
+     TemperatureApp_NwkState                  1
+     TemperatureApp_TransID                   1
+     TemperatureApp_DstAddr                  12
+     TemperatureApp_Init                    127
+     TemperatureApp_ProcessEvent            201
+     TemperatureApp_ProcessZDOMsgs          149
+     ?Subroutine0                             3
+     ??Subroutine1_0                          6
+     TemperatureApp_HandleKeys              241
+     TemperatureApp_MessageMSGCB             45
+     TemperatureApp_SendTheMessage          477
+     frameSeq                                 1
+     ??TemperatureApp_Init?relay              6
+     ??TemperatureApp_ProcessEvent?relay      6
+     ??TemperatureApp_ProcessZDOMsgs?relay    6
+     ??TemperatureApp_HandleKeys?relay        6
+     ??TemperatureApp_MessageMSGCB?relay      6
+     ??TemperatureApp_SendTheMessage?relay    6
+     ?<Constant "TemperatureApp">            15
+     ?<Constant "rcvd">                       5
+
+ 
+ 1 249 bytes in segment BANKED_CODE
+    36 bytes in segment BANK_RELAYS
+    34 bytes in segment XDATA_ROM_C
+    22 bytes in segment XDATA_Z
+ 
+ 1 285 bytes of CODE  memory
+    34 bytes of CONST memory
+    22 bytes of XDATA memory
+
+Errors: none
+Warnings: none
